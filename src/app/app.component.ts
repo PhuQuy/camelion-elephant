@@ -7,21 +7,21 @@ declare let $:any;
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements AfterViewInit {
-    @ViewChild('rippleAnimation') rippleAnimation: ElementRef;
+export class AppComponent {
+    // @ViewChild('rippleAnimation') rippleAnimation: ElementRef;
 
-    constructor(@Inject(PLATFORM_ID) public platformId: string) {
+    // constructor(@Inject(PLATFORM_ID) public platformId: string) {
         
-    }
+    // }
 
-    ngAfterViewInit() {
-        if (isPlatformBrowser(this.platformId)) {
-            $('.hero-area-fix').ripples({
-                resolution: 712,
-                dropRadius: 20,
-                perturbance: 0.04,
-            });
+    // ngAfterViewInit() {
+    //     if (isPlatformBrowser(this.platformId)) {
+    //         $('.hero-area-fix').ripples({
+    //             resolution: 712,
+    //             dropRadius: 20,
+    //             perturbance: 0.04,
+    //         });
             
-        }
-    }
+    //     }
+    // }
 }
