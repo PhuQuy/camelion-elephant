@@ -7,7 +7,7 @@
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
-      "prefix": "app",
+      "prefix": "",
       "schematics": {
         "@schematics/angular:component": {
           "styleext": "scss"
@@ -29,11 +29,16 @@
             ],
             "styles": [
               "src/assets/css/animate.css",
+              "src/assets/css/aos.css",
+              "src/assets/css/flaticon.css",
+              "src/assets/css/icomoon.css",
+              "src/assets/css/style.css",
               "src/styles.scss"
             ],
             "scripts": [
                 "src/assets/js/jquery-2.2.4.min.js",
-                "src/assets/js/jquery.ripples-min.js"
+                "src/assets/js/jquery.ripples-min.js",
+                "src/assets/js/aos.js"
             ]
           },
           "configurations": {

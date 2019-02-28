@@ -1,1 +1,6 @@
-<router-outlet #appOutlet="outlet"></router-outlet>
+<navbar></navbar>
+<div #animateChild [style.visibility]="!loading ? 'visible' : 'hidden'" class="client-content">
+  <router-outlet #appOutlet="outlet"></router-outlet>
+  <!-- <root-footer></root-footer> -->
+</div>
+
