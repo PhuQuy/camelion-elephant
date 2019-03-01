@@ -1,25 +1,33 @@
-.nav-item {
-  border: 1px solid transparent;
-  margin-right: 10px;
+nav:not(.scrolled) {
+  .nav-item {
+    border: 1px solid transparent;
+    margin-right: 10px;
 
-  &.active,
-  &:hover {
-    border: 1px solid white;
-    border-radius: 5px;
+    &.active,
+    &:hover {
+      border: 1px solid white;
+      border-radius: 5px;
+
+      a {
+        color: rgba(255, 255, 255, 1) !important;
+      }
+    }
 
     a {
-      color: rgba(255, 255, 255, 1) !important;
+      padding-top: 1px !important;
+      padding-bottom: 1px !important;
+    }
+
+    .dropdown-item {
+      &:hover {
+        background: #e0e0e0 !important;
+      }
     }
   }
+}
 
-  a {
-    padding-top: 1px !important;
-    padding-bottom: 1px !important;
-  }
-
-  .dropdown-item {
-    &:hover {
-      background: #e0e0e0 !important;
-    }
+@media screen and (max-width: 576px) {
+  .logo {
+    width: 200px !important;
   }
 }
