@@ -10,17 +10,27 @@ const routes: Routes = [
             { 
                 path: '', 
                 loadChildren: "../../routes/home/home.module#HomeModule"
+            },
+            { 
+                path: 'about-us', 
+                loadChildren: "../../routes/about/about.module#AboutModule"
+            },
+            { 
+                path: 'blog', 
+                loadChildren: "../../routes/blog/blog.module#BlogModule"
+            },
+            { 
+                path: 'portfolio', 
+                loadChildren: "../../routes/portfolio/portfolio.module#PortfolioModule"
+            },
+            { 
+                path: 'contact', 
+                loadChildren: "../../routes/contact/contact.module#ContactModule"
+            },
+            { 
+                path: 'solution', 
+                loadChildren: "../../routes/solution/solution.module#SolutionModule"
             }
-            // { path: 'contact-us', component: ContactUsComponent },
-            // { path: 'news', loadChildren: './../../routes/news/news.module#NewsModule' },
-            // {
-            //     path: 'form',
-            //     loadChildren: './../../routes/submit-form/submit-form.module#SubmitFormModule'
-            // },
-            // {
-            //     path: 'chat',
-            //     loadChildren: './../../routes/chat/chat.module#ChatModule'
-            // },
         ]
     }
 ];

@@ -28,7 +28,6 @@ export class ClientsComponent implements AfterViewInit {
                     event instanceof NavigationCancel
                 ) {
                     this.loading = false;
-
                     if (isPlatformBrowser(this.platformId)) {
                         window.scrollTo(0, 0);
                     }

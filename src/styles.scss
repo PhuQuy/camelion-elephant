@@ -9,7 +9,7 @@
 
 .hero-area-fix {
   canvas {
-      width: 100%;
+    width: 100%;
   }
 }
 
@@ -2500,4 +2500,8 @@ textarea.form-control {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px;
   }
+}
+
+.c-pointer {
+  cursor: pointer;
 }

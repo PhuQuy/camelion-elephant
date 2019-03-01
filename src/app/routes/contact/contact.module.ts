@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavbarComponent } from './navbar.component';
+import { ContactComponent } from './contact.component';
+import { ContactRoutingModule } from './contact.routing';
 import { ShareModule } from '@shared/share/share.module';
 
 @NgModule({
   imports: [
     CommonModule,
+    ContactRoutingModule,
     ShareModule
   ],
-  declarations: [NavbarComponent],
-  exports: [NavbarComponent]
+  declarations: [ContactComponent]
 })
-export class NavbarModule { }
+export class ContactModule { }
