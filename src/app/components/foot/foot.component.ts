@@ -21,7 +21,6 @@ export class FootComponent implements OnInit {
   
 
   isHidden = true;
-  isHiddenForm = true;
 
   local;
   lat: number = 10.880319;
@@ -136,10 +135,8 @@ export class FootComponent implements OnInit {
       if (event instanceof NavigationEnd) {
         if (router.url === '/contact') {
           this.isHidden = false;
-          this.isHiddenForm = true;
         } else {
           this.isHidden = true;
-          this.isHiddenForm = false;
         }
       }
     })
