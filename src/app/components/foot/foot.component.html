@@ -76,10 +76,10 @@
     </div>
   </div>
   <!-- Google Map  -->
-  <div class="container">
+  <div class="container" *ngIf="!isHidden">
     <div class="row">
       <div class="col-12">
-        <agm-map [latitude]="lat" [longitude]="lng" [styles]="styles" [zoom]="12" [scrollwheel]="null">
+        <agm-map style="height: 500px" [latitude]="lat" [longitude]="lng" [styles]="styles" [zoom]="12" [scrollwheel]="null">
           <agm-marker [latitude]="lat" [longitude]="lng" [iconUrl]="{
                             url: '../../../assets/images/local.png',
                             scaledSize: {

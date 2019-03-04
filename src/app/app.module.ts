@@ -18,7 +18,7 @@ import { AgmCoreModule } from '@agm/core';
         HttpClientModule,
         AppRoutingModule,
         AgmCoreModule.forRoot({ //Add module google map for root
-            apiKey: ''
+            apiKey: 'AIzaSyDhMJyRMmSKUPnuWEUqmH87W531M1kdRK4'
          })
     ],
     providers: [],
