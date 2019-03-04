@@ -5,6 +5,7 @@ import { NgtUniversalModule } from '@ng-toolkit/universal';
 import { TransferHttpCacheModule } from '@nguniversal/common';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
     declarations: [
@@ -15,7 +16,10 @@ import { AppRoutingModule } from './app.routing';
         NgtUniversalModule,
         TransferHttpCacheModule,
         HttpClientModule,
-        AppRoutingModule
+        AppRoutingModule,
+        AgmCoreModule.forRoot({ //Add module google map for root
+            apiKey: ''
+         })
     ],
     providers: [],
 })

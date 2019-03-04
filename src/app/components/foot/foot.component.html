@@ -13,7 +13,7 @@
           </ul>
         </div>
       </div>
-      <div class="col-md">
+      <div class="col-md" *ngIf="isHidden">
         <div class="ftco-footer-widget mb-4">
           <h2 class="ftco-heading-2">Quick Links</h2>
           <ul class="list-unstyled">
@@ -37,6 +37,30 @@
           </ul>
         </div>
       </div>
+      <div class="col-md" *ngIf="isHiddenForm">
+        <div class="ftco-footer-widget mb-4">
+          <h2 class="ftco-heading-2">Contact To Us</h2>
+          <form action="" class="submit-form text-white">
+            <div class="form-group">
+              <label for="exampleFormControlInput1" class="title">Name</label>
+              <input type="email" class="form-control pl-0 mb-4" id="exampleFormControlInput1">
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlInput1" class="title">Email Address</label>
+              <input type="email" class="form-control pl-0 mb-4" id="exampleFormControlInput1">
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlInput1" class="title">Organization Name</label>
+              <input type="email" class="form-control pl-0 mb-4" id="exampleFormControlInput1">
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1" class="title">Message</label>
+              <textarea class="form-control pl-0 mb-4" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary title w-100 p-3">Submit!</button>
+          </form>
+        </div>
+      </div>
       <div class="col-md">
         <div class="ftco-footer-widget mb-4">
           <h2 class="ftco-heading-2">Newsletter</h2>
@@ -48,6 +72,22 @@
             </div>
           </form>
         </div>
+      </div>
+    </div>
+  </div>
+  <!-- Google Map  -->
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <agm-map [latitude]="lat" [longitude]="lng" [styles]="styles" [zoom]="12" [scrollwheel]="null">
+          <agm-marker [latitude]="lat" [longitude]="lng" [iconUrl]="{
+                            url: '../../../assets/images/local.png',
+                            scaledSize: {
+                              width: 42,
+                              height: 53
+                            }
+                          }"></agm-marker>
+        </agm-map>
       </div>
     </div>
   </div>
