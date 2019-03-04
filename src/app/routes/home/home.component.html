@@ -11,8 +11,24 @@
           </h1>
           <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a
             paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-          <p><a href="https://vimeo.com/45830194" class="btn btn-primary btn-outline-white px-4 py-3 popup-vimeo"><span><i
-                  class="fa fa-play" style="font-size: 12px"></i></span> Watch Video</a></p>
+          <p><a href="#" class="btn btn-primary btn-outline-white px-4 py-3 popup-youtube" (click)="open(content)"
+              data-toggle="modal" 
+            ><span><i class="fa fa-play"
+                  style="font-size: 12px"></i></span> Watch Video</a></p>
+          <ng-template #content let-d="dismiss">
+            <div>
+                <div>
+                    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/FzuM9Z5VQJ8" allowfullscreen
+                      frameborder="0"></iframe>
+                  </div>
+            </div>
+            
+          </ng-template>
         </div>
       </div>
     </div>
@@ -57,7 +73,8 @@
       <div class="col-md-6 col-lg-3 d-flex align-self-stretch ">
         <div class="media block-6 services d-block text-center">
           <div class="d-flex justify-content-center">
-            <div class="icon color-1 d-flex justify-content-center mb-3"><span class="align-self-center icon-layers"></span></div>
+            <div class="icon color-1 d-flex justify-content-center mb-3"><span
+                class="align-self-center icon-layers"></span></div>
           </div>
           <div class="media-body p-2">
             <h3 class="heading">Unlimited Features</h3>
@@ -68,7 +85,8 @@
       <div class="col-md-6 col-lg-3 d-flex align-self-stretch ">
         <div class="media block-6 services d-block text-center">
           <div class="d-flex justify-content-center">
-            <div class="icon color-2 d-flex justify-content-center mb-3"><span class="align-self-center icon-gears"></span></div>
+            <div class="icon color-2 d-flex justify-content-center mb-3"><span
+                class="align-self-center icon-gears"></span></div>
           </div>
           <div class="media-body p-2">
             <h3 class="heading">Multiple Functions</h3>
@@ -79,7 +97,8 @@
       <div class="col-md-6 col-lg-3 d-flex align-self-stretch ">
         <div class="media block-6 services d-block text-center">
           <div class="d-flex justify-content-center">
-            <div class="icon color-3 d-flex justify-content-center mb-3"><span class="align-self-center icon-paper-plane"></span></div>
+            <div class="icon color-3 d-flex justify-content-center mb-3"><span
+                class="align-self-center icon-paper-plane"></span></div>
           </div>
           <div class="media-body p-2">
             <h3 class="heading">Advanced Visualizations</h3>
@@ -91,7 +110,8 @@
       <div class="col-md-6 col-lg-3 d-flex align-self-stretch ">
         <div class="media block-6 services d-block text-center">
           <div class="d-flex justify-content-center">
-            <div class="icon color-4 d-flex justify-content-center mb-3"><span class="align-self-center icon-live_help"></span></div>
+            <div class="icon color-4 d-flex justify-content-center mb-3"><span
+                class="align-self-center icon-live_help"></span></div>
           </div>
           <div class="media-body p-2">
             <h3 class="heading">Community &amp; Supports</h3>
@@ -161,6 +181,7 @@
 
 <section class="ftco-section testimony-section ftco-degree-bg">
   <div class="container">
+
     <div class="row justify-content-center mb-5 pb-5">
       <div class="col-md-7 text-center heading-section ">
         <span class="subheading">Customer Says</span>
@@ -254,7 +275,7 @@
 <section class="ftco-section ftco-counter ftco-degree-bg" id="section-counter">
   <div class="container">
     <div class="row justify-content-center mb-5 pb-5">
-      <div class="col-md-7 text-center heading-section heading-section-white "  > 
+      <div class="col-md-7 text-center heading-section heading-section-white ">
         <h2>Our achievements</h2>
       </div>
     </div>
@@ -340,4 +361,5 @@
       </div>
     </div>
   </div>
+
 </section>
