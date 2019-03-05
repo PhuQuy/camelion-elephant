@@ -2,11 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FootComponent } from './foot.component';
 import { AgmCoreModule } from '@agm/core';
+import { FormsModule }   from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
-    AgmCoreModule //import AgmModule for child
+    AgmCoreModule,
+    FormsModule
   ],
   declarations: [FootComponent],
   exports: [FootComponent]
