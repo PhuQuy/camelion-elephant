@@ -8809,6 +8809,57 @@ textarea.form-control {
   transform: translateY(-50%);
   color: rgba(255, 255, 255, 0.5); }
 
+.submit-form .form-group {
+  position: relative;
+  margin-bottom: 0; }
+  .submit-form .form-group textarea {
+    background: transparent !important;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.8) !important; }
+    .submit-form .form-group textarea::-webkit-input-placeholder {
+      /* Chrome/Opera/Safari */
+      color: rgba(255, 255, 255, 0.8) !important; }
+    .submit-form .form-group textarea::-moz-placeholder {
+      /* Firefox 19+ */
+      color: rgba(255, 255, 255, 0.8) !important; }
+    .submit-form .form-group textarea:-ms-input-placeholder {
+      /* IE 10+ */
+      color: rgba(255, 255, 255, 0.8) !important; }
+    .submit-form .form-group textarea:-moz-placeholder {
+      /* Firefox 18- */
+      color: rgba(255, 255, 255, 0.8) !important; }
+
+  .submit-form .form-group input {
+    height: 30px !important;
+    background: transparent !important;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.8) !important; }
+    .submit-form .form-group input::-webkit-input-placeholder {
+      /* Chrome/Opera/Safari */
+      color: rgba(255, 255, 255, 0.8) !important; }
+    .submit-form .form-group input::-moz-placeholder {
+      /* Firefox 19+ */
+      color: rgba(255, 255, 255, 0.8) !important; }
+    .submit-form .form-group input:-ms-input-placeholder {
+      /* IE 10+ */
+      color: rgba(255, 255, 255, 0.8) !important; }
+    .submit-form .form-group input:-moz-placeholder {
+      /* Firefox 18- */
+      color: rgba(255, 255, 255, 0.8) !important; }
+
+.submit-form .form-group .form-control {
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important; }
+
+.submit-form .btn {
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  background: transparent !important;
+  border-radius: 5px; }
+
+.submit-form .btn-primary:hover {
+  background: #fff !important;
+  color: #0079c2 !important; }
+
 .sidebar-box {
   margin-bottom: 30px;
   padding: 25px;

@@ -1508,7 +1508,6 @@ textarea.form-control {
 }
 
 // magnific pop up
-
 .image-popup {
   cursor: -webkit-zoom-in;
   cursor: -moz-zoom-in;
@@ -2505,3 +2504,15 @@ textarea.form-control {
 .c-pointer {
   cursor: pointer;
 }
+.modal{
+  .modal-content{
+    background-color: transparent;
+    border:none;
+  }
+  .close{
+    outline: 0;
+    color:white;
+    font-size: 30px;
+  }
+}
+

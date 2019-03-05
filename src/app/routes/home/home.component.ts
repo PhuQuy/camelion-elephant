@@ -1,7 +1,8 @@
-import { Component, AfterViewInit, PLATFORM_ID, Inject } from '@angular/core';
+import { Component, AfterViewInit, PLATFORM_ID, Inject , ElementRef, ViewChild, AfterViewChecked } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import * as AOS from 'aos';
 import { BaseComponent } from '@core/base/base.component';
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 declare let $: any;
 var TxtType = function (el, toRotate, period) {
@@ -18,8 +19,11 @@ var TxtType = function (el, toRotate, period) {
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.scss']
 })
-export class HomeComponent extends BaseComponent {
-    constructor(@Inject(PLATFORM_ID) public platformId: string) {
+export class HomeComponent extends BaseComponent{
+    closeResult: string;
+    
+    constructor(@Inject(PLATFORM_ID) public platformId: string,
+    private modalService: NgbModal) {
         super(platformId);
     }
 
@@ -41,8 +45,26 @@ export class HomeComponent extends BaseComponent {
             css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
             document.body.appendChild(css);
         }
+    
     }
+    
+    open(content) {
+        this.modalService.open(content,{ariaLabelledBy: 'modal-basic-title',size: 'lg', keyboard:true, windowClass:'modal', centered:true}).result.then((result) => {
+          this.closeResult = `Closed with: ${result}`;
+        }, (reason) => {
+          this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+        });
+      }  
 
+      private getDismissReason(reason: any): string {
+        if (reason === ModalDismissReasons.ESC) {
+          return 'by pressing ESC';
+        } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+          return 'by clicking on a backdrop';
+        } else {
+          return  `with: ${reason}`;
+        }
+      }
     loadTypeWriter() {
         TxtType.prototype.tick = function () {
             var i = this.loopNum % this.toRotate.length;
@@ -75,4 +97,5 @@ export class HomeComponent extends BaseComponent {
             }, delta);
         };
     }
+    
 }
