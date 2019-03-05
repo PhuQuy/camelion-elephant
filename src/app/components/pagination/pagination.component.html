@@ -1,0 +1,17 @@
+<pagination-template #p="paginationApi" [id]="config.id" (pageChange)="pageChange($event)">
+  <div class="col text-center" *ngIf="p.getTotalItems() > config.itemsPerPage">
+    <div class="block-27">
+      <ul>
+        <li class="page-item" [class.disabled]="p.isFirstPage()">
+          <a class="page-link" (click)="prev(p)"><i class="fa fa-caret-left"></i></a>
+        </li>
+        <li class="page-item" *ngFor="let page of p.pages" [class.active]="p.getCurrent() == page.value">
+          <a class="page-link" (click)="p.setCurrent(page.value)">{{page.label}}</a>
+        </li>
+        <li class="page-item" [class.disabled]="p.isLastPage()">
+          <a class="page-link" (click)="next(p)"><i class="fa fa-caret-right"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</pagination-template>
