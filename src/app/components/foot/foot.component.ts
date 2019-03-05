@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, Event, NavigationEnd } from '@angular/router';
 
 
@@ -18,7 +18,12 @@ export interface marker {
 })
 
 export class FootComponent implements OnInit {
-  
+
+  fullname = '';
+  email = '';
+  number: number;
+  message = '';
+
 
   isHidden = true;
 

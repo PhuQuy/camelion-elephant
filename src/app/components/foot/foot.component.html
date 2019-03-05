@@ -1,4 +1,4 @@
-<footer class="ftco-footer ftco-bg-dark ftco-section">
+<footer class="ftco-footer ftco-bg-dark ftco-section ftco-degree-bg-blue">
   <div class="container">
     <div class="row mb-5">
       <div class="col-md">
@@ -40,28 +40,34 @@
       <div class="col-md" *ngIf="!isHidden">
         <div class="ftco-footer-widget mb-4">
           <h2 class="ftco-heading-2">Contact To Us</h2>
-          <form action="" class="submit-form text-white">
-            <div class="form-group">
-              <label for="exampleFormControlInput1" class="title">Name</label>
-              <input type="email" class="form-control pl-0 mb-4" id="exampleFormControlInput1">
+          <form action="" class="submit-form text-white" #formSubmit="ngForm">
+            <div class="form-group  mb-4">
+              <input type="text" class="form-control pl-2 pr-2" id="fullname" placeholder="Fullname" [(ngModel)]="fullname"
+                required #fullnameText="ngModel" name="fullname">
+              <p class="form-validation m-0 pl-2" *ngIf="fullnameText?.invalid && (fullnameText?.dirty || fullnameText?.touched)">Fullname
+                is required!</p>
             </div>
-            <div class="form-group">
-              <label for="exampleFormControlInput1" class="title">Email Address</label>
-              <input type="email" class="form-control pl-0 mb-4" id="exampleFormControlInput1">
+            <div class="form-group mb-4">
+              <input type="text" class="form-control pl-2 pr-2" id="email" placeholder="Email" [(ngModel)]="email"
+                required #emailText="ngModel" name="email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+              <p class="form-validation m-0 pl-2" *ngIf="emailText?.errors && emailText?.errors?.required && (emailText?.dirty || emailText?.touched)">Email
+                is required</p>
+              <p class="form-validation m-0 pl-2" *ngIf="emailText?.errors && emailText?.errors?.pattern">Email is invalid</p>
             </div>
-            <div class="form-group">
-              <label for="exampleFormControlInput1" class="title">Organization Name</label>
-              <input type="email" class="form-control pl-0 mb-4" id="exampleFormControlInput1">
+            <div class="form-group mb-4">
+              <input type="number" class="form-control pl-2 pr-2" id="number" placeholder="Phone" [(ngModel)]="number"
+                #phoneNumber="ngModel" name="phone">
             </div>
-            <div class="form-group">
-              <label for="exampleFormControlTextarea1" class="title">Message</label>
-              <textarea class="form-control pl-0 mb-4" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <div class="form-group mb-4">
+              <textarea class="form-control pl-2 pr-2" id="exampleFormControlTextarea1" placeholder="Message" rows="3"
+                [(ngModel)]="message" #messageText="ngModel" name="message" appForbiddenName="fuck"></textarea>
+              <p class="form-validation m-0 pl-2" *ngIf="messageText?.errors?.forbiddenName">Text is invalid</p>
             </div>
-            <button type="submit" class="btn btn-primary title w-100 p-3">Submit!</button>
+            <button type="submit" class="btn btn-primary title w-100 p-2">Submit!</button>
           </form>
         </div>
       </div>
-      <div class="col-md">
+      <div class="col-md" *ngIf="isHidden">
         <div class="ftco-footer-widget mb-4">
           <h2 class="ftco-heading-2">Newsletter</h2>
           <p>Far far away, behind the word mountains, far from the countries.</p>
@@ -75,20 +81,15 @@
       </div>
     </div>
   </div>
+</footer>
   <!-- Google Map  -->
-  <div class="container" *ngIf="!isHidden">
-    <div class="row">
-      <div class="col-12">
-        <agm-map style="height: 500px" [latitude]="lat" [longitude]="lng" [styles]="styles" [zoom]="12" [scrollwheel]="null">
-          <agm-marker [latitude]="lat" [longitude]="lng" [iconUrl]="{
+  <agm-map *ngIf="!isHidden" style="height: 500px" [latitude]="lat" [longitude]="lng" [styles]="styles" [zoom]="12"
+    [scrollwheel]="null">
+    <agm-marker [latitude]="lat" [longitude]="lng" [iconUrl]="{
                             url: '../../../assets/images/local.png',
                             scaledSize: {
                               width: 42,
                               height: 53
                             }
                           }"></agm-marker>
-        </agm-map>
-      </div>
-    </div>
-  </div>
-</footer>
+  </agm-map>
