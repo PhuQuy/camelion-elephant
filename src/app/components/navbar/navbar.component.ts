@@ -1,5 +1,6 @@
 import { Component, OnInit, HostListener, PLATFORM_ID, Inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'navbar',
@@ -24,9 +25,18 @@ export class NavbarComponent implements OnInit {
         }
     }
 
-    constructor(@Inject(PLATFORM_ID) public platformId: string) { }
+    collapsed = true;
+     toggleCollapsed(): void {
+       this.collapsed = !this.collapsed;
+     }
+
+    constructor(@Inject(PLATFORM_ID) public platformId: string, private router: Router) { }
 
     ngOnInit() {
+        this.router.events
+            .subscribe(() => {
+              this.collapsed = true;
+            });
     }
 
 }
