@@ -1,5 +1,4 @@
-import { Component, Input, Output } from '@angular/core';
-import { EventEmitter } from 'events';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
     selector: 'pagination',
@@ -8,7 +7,7 @@ import { EventEmitter } from 'events';
 })
 export class PaginationComponent {
     @Input() config: any;
-    @Output() onPageChange =  new EventEmitter();
+    @Output() onPageChange = new EventEmitter();
 
     constructor() { }
 

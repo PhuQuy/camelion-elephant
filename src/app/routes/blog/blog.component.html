@@ -21,7 +21,8 @@
                         <circle fill="none" stroke="white" cx="13" cy="13" r="12" />
                       </g>
 
-                      <g class="js-transition-icon__state" [style.display]="searchBlog.length > 0 ? '' : 'none'" aria-hidden="true">
+                      <g class="js-transition-icon__state" [style.display]="searchBlog.length > 0 ? '' : 'none'"
+                        aria-hidden="true">
                         <title>Close search</title>
                         <line fill="none" stroke="white" x1="27" y1="5" x2="5" y2="27" />
                         <line fill="none" stroke="white" x1="27" y1="27" x2="5" y2="5" />
@@ -39,7 +40,7 @@
   </div>
 </section>
 
-<section class="ftco-section ftco-degree-bg" style="margin-top: -17rem;">
+<section class="ftco-section ftco-degree-bg" style="margin-top: -17rem;" #blogHeader>
   <div class="container">
     <div class="row">
       <div class="col-md-4 " data-aos="fade-up" data-aos-delay="200" data-aos-offset="0" *ngFor="let blog of blogs | paginate: config">
@@ -58,21 +59,7 @@
       </div>
     </div>
     <div class="row mt-5">
-      <!-- <div class="col text-center">
-        <div class="block-27">
-          <ul>
-            <li><a href="#">&lt;</a></li>
-            <li class="active"><span>1</span></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-            <li><a href="#">&gt;</a></li>
-          </ul>
-        </div>
-      </div> -->
-      <pagination [config]="config"></pagination>
-
+      <pagination class="mx-auto" [config]="config" (onPageChange)="pageChange($event)"></pagination>
     </div>
   </div>
 </section>
