@@ -7,6 +7,6 @@ WORKDIR /usr/src/app
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
 # where available (npm@5+)
 COPY local.js ./
-COPY dist/ .
+COPY dist/ ./dist
 
 RUN node local.js
