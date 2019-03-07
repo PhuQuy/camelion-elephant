@@ -1,8 +1,12 @@
-FROM node:carbon
+FROM node:8
+
 # Create app directory
 WORKDIR /usr/src/app
-# Bundle app src
-COPY dist .
-COPY local.js .
-EXPOSE 3000
+
+# Install app dependencies
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
+COPY local.js ./
+COPY dist/ .
+
 RUN node local.js
