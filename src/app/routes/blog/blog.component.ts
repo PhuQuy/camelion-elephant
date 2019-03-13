@@ -18,7 +18,7 @@ export class BlogComponent extends BaseComponent implements OnInit {
     blogs = [
         {
             title: 'Even the all-powerful Pointing has no control about the blind texts',
-            createdDate: '20-02-2019 05:02:04',
+            createdDate: '2019-02-20 05:02:04',
             postedBy: 'Admin',
             photoURL: '/assets/images/image_1.jpg',
             comments: [
@@ -34,8 +34,8 @@ export class BlogComponent extends BaseComponent implements OnInit {
         },
 
         {
-            title: 'Even the all-powerful Pointing has no control about the blind texts',
-            createdDate: '20-02-2019 05:02:04',
+            title: 'Right time, right girl',
+            createdDate: '2019-02-20 05:02:04',
             postedBy: 'Admin',
             photoURL: '/assets/images/image_2.jpg',
             comments: [
@@ -52,7 +52,7 @@ export class BlogComponent extends BaseComponent implements OnInit {
 
         {
             title: 'Even the all-powerful Pointing has no control about the blind texts',
-            createdDate: '20-02-2019 05:02:04',
+            createdDate: '2019-02-20 05:02:04',
             postedBy: 'Admin',
             photoURL: '/assets/images/image_3.jpg',
             comments: [
@@ -69,7 +69,7 @@ export class BlogComponent extends BaseComponent implements OnInit {
 
         {
             title: 'Even the all-powerful Pointing has no control about the blind texts',
-            createdDate: '20-02-2019 05:02:04',
+            createdDate: '2019-02-20 05:02:04',
             postedBy: 'Admin',
             photoURL: '/assets/images/image_4.jpg',
             comments: [
@@ -86,7 +86,7 @@ export class BlogComponent extends BaseComponent implements OnInit {
 
         {
             title: 'Even the all-powerful Pointing has no control about the blind texts',
-            createdDate: '20-02-2019 05:02:04',
+            createdDate: '2019-02-20 05:02:04',
             postedBy: 'Admin',
             photoURL: '/assets/images/image_5.jpg',
             comments: [
@@ -103,7 +103,7 @@ export class BlogComponent extends BaseComponent implements OnInit {
 
         {
             title: 'Even the all-powerful Pointing has no control about the blind texts',
-            createdDate: '20-02-2019 05:02:04',
+            createdDate: '2019-02-20 05:02:04',
             postedBy: 'Admin',
             photoURL: '/assets/images/image_6.jpg',
             comments: [
@@ -119,7 +119,7 @@ export class BlogComponent extends BaseComponent implements OnInit {
         },
         {
             title: 'Even the all-powerful Pointing has no control about the blind texts',
-            createdDate: '20-02-2019 05:02:04',
+            createdDate: '2019-02-20 05:02:04',
             postedBy: 'Admin',
             photoURL: '/assets/images/image_1.jpg',
             comments: [
@@ -136,7 +136,7 @@ export class BlogComponent extends BaseComponent implements OnInit {
 
         {
             title: 'Even the all-powerful Pointing has no control about the blind texts',
-            createdDate: '20-02-2019 05:02:04',
+            createdDate: '2019-02-20 05:02:04',
             postedBy: 'Admin',
             photoURL: '/assets/images/image_2.jpg',
             comments: [
@@ -153,7 +153,7 @@ export class BlogComponent extends BaseComponent implements OnInit {
 
         {
             title: 'Even the all-powerful Pointing has no control about the blind texts',
-            createdDate: '20-02-2019 05:02:04',
+            createdDate: '2019-02-20 05:02:04',
             postedBy: 'Admin',
             photoURL: '/assets/images/image_3.jpg',
             comments: [
@@ -170,7 +170,7 @@ export class BlogComponent extends BaseComponent implements OnInit {
 
         {
             title: 'Even the all-powerful Pointing has no control about the blind texts',
-            createdDate: '20-02-2019 05:02:04',
+            createdDate: '2019-02-20 05:02:04',
             postedBy: 'Admin',
             photoURL: '/assets/images/image_4.jpg',
             comments: [
@@ -187,7 +187,7 @@ export class BlogComponent extends BaseComponent implements OnInit {
 
         {
             title: 'Even the all-powerful Pointing has no control about the blind texts',
-            createdDate: '20-02-2019 05:02:04',
+            createdDate: '2019-02-20 05:02:04',
             postedBy: 'Admin',
             photoURL: '/assets/images/image_5.jpg',
             comments: [
@@ -204,7 +204,7 @@ export class BlogComponent extends BaseComponent implements OnInit {
 
         {
             title: 'Even the all-powerful Pointing has no control about the blind texts',
-            createdDate: '20-02-2019 05:02:04',
+            createdDate: '2019-02-20 05:02:04',
             postedBy: 'Admin',
             photoURL: '/assets/images/image_6.jpg',
             comments: [

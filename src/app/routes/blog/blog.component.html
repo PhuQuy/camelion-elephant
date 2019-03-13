@@ -43,17 +43,17 @@
 <section class="ftco-section ftco-degree-bg" style="margin-top: -17rem;" #blogHeader>
   <div class="container">
     <div class="row">
-      <div class="col-md-4 " data-aos="fade-up" data-aos-delay="200" data-aos-offset="0" *ngFor="let blog of blogs | paginate: config">
+      <div class="col-md-4 " data-aos="fade-up" data-aos-delay="200" data-aos-offset="0" *ngFor="let blog of blogs | paginate: config  | filter:searchBlog">
         <div class="blog-entry">
           <a href="blog-single.html" class="block-20" [style.background]="'url(' + blog.photoURL + ')'">
           </a>
           <div class="text p-4 d-block">
             <div class="meta mb-3">
-              <div><a href="#">July 12, 2018</a></div>
-              <div><a href="#">Admin</a></div>
-              <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+              <div><a href="#">{{blog.createdDate | datene}}</a></div>
+              <div><a href="#">{{blog.postedBy}}</a></div>
+              <div><a href="#" class="meta-chat"><span class="icon-chat"></span> {{blog.comments.length}}</a></div>
             </div>
-            <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
+            <h3 class="heading"><a href="#">{{blog.title}}</a></h3>
           </div>
         </div>
       </div>
