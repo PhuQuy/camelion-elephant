@@ -17,6 +17,7 @@ export class BlogComponent extends BaseComponent implements OnInit {
     @ViewChild('blogHeader') blogHeader: ElementRef;
     blogs = [
         {
+            id: 1,
             title: 'Even the all-powerful Pointing has no control about the blind texts',
             createdDate: '2019-02-20 05:02:04',
             postedBy: 'Admin',
@@ -34,6 +35,7 @@ export class BlogComponent extends BaseComponent implements OnInit {
         },
 
         {
+            id: 2,
             title: 'Right time, right girl',
             createdDate: '2019-02-20 05:02:04',
             postedBy: 'Admin',
@@ -51,6 +53,7 @@ export class BlogComponent extends BaseComponent implements OnInit {
         },
 
         {
+            id: 3,
             title: 'Even the all-powerful Pointing has no control about the blind texts',
             createdDate: '2019-02-20 05:02:04',
             postedBy: 'Admin',
@@ -68,6 +71,7 @@ export class BlogComponent extends BaseComponent implements OnInit {
         },
 
         {
+            id: 4,
             title: 'Even the all-powerful Pointing has no control about the blind texts',
             createdDate: '2019-02-20 05:02:04',
             postedBy: 'Admin',
@@ -85,6 +89,7 @@ export class BlogComponent extends BaseComponent implements OnInit {
         },
 
         {
+            id: 5,
             title: 'Even the all-powerful Pointing has no control about the blind texts',
             createdDate: '2019-02-20 05:02:04',
             postedBy: 'Admin',
@@ -102,6 +107,7 @@ export class BlogComponent extends BaseComponent implements OnInit {
         },
 
         {
+            id: 6,
             title: 'Even the all-powerful Pointing has no control about the blind texts',
             createdDate: '2019-02-20 05:02:04',
             postedBy: 'Admin',
@@ -118,6 +124,7 @@ export class BlogComponent extends BaseComponent implements OnInit {
             ]
         },
         {
+            id: 7,
             title: 'Even the all-powerful Pointing has no control about the blind texts',
             createdDate: '2019-02-20 05:02:04',
             postedBy: 'Admin',
@@ -135,6 +142,7 @@ export class BlogComponent extends BaseComponent implements OnInit {
         },
 
         {
+            id: 8,
             title: 'Even the all-powerful Pointing has no control about the blind texts',
             createdDate: '2019-02-20 05:02:04',
             postedBy: 'Admin',
@@ -152,6 +160,7 @@ export class BlogComponent extends BaseComponent implements OnInit {
         },
 
         {
+            id: 9,
             title: 'Even the all-powerful Pointing has no control about the blind texts',
             createdDate: '2019-02-20 05:02:04',
             postedBy: 'Admin',
@@ -169,6 +178,7 @@ export class BlogComponent extends BaseComponent implements OnInit {
         },
 
         {
+            id: 10,
             title: 'Even the all-powerful Pointing has no control about the blind texts',
             createdDate: '2019-02-20 05:02:04',
             postedBy: 'Admin',
@@ -186,6 +196,7 @@ export class BlogComponent extends BaseComponent implements OnInit {
         },
 
         {
+            id: 11,
             title: 'Even the all-powerful Pointing has no control about the blind texts',
             createdDate: '2019-02-20 05:02:04',
             postedBy: 'Admin',
@@ -203,6 +214,7 @@ export class BlogComponent extends BaseComponent implements OnInit {
         },
 
         {
+            id: 12,
             title: 'Even the all-powerful Pointing has no control about the blind texts',
             createdDate: '2019-02-20 05:02:04',
             postedBy: 'Admin',
@@ -235,8 +247,6 @@ export class BlogComponent extends BaseComponent implements OnInit {
     }
 
     pageChange(page) {
-        console.log('qq');
-        
         this.blogHeader.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 

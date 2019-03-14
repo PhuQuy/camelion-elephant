@@ -11,3 +11,21 @@
     </div>
   </div>
 </section>
+
+<section class="ftco-section ftco-degree-bg" #portfolioHeader>
+  <div class="container">
+    <div class="row no-gutters">
+      <div class="block-3 d-md-flex" *ngFor="let portfolio of portfolios | paginate: config; let even=even;" data-aos="fade-up">
+        <a href="portfolio-single.html" class="image" [class.order-2]="even" [style.background]="'url(' + portfolio.photoURL + ')'"></a>
+        <div class="text">
+          <h4 class="subheading">{{portfolio.subTitle}}</h4>
+          <h2 class="heading"><a href="portfolio-single.html">{{portfolio.title}}</a></h2>
+          <p>{{portfolio.description}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <pagination class="mx-auto" [config]="config" (onPageChange)="pageChange($event)"></pagination>
+    </div>
+  </div>
+</section>

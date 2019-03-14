@@ -45,15 +45,15 @@
     <div class="row">
       <div class="col-md-4 " data-aos="fade-up" data-aos-delay="200" data-aos-offset="0" *ngFor="let blog of blogs | paginate: config  | filter:searchBlog">
         <div class="blog-entry">
-          <a href="blog-single.html" class="block-20" [style.background]="'url(' + blog.photoURL + ')'">
+          <a [routerLink]="['/blog', blog.id]" class="block-20" [style.background]="'url(' + blog.photoURL + ')'">
           </a>
           <div class="text p-4 d-block">
             <div class="meta mb-3">
-              <div><a href="#">{{blog.createdDate | datene}}</a></div>
-              <div><a href="#">{{blog.postedBy}}</a></div>
-              <div><a href="#" class="meta-chat"><span class="icon-chat"></span> {{blog.comments.length}}</a></div>
+              <div><a >{{blog.createdDate | datene}}</a></div>
+              <div><a >{{blog.postedBy}}</a></div>
+              <div><a  class="meta-chat"><span class="icon-chat"></span> {{blog.comments.length}}</a></div>
             </div>
-            <h3 class="heading"><a href="#">{{blog.title}}</a></h3>
+            <h3 class="heading"><a [routerLink]="['/blog', blog.id]">{{blog.title}}</a></h3>
           </div>
         </div>
       </div>
