@@ -4,8 +4,8 @@
     <div class="container">
       <div class="row slider-text justify-content-center align-items-center">
         <div class="col-md-10 col-sm-12 mb-4 text-center" data-aos="fade-up" data-aos-delay="200" data-aos-offset="0">
-          <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>About</span></p>
-          <h1 class="mb-3 bread">About Us</h1>
+          <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Portfolio</span></p>
+          <h1 class="mb-3 bread">Portfolio</h1>
         </div>
       </div>
     </div>
@@ -16,10 +16,10 @@
   <div class="container">
     <div class="row no-gutters">
       <div class="block-3 d-md-flex" *ngFor="let portfolio of portfolios | paginate: config; let even=even;" data-aos="fade-up">
-        <a href="portfolio-single.html" class="image" [class.order-2]="even" [style.background]="'url(' + portfolio.photoURL + ')'"></a>
+        <a [routerLink]="['/portfolio', portfolio.id]" class="image" [class.order-2]="even" [style.background]="'url(' + portfolio.photoURL + ')'"></a>
         <div class="text">
           <h4 class="subheading">{{portfolio.subTitle}}</h4>
-          <h2 class="heading"><a href="portfolio-single.html">{{portfolio.title}}</a></h2>
+          <h2 class="heading"><a  [routerLink]="['/portfolio', portfolio.id]">{{portfolio.title}}</a></h2>
           <p>{{portfolio.description}}</p>
         </div>
       </div>

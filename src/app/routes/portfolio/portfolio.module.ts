@@ -4,6 +4,7 @@ import { PortfolioComponent } from './portfolio.component';
 import { ShareModule } from '@shared/share/share.module';
 import { PortfolioRoutingModule } from './portfolio.routing';
 import { PaginationModule } from '@components/pagination/pagination.module';
+import { PortfolioDetailComponent } from './portfolio-detail/portfolio-detail.component';
 
 @NgModule({
   imports: [
@@ -12,6 +13,6 @@ import { PaginationModule } from '@components/pagination/pagination.module';
     PaginationModule,
     ShareModule
   ],
-  declarations: [PortfolioComponent]
+  declarations: [PortfolioComponent, PortfolioDetailComponent]
 })
 export class PortfolioModule { }
