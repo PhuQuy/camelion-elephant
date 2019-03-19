@@ -30,6 +30,10 @@ const routes: Routes = [
             { 
                 path: 'solution', 
                 loadChildren: "../../routes/solution/solution.module#SolutionModule"
+            },
+            { 
+                path: 'login', 
+                loadChildren: "../user/login/login.module#LoginModule"
             }
         ]
     }
