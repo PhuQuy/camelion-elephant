@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
+    { path: '', redirectTo: '/', pathMatch: 'full' },
     {
         path: '',
         loadChildren: './layouts/clients/clients.module#ClientsModule'
@@ -15,7 +16,7 @@ const routes: Routes = [
 
 @NgModule({
     imports: [
-        RouterModule.forRoot(routes)
+        RouterModule.forRoot(routes, { initialNavigation: 'enabled' })
     ],
     exports: [
         RouterModule
