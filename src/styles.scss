@@ -98,11 +98,12 @@ h5,
   z-index: 3;
   top: 30px;
 
-  @include media-breakpoint-down(md) {
-    background: $black !important;
-    top: 0;
-    position: relative;
-  }
+
+    @include media-breakpoint-down(md) {
+      // background: $black !important;
+      top: 0;
+      // position: relative;
+    }
 
   .navbar-brand {
     color: $white;
@@ -2516,4 +2517,10 @@ textarea.form-control {
     color: white;
     font-size: 30px;
   }
+}
+
+.owl-carousel.home-slider .slider-item .overlay {
+  background: url(/assets/images/beach.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
 }
