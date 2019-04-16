@@ -6,6 +6,7 @@ import { TransferHttpCacheModule } from '@nguniversal/common';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing';
 import { AgmCoreModule } from '@agm/core';
+import { SeoService } from '@shared/seo.service';
 
 @NgModule({
     declarations: [
@@ -21,7 +22,7 @@ import { AgmCoreModule } from '@agm/core';
             apiKey: 'AIzaSyDhMJyRMmSKUPnuWEUqmH87W531M1kdRK4'
          })
     ],
-    providers: [],
+    providers: [SeoService],
 })
 export class AppModule {
 

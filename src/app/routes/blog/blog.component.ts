@@ -1,6 +1,7 @@
 import { Component, OnInit, PLATFORM_ID, Inject, ViewChild, ElementRef } from '@angular/core';
 import { BaseComponent } from '@core/base/base.component';
 import { PaginationInstance } from 'ngx-pagination';
+import { SeoService } from '@shared/seo.service';
 
 @Component({
     selector: 'blog',
@@ -231,11 +232,17 @@ export class BlogComponent extends BaseComponent implements OnInit {
             ]
         }
     ]
-    constructor(@Inject(PLATFORM_ID) public platformId: string) {
+    constructor(@Inject(PLATFORM_ID) public platformId: string, private seoService: SeoService) {
         super(platformId);
     }
 
     ngOnInit() {
+        this.seoService.generateTags({
+            title: ' Blog',
+            description: 'Liên hệ Vay vốn sinh viên',
+            slug: 'blog',
+            keywords: 'vay von sinh vien'
+        });
     }
 
     clearSearch() {

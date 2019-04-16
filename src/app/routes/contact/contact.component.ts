@@ -1,5 +1,6 @@
 import { Component, OnInit, PLATFORM_ID, Inject } from '@angular/core';
 import { BaseComponent } from '@core/base/base.component';
+import { SeoService } from '@shared/seo.service';
 
 @Component({
   selector: 'contact',
@@ -7,12 +8,19 @@ import { BaseComponent } from '@core/base/base.component';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent extends BaseComponent implements OnInit {
-    constructor(@Inject(PLATFORM_ID) public platformId: string) {
+    constructor(@Inject(PLATFORM_ID) public platformId: string, private seoService: SeoService) {
         super(platformId);
     }
 
     ngOnInit() {
+        this.seoService.generateTags({
+            title: ' Contact',
+            description: 'Liên hệ Vay vốn sinh viên',
+            slug: 'contact',
+            keywords: 'vay von sinh vien'
+        });
     }
+    
 
     ngAfterViewInit() {
         this.initView();

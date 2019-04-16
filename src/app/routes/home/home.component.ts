@@ -3,6 +3,7 @@ import { isPlatformBrowser } from '@angular/common';
 import * as AOS from 'aos';
 import { BaseComponent } from '@core/base/base.component';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { SeoService } from '@shared/seo.service';
 
 declare let $: any;
 var TxtType = function (el, toRotate, period) {
@@ -23,7 +24,7 @@ export class HomeComponent extends BaseComponent{
     closeResult: string;
     
     constructor(@Inject(PLATFORM_ID) public platformId: string,
-    private modalService: NgbModal) {
+    private modalService: NgbModal, private seoService: SeoService) {
         super(platformId);
     }
 
@@ -45,7 +46,15 @@ export class HomeComponent extends BaseComponent{
             css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
             document.body.appendChild(css);
         }
-    
+    }
+
+    ngOnInit() {
+        this.seoService.generateTags({
+            title: 'Home',
+            description: 'Liên hệ Vay vốn sinh viên',
+            slug: 'home',
+            keywords: 'vay von sinh vien'
+        });
     }
     
     open(content) {

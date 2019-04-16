@@ -1,6 +1,7 @@
 import { Component, OnInit, PLATFORM_ID, Inject, ElementRef, ViewChild } from '@angular/core';
 import { BaseComponent } from '@core/base/base.component';
 import { PaginationInstance } from 'ngx-pagination';
+import { SeoService } from '@shared/seo.service';
 
 @Component({
     selector: 'portfolio',
@@ -91,11 +92,17 @@ export class PortfolioComponent extends BaseComponent implements OnInit {
         }
     ]
 
-    constructor(@Inject(PLATFORM_ID) public platformId: string) {
+    constructor(@Inject(PLATFORM_ID) public platformId: string, private seoService: SeoService) {
         super(platformId);
     }
 
     ngOnInit() {
+        this.seoService.generateTags({
+            title: 'Portfolio',
+            description: 'Liên hệ Vay vốn sinh viên',
+            slug: 'portfolio',
+            keywords: 'vay von sinh vien'
+        });
     }
 
     ngAfterViewInit() {
