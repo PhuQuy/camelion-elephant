@@ -3,7 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebaseConfig: {
+    apiKey: "AIzaSyAQzhYcED7ENSi9GPr2PxMtN0Dk3grK8Qs",
+    authDomain: "camelion-elephant.firebaseapp.com",
+    databaseURL: "https://camelion-elephant.firebaseio.com",
+    projectId: "camelion-elephant",
+    storageBucket: "camelion-elephant.appspot.com",
+    messagingSenderId: "668859628583"
+  }
 };
 
 /*
