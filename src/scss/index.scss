@@ -1,5 +1,24 @@
-@import 'spec/settings/index';
-@import 'spec/tools/index';
-@import 'spec/index';
-@import 'vendor/index';
+@import "spec/settings/index";
+@import "spec/tools/index";
+@import "spec/index";
+@import "vendor/index";
+@import "~@ng-select/ng-select/themes/default.theme.css";
+@import '~simplemde/dist/simplemde.min.css';
+.modal-dialog {
+	background-color: white;
+	.close {
+		font-size: 1.3125rem;
+		font-weight: 700;
+		line-height: 1;
+		color: #000 !important;
+		text-shadow: 0 1px 0 #fff;
+		opacity: 0.5;
+	}
+}
+.btn-admin{
+  border-radius: 5px !important;
 
+}
+.editor-toolbar.fullscreen,.CodeMirror-fullscreen, .editor-preview-side{
+	z-index: 1100;
+}

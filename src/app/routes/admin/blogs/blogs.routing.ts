@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PortfolioComponent } from './portfolio.component';
-import { AddEditPortfolioComponent } from './add-edit-portfolio/add-edit-portfolio.component';
+import { BlogsComponent } from './blogs.component';
+import { AddEditBlogComponent } from './add-edit-blog/add-edit-blog.component';
 
 const routes: Routes = [
     {
         path: '',
-        component: PortfolioComponent
+        component: BlogsComponent,
+
     },{
         path: ':id',
-        component: AddEditPortfolioComponent
+        component: AddEditBlogComponent
     }
 ];
 
@@ -22,4 +23,4 @@ const routes: Routes = [
     ],
 })
 
-export class PortfolioRoutingModule { }
+export class BlogsRoutingModule { }
