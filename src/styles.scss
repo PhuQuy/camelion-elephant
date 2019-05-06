@@ -5,6 +5,14 @@
 @import '/assets/scss/bootstrap/bootstrap';
 @import '/assets/scss/bootstrap/variables';
 
+
+/*====admin==*/
+
+@import '~scss/index.scss';
+.btn-info{
+  border-radius: 5px !important;
+}
+
 /*====Hero area==*/
 
 .hero-area-fix {
