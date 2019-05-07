@@ -20,7 +20,7 @@ export class AboutComponent extends BaseComponent implements OnInit {
         navSpeed: 700,
         stagePadding: 90,
         nav:true,
-        navText: ['<span class="ion-ios-arrow-back">', '<span class="ion-ios-arrow-forward">'],
+        navText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>'],
         navClass: ['owl-prev', 'owl-next'],
         responsiveClass: true,
         responsive: {
@@ -43,6 +43,7 @@ export class AboutComponent extends BaseComponent implements OnInit {
         
         lazyLoad: true,
         lazyLoadEager: 2,
+        responsiveBaseElement: 'div'
     };
     slideStore = [
         {
@@ -136,8 +137,7 @@ export class AboutComponent extends BaseComponent implements OnInit {
     ngAfterViewInit() {
         this.initView();
     }
-
-    getData(data: SlidesOutputData) {
+getData(data: SlidesOutputData) {
         this.activeSlides = data;
         console.log(this.activeSlides);
       }

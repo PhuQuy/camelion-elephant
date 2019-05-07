@@ -6,8 +6,8 @@
 }
 .wrapper {
   @extend .center;
-  width: 70%;
-  min-height: 500px;
+  width: 80%;
+  min-height: 600px;
 }
 .quote {
   position: relative;
@@ -24,7 +24,7 @@
 ::ng-deep .owl-dots span {
   background: transparent !important; /* dots color*/
   width: 100% !important;
-  margin-top: 10px !important;
+  margin-top: 100px !important;
 
 }
 ::ng-deep .owl-theme .owl-dots .owl-dot.active span,
@@ -33,3 +33,16 @@
   margin-top: 10px !important;
 }
 
+::ng-deep .owl-dots{
+  position: absolute;
+  top:110%;
+  left:25%;
+  right:25%;
+}
+::ng-deep .owl-item{
+  min-height: 600px;
+}
+::ng-deep .owl-nav .owl-prev .owl-next{
+  background-color: transparent;
+  color: red !important;
+}
