@@ -1,6 +1,6 @@
 import { Component, OnInit, PLATFORM_ID, Inject } from '@angular/core';
 import { BaseComponent } from '@core/base/base.component';
-import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFireAuth } from 'angularfire2/auth';
 import { Router } from '@angular/router';
 
 @Component({
@@ -33,4 +33,33 @@ export class LoginComponent extends BaseComponent implements OnInit {
             this.error = err.message;
         });
     }
+
+    // detectFiles(event) {
+    //     let file = event.target.files.item(0);
+    //     const that = this;
+    //     if (file) {
+    //         if (this.edit) {
+    //             let name = that.propertyForm.get('name').value;
+    //             that.uploadService.pushUpload(`Agency/${this.user.Agency}/${this.storedId ? this.storedId : name}/imagesCover/${file.name}`, file).subscribe(res => {
+    //                 that.propertyForm.patchValue({
+    //                     imagesCover: [res]
+    //                 });
+    //                 this.submit();
+
+    //             });
+    //         } else {
+    //             var reader = new FileReader();
+    //             reader.onload = function (e) {
+    //                 that.propertyForm.patchValue({
+    //                     imagesCover: [e.target['result']]
+    //                 });
+
+    //                 that.propertyForm.patchValue({
+    //                     newImagesCover: file
+    //                 });
+    //             }
+    //             reader.readAsDataURL(file);
+    //         }
+    //     }
+    // }
 }

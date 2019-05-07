@@ -1,8 +1,8 @@
-import { Component, AfterViewInit, PLATFORM_ID, Inject , ElementRef, ViewChild, AfterViewChecked } from '@angular/core';
+import { Component, AfterViewInit, PLATFORM_ID, Inject, ElementRef, ViewChild, AfterViewChecked } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import * as AOS from 'aos';
 import { BaseComponent } from '@core/base/base.component';
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { SeoService } from '@shared/seo.service';
 
 declare let $: any;
@@ -20,11 +20,11 @@ var TxtType = function (el, toRotate, period) {
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.scss']
 })
-export class HomeComponent extends BaseComponent{
+export class HomeComponent extends BaseComponent {
     closeResult: string;
-    
+
     constructor(@Inject(PLATFORM_ID) public platformId: string,
-    private modalService: NgbModal, private seoService: SeoService) {
+        private modalService: NgbModal, private seoService: SeoService) {
         super(platformId);
     }
 
@@ -56,24 +56,24 @@ export class HomeComponent extends BaseComponent{
             keywords: 'vay von sinh vien'
         });
     }
-    
-    open(content) {
-        this.modalService.open(content,{ariaLabelledBy: 'modal-basic-title',size: 'lg', keyboard:true, windowClass:'modal', centered:true}).result.then((result) => {
-          this.closeResult = `Closed with: ${result}`;
-        }, (reason) => {
-          this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-        });
-      }  
 
-      private getDismissReason(reason: any): string {
+    open(content) {
+        this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title', size: 'lg', keyboard: true, windowClass: 'modal', centered: true }).result.then((result) => {
+            this.closeResult = `Closed with: ${result}`;
+        }, (reason) => {
+            this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+        });
+    }
+
+    private getDismissReason(reason: any): string {
         if (reason === ModalDismissReasons.ESC) {
-          return 'by pressing ESC';
+            return 'by pressing ESC';
         } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-          return 'by clicking on a backdrop';
+            return 'by clicking on a backdrop';
         } else {
-          return  `with: ${reason}`;
+            return `with: ${reason}`;
         }
-      }
+    }
     loadTypeWriter() {
         TxtType.prototype.tick = function () {
             var i = this.loopNum % this.toRotate.length;
@@ -106,5 +106,5 @@ export class HomeComponent extends BaseComponent{
             }, delta);
         };
     }
-    
+
 }

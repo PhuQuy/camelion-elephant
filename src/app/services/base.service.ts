@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { Observable, Observer } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -7,38 +9,45 @@ import { AngularFirestore } from '@angular/fire/firestore';
 export class BaseService {
 
   protected basePath = '';
-  constructor(protected angularFirestore: AngularFirestore, path: string) {
+  constructor(protected angularFireDatabase: AngularFireDatabase, path: string) {
     this.basePath = path;
   }
 
   public update(data) {
-    return this.angularFirestore.collection(this.basePath).doc(data.id).set({
-      ...data
+    return Observable.create((obs: Observer<string>) => {
+      if (data.id) {
+        const itemRef = this.angularFireDatabase.object(`${this.basePath}${data.id}`);
+        itemRef.update(data);
+        obs.next(data.id);
+        obs.complete();
+      } else {
+        const itemRef = this.angularFireDatabase.list(`${this.basePath}`);
+        itemRef.push(data).then(c => {
+          obs.next(c.key);
+          obs.complete();
+        });
+      }
     });
   }
 
-  public create(data) {
-    return this.angularFirestore.collection(this.basePath).add({
-      ...data
-    });
+  getAlls(): Observable<any[]> {
+    return this.angularFireDatabase.list(this.basePath).snapshotChanges().pipe(
+      map(changes =>
+        changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))
+      )
+    );
   }
 
-  public delete(id) {
-    return this.angularFirestore.collection(this.basePath).doc(id).delete();
+  getById(id) {
+    return this.angularFireDatabase.object(`${this.basePath}/${id}`).valueChanges();
   }
 
-  public getById(id) {
-    let itemPath = `${this.basePath}/${id}`;
-    return this.angularFirestore.doc<any>(itemPath).valueChanges();
+  getByRoute(route) {
+    return this.angularFireDatabase.object(`${this.basePath}/${route}`).valueChanges();
   }
 
-  public getAll() {
-    return this.angularFirestore.collection<any>(this.basePath).snapshotChanges().map(changes => {
-      return changes.map(a => {
-        const data = a.payload.doc.data();
-        data.id = a.payload.doc.id;
-        return data;
-      });
-    });
+  delete(path) {
+    const itemRef = this.angularFireDatabase.object(`${this.basePath}/${path}`);
+    itemRef.remove();
   }
 }
