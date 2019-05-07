@@ -11,6 +11,8 @@ import { environment } from '@env/environment';
 import { AuthGuard } from '@core/auth.guard';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
     declarations: [
@@ -23,6 +25,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
         HttpClientModule,
         AngularFireModule.initializeApp(environment.firebaseConfig),
         AppRoutingModule,
+        BrowserAnimationsModule,
         AgmCoreModule.forRoot({ //Add module google map for root
             apiKey: 'AIzaSyDhMJyRMmSKUPnuWEUqmH87W531M1kdRK4'
          })

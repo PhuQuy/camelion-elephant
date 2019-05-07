@@ -67,3 +67,36 @@
     </div>
   </div>
 </section>
+<section class="ftco-section ftco-degree-bg">
+  <div class="wrapper">
+      <div class="row justify-content-center mb-5 pb-5">
+          <div class="col-md-7 text-center heading-section ">
+            <small>INCLUDE</small>
+            <h2>Our members</h2>
+          </div>
+        </div>
+    <owl-carousel-o class="owl-dot" [options]="customOptions">
+      <ng-container *ngFor="let slide of slideStore">
+        <ng-template carouselSlide [id]="slide.id">
+          <div class="text-center p-2 border">
+            <div class="d-inline-block">
+                <img class="rounded-circle z-depth-2 d-flex center pt-2" [src]="slide.src" [alt]="slide.alt"
+                [title]="slide.title" style="width: 100px;"/>
+                <span class="quote d-flex align-items-center justify-content-center">
+                    <i class="icon-quote-left"></i>
+                  </span>
+            </div>
+              <br />
+            <p class="mx-2">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the
+              blind texts.</p>
+            <br />
+            <br />
+            <h6><strong>{{slide.name}}</strong></h6>
+            <small>{{slide.job}}</small>
+            <br />
+          </div>
+        </ng-template>>
+      </ng-container>
+    </owl-carousel-o>
+  </div>
+</section>
