@@ -1,0 +1,26 @@
+<h4 class="c-grey-900 mT-10 mB-30">Blogs <small>Edit</small></h4>
+<div class="bgc-white bd bdrs-3 p-20 mB-20">
+  <form>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Title</label>
+      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter title">
+    </div>
+    <div class="form-group">
+      <label>Tags</label>
+      <ng-select
+        [items]="tags"
+        [addTag]="addTag"
+        [hideSelected]="true"
+        multiple="true"
+        placeholder="Select tag"
+        bindLabel="name"
+      >
+      </ng-select>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Content</label>
+      <simplemde (change)="onChange()" ></simplemde>
+    </div>
+    <button type="submit" class="btn btn-primary btn-admin">Save</button>
+  </form>
+</div>

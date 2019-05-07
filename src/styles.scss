@@ -5,6 +5,10 @@
 @import '/assets/scss/bootstrap/bootstrap';
 @import '/assets/scss/bootstrap/variables';
 
+@import '~scss/index.scss';
+
+
+
 /*====Hero area==*/
 
 .hero-area-fix {
@@ -1016,12 +1020,21 @@ h5,
 
 
 .form-control {
-  height: 52px !important;
-  background: $white !important;
-  color: $black !important;
-  font-size: 18px;
-  border-radius: 0px;
-  box-shadow: none !important;
+    display: block;
+    width: 100%;
+    padding: 6px 12px;
+    padding: .375rem .75rem;
+    font-size: 14px;
+    font-size: .875rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-image: none;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+
+
 
   &:focus,
   &:active {
@@ -2524,3 +2537,5 @@ textarea.form-control {
   background-size: cover;
   background-position: center;
 }
+
+
