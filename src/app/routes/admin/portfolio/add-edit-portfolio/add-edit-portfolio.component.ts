@@ -15,12 +15,12 @@ export class AddEditPortfolioComponent {
 	public selectedCompany ='';
 	platformsData = [];
     portfolioForm: FormGroup;
-
+    id;
     constructor(protected portfolioService: PortfolioService, private router: Router, private activatedRoute: ActivatedRoute) {
         this.activatedRoute.params.subscribe(params => {
-            let id = params['id'];
-            if(id !== 'new') {
-                this.portfolioService.getById(id).subscribe(portfolio => {
+            this.id = params['id'];
+            if(this.id !== 'new') {
+                this.portfolioService.getById(this.id).subscribe(portfolio => {
                     this.portfolioForm.patchValue(portfolio);
                 })
             }
@@ -44,10 +44,14 @@ export class AddEditPortfolioComponent {
     }
 
     save() {
-        console.log(this.portfolioForm.value);
-        this.portfolioService.create(this.portfolioForm.value).then(result => {
-            console.log(result);
-            this.router.navigate(['/admin/portfolio']);
-        })
+        if(this.id === 'new') {
+            this.portfolioService.create(this.portfolioForm.value).then(result => {
+                this.router.navigate(['/admin/portfolio']);
+            })
+        } else {
+            this.portfolioService.update({...this.portfolioForm.value, id: this.id}).then(result => {
+                this.router.navigate(['/admin/portfolio']);
+            })
+        }
     }
 }

@@ -22,12 +22,16 @@ export class PortfolioComponent {
 	getAll() {
 		this.portfolioService.getAll().subscribe(portfolios => {
 			this.portfolios = portfolios;
-			console.log(this.portfolios);
 		})
 	}
 
-	onDelete() {
+	delete(portfolio) {
 		const modalRef = this.modalService.open(ConfirmModalComponent);
 		modalRef.componentInstance.title = "Portfolio delete";
+		modalRef.result.then(result => {
+			if(result === 'ok') {
+				this.portfolioService.delete(portfolio.id).then();
+			}
+		})
 	}
 }
