@@ -3,7 +3,7 @@
 @import "spec/index";
 @import "vendor/index";
 @import "~@ng-select/ng-select/themes/default.theme.css";
-@import '~simplemde/dist/simplemde.min.css';
+@import "~simplemde/dist/simplemde.min.css";
 .modal-dialog {
 	background-color: white;
 	.close {
@@ -15,10 +15,19 @@
 		opacity: 0.5;
 	}
 }
-.btn-admin{
-  border-radius: 5px !important;
-
+.btn-admin {
+	border-radius: 5px !important;
 }
-.editor-toolbar.fullscreen,.CodeMirror-fullscreen, .editor-preview-side{
+.editor-toolbar.fullscreen,
+.CodeMirror-fullscreen,
+.editor-preview-side {
 	z-index: 1100;
+}
+
+.table thead th {
+    border-bottom: 2px solid #fafafb !important;
+}
+.table.dataTable tbody td{
+	font-weight: 400 !important;
+	color: #5a5c5d;
 }

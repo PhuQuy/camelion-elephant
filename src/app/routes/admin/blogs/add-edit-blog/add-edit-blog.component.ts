@@ -14,13 +14,30 @@ export class AddEditBlogComponent {
         { id: 3, name: "Java" }
     ];
     value = "";
+
+    public imagePath;
+    imgURL: any ='/assets/images/about.jpg';
+    public message: string;
     constructor() {}
 
     ngOnInit() {}
+    
     addTag(name) {
         return { name: name, tag: true };
     }
-    onChange(){
-        
+    onChange() {}
+
+    preview(files) {
+        if (files.length === 0) return;
+        var mimeType = files[0].type;
+        if (mimeType.match(/image\/*/) == null) {
+            return;
+        }
+        var reader = new FileReader();
+        this.imagePath = files;
+        reader.readAsDataURL(files[0]);
+        reader.onload = _event => {
+            this.imgURL = reader.result;
+        };
     }
 }

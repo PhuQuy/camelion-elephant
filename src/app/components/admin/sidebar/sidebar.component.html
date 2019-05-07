@@ -19,7 +19,7 @@
           </div>
           <div class="peer">
             <div class="mobile-toggle sidebar-toggle">
-              <a href="" class="td-n">
+              <a class="td-n" href="javascript:void(0);" (click)="onToggleMenu()">
                 <i class="ti-arrow-circle-left"></i>
               </a>
             </div>
@@ -39,7 +39,7 @@
         <li class="nav-item">
           <a class='sidebar-link' [routerLink]="['/admin/portfolio']" [routerLinkActive]="'active'" >
             <span class="icon-holder">
-              <i class="c-brown-500 ti-email"></i>
+              <i class="c-brown-500 ti-world"></i>
             </span>
             <span class="title">Portfolio</span>
           </a>
@@ -47,7 +47,7 @@
         <li class="nav-item">
           <a class='sidebar-link' [routerLink]="['/admin/blogs']" [routerLinkActive]="'active'">
             <span class="icon-holder">
-              <i class="c-blue-500 ti-share"></i>
+              <i class="c-blue-500 ti-pencil-alt"></i>
             </span>
             <span class="title">Blogs</span>
           </a>
@@ -58,6 +58,14 @@
               <i class="c-blue-500 ti-tag"></i>
             </span>
             <span class="title">Tags</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class='sidebar-link' [routerLink]="['/admin/categories']" [routerLinkActive]="'active'">
+            <span class="icon-holder">
+              <i class="c-blue-500 ti-list-ol"></i>
+            </span>
+            <span class="title">Categories</span>
           </a>
         </li>
       </ul>
