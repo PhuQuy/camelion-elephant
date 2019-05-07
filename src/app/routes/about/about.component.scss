@@ -21,12 +21,15 @@
   -ms-border-radius: 50%;
   border-radius: 50%;
 }
-::ng-deep .owl-dots .owl-dot span{ 
+::ng-deep .owl-dots span {
   background: transparent !important; /* dots color*/
-  width: 100vw !important;
+  width: 100% !important;
+  margin-top: 10px !important;
+
 }
-::ng-deep .owl-pre .owl-next {
-  color: #8f8f8f !important;
-  background: transparent !important;
-  font-size: 30px !important;
+::ng-deep .owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+  background: transparent !important; /*active and on hover color*/
+  margin-top: 10px !important;
 }
+
