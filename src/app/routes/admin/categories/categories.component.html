@@ -1,6 +1,6 @@
-<h4 class="c-grey-900 mT-10 mB-30">Blogs <small>manage</small></h4>
+<h4 class="c-grey-900 mT-10 mB-30">Categories <small>manage</small></h4>
 <div class="mB-20">
-	<a routerLink="/admin/blogs/new" class="btn btn-info btn-admin" href="javascript:void(0);">
+	<a class="btn btn-info btn-admin" href="javascript:void(0);" (click)="onAdd()">
 		Add
 	</a>
 </div>
@@ -9,24 +9,21 @@
 		<thead>
 			<tr>
 				<th>Name</th>
-				<th>Published</th>
-				<th>Create date</th>
 				<th>Action</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr>
 				<td>Foo</td>
-				<td>true</td>
-				<td>15/02/2019</td>
 				<td>
 					<ul class="list-inline">
 						<li class="list-inline-item">
-							<a routerLink="/admin/blogs/1" 
+							<button
+								(click)="onEdit()"
 								title="Edit"
 								class="btn btn-primary btn-sm btn-admin"
 								><span class="ti-pencil"></span
-							></a>
+							></button>
 						</li>
 						<li class="list-inline-item">
 							<button

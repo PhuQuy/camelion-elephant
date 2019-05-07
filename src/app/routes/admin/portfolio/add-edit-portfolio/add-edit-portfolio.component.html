@@ -16,6 +16,14 @@
       <label>Desctription</label>
       <textarea class="form-control" rows="6" placeholder="Enter description" formControlName="description"></textarea>
     </div>
+    <div class="form-group">
+      <label>Images</label>
+      <div class="list-image">
+        <input type="file" name="image"  accept='image/*' hidden (change)="preview(file.files)" #file multiple>
+          <img class="upload-action" src="/assets/images/upload.png" (click)="file.click()"/>
+          <img  *ngFor="let image of images" [src]="image.url"  />
+      </div>
+    </div>
     <button type="submit" class="btn btn-primary btn-admin" (click)="save()">Save</button>
   </form>
 </div>

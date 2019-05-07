@@ -1,22 +1,41 @@
 <h4 class="c-grey-900 mT-10 mB-30">Blogs <small>Edit</small></h4>
 <div class="bgc-white bd bdrs-3 p-20 mB-20">
   <form [formGroup]="blogForm">
+    <div class="upload-image">
+      <div class="upload-icon" (click)="file.click()">
+        <img src="/assets/images/upload.png" />
+        <input type="file" name="image" accept="image/*" hidden (change)="preview(file.files)" #file />
+      </div>
+      <img class="image-default" [src]="imgURL" />
+    </div>
+    <br />
     <div class="form-group">
       <label for="exampleInputEmail1">Title</label>
-      <input type="text" class="form-control" id="exampleInputEmail1" formControlName="title" aria-describedby="emailHelp" placeholder="Enter title">
+      <input type="text" class="form-control" id="exampleInputEmail1" formControlName="title"
+        aria-describedby="emailHelp" placeholder="Enter title">
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-8">
+        <label>Tags</label>
+        <ng-select [items]="tags" [addTag]="addTag" [hideSelected]="true" multiple="true" placeholder="Select tag"
+          bindLabel="name" formControlName="tags">
+        </ng-select>
+      </div>
+      <div class="form-group col-md-4">
+        <label for="inputState">Published </label>
+        <select id="inputState" class="form-control">
+          <option>True</option>
+          <option>False</option>
+        </select>
+      </div>
+
     </div>
     <div class="form-group">
-      <label>Tags</label>
-      <ng-select
-        [items]="tags"
-        [addTag]="addTag"
-        [hideSelected]="true"
-        multiple="true"
-        placeholder="Select tag"
-        bindLabel="name"
-        formControlName="tags"
-      >
-      </ng-select>
+      <label>Category</label>
+      <select class="form-control">
+        <option>React</option>
+        <option>Angular</option>
+      </select>
     </div>
     <div class="form-group">
       <label for="exampleInputPassword1">Content</label>
@@ -25,4 +44,3 @@
     <button type="submit" class="btn btn-primary btn-admin">Save</button>
   </form>
 </div>
-

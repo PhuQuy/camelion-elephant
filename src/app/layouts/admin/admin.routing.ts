@@ -30,6 +30,11 @@ const routes: Routes = [
                 path: "tags",
                 loadChildren: "../../routes/admin/tags/tags.module#TagsModule",
                 canActivate: [AuthGuard]
+            },
+            {
+                path: "categories",
+                loadChildren: "../../routes/admin/categories/categories.module#CategoriesModule",
+                canActivate: [AuthGuard]
             }
         ]
     }

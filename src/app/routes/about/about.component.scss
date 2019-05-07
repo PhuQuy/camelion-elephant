@@ -1,0 +1,48 @@
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.wrapper {
+  @extend .center;
+  width: 80%;
+  min-height: 600px;
+}
+.quote {
+  position: relative;
+  bottom: 30px;
+  left: 60px;
+  width: 40px;
+  height: 40px;
+  background: #79efb4;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+}
+::ng-deep .owl-dots span {
+  background: transparent !important; /* dots color*/
+  width: 100% !important;
+  margin-top: 100px !important;
+
+}
+::ng-deep .owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+  background: transparent !important; /*active and on hover color*/
+  margin-top: 10px !important;
+}
+
+::ng-deep .owl-dots{
+  position: absolute;
+  top:110%;
+  left:25%;
+  right:25%;
+}
+::ng-deep .owl-item{
+  min-height: 600px;
+}
+::ng-deep .owl-nav .owl-prev .owl-next{
+  background-color: transparent;
+  color: red !important;
+}

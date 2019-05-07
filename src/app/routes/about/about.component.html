@@ -67,3 +67,42 @@
     </div>
   </div>
 </section>
+<section class="ftco-section ftco-degree-bg">
+  <div class="wrapper">
+    <div class="row justify-content-center mb-5 pb-5">
+      <div class="col-md-7 text-center heading-section ">
+        <small>INCLUDE</small>
+        <h2>Our members</h2>
+      </div>
+    </div>
+    <owl-carousel-o #owlCar [options]="customOptions" (change)="getData($event)">
+      <ng-container *ngFor="let slide of slideStore; index as id">
+        <ng-template carouselSlide [id]="id">
+          <div class="text-center border">
+            <div class="d-inline-block pt-3">
+              <img class="rounded-circle z-depth-2 d-flex center" [src]="slide.src" [alt]="slide.alt"
+                [title]="slide.title" style="width: 100px;" />
+              <span class="quote d-flex align-items-center justify-content-center" (click)="getData($event)">
+                <i class="icon-quote-left"></i>
+              </span>
+            </div>
+            <br />
+            <p class="mx-3">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
+              there live the
+              blind texts.</p>
+            <br />
+            <h6><strong>{{slide.name}}</strong></h6>
+            <p><small>{{slide.job}}</small></p>
+            <br />
+          </div>
+        </ng-template>>
+      </ng-container>
+    </owl-carousel-o>
+    <!-- <div class="row justify-content-center mb-5 pb-5">
+      <div class="col-md-7 text-center heading-section ">
+        <a class="btn btn-light btn-outline-light prev-button" (click)="owlCar.prev()">Prev</a>
+        <a class="btn btn-light btn-outline-light next-button" (click)="owlCar.next()">Next</a>
+      </div>
+    </div> -->
+  </div>
+</section>

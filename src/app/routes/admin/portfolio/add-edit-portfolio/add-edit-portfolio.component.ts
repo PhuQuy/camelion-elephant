@@ -1,4 +1,4 @@
-import { Component, Inject } from "@angular/core";
+import { Component, Inject, ViewChild } from "@angular/core";
 
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { FormGroup, FormControl, Validators } from "@angular/forms";
@@ -11,15 +11,19 @@ import { Router, ActivatedRoute } from "@angular/router";
     providers: [PortfolioService]
 })
 export class AddEditPortfolioComponent {
-	public editor = ClassicEditor;
-	public selectedCompany ='';
-	platformsData = [];
+    public editor = ClassicEditor;
+    public selectedCompany = '';
+    platformsData = [];
     portfolioForm: FormGroup;
     id;
+    @ViewChild("file") fileImage;
+    imgURL;
+    images: any = [];
+
     constructor(protected portfolioService: PortfolioService, private router: Router, private activatedRoute: ActivatedRoute) {
         this.activatedRoute.params.subscribe(params => {
             this.id = params['id'];
-            if(this.id !== 'new') {
+            if (this.id !== 'new') {
                 this.portfolioService.getById(this.id).subscribe(portfolio => {
                     this.portfolioForm.patchValue(portfolio);
                 })
@@ -44,14 +48,34 @@ export class AddEditPortfolioComponent {
     }
 
     save() {
-        if(this.id === 'new') {
+        if (this.id === 'new') {
             this.portfolioService.create(this.portfolioForm.value).then(result => {
                 this.router.navigate(['/admin/portfolio']);
             })
         } else {
-            this.portfolioService.update({...this.portfolioForm.value, id: this.id}).then(result => {
+            this.portfolioService.update({ ...this.portfolioForm.value, id: this.id }).then(result => {
                 this.router.navigate(['/admin/portfolio']);
             })
         }
     }
+
+    preview(files) {
+        if (files.length === 0) return;
+        for (let i = 0; i < files.length; i++) {
+            let image = files[i];
+            var mimeType = image.type;
+            if (mimeType.match(/image\/*/) == null) {
+                return;
+            }
+            var reader = new FileReader();
+            reader.readAsDataURL(image);
+            reader.onload = event => {
+                this.id++;
+                this.images.push({ id: this.id, url: event.target['result'] });
+                console.log("image", this.images);
+            };
+        }
+        this.fileImage.nativeElement.value = '';
+    }
+
 }

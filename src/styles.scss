@@ -5,8 +5,9 @@
 @import '/assets/scss/bootstrap/bootstrap';
 @import '/assets/scss/bootstrap/variables';
 
-@import '~scss/index.scss';
 
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
 
 
 /*====Hero area==*/
@@ -2539,3 +2540,4 @@ textarea.form-control {
 }
 
 
+@import '~scss/index.scss';
