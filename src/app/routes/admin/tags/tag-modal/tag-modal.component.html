@@ -1,17 +1,17 @@
 <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">Add Tag</h4>
-    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-    <form>
-      <div class="form-group">
-        <label >Name</label>
-          <input type="text" class="form-control"  placeholder="Name">
-      </div>
-    </form>
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark btn-admin" (click)="activeModal.close('Save click')">Save</button>
-  </div>
+  <h4 class="modal-title" id="modal-basic-title">Add Tag</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="tagForm">
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" class="form-control" placeholder="Name" formControlName="name">
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-dark btn-admin" (click)="save()" [disabled]="!tagForm.valid">Save</button>
+</div>

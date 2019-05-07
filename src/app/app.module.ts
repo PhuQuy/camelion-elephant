@@ -11,6 +11,7 @@ import { environment } from '@env/environment';
 import { AuthGuard } from '@core/auth.guard';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFirestore } from 'angularfire2/firestore';
 
 @NgModule({
     declarations: [
@@ -27,7 +28,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
             apiKey: 'AIzaSyDhMJyRMmSKUPnuWEUqmH87W531M1kdRK4'
          })
     ],
-    providers: [SeoService, AuthGuard, AngularFireAuth],
+    providers: [SeoService, AuthGuard, AngularFireAuth, AngularFirestore],
 })
 export class AppModule {
 

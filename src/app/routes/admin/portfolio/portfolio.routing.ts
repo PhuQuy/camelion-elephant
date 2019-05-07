@@ -7,7 +7,8 @@ const routes: Routes = [
     {
         path: '',
         component: PortfolioComponent
-    },{
+    },
+    {
         path: ':id',
         component: AddEditPortfolioComponent
     }

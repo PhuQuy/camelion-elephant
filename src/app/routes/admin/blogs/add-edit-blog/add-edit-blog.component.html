@@ -1,9 +1,9 @@
 <h4 class="c-grey-900 mT-10 mB-30">Blogs <small>Edit</small></h4>
 <div class="bgc-white bd bdrs-3 p-20 mB-20">
-  <form>
+  <form [formGroup]="blogForm">
     <div class="form-group">
       <label for="exampleInputEmail1">Title</label>
-      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter title">
+      <input type="text" class="form-control" id="exampleInputEmail1" formControlName="title" aria-describedby="emailHelp" placeholder="Enter title">
     </div>
     <div class="form-group">
       <label>Tags</label>
@@ -14,13 +14,15 @@
         multiple="true"
         placeholder="Select tag"
         bindLabel="name"
+        formControlName="tags"
       >
       </ng-select>
     </div>
     <div class="form-group">
       <label for="exampleInputPassword1">Content</label>
-      <simplemde (change)="onChange()" ></simplemde>
+      <simplemde (change)="onChange()" formControlName="content"></simplemde>
     </div>
     <button type="submit" class="btn btn-primary btn-admin">Save</button>
   </form>
 </div>
+

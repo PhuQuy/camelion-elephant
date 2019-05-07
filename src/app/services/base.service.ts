@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFirestore } from 'angularfire2/firestore';
 import { Observable, Observer } from 'rxjs';
 import { map } from 'rxjs/operators';
+import * as firebase from 'firebase/app';
 
 @Injectable({
   providedIn: 'root'
@@ -9,45 +10,44 @@ import { map } from 'rxjs/operators';
 export class BaseService {
 
   protected basePath = '';
-  constructor(protected angularFireDatabase: AngularFireDatabase, path: string) {
+  constructor(protected angularFirestore: AngularFirestore, path: string) {
     this.basePath = path;
   }
 
   public update(data) {
-    return Observable.create((obs: Observer<string>) => {
-      if (data.id) {
-        const itemRef = this.angularFireDatabase.object(`${this.basePath}${data.id}`);
-        itemRef.update(data);
-        obs.next(data.id);
-        obs.complete();
-      } else {
-        const itemRef = this.angularFireDatabase.list(`${this.basePath}`);
-        itemRef.push(data).then(c => {
-          obs.next(c.key);
-          obs.complete();
-        });
-      }
+    const timestamp = this.timestamp;
+    return this.angularFirestore.collection(this.basePath).doc(data.id).set({
+      ...data, createdAt: timestamp
     });
   }
 
-  getAlls(): Observable<any[]> {
-    return this.angularFireDatabase.list(this.basePath).snapshotChanges().pipe(
-      map(changes =>
-        changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))
-      )
-    );
+  public create(data) {
+    const timestamp = this.timestamp;
+    return this.angularFirestore.collection(this.basePath).add({
+      ...data, createdAt: timestamp
+    });
   }
 
-  getById(id) {
-    return this.angularFireDatabase.object(`${this.basePath}/${id}`).valueChanges();
+  public getAll(query?) {
+    return this.angularFirestore.collection<any>(this.basePath).snapshotChanges().map(changes => {
+      return changes.map(a => {
+        const data = a.payload.doc.data();
+        data.id = a.payload.doc.id;
+        return data;
+      });
+    });
   }
 
-  getByRoute(route) {
-    return this.angularFireDatabase.object(`${this.basePath}/${route}`).valueChanges();
+  public getById(id) {
+    let itemPath = `${this.basePath}/${id}`;
+    return this.angularFirestore.doc<any>(itemPath).valueChanges();
   }
 
-  delete(path) {
-    const itemRef = this.angularFireDatabase.object(`${this.basePath}/${path}`);
-    itemRef.remove();
+  get timestamp() {
+    return firebase.firestore.FieldValue.serverTimestamp();
+  }
+
+  public delete(id) {
+    return this.angularFirestore.collection(this.basePath).doc(id).delete();
   }
 }

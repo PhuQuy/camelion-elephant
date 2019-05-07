@@ -18,8 +18,7 @@ const routes: Routes = [
             },
             { 
                 path: 'blog', 
-                loadChildren: "../../routes/blog/blog.module#BlogModule",
-                canActivate: [AuthGuard]
+                loadChildren: "../../routes/blog/blog.module#BlogModule"
             },
             { 
                 path: 'portfolio', 

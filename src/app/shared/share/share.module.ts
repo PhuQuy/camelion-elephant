@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DatePipe } from '@shared/date.pipe';
 
@@ -10,9 +10,10 @@ import { DatePipe } from '@shared/date.pipe';
         CommonModule,
         RouterModule,
         FormsModule,
+        ReactiveFormsModule,
         NgbModule.forRoot()
     ],
     declarations: [DatePipe],
-    exports: [RouterModule, FormsModule, NgbModule, DatePipe]
+    exports: [RouterModule, FormsModule, ReactiveFormsModule, NgbModule, DatePipe]
 })
 export class ShareModule { }

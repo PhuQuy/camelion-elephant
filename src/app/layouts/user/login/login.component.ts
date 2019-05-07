@@ -28,7 +28,7 @@ export class LoginComponent extends BaseComponent implements OnInit {
     login() {
         this.af.auth.signInWithEmailAndPassword(this.email, this.password).then(() => {
             this.error = null;
-            this.router.navigate(['/']);
+            this.router.navigate(['/admin/dashboard']);
         }).catch((err) => {
             this.error = err.message;
         });
