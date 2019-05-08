@@ -47,10 +47,16 @@
   background: transparent !important;
   font-size: 37px !important;
   color: rgb(173, 173, 173);
+  &:hover{
+    color: rgb(173, 173, 173);
+  }
 }
 
 ::ng-deep .owl-carousel .owl-nav .owl-prev{
   background: transparent !important;
   font-size: 37px !important;
   color: rgb(173, 173, 173);
+  &:hover{
+    color: rgb(173, 173, 173);
+  }
 }
