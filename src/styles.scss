@@ -2522,8 +2522,13 @@ textarea.form-control {
 }
 
 .modal {
-  .modal-content {
+  background-color: transparent;
+  .modal-dialog{
     background-color: transparent;
+    border: none;
+  }
+  .modal-content{
+    background: transparent;
     border: none;
   }
 
@@ -2533,7 +2538,6 @@ textarea.form-control {
     font-size: 30px;
   }
 }
-
 .owl-carousel.home-slider .slider-item .overlay {
   background: url(/assets/images/beach.jpg) no-repeat;
   background-size: cover;
