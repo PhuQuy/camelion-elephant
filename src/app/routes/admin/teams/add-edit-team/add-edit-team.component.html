@@ -1,0 +1,51 @@
+<h4 class="c-grey-900 mT-10 mB-30">Teams <small>Edit</small></h4>
+<div class="bgc-white bd bdrs-3 p-20 mB-20">
+  <form [formGroup]="portfolioForm">
+    <div class="avatar-section" (click)="file.click()">
+      <input
+        type="file"
+        name="image"
+        accept="image/*"
+        hidden
+        (change)="preview(file.files)"
+        #file
+      />
+      <img class="avatar" [src]="imgURL" />
+      <img class="upload" src="/assets/images/upload.png" />
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputEmail1">Fullname</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="Enter fullname"
+        formControlName="title"
+      />
+    </div>
+    <div class="form-group">
+      <label>Position</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter position"
+        formControlName="title"
+      />
+    </div>
+    <div class="form-group">
+      <label>Desctription</label>
+      <textarea
+        class="form-control"
+        rows="6"
+        placeholder="Enter description"
+        formControlName="description"
+      ></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-admin" (click)="save()">
+      Save
+    </button>
+  </form>
+</div>

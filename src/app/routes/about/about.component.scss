@@ -1,3 +1,4 @@
+
 .center {
   display: block;
   margin-left: auto;
@@ -6,12 +7,16 @@
 }
 .wrapper {
   @extend .center;
-  width: 80%;
+  width: 70%;
   min-height: 600px;
+}
+img{
+  margin-top: 20px;
+  box-shadow: 0px 25px 82px -31px rgba(0, 0, 0, 0.36);
 }
 .quote {
   position: relative;
-  bottom: 30px;
+  bottom: 35px;
   left: 60px;
   width: 40px;
   height: 40px;
@@ -35,14 +40,27 @@
 
 ::ng-deep .owl-dots{
   position: absolute;
-  top:110%;
+  top:107%;
   left:25%;
   right:25%;
 }
 ::ng-deep .owl-item{
-  min-height: 600px;
+  min-height: 500px;
 }
-::ng-deep .owl-nav .owl-prev .owl-next{
-  background-color: transparent;
-  color: red !important;
+::ng-deep .owl-carousel .owl-nav .owl-next{
+  background: transparent !important;
+  font-size: 37px !important;
+  color: rgb(173, 173, 173);
+  &:hover{
+    color: rgb(173, 173, 173);
+  }
+}
+
+::ng-deep .owl-carousel .owl-nav .owl-prev{
+  background: transparent !important;
+  font-size: 37px !important;
+  color: rgb(173, 173, 173);
+  &:hover{
+    color: rgb(173, 173, 173);
+  }
 }

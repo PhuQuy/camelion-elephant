@@ -22,11 +22,11 @@ export class BaseComponent implements AfterViewInit {
     initView() {
         if (isPlatformBrowser(this.platformId)) {
             AOS.init();
-            $('.hero-area-fix').ripples({
-                resolution: 500,
-                dropRadius: 20,
-                perturbance: 0.04,
-            });
+            // $('.hero-area-fix').ripples({
+            //     resolution: 500,
+            //     dropRadius: 20,
+            //     perturbance: 0.04,
+            // });
         }
     }
 }

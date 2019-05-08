@@ -1,0 +1,16 @@
+.avatar-section {
+	text-align: center;
+	position: relative;
+	cursor: pointer;
+	.avatar {
+		width: 150px;
+		height: 150px;
+		border-radius: 50%;
+	}
+	.upload {
+		width: 40px;
+		position: absolute;
+		top: 75%;
+		left: 48%;
+	}
+}

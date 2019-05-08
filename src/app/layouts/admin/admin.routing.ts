@@ -35,6 +35,16 @@ const routes: Routes = [
                 path: "categories",
                 loadChildren: "../../routes/admin/categories/categories.module#CategoriesModule",
                 canActivate: [AuthGuard]
+            },
+            {
+                path: "contacts",
+                loadChildren: "../../routes/admin/contacts/contacts.module#ContactsModule",
+                canActivate: [AuthGuard]
+            },
+            {
+                path: "teams",
+                loadChildren: "../../routes/admin/teams/teams.module#TeamsModule",
+                canActivate: [AuthGuard]
             }
         ]
     }

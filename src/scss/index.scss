@@ -4,8 +4,9 @@
 @import "vendor/index";
 @import "~@ng-select/ng-select/themes/default.theme.css";
 @import "~simplemde/dist/simplemde.min.css";
+
 .modal-dialog {
-	background-color: white;
+	background-color: white !important;
 	.close {
 		font-size: 1.3125rem;
 		font-weight: 700;

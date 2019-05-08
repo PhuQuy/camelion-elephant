@@ -1,4 +1,4 @@
-<section class="home-slider owl-carousel ftco-degree-bg">
+<section class="home-slider carousel ftco-degree-bg">
   <div class="slider-item bread-wrap">
     <div class="overlay hero-area-fix"></div>
     <div class="container">
@@ -67,7 +67,7 @@
     </div>
   </div>
 </section>
-<section class="ftco-section ftco-degree-bg">
+<section class="ftco-section-2 ftco-degree-bg">
   <div class="wrapper">
     <div class="row justify-content-center mb-5 pb-5">
       <div class="col-md-7 text-center heading-section ">
@@ -79,15 +79,14 @@
       <ng-container *ngFor="let slide of slideStore; index as id">
         <ng-template carouselSlide [id]="id">
           <div class="text-center border">
-            <div class="d-inline-block pt-3">
-              <img class="rounded-circle z-depth-2 d-flex center" [src]="slide.src" [alt]="slide.alt"
+            <div class="d-inline-block">
+              <img class="shadow p-1 mb-2 bg-white rounded-circle d-flex center" [src]="slide.src" [alt]="slide.alt"
                 [title]="slide.title" style="width: 100px;" />
-              <span class="quote d-flex align-items-center justify-content-center" (click)="getData($event)">
+              <span class="shadow p-1 mb-2 quote d-flex align-items-center justify-content-center" (click)="getClickEvent(slide)">
                 <i class="icon-quote-left"></i>
               </span>
             </div>
-            <br />
-            <p class="mx-3">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
+            <p class="mx-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
               there live the
               blind texts.</p>
             <br />
@@ -100,8 +99,8 @@
     </owl-carousel-o>
     <!-- <div class="row justify-content-center mb-5 pb-5">
       <div class="col-md-7 text-center heading-section ">
-        <a class="btn btn-light btn-outline-light prev-button" (click)="owlCar.prev()">Prev</a>
-        <a class="btn btn-light btn-outline-light next-button" (click)="owlCar.next()">Next</a>
+        <a class="prev-button" (click)="owlCar.prev()"><i class="fas fa-chevron-left"></i></a>
+        <a class="next-button" (click)="owlCar.next()"><i class="fas fa-chevron-right"></i></a>
       </div>
     </div> -->
   </div>

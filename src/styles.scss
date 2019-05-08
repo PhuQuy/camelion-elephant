@@ -6,7 +6,7 @@
 @import '/assets/scss/bootstrap/variables';
 
 
-// @import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+//@import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
 // @import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
 
 @import '~scss/index.scss';
@@ -96,7 +96,7 @@ h5,
   color: $primary !important;
 }
 
-.ftco-navbar-light {
+.ftco-navbar-lighter {
   background: transparent !important;
   position: absolute;
   left: 0;
@@ -283,7 +283,7 @@ h5,
 }
 
 //OWL CAROUSEL
-.owl-carousel {
+.carousel {
   position: relative;
 
   .owl-item {
@@ -659,7 +659,7 @@ h5,
     z-index: 2;
     position: relative;
 
-    .owl-carousel .owl-stage-outer {
+    .carousel .owl-stage-outer {
       padding-bottom: 2em;
     }
 
@@ -1159,15 +1159,12 @@ textarea.form-control {
 
 
 .about-author {
-  img {}
 
   .desc {
     h3 {
       font-size: 24px;
     }
   }
-
-  .bio {}
 }
 
 
@@ -1430,11 +1427,11 @@ textarea.form-control {
 .testimony-section {
   position: relative;
 
-  .owl-carousel {
+  .carousel {
     margin: 0;
   }
 
-  .owl-carousel .owl-stage-outer {
+  .carousel .owl-stage-outer {
     padding-bottom: 2em;
     position: relative;
 
@@ -1556,10 +1553,6 @@ textarea.form-control {
 .ftco-counter {
   background: $tertiary;
   padding: 15em 0;
-
-  .icon {
-    span {}
-  }
 
   .text {
     strong.number {
@@ -1683,7 +1676,7 @@ textarea.form-control {
   }
 
   .media-body {
-    .heading {}
+  
 
     p {
       font-size: 16px;
@@ -1739,9 +1732,9 @@ textarea.form-control {
           margin-bottom: 10px;
         }
 
-        &:first-child {
-          // padding-left: 0;
-        }
+        // &:first-child {
+        //   // padding-left: 0;
+        // }
 
         &:last-child {
           border-right: none;
@@ -1797,13 +1790,6 @@ textarea.form-control {
         }
       }
 
-      .textfield-search,
-      .select-wrap {}
-
-      .textfield-search {
-        input {}
-      }
-
       .select-wrap {
         position: relative;
 
@@ -1832,9 +1818,6 @@ textarea.form-control {
 
 //### .block-18 
 .block-18 {
-
-  .icon,
-  .text {}
 
   .icon {
     >span {
@@ -2102,8 +2085,6 @@ textarea.form-control {
       a {
         color: lighten($black, 10%);
       }
-
-      span {}
     }
   }
 }
@@ -2116,7 +2097,6 @@ textarea.form-control {
     font-size: 15px;
   }
 
-  #map {}
 }
 
 
@@ -2522,8 +2502,13 @@ textarea.form-control {
 }
 
 .modal {
-  .modal-content {
+  background-color: transparent;
+  .modal-dialog{
     background-color: transparent;
+    border: none;
+  }
+  .modal-content{
+    background: transparent;
     border: none;
   }
 
@@ -2533,8 +2518,7 @@ textarea.form-control {
     font-size: 30px;
   }
 }
-
-.owl-carousel.home-slider .slider-item .overlay {
+.carousel.home-slider .slider-item .overlay {
   background: url(/assets/images/beach.jpg) no-repeat;
   background-size: cover;
   background-position: center;
