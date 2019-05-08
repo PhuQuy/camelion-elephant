@@ -15,11 +15,11 @@ export class AboutComponent extends BaseComponent implements OnInit {
         touchDrag: true,
         pullDrag: true,
         dots: true,
-        center:true,
-        margin:30,
+        center: true,
+        margin: 30,
         navSpeed: 700,
         stagePadding: 50,
-        nav:true,
+        nav: true,
         navText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>'],
         navClass: ['owl-prev', 'owl-next'],
         responsiveClass: true,
@@ -32,11 +32,11 @@ export class AboutComponent extends BaseComponent implements OnInit {
             },
             768: {
                 items: 3,
-               // loop: false
+                // loop: false
             },
             990: {
                 items: 3,
-               // loop: false
+                // loop: false
             }
         },
         navElement: 'div',
@@ -132,12 +132,14 @@ export class AboutComponent extends BaseComponent implements OnInit {
         });
 
     }
-
     ngAfterViewInit() {
         this.initView();
     }
-getData(data: SlidesOutputData) {
+    getData(data: SlidesOutputData) {
         this.activeSlides = data;
         console.log(this.activeSlides);
-      }
+    }
+    getClickEvent(data) {
+        console.log(data.name);
+    }
 }
