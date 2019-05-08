@@ -2,6 +2,7 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { BlogsComponent } from "./blogs.component";
 import { AddEditBlogComponent } from "./add-edit-blog/add-edit-blog.component";
+import { UploadImageModalComponent } from "./upload-image-modal/upload-image-modal.component";
 import { BlogsRoutingModule } from "./blogs.routing";
 
 import { ShareModule } from "@shared/share/share.module";
@@ -24,6 +25,8 @@ import { SimplemdeModule, SIMPLEMDE_CONFIG } from "ng2-simplemde";
 			useValue: {showIcons: ["code", "table"]}
 		})
 	],
-	declarations: [BlogsComponent, AddEditBlogComponent]
+	declarations: [BlogsComponent, AddEditBlogComponent, UploadImageModalComponent],
+	entryComponents: [UploadImageModalComponent], 
+	
 })
 export class BlogsModule {}

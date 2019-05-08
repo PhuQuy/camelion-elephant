@@ -2258,7 +2258,8 @@ pre code {
 .form-control:focus {
   color: #495057;
   background-color: #fff;
-  border-color: #eaf8fd;
+  /*border-color: #eaf8fd;*/
+  border-color: red;
   outline: 0;
   -webkit-box-shadow: 0 0 0 0.2rem rgba(120, 213, 239, 0.25);
   box-shadow: 0 0 0 0.2rem rgba(120, 213, 239, 0.25);
