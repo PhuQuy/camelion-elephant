@@ -1,6 +1,11 @@
 import { Component, Inject } from "@angular/core";
 
 import * as ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+
+import { NgbModal, ModalDismissReasons } from "@ng-bootstrap/ng-bootstrap";
+
+import { UploadImageModalComponent } from "../upload-image-modal/upload-image-modal.component";
+
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 @Component({
     selector: "app-admin-add-edit-blog",
@@ -8,7 +13,6 @@ import { FormGroup, FormControl, Validators } from "@angular/forms";
     styleUrls: ["./add-edit-blog.component.scss"]
 })
 export class AddEditBlogComponent {
-
     blogForm: FormGroup;
 
     editor = ClassicEditor;
@@ -18,12 +22,41 @@ export class AddEditBlogComponent {
         { id: 3, name: "Java" }
     ];
     value = "";
-
-    public imagePath;
-    imgURL: any = '/assets/images/about.jpg';
+    options = {
+        toolbar: [
+            "bold",
+            "italic",
+            "heading-1",
+            "heading-2",
+            "heading-3",
+            "code",
+            "quote",
+            "unordered-list",
+            "ordered-list",
+            {
+                name: "image",
+                action: () => {
+                    console.log("aaaaaaaa");
+                    this.openModalImage();
+                },
+                className: "fa fa-image",
+                title: "Upload Image"
+            },
+            "table",
+            "link",
+            "horizontal-rule",
+            "preview",
+            "side-by-side",
+            "fullscreen",
+            "guide"
+        ]
+    };
+    imagePath;
+    imgURL: any = "/assets/images/about.jpg";
     public message: string;
-    constructor() { }
 
+    
+    constructor(private modalService: NgbModal) {}
     ngOnInit() {
         this.createForm();
     }
@@ -31,7 +64,11 @@ export class AddEditBlogComponent {
     addTag(name) {
         return { name: name, tag: true };
     }
-    onChange() { }
+    openModalImage() {
+        const modalRef = this.modalService.open(UploadImageModalComponent);
+        // modalRef.componentInstance.new = true;
+    }
+    onChange() {}
 
     preview(files) {
         if (files.length === 0) return;
@@ -52,6 +89,6 @@ export class AddEditBlogComponent {
             title: new FormControl("", [Validators.required]),
             tags: new FormControl("", [Validators.required]),
             content: new FormControl("", [Validators.required])
-        })
+        });
     }
 }

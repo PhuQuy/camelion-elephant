@@ -42,7 +42,7 @@
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/datatables.net/js/jquery.dataTables.js",
-              "node_modules/@fortawesome/fontawesome-free/js/all.js"
+              // "node_modules/@fortawesome/fontawesome-free/js/all.js"
             ]
           },
           "configurations": {

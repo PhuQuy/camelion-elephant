@@ -39,7 +39,7 @@
     </div>
     <div class="form-group">
       <label for="exampleInputPassword1">Content</label>
-      <simplemde (change)="onChange()" formControlName="content"></simplemde>
+      <simplemde (change)="onChange()" formControlName="content"  [options]="options"></simplemde>
     </div>
     <button type="submit" class="btn btn-primary btn-admin">Save</button>
   </form>

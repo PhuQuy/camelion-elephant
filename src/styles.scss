@@ -6,9 +6,10 @@
 @import '/assets/scss/bootstrap/variables';
 
 
-@import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
-@import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+// @import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+// @import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
 
+@import '~scss/index.scss';
 
 /*====Hero area==*/
 
@@ -1039,7 +1040,7 @@ h5,
 
   &:focus,
   &:active {
-    border-color: $black;
+    border-color: #29bae4;
   }
 }
 
@@ -2540,4 +2541,3 @@ textarea.form-control {
 }
 
 
-@import '~scss/index.scss';
