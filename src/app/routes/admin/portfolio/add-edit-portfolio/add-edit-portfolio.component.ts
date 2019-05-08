@@ -4,11 +4,12 @@ import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { PortfolioService } from "app/services/portfolio.service";
 import { Router, ActivatedRoute } from "@angular/router";
+import { UploadService } from "app/services/upload.service";
 @Component({
     selector: "app-admin-add-edit-portfolio",
     templateUrl: "./add-edit-portfolio.component.html",
     styleUrls: ["./add-edit-portfolio.component.scss"],
-    providers: [PortfolioService]
+    providers: [PortfolioService, UploadService]
 })
 export class AddEditPortfolioComponent {
     public editor = ClassicEditor;
@@ -19,14 +20,23 @@ export class AddEditPortfolioComponent {
     @ViewChild("file") fileImage;
     imgURL;
     images: any = [];
+    files = [];
+    public edit = false;
 
-    constructor(protected portfolioService: PortfolioService, private router: Router, private activatedRoute: ActivatedRoute) {
+    constructor(protected portfolioService: PortfolioService, private router: Router,
+        private activatedRoute: ActivatedRoute, private upSvc: UploadService) {
         this.activatedRoute.params.subscribe(params => {
             this.id = params['id'];
             if (this.id !== 'new') {
                 this.portfolioService.getById(this.id).subscribe(portfolio => {
                     this.portfolioForm.patchValue(portfolio);
+                    portfolio.images.map(img => {
+                        this.images.push(img);
+                    })
+                    this.edit = true;
                 })
+            } else {
+                this.edit = false;
             }
         })
     }
@@ -48,34 +58,31 @@ export class AddEditPortfolioComponent {
     }
 
     save() {
-        if (this.id === 'new') {
-            this.portfolioService.create(this.portfolioForm.value).then(result => {
+        if (this.edit) {
+            this.portfolioService.update({ ...this.portfolioForm.value, id: this.id, images: this.images }).then(result => {
                 this.router.navigate(['/admin/portfolio']);
             })
         } else {
-            this.portfolioService.update({ ...this.portfolioForm.value, id: this.id }).then(result => {
+            this.portfolioService.create({ ...this.portfolioForm.value, images: this.images }).then(result => {
                 this.router.navigate(['/admin/portfolio']);
             })
         }
     }
 
-    preview(files) {
+    preview(event) {
+        let files = event.target.files;
         if (files.length === 0) return;
+        const that = this;
         for (let i = 0; i < files.length; i++) {
-            let image = files[i];
-            var mimeType = image.type;
-            if (mimeType.match(/image\/*/) == null) {
-                return;
-            }
-            var reader = new FileReader();
-            reader.readAsDataURL(image);
-            reader.onload = event => {
-                this.id++;
-                this.images.push({ id: this.id, url: event.target['result'] });
-                console.log("image", this.images);
-            };
+            this.upSvc.pushUpload(`Portfolio/${files[i].name}`, files[i]).subscribe(res => {
+                this.images.push(res);
+            })
         }
         this.fileImage.nativeElement.value = '';
     }
 
+    deletePhoto(url, i) {
+        this.upSvc.deleteFileByURL(url);
+        this.images.splice(i, 1);
+    }
 }
