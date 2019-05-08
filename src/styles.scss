@@ -6,7 +6,7 @@
 @import '/assets/scss/bootstrap/variables';
 
 
-// @import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+//@import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
 // @import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
 
 @import '~scss/index.scss';
@@ -96,7 +96,7 @@ h5,
   color: $primary !important;
 }
 
-.ftco-navbar-light {
+.ftco-navbar-lighter {
   background: transparent !important;
   position: absolute;
   left: 0;
@@ -283,7 +283,7 @@ h5,
 }
 
 //OWL CAROUSEL
-.owl-carousel {
+.carousel {
   position: relative;
 
   .owl-item {
@@ -659,7 +659,7 @@ h5,
     z-index: 2;
     position: relative;
 
-    .owl-carousel .owl-stage-outer {
+    .carousel .owl-stage-outer {
       padding-bottom: 2em;
     }
 
@@ -1427,11 +1427,11 @@ textarea.form-control {
 .testimony-section {
   position: relative;
 
-  .owl-carousel {
+  .carousel {
     margin: 0;
   }
 
-  .owl-carousel .owl-stage-outer {
+  .carousel .owl-stage-outer {
     padding-bottom: 2em;
     position: relative;
 
@@ -2518,7 +2518,7 @@ textarea.form-control {
     font-size: 30px;
   }
 }
-.owl-carousel.home-slider .slider-item .overlay {
+.carousel.home-slider .slider-item .overlay {
   background: url(/assets/images/beach.jpg) no-repeat;
   background-size: cover;
   background-position: center;
