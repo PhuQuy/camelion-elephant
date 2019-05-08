@@ -1,26 +1,30 @@
-<h4 class="c-grey-900 mT-10 mB-30">Tags <small>manage</small></h4>
-<div class="mB-20">
-  <a class="btn btn-info btn-admin" href="javascript:void(0);" (click)="onAdd()">
-    Add
-  </a>
-</div>
+<h4 class="c-grey-900 mT-10 mB-30">Contacts <small>manage</small></h4>
+
 <div class="bgc-white bd bdrs-3 p-20 mB-20">
   <table class="table table-striped table-bordered" datatable [dtTrigger]="dtTrigger" >
     <thead>
       <tr>
-        <th>Name</th>
+        <th>Fullname</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Message</th>
+        <th>Create date</th>
         <th>Action</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let tag of tags">
-        <td>{{tag.name}}</td>
+      <tr >
+        <td>Lethinh</td>
+        <td>Lethinh@gmail.com</td>
+        <td>0369599700</td>
+        <td>fefef fefef</td>
+        <td>05/10/2019</td>
         <td>
           <ul class="list-inline">
-            <li class="list-inline-item">
+            <!-- <li class="list-inline-item">
               <button (click)="onEdit(tag)" title="Edit" class="btn btn-primary btn-sm btn-admin"><span
                   class="ti-pencil"></span></button>
-            </li>
+            </li> -->
             <li class="list-inline-item">
               <button class="btn btn-danger btn-sm btn-admin" title="Delete" (click)="onDelete(tag)">
                 <i class="ti-trash"></i>
