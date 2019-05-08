@@ -6,7 +6,7 @@
 }
 .wrapper {
   @extend .center;
-  width: 60%;
+  width: 70%;
   min-height: 600px;
 }
 .quote {
@@ -35,12 +35,12 @@
 
 ::ng-deep .owl-dots{
   position: absolute;
-  top:110%;
+  top:107%;
   left:25%;
   right:25%;
 }
 ::ng-deep .owl-item{
-  min-height: 600px;
+  min-height: 500px;
 }
 ::ng-deep .owl-carousel .owl-nav .owl-next{
   background: transparent !important;

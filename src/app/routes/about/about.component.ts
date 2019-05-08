@@ -13,10 +13,10 @@ export class AboutComponent extends BaseComponent implements OnInit {
         loop: true,
         mouseDrag: true,
         touchDrag: true,
-        pullDrag: false,
+        pullDrag: true,
         dots: true,
         center:true,
-        margin:40,
+        margin:30,
         navSpeed: 700,
         stagePadding: 50,
         nav:true,
@@ -40,7 +40,6 @@ export class AboutComponent extends BaseComponent implements OnInit {
             }
         },
         navElement: 'div',
-        
         lazyLoad: true,
         lazyLoadEager: 2,
         responsiveBaseElement: 'div'
