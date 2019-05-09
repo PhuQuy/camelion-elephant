@@ -100,7 +100,7 @@ export class AddEditBlogComponent {
     preview(event) {
         let file = event.target.files.item(0);
         if (!file) return;
-        if (this.edit) {
+        if (this.edit && this.blogForm.get('imgURL')) {
             this.upSvc.deleteFileByURL(this.blogForm.get('imgURL').value);
         }
         this.upSvc.pushUpload(`Blogs/${file.name}`, file).subscribe(res => {

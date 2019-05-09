@@ -5,16 +5,17 @@ import { NgbModal, ModalDismissReasons } from "@ng-bootstrap/ng-bootstrap";
 import { ConfirmModalComponent } from "@components/admin/confirm-modal/confirm-modal.component";
 import { PortfolioService } from "app/services/portfolio.service";
 import { Subject } from "rxjs";
+import { TeamService } from "app/services/team.service";
 
 @Component({
 	selector: "app-teams",
 	templateUrl: "./teams.component.html",
 	styleUrls: ["./teams.component.scss"],
-	providers: [PortfolioService]
+	providers: [TeamService]
 })
 export class TeamsComponent {
-	portfolios;
-	constructor(private modalService: NgbModal, protected portfolioService: PortfolioService) {}
+	teams;
+	constructor(private modalService: NgbModal, protected teamService: TeamService) {}
 	dtTrigger = new Subject();
 
 	ngOnInit() {
@@ -22,19 +23,18 @@ export class TeamsComponent {
 	}
 
 	getAll() {
-		this.portfolioService.getAll().subscribe(portfolios => {
-			this.portfolios = portfolios;
+		this.teamService.getAll().subscribe(teams => {
+			this.teams = teams;
 			this.dtTrigger.next();
-
 		})
 	}
 
-	delete(portfolio) {
+	delete(team) {
 		const modalRef = this.modalService.open(ConfirmModalComponent);
 		modalRef.componentInstance.title = "Team delete";
 		modalRef.result.then(result => {
 			if(result === 'ok') {
-				this.portfolioService.delete(portfolio.id).then();
+				this.teamService.delete(team.id).then();
 			}
 		})
 	}
