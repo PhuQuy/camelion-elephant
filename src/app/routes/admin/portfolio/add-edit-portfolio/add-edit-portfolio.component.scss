@@ -1,14 +1,42 @@
 .upload-action {
-	width: 100px;
-	height: 100px;
+  width: 100px;
+  height: 100px;
 }
 
 .list-image {
-	border: 1px solid #d0cdcd;
-	padding: 10px;
-	img {
-		width: 100px;
-		height: 100px;
-		margin: 10px;
-	}
+  border: 1px solid #d0cdcd;
+  padding: 10px;
+  display: flex;
+
+  img {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+  }
+}
+
+.img-content {
+  position: relative;
+
+  &:hover .btn-hover {
+    opacity: 1;
+  }
+
+  .btn-hover {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    position: absolute;
+    top: 2px;
+    left: 100px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    display: inline-grid;
+
+    i {
+      margin-top: -1px;
+      margin-left: -5px;
+    }
+  }
 }
