@@ -4,6 +4,8 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DatePipe } from '@shared/date.pipe';
+import { PortfolioItemComponent } from '@components/portfolio-item/portfolio-item.component';
+import { BlogItemComponent } from '@components/blog-item/blog-item.component';
 
 @NgModule({
     imports: [
@@ -13,7 +15,7 @@ import { DatePipe } from '@shared/date.pipe';
         ReactiveFormsModule,
         NgbModule.forRoot()
     ],
-    declarations: [DatePipe],
-    exports: [RouterModule, FormsModule, ReactiveFormsModule, NgbModule, DatePipe]
+    declarations: [DatePipe, PortfolioItemComponent, BlogItemComponent],
+    exports: [RouterModule, FormsModule, ReactiveFormsModule, NgbModule, DatePipe, PortfolioItemComponent, BlogItemComponent]
 })
 export class ShareModule { }

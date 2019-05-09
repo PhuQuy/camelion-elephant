@@ -7,6 +7,11 @@
         placeholder="Enter title" formControlName="title" />
     </div>
     <div class="form-group">
+      <label for="exampleInputEmail1">Link</label>
+      <input type="text" class="form-control" 
+        placeholder="Enter link" formControlName="link" />
+    </div>
+    <div class="form-group">
       <label>Development platforms</label>
       <ng-select [items]="platformsData" [addTag]="addTag" [hideSelected]="true" multiple="true"
         placeholder="Enter development platforms" bindLabel="name" formControlName="platforms">

@@ -1,0 +1,27 @@
+
+	<div class="blog-entry">
+		<a
+			[routerLink]="['/blog', blog.id]"
+			class="block-20"
+			[style.backgroundImage]="'url(' + blog.photoURL + ')'"
+		>
+		</a>
+		<div class="text p-4 d-block ">
+			<div class="meta mb-3">
+				<div><span class="badge badge-primary">Javascript</span></div>
+				<div>
+					<a>{{ blog.createdDate | datene }}</a>
+				</div>
+				<div>
+					<a class="meta-chat"
+						><span class="icon-chat"></span>
+						{{ blog.comments.length }}</a
+					>
+				</div>
+			</div>
+			<h3 class="heading">
+				<a [routerLink]="['/blog', blog.id]">{{ blog.title }}</a>
+			</h3>
+		</div>
+	</div>
+<!-- </div> -->

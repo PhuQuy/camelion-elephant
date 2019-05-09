@@ -3,64 +3,180 @@
     <div class="overlay hero-area-fix"></div>
     <div class="container">
       <div class="row slider-text justify-content-center align-items-center">
-        <div class="col-md-10 col-sm-12 mb-4 text-center" data-aos="fade-up" data-aos-delay="200" data-aos-offset="0">
-          <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Blog</span></p>
+        <div
+          class="col-md-10 col-sm-12 mb-4 text-center"
+          data-aos="fade-up"
+          data-aos-delay="200"
+          data-aos-offset="0"
+        >
+          <p class="breadcrumbs">
+            <span class="mr-2"><a href="index.html">Home</a></span>
+            <span>Blog</span>
+          </p>
           <h1 class="mb-3 bread">Read our blog</h1>
-          <div class="row">
-            <div class="col-lg-10 mx-auto">
-              <div class="row search-blog-input">
-                <div class="col-10 col-md-11 mr-0 pr-0">
-                  <input type="text" placeholder="Search..." class="form-control w-100" [(ngModel)]="searchBlog">
-                </div>
-                <div class="col-2 col-md-1 ml-0 pl-0">
-                  <button class="btn" (click)="clearSearch()">
-                    <svg class="js-transition-icon" width="22px" height="22px" viewBox="0 0 32 32">
-                      <g class="js-transition-icon__state" [style.display]="searchBlog.length > 0 ? 'none' : ''">
-                        <title>Search</title>
-                        <line fill="none" stroke="white" x1="30" y1="30" x2="21.5" y2="21.5" />
-                        <circle fill="none" stroke="white" cx="13" cy="13" r="12" />
-                      </g>
-
-                      <g class="js-transition-icon__state" [style.display]="searchBlog.length > 0 ? '' : 'none'"
-                        aria-hidden="true">
-                        <title>Close search</title>
-                        <line fill="none" stroke="white" x1="27" y1="5" x2="5" y2="27" />
-                        <line fill="none" stroke="white" x1="27" y1="27" x2="5" y2="5" />
-                      </g>
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-<section class="ftco-section ftco-degree-bg" style="margin-top: -17rem;" #blogHeader>
+<section class="ftco-section ftco-degree-bg" #blogHeader>
   <div class="container">
     <div class="row">
-      <div class="col-md-4 " data-aos="fade-up" data-aos-delay="200" data-aos-offset="0"
-        *ngFor="let blog of blogs | paginate: config  | filter:searchBlog">
-        <div class="blog-entry">
-          <a [routerLink]="['/blog', blog.id]" class="block-20" [style.background]="'url(' + blog.photoURL + ')'">
-          </a>
-          <div class="text p-4 d-block">
-            <div class="meta mb-3">
-              <div><a>{{blog.createdDate | datene}}</a></div>
-              <div><a>{{blog.postedBy}}</a></div>
-              <div><a class="meta-chat"><span class="icon-chat"></span> {{blog.comments.length}}</a></div>
+      <div class="col-md-8 ">
+        <div class="row">
+          <div
+  class="col-md-6"
+  data-aos="fade-up"
+  data-aos-delay="200"
+  data-aos-offset="0"
+  *ngFor="let blog of (blogs | paginate: config | filter: searchBlog)"
+>
+          <app-blog-item
+            
+            [blog]="blog"
+          ></app-blog-item></div>
+        </div>
+        <div class="row mt-5">
+          <pagination
+            class="mx-auto"
+            [config]="config"
+            (onPageChange)="pageChange($event)"
+          ></pagination>
+        </div>
+      </div>
+      <div class="col-md-4  ">
+        <div class="sidebar-box">
+          <form action="#" class="search-form">
+            <div class="form-group">
+              <span class="icon fa fa-search"></span>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Type a keyword and hit enter"
+              />
             </div>
-            <h3 class="heading"><a [routerLink]="['/blog', blog.id]">{{blog.title}}</a></h3>
+          </form>
+        </div>
+        <div class="sidebar-box ">
+          <div class="categories">
+            <h3>Categories</h3>
+            <li>
+              <a href="#">Food <span>(12)</span></a>
+            </li>
+            <li>
+              <a href="#">Dish <span>(22)</span></a>
+            </li>
+            <li>
+              <a href="#">Desserts <span>(37)</span></a>
+            </li>
+            <li>
+              <a href="#">Drinks <span>(42)</span></a>
+            </li>
+            <li>
+              <a href="#">Ocassion <span>(14)</span></a>
+            </li>
+          </div>
+        </div>
+
+        <div class="sidebar-box ">
+          <h3>Recent Blog</h3>
+          <div class="block-21 mb-4 d-flex">
+            <a
+              class="blog-img mr-4"
+              style="background-image: url(assets/images/image_1.jpg);"
+            ></a>
+            <div class="text">
+              <h3 class="heading">
+                <a href="#"
+                  >Even the all-powerful Pointing has no control about the blind
+                  texts</a
+                >
+              </h3>
+              <div class="meta">
+                <div>
+                  <a href="#"
+                    ><span class="icon-calendar"></span> July 12, 2018</a
+                  >
+                </div>
+                <div>
+                  <a href="#"><span class="icon-person"></span> Admin</a>
+                </div>
+                <div>
+                  <a href="#"><span class="icon-chat"></span> 19</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="block-21 mb-4 d-flex">
+            <a
+              class="blog-img mr-4"
+              style="background-image: url(assets/images/image_2.jpg);"
+            ></a>
+            <div class="text">
+              <h3 class="heading">
+                <a href="#"
+                  >Even the all-powerful Pointing has no control about the blind
+                  texts</a
+                >
+              </h3>
+              <div class="meta">
+                <div>
+                  <a href="#"
+                    ><span class="icon-calendar"></span> July 12, 2018</a
+                  >
+                </div>
+                <div>
+                  <a href="#"><span class="icon-person"></span> Admin</a>
+                </div>
+                <div>
+                  <a href="#"><span class="icon-chat"></span> 19</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="block-21 mb-4 d-flex">
+            <a
+              class="blog-img mr-4"
+              style="background-image: url(assets/images/image_3.jpg);"
+            ></a>
+            <div class="text">
+              <h3 class="heading">
+                <a href="#"
+                  >Even the all-powerful Pointing has no control about the blind
+                  texts</a
+                >
+              </h3>
+              <div class="meta">
+                <div>
+                  <a href="#"
+                    ><span class="icon-calendar"></span> July 12, 2018</a
+                  >
+                </div>
+                <div>
+                  <a href="#"><span class="icon-person"></span> Admin</a>
+                </div>
+                <div>
+                  <a href="#"><span class="icon-chat"></span> 19</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-box ">
+          <h3>Tag Cloud</h3>
+          <div class="tagcloud">
+            <a href="#" class="tag-cloud-link">dish</a>
+            <a href="#" class="tag-cloud-link">menu</a>
+            <a href="#" class="tag-cloud-link">food</a>
+            <a href="#" class="tag-cloud-link">sweet</a>
+            <a href="#" class="tag-cloud-link">tasty</a>
+            <a href="#" class="tag-cloud-link">delicious</a>
+            <a href="#" class="tag-cloud-link">desserts</a>
+            <a href="#" class="tag-cloud-link">drinks</a>
           </div>
         </div>
       </div>
-    </div>
-    <div class="row mt-5">
-      <pagination class="mx-auto" [config]="config" (onPageChange)="pageChange($event)"></pagination>
     </div>
   </div>
 </section>

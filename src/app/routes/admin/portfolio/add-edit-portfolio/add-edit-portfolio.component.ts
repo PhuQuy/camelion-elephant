@@ -30,6 +30,7 @@ export class AddEditPortfolioComponent {
             if (this.id !== 'new') {
                 this.portfolioService.getById(this.id).subscribe(portfolio => {
                     this.portfolioForm.patchValue(portfolio);
+                    console.log('portfolio',portfolio);
                     portfolio.images.map(img => {
                         this.images.push(img);
                     })
@@ -52,6 +53,7 @@ export class AddEditPortfolioComponent {
     createForm() {
         this.portfolioForm = new FormGroup({
             title: new FormControl("", [Validators.required]),
+            link: new FormControl("", []),
             platforms: new FormControl("", [Validators.required]),
             description: new FormControl("", [Validators.required])
         })

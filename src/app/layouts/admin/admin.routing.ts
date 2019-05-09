@@ -45,6 +45,11 @@ const routes: Routes = [
                 path: "teams",
                 loadChildren: "../../routes/admin/teams/teams.module#TeamsModule",
                 canActivate: [AuthGuard]
+            },
+            {
+                path: "subscribes",
+                loadChildren: "../../routes/admin/subscribes/subscribes.module#SubscribesModule",
+                canActivate: [AuthGuard]
             }
         ]
     }

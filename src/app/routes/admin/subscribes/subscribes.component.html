@@ -1,0 +1,34 @@
+<h4 class="c-grey-900 mT-10 mB-30">Subsribes <small>manage</small></h4>
+<!-- <div class="mB-20">
+  <a class="btn btn-info btn-admin" href="javascript:void(0);" (click)="onAdd()">
+    Add
+  </a>
+</div> -->
+<div class="bgc-white bd bdrs-3 p-20 mB-20">
+  <table class="table table-striped table-bordered" datatable [dtTrigger]="dtTrigger" >
+    <thead>
+      <tr>
+        <th>Email</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tag of tags">
+        <td>{{tag.name}}</td>
+        <td>
+          <ul class="list-inline">
+            <!-- <li class="list-inline-item">
+              <button (click)="onEdit(tag)" title="Edit" class="btn btn-primary btn-sm btn-admin"><span
+                  class="ti-pencil"></span></button>
+            </li> -->
+            <li class="list-inline-item">
+              <button class="btn btn-danger btn-sm btn-admin" title="Delete" (click)="onDelete(tag)">
+                <i class="ti-trash"></i>
+              </button>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

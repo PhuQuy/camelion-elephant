@@ -22,7 +22,60 @@ var TxtType = function (el, toRotate, period) {
 })
 export class HomeComponent extends BaseComponent {
     closeResult: string;
+    blogs = [
+        {
+            id: 1,
+            title: 'Even the all-powerful Pointing has no control about the blind texts',
+            createdDate: '2019-02-20 05:02:04',
+            postedBy: 'Admin',
+            photoURL: '/assets/images/image_1.jpg',
+            comments: [
+                {
+                    postedBy: 'User',
+                    message: 'That \'s beautiful!'
+                },
+                {
+                    postedBy: 'Quy',
+                    message: 'Hello there!'
+                }
+            ]
+        },
 
+        {
+            id: 2,
+            title: 'Right time, right girl',
+            createdDate: '2019-02-20 05:02:04',
+            postedBy: 'Admin',
+            photoURL: '/assets/images/image_2.jpg',
+            comments: [
+                {
+                    postedBy: 'User',
+                    message: 'That \'s beautiful!'
+                },
+                {
+                    postedBy: 'Quy',
+                    message: 'Hello there!'
+                }
+            ]
+        },
+
+        {
+            id: 3,
+            title: 'Even the all-powerful Pointing has no control about the blind texts',
+            createdDate: '2019-02-20 05:02:04',
+            postedBy: 'Admin',
+            photoURL: '/assets/images/image_3.jpg',
+            comments: [
+                {
+                    postedBy: 'User',
+                    message: 'That \'s beautiful!'
+                },
+                {
+                    postedBy: 'Quy',
+                    message: 'Hello there!'
+                }
+            ]
+        }];
     constructor(@Inject(PLATFORM_ID) public platformId: string,
         private modalService: NgbModal, private seoService: SeoService) {
         super(platformId);
