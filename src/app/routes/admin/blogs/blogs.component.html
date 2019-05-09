@@ -1,44 +1,38 @@
 <h4 class="c-grey-900 mT-10 mB-30">Blogs <small>manage</small></h4>
 <div class="mB-20">
-	<a routerLink="/admin/blogs/new" class="btn btn-info btn-admin" href="javascript:void(0);">
-		Add
-	</a>
+  <a routerLink="/admin/blogs/new" class="btn btn-info btn-admin" href="javascript:void(0);">
+    Add
+  </a>
 </div>
 <div class="bgc-white bd bdrs-3 p-20 mB-20">
-	<table class="table table-striped table-bordered" datatable>
-		<thead>
-			<tr>
-				<th>Name</th>
-				<th>Published</th>
-				<th>Create date</th>
-				<th>Action</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>Foo</td>
-				<td>true</td>
-				<td>15/02/2019</td>
-				<td>
-					<ul class="list-inline">
-						<li class="list-inline-item">
-							<a routerLink="/admin/blogs/1" 
-								title="Edit"
-								class="btn btn-primary btn-sm btn-admin"
-								><span class="ti-pencil"></span
-							></a>
-						</li>
-						<li class="list-inline-item">
-							<button
-								class="btn btn-danger btn-sm btn-admin"
-								title="Delete" (click)="onDelete()"
-							>
-								<i class="ti-trash"></i>
-							</button>
-						</li>
-					</ul>
-				</td>
-			</tr>
-		</tbody>
-	</table>
+  <table class="table table-striped table-bordered" datatable>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Published</th>
+        <th>Create date</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let blog of blogs">
+        <td>{{blog.title}}</td>
+        <td>{{blog.published}}</td>
+        <td>{{blog.createdAt.seconds * 1000 | date :'short'}}</td>
+        <td>
+          <ul class="list-inline">
+            <li class="list-inline-item">
+              <a routerLink="/admin/blogs/{{blog.id}}" title="Edit" class="btn btn-primary btn-sm btn-admin"><span
+                  class="ti-pencil"></span></a>
+            </li>
+            <li class="list-inline-item">
+              <button class="btn btn-danger btn-sm btn-admin" title="Delete" (click)="onDelete(blog)">
+                <i class="ti-trash"></i>
+              </button>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>

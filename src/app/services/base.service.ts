@@ -44,7 +44,7 @@ export class BaseService {
   }
 
   get timestamp() {
-    return firebase.firestore.FieldValue.serverTimestamp();
+    return new Date();
   }
 
   public delete(id) {

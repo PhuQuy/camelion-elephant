@@ -1,0 +1,22 @@
+.ftco-gray-bg {
+  background: url(/assets/images/beach.jpg) no-repeat;
+  background-size: cover;
+
+  h2 {
+    color: white;
+  }
+
+  img {
+      width: 500px;
+  }
+}
+
+.ftco-opacity-bg {
+    background: rgba(0,0,0,.6);
+    border-radius: 5px;
+}
+
+.ftco-sologan {
+    color: white;
+    font-size: 25px;
+}

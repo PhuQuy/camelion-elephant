@@ -1,72 +1,167 @@
 $color: rgb(255, 255, 255);
+$textColor : rgb(99, 99, 99);
 $background-clor: rgba(255, 255, 255, 0);
+//
+//   width: 60%;
+//   display: block;
+//   margin-left: auto;
+//   margin-right: auto;
+//   //background-color: rgba(0, 0, 0, .1);
+//   padding: 20px;
+//   input {
+//     border: none;
+//     color: $color !important;
+//     font-size: 19px;
+//     margin: 5px 0 5px 0;
+//     background: transparent !important;
+
+//     &::placeholder {
+//       color: $color;
+//       font-weight: 300;
+//     }
+//     &:focus,
+//     &:active {
+//       background: transparent !important;
+//     }
+//   }
+//   input:-webkit-autofill,
+//   input:-webkit-autofill:hover,
+//   input:-webkit-autofill:focus,
+//   textarea:-webkit-autofill,
+//   textarea:-webkit-autofill:hover,
+//   textarea:-webkit-autofill:focus,
+//   select:-webkit-autofill,
+//   select:-webkit-autofill:hover,
+//   select:-webkit-autofill:focus {
+//     -webkit-text-fill-color: white;
+//     transition: background-color 5000s ease-in-out 0s;
+//   }
+
+//   .input-container {
+//     display: -ms-flexbox; /* IE10 */
+//     // border-radius: 5px;
+//     min-height: 48px;
+//     display: flex;
+//     width: 100%;
+//     margin-bottom: 10px;
+//     background-color: $background-clor;
+//     border-bottom: 2px solid white;
+//   }
+//   .icon {
+//     padding: 5px;
+//     position: relative;
+//     left: 10px;
+//     height: 45px;
+//     background: transparent;
+//     color: $color;
+//     font-size: 30px !important;
+//     text-align: center;
+//   }
+//   .submit-button {
+//     border: solid 1px white !important;
+//     border-radius: 5px;
+//     background-color: transparent;
+//     color: white;
+//     padding: 10px 30px;
+//     text-align: center;
+//     min-width: 200px;
+//     font-size: 17px;
+//     font-weight: 500;
+//     &:hover {
+//       color: black;
+//       background-color: white;
+//       box-shadow: 0px 10px 15px 5px #7878786b;
+//       -webkit-transition-duration: 0.5s;
+//       transition-duration: 0.5s;
+//     }
+//     &:focus {
+//       outline: none;
+//     }
+//   }
+//   .check-button {
+//     font-size: 15px;
+//     font-weight: 300;
+//   }
+// }
 .login-form {
-  width: 50%;
+  width: 55%;
   display: block;
   margin-left: auto;
   margin-right: auto;
-
-  input {
-    border: none;
-    color: $color !important;
-    font-size: 16px;
-    margin: 5px 0 5px 0;
-    background: transparent !important;
-
-    &::placeholder {
-      color: $color;
-      font-weight: 400;
-    }
-    &:focus,
-    &:active {
-      background: transparent !important;
-    }
+  padding: 20px;
+  //background: rgba(228, 228, 228, 0.3);
+  z-index: -10;
+  label {
+    display: inline-block;
+    color: $textColor;
+    top: 100px;
+    font-size: 1.25em;
+    transition: all 0.2s ease;
+    z-index: 40;
+    position: relative;
+    top: -35px;
+    left: 40px;
   }
   input:-webkit-autofill,
   input:-webkit-autofill:hover,
-  input:-webkit-autofill:focus,
-  textarea:-webkit-autofill,
-  textarea:-webkit-autofill:hover,
-  textarea:-webkit-autofill:focus,
-  select:-webkit-autofill,
-  select:-webkit-autofill:hover,
-  select:-webkit-autofill:focus {
-    -webkit-text-fill-color: white;
+  input:-webkit-autofill:focus {
+    -webkit-text-fill-color: grey;
     transition: background-color 5000s ease-in-out 0s;
   }
-
-  .input-container {
-    display: -ms-flexbox; /* IE10 */
-    // border-radius: 5px;
-    min-height: 48px;
-    display: flex;
+  .input-contain {
     width: 100%;
-    margin-bottom: 15px;
-    background-color: $background-clor;
-    border-bottom: 2px solid white;
-  }
-  .icon {
-    padding: 5px;
     position: relative;
-    left: 10px;
-    height: 45px;
-    background: transparent;
+    min-height: 135px;
+    text-align: start;
+    margin: -25px auto -45px;
+  }
+  .remember-contain{
+    width: 100%;
+    position: relative;
+    min-height: 100px;
+    text-align: start;
+    margin: -25px auto -45px;
+  }
+
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    position: relative;
+    display: inline-block;
+    font-size: 1.2em;
+    padding: 0px 0px 5px 35px;
+    color: $textColor;
+    background-color: rgba(255, 255, 255, .8);
+    border: none;
+   
+    outline: none;
+    z-index: 20;
+  }
+
+  input[type="email"]:focus ~ label,
+  input[type="password"]:focus ~ label,
+  input[type="email"]:hover ~ label,
+  input[type="password"]:hover ~ label,
+  input[type="email"]:valid ~ label,
+  input[type="password"]:valid ~ label ,
+  label:hover{
+    top: -60px;
+    font-size: 13px;
     color: $color;
-    font-size: 30px !important;
-    text-align: center;
+    transition: all 0.4s ease;
   }
   .submit-button {
-    border: solid 1px white !important;
-    border-radius: 5px;
+    border: solid 1px $color !important;
     background-color: transparent;
-    color: white;
-    padding: 10px 30px;
+    color: $color;
+    padding: 5px 20px;
     text-align: center;
     min-width: 200px;
     font-size: 17px;
+    font-weight: 500;
     &:hover {
       color: black;
-      background-color: white;
+      background-color: $color;
       box-shadow: 0px 10px 15px 5px #7878786b;
       -webkit-transition-duration: 0.5s;
       transition-duration: 0.5s;
@@ -75,4 +170,27 @@ $background-clor: rgba(255, 255, 255, 0);
       outline: none;
     }
   }
+  // .check-button {
+  //   font-size: 15px;
+  //   font-weight: 300;
+  // }
+  .icon {
+    position: relative;
+    top: 48px;
+    left: 10px;
+    height: 45px;
+    background: transparent;
+    color: $textColor;
+    z-index: 40;
+    font-size: 18px !important;
+  }
+.invalid{
+  top: -60px;
+  font-size: 13px;
+  color: $color;
+}
+.error{
+  min-height: 10px;
+  color: rgb(247, 40, 51);
+}
 }
