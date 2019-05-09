@@ -1,23 +1,78 @@
+$color: rgb(255, 255, 255);
+$background-clor: rgba(255, 255, 255, 0);
 .login-form {
-  input {
-    border-radius: 5px;
-    border: none;
-    height: 45px !important;
-    background-color: rgba(255, 255, 255, .4) !important;
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 
-    &:focus {
-      background-color: rgba(255, 255, 255, .6) !important;
-    }
+  input {
+    border: none;
+    color: $color !important;
+    font-size: 16px;
+    margin: 5px 0 5px 0;
+    background: transparent !important;
 
     &::placeholder {
-      color: white;
-      font-weight: 200;
+      color: $color;
+      font-weight: 400;
+    }
+    &:focus,
+    &:active {
+      background: transparent !important;
     }
   }
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    -webkit-text-fill-color: white;
+    transition: background-color 5000s ease-in-out 0s;
+  }
 
-  button {
-    border: none !important;
+  .input-container {
+    display: -ms-flexbox; /* IE10 */
+    // border-radius: 5px;
+    min-height: 48px;
+    display: flex;
+    width: 100%;
+    margin-bottom: 15px;
+    background-color: $background-clor;
+    border-bottom: 2px solid white;
+  }
+  .icon {
+    padding: 5px;
+    position: relative;
+    left: 10px;
+    height: 45px;
+    background: transparent;
+    color: $color;
+    font-size: 30px !important;
+    text-align: center;
+  }
+  .submit-button {
+    border: solid 1px white !important;
+    border-radius: 5px;
+    background-color: transparent;
+    color: white;
     padding: 10px 30px;
-    text-align: right;
+    text-align: center;
+    min-width: 200px;
+    font-size: 17px;
+    &:hover {
+      color: black;
+      background-color: white;
+      box-shadow: 0px 10px 15px 5px #7878786b;
+      -webkit-transition-duration: 0.5s;
+      transition-duration: 0.5s;
+    }
+    &:focus {
+      outline: none;
+    }
   }
 }
