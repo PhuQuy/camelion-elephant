@@ -8,26 +8,26 @@
             <h1>Login</h1>
             <div class="mt-3">
               <div class="input-contain">
-                  <i class="fa fa-user icon"></i>
-                <input type="email" placeholder="" required [(ngModel)]="email" name="email" email="true"/>
+                <i class="fa fa-user icon"></i>
+                <input type="email" placeholder="" required minlength="1" [(ngModel)]="email" name="email"
+                  email="true" />
                 <label>Username</label>
               </div>
               <small class="form-text text-md-left text-white">We'll never share your data with anyone else.</small>
               <div class="input-contain">
-                  <i class="fas fa-unlock-alt icon"></i>
-                <input type="password"  placeholder="" required [(ngModel)]="password"
-                  name="password" password="true" />
-                  <label>Password</label>
+                <i class="fas fa-unlock-alt icon"></i>
+                <input type="password" placeholder="" required [(ngModel)]="password" name="password" password="true" />
+                <label>Password</label>
               </div>
-              <div class="text-md-left">
-                <input type="checkbox" [(ngModel)]="remember"
-                  name="remember" />
-                  <span class="check-button"> Remember Me</span> 
+              <div class="text-md-left remember-contain mt-2">
+                <input type="checkbox"
+                    [(ngModel)]="remember" name="remember" [ngModelOptions]="{standalone: true}" (change)="rememberClick()"/>
+                    <span class="check-button" (click)="rememberClick()"> Remember Me</span>
               </div>
             </div>
             <div class="row">
-              <div class="col-12 mx-auto text-center text-md-center mt-3">
-                <button type="submit" class="submit-button" (click)="login()">Submit</button>
+              <div class="col-12 mx-auto my-0 text-center text-md-center ">
+                <button type="submit" class="submit-button" (click)="login()" [disabled]="">Submit</button>
                 <div class="mt-3"><a class="text-light" href="#"><small>Forgot password?</small></a></div>
               </div>
             </div>

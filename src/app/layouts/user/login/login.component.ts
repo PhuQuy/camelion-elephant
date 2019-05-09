@@ -13,12 +13,14 @@ export class LoginComponent extends BaseComponent implements OnInit {
     email;
     password;
     error;
+    remember = false;
 
     constructor(@Inject(PLATFORM_ID) public platformId: string, private af: AngularFireAuth, public router: Router) {
         super(platformId);
     }
 
     ngOnInit() {
+        console.log(this.remember);
     }
 
     ngAfterViewInit() {
@@ -33,7 +35,9 @@ export class LoginComponent extends BaseComponent implements OnInit {
             this.error = err.message;
         });
     }
-
+    rememberClick(){
+        this.remember = !this.remember;
+    }
     // detectFiles(event) {
     //     let file = event.target.files.item(0);
     //     const that = this;
