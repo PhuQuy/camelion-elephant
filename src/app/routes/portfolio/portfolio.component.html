@@ -3,29 +3,51 @@
     <div class="overlay hero-area-fix"></div>
     <div class="container">
       <div class="row slider-text justify-content-center align-items-center">
-        <div class="col-md-10 col-sm-12 mb-4 text-center" data-aos="fade-up" data-aos-delay="200" data-aos-offset="0">
-          <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Portfolio</span></p>
+        <div
+          class="col-md-10 col-sm-12 mb-4 text-center"
+          data-aos="fade-up"
+          data-aos-delay="200"
+          data-aos-offset="0"
+        >
+          <p class="breadcrumbs">
+            <span class="mr-2"><a href="index.html">Home</a></span>
+            <span>Portfolio</span>
+          </p>
           <h1 class="mb-3 bread">Portfolio</h1>
         </div>
       </div>
     </div>
   </div>
 </section>
-
 <section class="ftco-section ftco-degree-bg" #portfolioHeader>
   <div class="container">
-    <div class="row no-gutters">
-      <div class="block-3 d-md-flex" *ngFor="let portfolio of portfolios | paginate: config; let even=even;" data-aos="fade-up">
-        <a [routerLink]="['/portfolio', portfolio.id]" class="image" [class.order-2]="even" [style.background]="'url(' + portfolio.photoURL + ')'"></a>
-        <div class="text">
-          <h4 class="subheading">{{portfolio.subTitle}}</h4>
-          <h2 class="heading"><a  [routerLink]="['/portfolio', portfolio.id]">{{portfolio.title}}</a></h2>
-          <p>{{portfolio.description}}</p>
-        </div>
+    <div class="row ">
+      <div class="col-md-4">
+        <app-portfolio-item></app-portfolio-item>
+      </div>
+      <div class="col-md-4">
+        <app-portfolio-item></app-portfolio-item>
+      </div>
+      <div class="col-md-4">
+        <app-portfolio-item></app-portfolio-item>
       </div>
     </div>
-    <div class="row mt-5">
-      <pagination class="mx-auto" [config]="config" (onPageChange)="pageChange($event)"></pagination>
+    <div class="row">
+      <div class="col-md-8">
+        <app-portfolio-item classSize="big"></app-portfolio-item>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <div class="col-md-12">
+            <app-portfolio-item></app-portfolio-item>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <app-portfolio-item></app-portfolio-item>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>

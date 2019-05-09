@@ -36,9 +36,8 @@ export class AddEditBlogComponent {
             "ordered-list",
             {
                 name: "image",
-                action: () => {
-                    console.log("aaaaaaaa");
-                    this.openModalImage();
+                action: editor => {
+                    this.openModalImage(editor);
                 },
                 className: "fa fa-image",
                 title: "Upload Image"
@@ -90,9 +89,17 @@ export class AddEditBlogComponent {
     addTag(name) {
         return { name: name, tag: true };
     }
-
-    openModalImage() {
+    openModalImage(editor) {
+        console.log("edittor", editor);
         const modalRef = this.modalService.open(UploadImageModalComponent);
+        modalRef.result.then(result => {
+            if (result) {
+                console.log("result", result);
+                let cm = editor.codemirror;
+                let output = "![](" + result + ")";
+                cm.replaceSelection(output);
+            }
+        });
     }
 
     onChange() { }
