@@ -17,7 +17,7 @@
               <div class="input-contain">
                 <i class="fas fa-unlock-alt icon"></i>
                 <input type="password" placeholder="" required [(ngModel)]="password" name="password" password="true" #userPassword="ngModel"/>
-                <label>Password</label>
+                <label [className]="(userPassword.dirty && userPassword.touched)? 'invalid' : '' ">Password</label>
               </div>
               <div class="text-md-left remember-contain mt-2">
                 <input type="checkbox"
