@@ -37,23 +37,24 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <div class="carousel">
-          <div class="item">
-            <a href="portfolio.html">
-              <img src="/assets/images/dashboard_full_1.jpg" class="img-fluid" alt="">
-            </a>
-          </div>
-          <!-- <div class="item">
-            <a href="portfolio.html">
-              <img src="/assets/images/dashboard_full_2.jpg" class="img-fluid" alt="">
-            </a>
-          </div>
-          <div class="item">
-            <a href="portfolio.html">
-              <img src="/assets/images/dashboard_full_3.jpg" class="img-fluid" alt="">
-            </a>
-          </div> -->
-        </div>
+        <owl-carousel-o #owlCar [options]="customOptions" (click)="getClickEvent(slide.link)">
+          <ng-container *ngFor="let slide of slideStore; index as id">
+            <ng-template carouselSlide [id]="id">
+              <div>
+                <img class="bg-white d-flex center" [src]="slide.src" [alt]="slide.alt" [title]="slide.title"
+                  style="width: 100%;border-radius: 5px;" />
+                <div class="overlay-link col-12 ">
+                  <a [href]="slide.link">
+                    <div class='overlay-bar p-5'>
+                      <h2 class="text-white">{{slide.name}}</h2>
+                      {{slide.link}}
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </ng-template>>
+          </ng-container>
+        </owl-carousel-o>
       </div>
     </div>
   </div>

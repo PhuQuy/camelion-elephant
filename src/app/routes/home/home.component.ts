@@ -21,6 +21,58 @@ var TxtType = function (el, toRotate, period) {
     styleUrls: ['./home.component.scss']
 })
 export class HomeComponent extends BaseComponent {
+    customOptions: any = {
+        loop: true,
+        mouseDrag: true,
+        touchDrag: true,
+        pullDrag: true,
+        dots: true,
+        center: true,
+        margin: 50,
+        navSpeed: 700,
+        stagePadding: 20,
+        nav: true,
+        navText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>'],
+        navClass: ['owl-prev', 'owl-next'],
+        responsiveClass: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            480: {
+                items: 1
+            },
+            768: {
+                items: 1,
+                // loop: false
+            },
+            990: {
+                items: 1,
+                // loop: false
+            }
+        },
+        navElement: 'div',
+        lazyLoad: true,
+        lazyLoadEager: 2,
+        responsiveBaseElement: 'div'
+    };
+    slideStore = [
+        {
+            src: "/assets/images/dashboard_full_1.jpg",
+            link:"localhost:4200",
+            name: "Marvel"
+        },
+        {
+            src: "/assets/images/dashboard_full_2.jpg",
+            link:"localhost:8200",
+            name: "DC"
+        },
+        {
+            src: "/assets/images/dashboard_full_3.jpg",
+            link:"localhost:8080",
+            name: "Anime"
+        },
+    ];
     closeResult: string;
 
     constructor(@Inject(PLATFORM_ID) public platformId: string,
@@ -105,6 +157,9 @@ export class HomeComponent extends BaseComponent {
                 that.tick();
             }, delta);
         };
+    }
+    getClickEvent(data) {
+        console.log(data);
     }
 
 }
