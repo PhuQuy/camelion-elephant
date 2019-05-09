@@ -1,72 +1,154 @@
 $color: rgb(255, 255, 255);
 $background-clor: rgba(255, 255, 255, 0);
+//
+//   width: 60%;
+//   display: block;
+//   margin-left: auto;
+//   margin-right: auto;
+//   //background-color: rgba(0, 0, 0, .1);
+//   padding: 20px;
+//   input {
+//     border: none;
+//     color: $color !important;
+//     font-size: 19px;
+//     margin: 5px 0 5px 0;
+//     background: transparent !important;
+
+//     &::placeholder {
+//       color: $color;
+//       font-weight: 300;
+//     }
+//     &:focus,
+//     &:active {
+//       background: transparent !important;
+//     }
+//   }
+//   input:-webkit-autofill,
+//   input:-webkit-autofill:hover,
+//   input:-webkit-autofill:focus,
+//   textarea:-webkit-autofill,
+//   textarea:-webkit-autofill:hover,
+//   textarea:-webkit-autofill:focus,
+//   select:-webkit-autofill,
+//   select:-webkit-autofill:hover,
+//   select:-webkit-autofill:focus {
+//     -webkit-text-fill-color: white;
+//     transition: background-color 5000s ease-in-out 0s;
+//   }
+
+//   .input-container {
+//     display: -ms-flexbox; /* IE10 */
+//     // border-radius: 5px;
+//     min-height: 48px;
+//     display: flex;
+//     width: 100%;
+//     margin-bottom: 10px;
+//     background-color: $background-clor;
+//     border-bottom: 2px solid white;
+//   }
+//   .icon {
+//     padding: 5px;
+//     position: relative;
+//     left: 10px;
+//     height: 45px;
+//     background: transparent;
+//     color: $color;
+//     font-size: 30px !important;
+//     text-align: center;
+//   }
+//   .submit-button {
+//     border: solid 1px white !important;
+//     border-radius: 5px;
+//     background-color: transparent;
+//     color: white;
+//     padding: 10px 30px;
+//     text-align: center;
+//     min-width: 200px;
+//     font-size: 17px;
+//     font-weight: 500;
+//     &:hover {
+//       color: black;
+//       background-color: white;
+//       box-shadow: 0px 10px 15px 5px #7878786b;
+//       -webkit-transition-duration: 0.5s;
+//       transition-duration: 0.5s;
+//     }
+//     &:focus {
+//       outline: none;
+//     }
+//   }
+//   .check-button {
+//     font-size: 15px;
+//     font-weight: 300;
+//   }
+// }
 .login-form {
-  width: 50%;
+  width: 60%;
   display: block;
   margin-left: auto;
   margin-right: auto;
-
-  input {
-    border: none;
-    color: $color !important;
-    font-size: 16px;
-    margin: 5px 0 5px 0;
-    background: transparent !important;
-
-    &::placeholder {
-      color: $color;
-      font-weight: 400;
-    }
-    &:focus,
-    &:active {
-      background: transparent !important;
-    }
+  label {
+    display: inline-block;
+    color: $color;
+    top: 100px;
+    font-size: 1.25em;
+    transition: all 0.2s ease;
+    z-index: 10;
+    position: relative;
+    top: -35px;
+    left: 40px;
   }
   input:-webkit-autofill,
   input:-webkit-autofill:hover,
-  input:-webkit-autofill:focus,
-  textarea:-webkit-autofill,
-  textarea:-webkit-autofill:hover,
-  textarea:-webkit-autofill:focus,
-  select:-webkit-autofill,
-  select:-webkit-autofill:hover,
-  select:-webkit-autofill:focus {
-    -webkit-text-fill-color: white;
+  input:-webkit-autofill:focus {
+    -webkit-text-fill-color: $color;
     transition: background-color 5000s ease-in-out 0s;
   }
-
-  .input-container {
-    display: -ms-flexbox; /* IE10 */
-    // border-radius: 5px;
-    min-height: 48px;
-    display: flex;
+  .input-contain {
     width: 100%;
-    margin-bottom: 15px;
-    background-color: $background-clor;
-    border-bottom: 2px solid white;
-  }
-  .icon {
-    padding: 5px;
     position: relative;
-    left: 10px;
-    height: 45px;
-    background: transparent;
+    min-height: 135px;
+    text-align: start;
+    margin: -35px auto -45px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    position: relative;
+    display: inline-block;
+    font-size: 1.25em;
+    padding: 0px 0px 0px 40px;
     color: $color;
-    font-size: 30px !important;
-    text-align: center;
+    background-color: transparent;
+    border: none;
+    border-bottom: solid 2px $color;
+    outline: none;
+    z-index: 20;
+  }
+
+  input[type="email"]:focus ~ label,
+  input[type="password"]:focus ~ label,
+  input[type="email"]:valid ~ label,
+  input[type="password"]:valid ~ label {
+    top: -60px;
+    font-size: 12px;
+    transition: all 0.4s ease;
   }
   .submit-button {
-    border: solid 1px white !important;
+    border: solid 1px $color !important;
     border-radius: 5px;
     background-color: transparent;
-    color: white;
+    color: $color;
     padding: 10px 30px;
     text-align: center;
     min-width: 200px;
     font-size: 17px;
+    font-weight: 500;
     &:hover {
-      color: black;
-      background-color: white;
+      color: $color;
+      background-color: $color;
       box-shadow: 0px 10px 15px 5px #7878786b;
       -webkit-transition-duration: 0.5s;
       transition-duration: 0.5s;
@@ -74,5 +156,18 @@ $background-clor: rgba(255, 255, 255, 0);
     &:focus {
       outline: none;
     }
+  }
+  .check-button {
+    font-size: 15px;
+    font-weight: 300;
+  }
+  .icon {
+    position: relative;
+    top: 45px;
+    left: 10px;
+    height: 45px;
+    background: transparent;
+    color: $color;
+    font-size: 27px !important;
   }
 }
