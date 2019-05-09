@@ -181,5 +181,9 @@ $background-clor: rgba(255, 255, 255, 0);
     z-index: 40;
     font-size: 18px !important;
   }
-
+.invalid{
+  top: -60px;
+  font-size: 13px;
+  color: $color;
+}
 }

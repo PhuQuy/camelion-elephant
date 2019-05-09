@@ -20,14 +20,14 @@ export class LoginComponent extends BaseComponent implements OnInit {
     }
 
     ngOnInit() {
-        console.log(this.remember);
+        
     }
 
     ngAfterViewInit() {
         this.initView();
     }
 
-    login() {
+    login() {  
         this.af.auth.signInWithEmailAndPassword(this.email, this.password).then(() => {
             this.error = null;
             this.router.navigate(['/admin/dashboard']);
