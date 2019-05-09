@@ -3,6 +3,7 @@ import { NgbModal, ModalDismissReasons } from "@ng-bootstrap/ng-bootstrap";
 import { CategoryModalComponent } from "./category-modal/category-modal.component";
 import { ConfirmModalComponent } from "@components/admin/confirm-modal/confirm-modal.component";
 import { CategoryService } from "app/services/category.service";
+import { Subject } from "rxjs";
 
 @Component({
 	selector: "app-admin-categories",
@@ -13,6 +14,7 @@ import { CategoryService } from "app/services/category.service";
 export class CategoriesComponent {
 	closeResult: string;
 	categories;
+	dtTrigger = new Subject();
 	
 	constructor(private modalService: NgbModal, protected categoryService: CategoryService) {}
 
@@ -23,6 +25,8 @@ export class CategoriesComponent {
 	getAll() {
 		this.categoryService.getAll().subscribe(categories => {
 			this.categories = categories;
+			this.dtTrigger.next();
+
 		})
 	}
 
@@ -61,5 +65,8 @@ export class CategoriesComponent {
 				});
 			}
 		})
+	}
+	ngOnDestroy(): void {
+		this.dtTrigger.unsubscribe();
 	}
 }

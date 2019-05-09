@@ -66,7 +66,6 @@ export class AddEditBlogComponent {
     }
     openModalImage() {
         const modalRef = this.modalService.open(UploadImageModalComponent);
-        // modalRef.componentInstance.new = true;
     }
     onChange() {}
 

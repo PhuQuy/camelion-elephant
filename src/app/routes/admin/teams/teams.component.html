@@ -1,6 +1,6 @@
-<h4 class="c-grey-900 mT-10 mB-30">Tags <small>manage</small></h4>
+<h4 class="c-grey-900 mT-10 mB-30">Teams <small>manage</small></h4>
 <div class="mB-20">
-  <a class="btn btn-info btn-admin" href="javascript:void(0);" (click)="onAdd()">
+  <a routerLink="/admin/teams/new" class="btn btn-info btn-admin">
     Add
   </a>
 </div>
@@ -13,16 +13,16 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let tag of tags">
-        <td>{{tag.name}}</td>
+      <tr *ngFor="let portfolio of portfolios">
+        <td>{{portfolio.title}}</td>
         <td>
           <ul class="list-inline">
             <li class="list-inline-item">
-              <button (click)="onEdit(tag)" title="Edit" class="btn btn-primary btn-sm btn-admin"><span
-                  class="ti-pencil"></span></button>
+              <a routerLink="/admin/teams/{{portfolio.id}}" title="Edit"
+                class="btn btn-primary btn-sm btn-admin"><span class="ti-pencil"></span></a>
             </li>
             <li class="list-inline-item">
-              <button class="btn btn-danger btn-sm btn-admin" title="Delete" (click)="onDelete(tag)">
+              <button class="btn btn-danger btn-sm btn-admin" title="Delete" (click)="delete(portfolio)">
                 <i class="ti-trash"></i>
               </button>
             </li>

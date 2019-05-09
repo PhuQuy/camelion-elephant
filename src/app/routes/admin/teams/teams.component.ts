@@ -7,12 +7,12 @@ import { PortfolioService } from "app/services/portfolio.service";
 import { Subject } from "rxjs";
 
 @Component({
-	selector: "app-portfolio",
-	templateUrl: "./portfolio.component.html",
-	styleUrls: ["./portfolio.component.scss"],
+	selector: "app-teams",
+	templateUrl: "./teams.component.html",
+	styleUrls: ["./teams.component.scss"],
 	providers: [PortfolioService]
 })
-export class PortfolioComponent {
+export class TeamsComponent {
 	portfolios;
 	constructor(private modalService: NgbModal, protected portfolioService: PortfolioService) {}
 	dtTrigger = new Subject();
@@ -31,7 +31,7 @@ export class PortfolioComponent {
 
 	delete(portfolio) {
 		const modalRef = this.modalService.open(ConfirmModalComponent);
-		modalRef.componentInstance.title = "Portfolio delete";
+		modalRef.componentInstance.title = "Team delete";
 		modalRef.result.then(result => {
 			if(result === 'ok') {
 				this.portfolioService.delete(portfolio.id).then();
