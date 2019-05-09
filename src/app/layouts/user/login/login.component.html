@@ -13,13 +13,13 @@
                   email="true" #username="ngModel"/>
                 <label [className]="(username.dirty && username.touched)? 'invalid' : '' ">Username</label>
               </div>
-              <small class="form-text text-md-left text-white">{{((username.dirty && username.touched) && username.invalid)? 'Email not valid' : ''}}</small>
+              <small class="error form-text text-md-left">{{((username.dirty && username.touched) && username.invalid)? 'Email not valid' : ''}}</small>
               <div class="input-contain">
                 <i class="fas fa-unlock-alt icon"></i>
                 <input type="password" placeholder="" required minlength="5" [(ngModel)]="password" name="password" password="true" #userPassword="ngModel"/>
                 <label [className]="(userPassword.dirty && userPassword.touched)? 'invalid' : '' ">Password</label>
               </div>
-              <small class="form-text text-md-left text-white">{{((userPassword.dirty && userPassword.touched) && userPassword.invalid)? 'Password must longer 6 characters' : ''}}</small>
+              <small class="error form-text text-md-left">{{((userPassword.dirty && userPassword.touched) && userPassword.invalid)? 'Password must longer 6 characters' : ''}}</small>
               <div class="text-md-left remember-contain mt-2">
                 <input type="checkbox"
                     [(ngModel)]="remember" name="remember" [ngModelOptions]="{standalone: true}" (change)="rememberClick()"/>
