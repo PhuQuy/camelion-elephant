@@ -8,6 +8,8 @@ import { SeoService } from '@shared/seo.service';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent extends BaseComponent implements OnInit {
+
+    logo = 'assets/images/logo3.png';
     constructor(@Inject(PLATFORM_ID) public platformId: string, private seoService: SeoService) {
         super(platformId);
     }

@@ -12666,57 +12666,57 @@ textarea.form-control {
 
 .submit-form .form-group textarea {
   font-size: 15px;
-  background: #fff !important;
+  background: transparent !important;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #29bae4 !important;
+  color: #fff !important;
 }
 
 .submit-form .form-group textarea::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
-  color: #29bae4 !important;
+  color: rgba(255, 255, 255, 0.8) !important;
 }
 
 .submit-form .form-group textarea::-moz-placeholder {
   /* Firefox 19+ */
-  color: #29bae4 !important;
+  color: rgba(255, 255, 255, 0.8) !important;
 }
 
 .submit-form .form-group textarea:-ms-input-placeholder {
   /* IE 10+ */
-  color: #29bae4 !important;
+  color: rgba(255, 255, 255, 0.8) !important;
 }
 
 .submit-form .form-group textarea:-moz-placeholder {
   /* Firefox 18- */
-  color: #29bae4 !important;
+  color: rgba(255, 255, 255, 0.8) !important;
 }
 
 .submit-form .form-group input {
   font-size: 15px;
-  height: 30px !important;
-  background: #fff !important;
+  height: 40px !important;
+  background: transparent !important;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #29bae4 !important;
+  color: rgba(255, 255, 255, 0.8) !important;
 }
 
 .submit-form .form-group input::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
-  color: #29bae4 !important;
+  color: rgba(255, 255, 255, 0.8) !important;
 }
 
 .submit-form .form-group input::-moz-placeholder {
   /* Firefox 19+ */
-  color: #29bae4 !important;
+  color: rgba(255, 255, 255, 0.8) !important;
 }
 
 .submit-form .form-group input:-ms-input-placeholder {
   /* IE 10+ */
-  color: #29bae4 !important;
+  color: rgba(255, 255, 255, 0.8) !important;
 }
 
 .submit-form .form-group input:-moz-placeholder {
   /* Firefox 18- */
-  color: #29bae4 !important;
+  color: rgba(255, 255, 255, 0.8) !important;
 }
 
 .submit-form .form-group p {
@@ -12730,13 +12730,15 @@ textarea.form-control {
 
 .submit-form .btn {
   border: 1px solid rgba(255, 255, 255, 0.2) !important;
-  background: transparent !important;
+  background: #fff !important;
+  height: 50px;
   border-radius: 5px;
+  color: #29bae4 !important;
 }
 
 .submit-form .btn-primary:hover {
-  background: #fff !important;
-  color: #0079c2 !important;
+  background: #29bae4!important;
+  color: #fff !important;
 }
 
 .sidebar-box {
