@@ -88,6 +88,9 @@ $background-clor: rgba(255, 255, 255, 0);
   display: block;
   margin-left: auto;
   margin-right: auto;
+  padding: 20px;
+  //background: rgba(228, 228, 228, 0.3);
+  z-index: -10;
   label {
     display: inline-block;
     color: $textColor;
@@ -125,8 +128,8 @@ $background-clor: rgba(255, 255, 255, 0);
     width: 100%;
     position: relative;
     display: inline-block;
-    font-size: 1.25em;
-    padding: 0px 0px 0px 40px;
+    font-size: 1.2em;
+    padding: 0px 0px 5px 35px;
     color: $textColor;
     background-color: rgba(255, 255, 255, .8);
     border: none;
@@ -188,6 +191,6 @@ $background-clor: rgba(255, 255, 255, 0);
 }
 .error{
   min-height: 10px;
-  color: hotpink;
+  color: rgb(247, 40, 51);
 }
 }
