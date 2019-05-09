@@ -59,7 +59,7 @@ export class HomeComponent extends BaseComponent {
     slideStore = [
         {
             src: "/assets/images/dashboard_full_1.jpg",
-            link:"localhost:4200",
+            link:"https://google.com",
             name: "Marvel"
         },
         {
