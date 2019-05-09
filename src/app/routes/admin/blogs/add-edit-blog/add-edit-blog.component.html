@@ -2,9 +2,9 @@
 <div class="bgc-white bd bdrs-3 p-20 mB-20">
   <form [formGroup]="blogForm">
     <div class="upload-image">
-      <div class="upload-icon" (click)="file.click()">
-        <img src="/assets/images/upload.png" />
-        <input type="file" name="image" accept="image/*" hidden (change)="preview(file.files)" #file />
+      <div class="upload-icon">
+        <img src="/assets/images/upload.png" (click)="file.click()" />
+        <input type="file" name="image" accept="image/*" hidden (change)="preview($event)" #file />
       </div>
       <img class="image-default" [src]="imgURL" />
     </div>
@@ -23,7 +23,7 @@
       </div>
       <div class="form-group col-md-4">
         <label for="inputState">Published </label>
-        <select id="inputState" class="form-control">
+        <select id="inputState" class="form-control" formControlName="published">
           <option>True</option>
           <option>False</option>
         </select>
@@ -32,15 +32,14 @@
     </div>
     <div class="form-group">
       <label>Category</label>
-      <select class="form-control">
-        <option>React</option>
-        <option>Angular</option>
-      </select>
+      <ng-select [items]="categories" [hideSelected]="true" multiple="true" placeholder="Select category"
+        bindLabel="name" formControlName="category">
+      </ng-select>
     </div>
     <div class="form-group">
       <label for="exampleInputPassword1">Content</label>
-      <simplemde (change)="onChange()" formControlName="content"  [options]="options"></simplemde>
+      <simplemde (change)="onChange()" formControlName="content" [options]="options"></simplemde>
     </div>
-    <button type="submit" class="btn btn-primary btn-admin">Save</button>
+    <button type="submit" class="btn btn-primary btn-admin" (click)="save()">Save</button>
   </form>
 </div>
