@@ -4,6 +4,8 @@ import * as AOS from 'aos';
 import { BaseComponent } from '@core/base/base.component';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { SeoService } from '@shared/seo.service';
+import { Subject } from 'rxjs';
+import { PortfolioService } from '@services/portfolio.service';
 
 declare let $: any;
 var TxtType = function (el, toRotate, period) {
@@ -18,7 +20,8 @@ var TxtType = function (el, toRotate, period) {
 @Component({
     selector: 'app-home',
     templateUrl: './home.component.html',
-    styleUrls: ['./home.component.scss']
+    styleUrls: ['./home.component.scss'],
+    providers: [PortfolioService]
 })
 export class HomeComponent extends BaseComponent {
     customOptions: any = {
@@ -59,17 +62,17 @@ export class HomeComponent extends BaseComponent {
     slideStore = [
         {
             src: "/assets/images/dashboard_full_1.jpg",
-            link:"https://google.com",
+            link: "https://google.com",
             name: "Marvel"
         },
         {
             src: "/assets/images/dashboard_full_2.jpg",
-            link:"localhost:8200",
+            link: "localhost:8200",
             name: "DC"
         },
         {
             src: "/assets/images/dashboard_full_3.jpg",
-            link:"localhost:8080",
+            link: "localhost:8080",
             name: "Anime"
         },
     ];
@@ -128,8 +131,10 @@ export class HomeComponent extends BaseComponent {
                 }
             ]
         }];
+    portfolios:any;
+    dtTrigger = new Subject();
     constructor(@Inject(PLATFORM_ID) public platformId: string,
-        private modalService: NgbModal, private seoService: SeoService) {
+        private modalService: NgbModal, private seoService: SeoService, protected portfolioService: PortfolioService) {
         super(platformId);
     }
 
@@ -154,14 +159,18 @@ export class HomeComponent extends BaseComponent {
     }
 
     ngOnInit() {
+        this.getAll();
         this.seoService.generateTags({
             title: 'Home',
             description: 'Liên hệ Vay vốn sinh viên',
             slug: 'home',
             keywords: 'vay von sinh vien'
         });
-    }
 
+    }
+    ngOnDestroy(): void {
+        this.dtTrigger.unsubscribe();
+    }
     open(content) {
         this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title', size: 'lg', keyboard: true, windowClass: 'modal', centered: true }).result.then((result) => {
             this.closeResult = `Closed with: ${result}`;
@@ -211,8 +220,21 @@ export class HomeComponent extends BaseComponent {
             }, delta);
         };
     }
-    getClickEvent(data) {
-        console.log(data);
+
+    getAll() {
+        this.portfolioService.getAll().subscribe(portfolios => {
+            if (portfolios.length > 0) {
+                this.portfolios = portfolios;
+                console.log("Log", portfolios);
+                this.dtTrigger.next();
+            }
+            else {
+                this.portfolios = null;
+            }
+
+
+
+        })
     }
 
 }

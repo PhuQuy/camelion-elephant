@@ -61,7 +61,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <owl-carousel-o #owlCar [options]="customOptions" (click)="getClickEvent(slide.link)">
+        <owl-carousel-o #owlCar [options]="customOptions" >
           <ng-container *ngFor="let slide of slideStore; index as id">
             <ng-template carouselSlide [id]="id">
               <div>
@@ -193,13 +193,13 @@
     </div>
     <div class="row">
       <div class="col-md-4">
-        <app-portfolio-item></app-portfolio-item>
+        <app-portfolio-item [portfolios]="portfolios[0]"></app-portfolio-item>
       </div>
       <div class="col-md-4">
-        <app-portfolio-item></app-portfolio-item>
+        <app-portfolio-item [portfolios]="portfolios[0]"></app-portfolio-item>
       </div>
       <div class="col-md-4">
-        <app-portfolio-item></app-portfolio-item>
+        <app-portfolio-item [portfolios]="portfolios[0]"></app-portfolio-item>
       </div>
     </div>
     <!-- <div class="row no-gutters">

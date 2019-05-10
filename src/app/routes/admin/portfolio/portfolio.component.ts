@@ -14,8 +14,9 @@ import { Subject } from "rxjs";
 })
 export class PortfolioComponent {
 	portfolios;
-	constructor(private modalService: NgbModal, protected portfolioService: PortfolioService) {}
 	dtTrigger = new Subject();
+	constructor(private modalService: NgbModal, protected portfolioService: PortfolioService) {}
+	
 
 	ngOnInit() {
 		this.getAll();

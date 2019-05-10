@@ -11,7 +11,10 @@
     color: rgb(173, 173, 173);
   }
 }
-
+::ng-deep .owl-item{
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px 0px,
+		rgba(0, 0, 0, 0.02) 0px 0px 0px 1px;
+}
 ::ng-deep .owl-carousel .owl-nav .owl-prev {
   background: transparent !important;
   font-size: 37px !important;

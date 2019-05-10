@@ -20,31 +20,31 @@
   </div>
 </section>
 <section class="ftco-section ftco-degree-bg" #portfolioHeader>
-  <div class="container">
+  <div class="container" *ngIf="portfolios">
     <div class="row ">
       <div class="col-md-4">
-        <app-portfolio-item></app-portfolio-item>
+        <app-portfolio-item [portfolios]="portfolios[0]"></app-portfolio-item>
       </div>
       <div class="col-md-4">
-        <app-portfolio-item></app-portfolio-item>
+        <app-portfolio-item [portfolios]="portfolios[0]"></app-portfolio-item>
       </div>
       <div class="col-md-4">
-        <app-portfolio-item></app-portfolio-item>
+        <app-portfolio-item [portfolios]="portfolios[0]"></app-portfolio-item>
       </div>
     </div>
     <div class="row">
       <div class="col-md-8">
-        <app-portfolio-item classSize="big"></app-portfolio-item>
+        <app-portfolio-item classSize="big" [portfolios]="portfolios[0]"></app-portfolio-item>
       </div>
       <div class="col-md-4">
         <div class="row">
           <div class="col-md-12">
-            <app-portfolio-item></app-portfolio-item>
+            <app-portfolio-item [portfolios]="portfolios[0]"></app-portfolio-item>
           </div>
         </div>
         <div class="row">
           <div class="col-md-12">
-            <app-portfolio-item></app-portfolio-item>
+            <app-portfolio-item [portfolios]="portfolios[0]"></app-portfolio-item>
           </div>
         </div>
       </div>
