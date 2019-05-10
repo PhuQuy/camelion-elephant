@@ -18,6 +18,9 @@ export class ContactComponent extends BaseComponent implements OnInit {
         number: null,
         message: null
     }
+    lat: number = 10.880319;
+    lng: number = 106.794486;
+    
     constructor(@Inject(PLATFORM_ID) public platformId: string, private seoService: SeoService,
     private contactService: ContactService) {
         super(platformId);
@@ -25,13 +28,12 @@ export class ContactComponent extends BaseComponent implements OnInit {
 
     ngOnInit() {
         this.seoService.generateTags({
-            title: ' Contact',
-            description: 'Liên hệ Vay vốn sinh viên',
-            slug: 'contact',
-            keywords: 'vay von sinh vien'
+            title: " Contact",
+            description: "Liên hệ Vay vốn sinh viên",
+            slug: "contact",
+            keywords: "vay von sinh vien"
         });
     }
-
 
     ngAfterViewInit() {
         this.initView();

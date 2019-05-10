@@ -9,6 +9,7 @@ import { BaseComponent } from '@core/base/base.component';
 export class BlogItemComponent extends BaseComponent implements OnInit {
 
     @Input() blog;
+    createDate;
     constructor(@Inject(PLATFORM_ID) public platformId: string) {
         super(platformId);
     }
@@ -17,6 +18,7 @@ export class BlogItemComponent extends BaseComponent implements OnInit {
     }
 
     ngOnInit() {
+        this.createDate = new Date(this.blog.createdAt.seconds);
     }
 
 }

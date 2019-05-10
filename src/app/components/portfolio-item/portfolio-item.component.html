@@ -1,10 +1,15 @@
-<a class="portfolio-item {{classSize}}" data-aos="fade-up"
-        data-aos-delay="200"
-        data-aos-offset="0" [style.backgroundImage]="'url(' +imageURL+ ')'">
-  <div class="shadow">
-    <div class="info">
-      <div class="title">{{title}}</div>
-      <a [href]="link" target="_blank"> {{link}}</a>
-    </div>
-  </div>
+<a
+	class="portfolio-item {{ classSize }}"
+	data-aos="fade-up"
+	data-aos-delay="200"
+	data-aos-offset="0"
+	[style.backgroundImage]="'url(' + imageURL + ')'"
+	[routerLink]="['/portfolio', portfolio.id]"
+>
+	<div class="shadow">
+		<div class="info">
+			<div class="title">{{ portfolio.title }}</div>
+			<a [href]="portfolio.link" target="_blank"> {{ portfolio.link }}</a>
+		</div>
+	</div>
 </a>

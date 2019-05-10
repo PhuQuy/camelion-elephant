@@ -20,3 +20,19 @@
     color: white;
     font-size: 25px;
 }
+
+
+.contact-form{
+  margin-top:50px;
+}
+
+.form-validation{
+  font-size: 12px;
+  color: red;
+}
+input.ng-invalid{
+  &.ng-dirty, &.ng-touched{
+    
+  border-color: red !important;
+  }
+}
