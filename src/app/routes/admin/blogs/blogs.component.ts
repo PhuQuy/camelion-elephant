@@ -19,8 +19,7 @@ export class BlogsComponent {
     ngOnInit() {
         this.blogService.getAll().subscribe(blogs => {
             this.blogs = blogs;
-            let date = new Date(blogs[0].createdAt.seconds);
-            console.log(date);
+            
             
         })
     }

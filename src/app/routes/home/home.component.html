@@ -193,13 +193,13 @@
     </div>
     <div class="row" *ngIf="portfolios">
       <div class="col-md-4">
-        <app-portfolio-item [portfolios]="portfolios[0]"></app-portfolio-item>
+        <app-portfolio-item [portfolio]="portfolios[0]"></app-portfolio-item>
       </div>
       <div class="col-md-4">
-        <app-portfolio-item [portfolios]="portfolios[0]"></app-portfolio-item>
+        <app-portfolio-item [portfolio]="portfolios[0]"></app-portfolio-item>
       </div>
       <div class="col-md-4">
-        <app-portfolio-item [portfolios]="portfolios[0]"></app-portfolio-item>
+        <app-portfolio-item [portfolio]="portfolios[0]"></app-portfolio-item>
       </div>
     </div>
     <!-- <div class="row no-gutters">
@@ -295,7 +295,6 @@
         data-aos-offset="0"
         *ngFor="let blog of blogs">
         <app-blog-item [blog]="blog"></app-blog-item>
-        
       </div>
     </div>
   </div>

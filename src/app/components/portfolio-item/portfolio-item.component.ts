@@ -9,10 +9,8 @@ import { BaseComponent } from '@core/base/base.component';
 export class PortfolioItemComponent extends BaseComponent implements OnInit {
 
     @Input() classSize ='';
-    @Input('portfolios') portfolio;
-    title;
+    @Input('portfolio') portfolio;
     imageURL;
-    link;
     constructor(@Inject(PLATFORM_ID) public platformId: string) {
         super(platformId);
     }
@@ -22,9 +20,9 @@ export class PortfolioItemComponent extends BaseComponent implements OnInit {
 
     ngOnInit() {
         //console.log('classSize', this.classSize);
-        this.title = this.portfolio.title;
+        // this.title = this.portfolio.title;
         this.imageURL = this.portfolio.images[0];
-        this.link = this.portfolio.link;
+        // this.link = this.portfolio.link;
         //console.log("Item", this.portfolio);
         
     }

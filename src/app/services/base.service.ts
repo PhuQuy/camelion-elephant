@@ -38,6 +38,16 @@ export class BaseService {
     });
   }
 
+  public getLimit(limit) {
+    return this.angularFirestore.collection<any>(this.basePath, ref => ref.limit(limit)).snapshotChanges().map(changes => {
+      return changes.map(a => {
+        const data = a.payload.doc.data();
+        data.id = a.payload.doc.id;
+        return data;
+      });
+    });
+  }
+
   public getById(id) {
     let itemPath = `${this.basePath}/${id}`;
     return this.angularFirestore.doc<any>(itemPath).valueChanges();
