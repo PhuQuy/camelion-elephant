@@ -9,26 +9,36 @@
             <div class="mt-3">
               <div class="input-contain">
                 <i class="fa fa-user icon"></i>
-                <input type="email" placeholder="" required [(ngModel)]="email" name="email"
-                  email="true" #username="ngModel"/>
-                <label [className]="(username.dirty && username.touched)? 'invalid' : '' ">Username</label>
+                <input type="email" placeholder="Username" required [(ngModel)]="email" name="email" email="true"
+                  #username="ngModel" />
+                <!-- <label [className]="(username.dirty && username.touched)? 'invalid' : '' ">Username</label> -->
               </div>
-              <small class="error form-text text-md-left">{{((username.dirty && username.touched) && username.invalid)? 'Email not valid' : ''}}</small>
+              <div>
+                <small class="error form-text text-md-left"
+                  *ngIf="((username.dirty && username.touched) && username.invalid)"><i
+                    class="fas fa-exclamation text-warning"></i> Email not valid</small>
+              </div>
               <div class="input-contain">
                 <i class="fas fa-unlock-alt icon"></i>
-                <input type="password" placeholder="" required minlength="5" [(ngModel)]="password" name="password" password="true" #userPassword="ngModel"/>
-                <label [className]="(userPassword.dirty && userPassword.touched)? 'invalid' : '' ">Password</label>
+                <input type="password" placeholder="Password" required minlength="5" [(ngModel)]="password"
+                  name="password" password="true" #userPassword="ngModel" />
+                <!-- <label [className]="(userPassword.dirty && userPassword.touched)? 'invalid' : '' ">Password</label> -->
               </div>
-              <small class="error form-text text-md-left">{{((userPassword.dirty && userPassword.touched) && userPassword.invalid)? 'Password must longer 6 characters' : ''}}</small>
+              <div>
+                <small class="error form-text text-md-left"
+                  *ngIf="((userPassword.dirty && userPassword.touched) && userPassword.invalid)"> <i
+                    class="fas fa-exclamation text-warning"></i> Password must longer 6 characters</small>
+              </div>
               <div class="text-md-left remember-contain mt-2">
-                <input type="checkbox"
-                    [(ngModel)]="remember" name="remember" [ngModelOptions]="{standalone: true}" (change)="rememberClick()"/>
-                    <span class="check-button" (click)="rememberClick()"> Remember Me</span>
+                <input type="checkbox" [(ngModel)]="remember" name="remember" [ngModelOptions]="{standalone: true}"
+                  (change)="rememberClick()" />
+                <span class="check-button" (click)="rememberClick()"> Remember Me</span>
               </div>
             </div>
             <div class="row">
               <div class="col-12 mx-auto my-0 text-center text-md-center ">
-                <button type="submit" class="submit-button" (click)="login()" [disabled]="username.invalid || userPassword.invalid">LOGIN</button>
+                <button type="submit" value="Submit" class="submit-button" (click)="login()"
+                  [disabled]="username.invalid || userPassword.invalid">LOGIN</button>
                 <div class="mt-3"><a class="text-light" href="#"><small>Forgot password?</small></a></div>
               </div>
             </div>

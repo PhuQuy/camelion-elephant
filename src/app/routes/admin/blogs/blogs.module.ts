@@ -12,6 +12,7 @@ import { ConfirmModalComponent } from "@components/admin/confirm-modal/confirm-m
 import { NgSelectModule } from "@ng-select/ng-select";
 import { SimplemdeModule, SIMPLEMDE_CONFIG } from "ng2-simplemde";
 
+
 @NgModule({
 	imports: [
 		CommonModule,
