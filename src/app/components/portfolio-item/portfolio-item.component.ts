@@ -25,7 +25,7 @@ export class PortfolioItemComponent extends BaseComponent implements OnInit {
         this.title = this.portfolio.title;
         this.imageURL = this.portfolio.images[0];
         this.link = this.portfolio.link;
-        console.log("Item", this.portfolio);
+        //console.log("Item", this.portfolio);
         
     }
 

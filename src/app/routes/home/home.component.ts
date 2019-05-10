@@ -225,7 +225,7 @@ export class HomeComponent extends BaseComponent {
         this.portfolioService.getAll().subscribe(portfolios => {
             if (portfolios.length > 0) {
                 this.portfolios = portfolios;
-                console.log("Log", portfolios);
+                //console.log("Log", portfolios);
                 this.dtTrigger.next();
             }
             else {
