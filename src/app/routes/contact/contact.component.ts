@@ -1,6 +1,8 @@
 import { Component, OnInit, PLATFORM_ID, Inject } from "@angular/core";
 import { BaseComponent } from "@core/base/base.component";
 import { SeoService } from "@shared/seo.service";
+import { ContactService } from "@services/contact.service";
+import { NgForm } from '@angular/forms'
 
 @Component({
     selector: "contact",
@@ -11,9 +13,11 @@ export class ContactComponent extends BaseComponent implements OnInit {
     logo = "assets/images/logo3.png";
     lat: number = 10.880319;
     lng: number = 106.794486;
+    sendMessage = "";
     constructor(
         @Inject(PLATFORM_ID) public platformId: string,
-        private seoService: SeoService
+        private seoService: SeoService,
+        private contactService: ContactService
     ) {
         super(platformId);
     }
@@ -29,5 +33,21 @@ export class ContactComponent extends BaseComponent implements OnInit {
 
     ngAfterViewInit() {
         this.initView();
+    }
+
+    sendInfo(formSubmit: NgForm) {
+        // console.log(formSubmit.value);
+        // console.log(formSubmit.valid);
+
+        if (formSubmit.valid) {
+            this.contactService.create(formSubmit.value);
+
+            this.sendMessage = "Success";
+        }
+        
+    }
+    closeAlert(formSubmit: NgForm){
+        formSubmit.reset();
+        this.sendMessage = '';
     }
 }

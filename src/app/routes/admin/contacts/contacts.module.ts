@@ -8,6 +8,7 @@ import { ContactsRoutingModule } from "./contacts.routing";
 import { ShareModule } from "@shared/share/share.module";
 import { DataTablesModule } from "angular-datatables";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { ContactService } from "@services/contact.service";
 @NgModule({
 	imports: [
 		CommonModule,
@@ -17,5 +18,6 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 		NgbModule
 	],
 	declarations: [ContactsComponent],
+	providers:[ContactService]
 })
 export class ContactsModule {}

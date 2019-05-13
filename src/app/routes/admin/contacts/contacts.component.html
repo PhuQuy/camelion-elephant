@@ -13,12 +13,12 @@
       </tr>
     </thead>
     <tbody>
-      <tr >
-        <td>Lethinh</td>
-        <td>Lethinh@gmail.com</td>
-        <td>0369599700</td>
-        <td>fefef fefef</td>
-        <td>05/10/2019</td>
+      <tr *ngFor="let contact of contacts">
+        <td>{{contact.fullname}}</td>
+        <td>{{contact.email}}</td>
+        <td>{{contact.phone}}</td>
+        <td>{{contact.message}}</td>
+        <td>{{contact.createdAt.seconds |  date:'medium'}}</td>
         <td>
           <ul class="list-inline">
             <!-- <li class="list-inline-item">

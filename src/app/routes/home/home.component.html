@@ -6,11 +6,7 @@
         <div class="col-md-10 text-center">
           <h1 class="mb-4">
             We love to
-            <strong
-              class="typewrite"
-              data-period="4000"
-              data-type='[ "Develop.", "Design.", "Explore.", "Capture." ]'
-            >
+            <strong class="typewrite" data-period="4000" data-type='[ "Develop.", "Design.", "Explore.", "Capture." ]'>
               <span class="wrap"></span>
             </strong>
           </h1>
@@ -20,34 +16,20 @@
             roasted parts of sentences fly into your mouth.
           </p>
           <p>
-            <a
-              href="#"
-              class="btn btn-primary btn-outline-white px-4 py-3 popup-youtube"
-              (click)="open(content)"
-              data-toggle="modal"
-              ><span><i class="fa fa-play" style="font-size: 12px"></i></span>
-              Watch Video</a
-            >
+            <a href="#" class="btn btn-primary btn-outline-white px-4 py-3 popup-youtube" (click)="open(content)"
+              data-toggle="modal"><span><i class="fa fa-play" style="font-size: 12px"></i></span>
+              Watch Video</a>
           </p>
           <ng-template #content let-d="dismiss">
             <div>
               <div>
-                <button
-                  type="button"
-                  class="close"
-                  aria-label="Close"
-                  (click)="d('Cross click')"
-                >
+                <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
               <div class="embed-responsive embed-responsive-16by9">
-                <iframe
-                  class="embed-responsive-item"
-                  src="https://www.youtube.com/embed/M-P4QBt-FWw"
-                  allowfullscreen
-                  frameborder="0"
-                ></iframe>
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/M-P4QBt-FWw" allowfullscreen
+                  frameborder="0"></iframe>
               </div>
             </div>
           </ng-template>
@@ -61,20 +43,22 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <owl-carousel-o #owlCar [options]="customOptions" >
-          <ng-container *ngFor="let slide of slideStore; index as id">
-            <ng-template carouselSlide [id]="id">
+        <owl-carousel-o #owlCar [options]="customOptions">
+          <ng-container *ngFor="let slide of portfolios; index as i">
+            <ng-template carouselSlide [id]="i">
               <div>
-                <img class="bg-white d-flex center" [src]="slide.src" [alt]="slide.alt" [title]="slide.title"
-                  style="width: 100%;border-radius: 5px;" />
-                <div class="overlay-link">
-                 
+                <a [routerLink]="['/portfolio', slide.id]">
+                  <img class="bg-white d-flex center" [src]="slide.images[0]" [alt]="slide.title" [title]="slide.title"
+                    style="width: 100%;border-radius: 5px;" />
+                  <div class="overlay-link">
+
                     <div class='overlay-bar'>
-                      <h2 class="text-white">{{slide.name}}</h2>
-                      <a [href]="slide.link">{{slide.link}}  </a>
+                      <h2 class="text-white">{{slide.title}}</h2>
+                      <a [href]="slide.link" >{{slide.link}} </a>
                     </div>
-                
-                </div>
+
+                  </div>
+                </a>
               </div>
             </ng-template>>
           </ng-container>
@@ -166,16 +150,12 @@
   <div class="parallax-img d-flex align-items-center">
     <div class="container">
       <div class="row d-flex justify-content-center">
-        <div
-          class="col-md-10 text-center heading-section heading-section-white "
-        >
+        <div class="col-md-10 text-center heading-section heading-section-white ">
           <h2 class="h1 font-weight-bold">
             Turn every channel into a revenue channel and drive business growth
           </h2>
           <p>
-            <a href="#" class="btn btn-primary btn-outline-white mt-3 py-3 px-4"
-              >View more details</a
-            >
+            <a href="#" class="btn btn-primary btn-outline-white mt-3 py-3 px-4">View more details</a>
           </p>
         </div>
       </div>
@@ -192,14 +172,8 @@
       </div>
     </div>
     <div class="row" *ngIf="portfolios">
-      <div class="col-md-4">
-        <app-portfolio-item [portfolio]="portfolios[0]"></app-portfolio-item>
-      </div>
-      <div class="col-md-4">
-        <app-portfolio-item [portfolio]="portfolios[0]"></app-portfolio-item>
-      </div>
-      <div class="col-md-4">
-        <app-portfolio-item [portfolio]="portfolios[0]"></app-portfolio-item>
+      <div class="col-md-4" *ngFor="let porfolio of portfolios; index as i">
+        <app-portfolio-item [portfolio]="porfolio"></app-portfolio-item>
       </div>
     </div>
     <!-- <div class="row no-gutters">
@@ -245,32 +219,33 @@
       </div>
     </div>
     <div class="row">
-      <div
-        class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap "
-      >
+      <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap ">
         <div class="block-18 text-center">
           <div class="text">
-            <strong class="number" data-number="1000">0</strong>
+            <strong class="number" data-aos="fade-up" data-number="1000">
+                <ng2-odometer [number]="1000" [config]="configCount" [observable]="observable"></ng2-odometer>
+            </strong>
+
             <span>Customers are satisfied with our professional support</span>
           </div>
         </div>
       </div>
-      <div
-        class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap "
-      >
+      <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap ">
         <div class="block-18 text-center">
           <div class="text">
-            <strong class="number" data-number="12000">0</strong>
+            <strong class="number" data-number="12000">
+                <ng2-odometer [number]="12000" [config]="configCount" [observable]="observable"></ng2-odometer>
+            </strong>
             <span>Amazing preset options to be mixed and combined</span>
           </div>
         </div>
       </div>
-      <div
-        class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap "
-      >
+      <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap ">
         <div class="block-18 text-center">
           <div class="text">
-            <strong class="number" data-number="10000">0</strong>
+            <strong class="number" data-number="10000">
+                <ng2-odometer [number]="10000" [config]="configCount" [observable]="observable"></ng2-odometer>
+            </strong>
             <span>Average response time on live chat support channel</span>
           </div>
         </div>
@@ -288,14 +263,14 @@
       </div>
     </div>
     <div class="row">
-      <div
+      <!-- <div
         class="col-md-4"
         data-aos="fade-up"
         data-aos-delay="200"
         data-aos-offset="0"
         *ngFor="let blog of blogs">
         <app-blog-item [blog]="blog"></app-blog-item>
-      </div>
+      </div> -->
     </div>
   </div>
 </section>

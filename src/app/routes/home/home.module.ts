@@ -4,13 +4,15 @@ import { HomeComponent } from './home.component';
 import { HomeRoutingModule } from './home.routing';
 import { ShareModule } from '@shared/share/share.module';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { Ng2OdometerModule } from 'ng2-odometer';
 
 @NgModule({
   imports: [
     CommonModule,
     ShareModule,
     HomeRoutingModule,
-    CarouselModule
+    CarouselModule,
+    Ng2OdometerModule
   ],
   declarations: [HomeComponent]
 })

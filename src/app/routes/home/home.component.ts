@@ -34,6 +34,9 @@ export class HomeComponent extends BaseComponent {
         margin: 50,
         navSpeed: 700,
         stagePadding: 20,
+        autoplay: true,
+        autoplayTimeout: 5000,
+        autoplayHoverPause: true,
         nav: true,
         navText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>'],
         navClass: ['owl-prev', 'owl-next'],
@@ -59,23 +62,13 @@ export class HomeComponent extends BaseComponent {
         lazyLoadEager: 2,
         responsiveBaseElement: 'div'
     };
-    slideStore = [
-        {
-            src: "/assets/images/dashboard_full_1.jpg",
-            link: "https://google.com",
-            name: "Marvel"
-        },
-        {
-            src: "/assets/images/dashboard_full_2.jpg",
-            link: "localhost:8200",
-            name: "DC"
-        },
-        {
-            src: "/assets/images/dashboard_full_3.jpg",
-            link: "localhost:8080",
-            name: "Anime"
-        },
-    ];
+    public configCount = {
+       animation: 'count', 
+        format: '(,ddd)', 
+        duration: 6000, 
+        value: 0,
+        auto: true,
+    }
     closeResult: string;
     blogs = [
         {
@@ -131,7 +124,7 @@ export class HomeComponent extends BaseComponent {
                 }
             ]
         }];
-    portfolios:any;
+    portfolios: any;
     dtTrigger = new Subject();
     constructor(@Inject(PLATFORM_ID) public platformId: string,
         private modalService: NgbModal, private seoService: SeoService, protected portfolioService: PortfolioService) {
@@ -166,6 +159,8 @@ export class HomeComponent extends BaseComponent {
             slug: 'home',
             keywords: 'vay von sinh vien'
         });
+        console.log();
+        
 
     }
     ngOnDestroy(): void {
@@ -222,14 +217,12 @@ export class HomeComponent extends BaseComponent {
     }
 
     getAll() {
-        this.portfolioService.getAll().subscribe(portfolios => {
+        this.portfolioService.getLimit(3).subscribe(portfolios => {
             if (portfolios.length > 0) {
                 this.portfolios = portfolios;
-                //console.log("Log", portfolios);
-                this.dtTrigger.next();
             }
             else {
-                this.portfolios = null;
+                this.portfolios = [];
             }
 
 
