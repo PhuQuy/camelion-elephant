@@ -137,7 +137,7 @@ export class AboutComponent extends BaseComponent implements OnInit {
     }
     loadTeams() {
         this.teamService.getAll().subscribe(teams => {
-            console.log('team', teams);
+            //console.log('team', teams);
             this.teams = teams;
         });
     }
@@ -146,7 +146,7 @@ export class AboutComponent extends BaseComponent implements OnInit {
     }
     getData(data: SlidesOutputData) {
         this.activeSlides = data;
-        console.log(this.activeSlides);
+        //console.log(this.activeSlides);
     }
     getClickEvent(data) {
         console.log(data.name);

@@ -82,8 +82,8 @@
       </div>
     </div>
     <owl-carousel-o #owlCar [options]="customOptions" (change)="getData($event)" >
-      <ng-container *ngFor="let team of teams;index as i">
-        <ng-template carouselSlide [id]="i">
+      <ng-container *ngFor="let team of teams">
+        <ng-template carouselSlide [id]="team.id">
           <div class="text-center border">
             <div class="d-inline-block">
               <img class="shadow p-1 mb-2 bg-white rounded-circle d-flex center user-image" [src]="team.imgURL" [alt]="team.name"
@@ -92,9 +92,8 @@
                 <i class="icon-quote-left"></i>
               </span>
             </div>
-            <p class="mx-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-              there live the
-              blind texts.</p>
+            <p class="mx-4">{{team.description}}
+            </p>
             <br />
             <h6><strong>{{team.name}}</strong></h6>
             <p><small>{{team.position}}</small></p>
