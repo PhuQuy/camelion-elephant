@@ -90,10 +90,10 @@
           <form #formSubmit="ngForm" class="subscribe-form">
             <div class="form-group">
               <span class="icon icon-paper-plane" (click)="sendInfo(formSubmit)"></span>
-              <input type="text" class="form-control" placeholder="Subscribe" [(ngModel)]="name" #nameText="ngModel"
-                name="name" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+              <input type="email" class="form-control" placeholder="Subscribe" [(ngModel)]="email" #emailText="ngModel"
+                name="email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
             </div>
-            <p class="form-validation m-0 " *ngIf="nameText?.errors && nameText?.errors?.pattern">
+            <p class="form-validation m-0 " *ngIf="emailText?.errors && emailText?.errors?.pattern">
               Email is invalid
             </p>
             <div class="alert alert-success alert-dismissible myAlert-bottom" *ngIf="sendMessage !== ''">
