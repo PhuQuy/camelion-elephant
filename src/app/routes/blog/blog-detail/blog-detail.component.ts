@@ -28,9 +28,9 @@ export class BlogDetailComponent extends BaseComponent implements OnInit {
     ngOnInit() {
         this.activatedRoute.params.subscribe(params => {
             this.id = params["id"];
-            this.blogService.getById(this.id).subscribe(blog => {
-                console.log('Blog', blog);
-                this.blog = blog;
+            this.blogService.getBySlug(this.id).subscribe(blogs => {
+                console.log('Blog', blogs);
+                this.blog = blogs[0];
             });
         });
         this.blogService.getLimit(3).subscribe(blogs => {

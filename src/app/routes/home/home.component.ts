@@ -6,6 +6,7 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { SeoService } from '@shared/seo.service';
 import { Subject } from 'rxjs';
 import { PortfolioService } from '@services/portfolio.service';
+import { BlogService } from '@services/blog.service';
 
 declare let $: any;
 var TxtType = function (el, toRotate, period) {
@@ -22,7 +23,7 @@ var TxtType = function (el, toRotate, period) {
     selector: 'app-home',
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.scss'],
-    providers: [PortfolioService]
+    providers: [PortfolioService, BlogService]
 })
 export class HomeComponent extends BaseComponent {
     customOptions: any = {
@@ -72,60 +73,7 @@ export class HomeComponent extends BaseComponent {
         auto: true,
     }
     closeResult: string;
-    blogs = [
-        {
-            id: 1,
-            title: 'Even the all-powerful Pointing has no control about the blind texts',
-            createdDate: '2019-02-20 05:02:04',
-            postedBy: 'Admin',
-            photoURL: '/assets/images/image_1.jpg',
-            comments: [
-                {
-                    postedBy: 'User',
-                    message: 'That \'s beautiful!'
-                },
-                {
-                    postedBy: 'Quy',
-                    message: 'Hello there!'
-                }
-            ]
-        },
-
-        {
-            id: 2,
-            title: 'Right time, right girl',
-            createdDate: '2019-02-20 05:02:04',
-            postedBy: 'Admin',
-            photoURL: '/assets/images/image_2.jpg',
-            comments: [
-                {
-                    postedBy: 'User',
-                    message: 'That \'s beautiful!'
-                },
-                {
-                    postedBy: 'Quy',
-                    message: 'Hello there!'
-                }
-            ]
-        },
-
-        {
-            id: 3,
-            title: 'Even the all-powerful Pointing has no control about the blind texts',
-            createdDate: '2019-02-20 05:02:04',
-            postedBy: 'Admin',
-            photoURL: '/assets/images/image_3.jpg',
-            comments: [
-                {
-                    postedBy: 'User',
-                    message: 'That \'s beautiful!'
-                },
-                {
-                    postedBy: 'Quy',
-                    message: 'Hello there!'
-                }
-            ]
-        }];
+    blogs = [];
     // @HostListener('window:scroll', ['$event'])
     // checkScroll() {   
     //     // console.log(window.scrollY);
@@ -136,7 +84,7 @@ export class HomeComponent extends BaseComponent {
     portfolios: any;
     dtTrigger = new Subject();
     constructor(@Inject(PLATFORM_ID) public platformId: string,
-        private modalService: NgbModal, private seoService: SeoService, protected portfolioService: PortfolioService) {
+        private modalService: NgbModal, private seoService: SeoService, protected portfolioService: PortfolioService, private blogService: BlogService) {
         super(platformId);
     }
 
@@ -161,13 +109,20 @@ export class HomeComponent extends BaseComponent {
     }
 
     ngOnInit() {
-        this.getAll();
         this.seoService.generateTags({
             title: 'Home',
             description: 'Liên hệ Vay vốn sinh viên',
             slug: 'home',
             keywords: 'vay von sinh vien'
         });
+        this.getAll();
+        this.loadRecentBlogs();
+
+    }
+    loadRecentBlogs(){
+        this.blogService.getLimit(3).subscribe(blogs => {
+            this.blogs = blogs;
+        })
     }
     ngOnDestroy(): void {
         this.dtTrigger.unsubscribe();

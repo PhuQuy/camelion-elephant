@@ -5,11 +5,13 @@ import { AgmCoreModule } from '@agm/core';
 import { FormsModule }   from '@angular/forms';
 import { TagService } from '@services/tag.service';
 
+import { RouterModule, Routes } from '@angular/router';
 @NgModule({
   imports: [
     CommonModule,
     AgmCoreModule,
-    FormsModule
+    FormsModule,
+    RouterModule
   ],
   declarations: [FootComponent],
   providers:[TagService],

@@ -35,7 +35,8 @@ export class ContactsComponent {
 	}
 	getAll(){
 		this.sub = this.contactService.getAll().subscribe(contacts =>{
-			this.contacts = contacts
+			this.contacts = contacts;
+			this.dtTrigger.next();
 		})
 	}
 	ngOnDestroy(): void {
