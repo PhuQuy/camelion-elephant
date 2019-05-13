@@ -31,7 +31,9 @@ export class SubscribesComponent {
 			this.dtTrigger.next();
 		});
 	}
-
+	onDelete(tag){
+		this.tagService.delete(tag.id);
+	}
 	
 
 	ngOnDestroy(): void {

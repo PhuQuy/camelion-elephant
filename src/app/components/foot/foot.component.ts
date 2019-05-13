@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, Event, NavigationEnd } from '@angular/router';
+import { NgForm } from '@angular/forms';
+import { Subscribable } from 'rxjs';
+import { TagService } from '@services/tag.service';
+
 
 
 export interface marker {
@@ -133,9 +137,10 @@ export class FootComponent implements OnInit {
       ]
     }
   ];
+  sendMessage: string = '';
 
   // Using NavigationEnd to catch url when router
-  constructor(private router: Router) {
+  constructor(private router: Router, private tagService: TagService) {
     router.events.subscribe((event: Event) => {
       if (event instanceof NavigationEnd) {
         if (router.url === '/contact') {
@@ -150,5 +155,21 @@ export class FootComponent implements OnInit {
   // constructor () {}
 
   ngOnInit() {
+  }
+
+  sendInfo(formSubmit: NgForm) {
+    console.log(formSubmit.value);
+    console.log(formSubmit.valid);
+
+    if (formSubmit.valid) {
+      this.tagService.create(formSubmit.value);
+
+      this.sendMessage = "Your subscribe has sent";
+    }
+
+  }
+  closeAlert(formSubmit: NgForm) {
+    formSubmit.reset();
+    this.sendMessage = '';
   }
 }
