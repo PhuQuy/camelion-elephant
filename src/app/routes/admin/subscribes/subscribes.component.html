@@ -13,8 +13,8 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let tag of tags">
-        <td>{{tag.name}}</td>
+      <tr *ngFor="let subscribe of subscribes">
+        <td>{{subscribe.name}}</td>
         <td>
           <ul class="list-inline">
             <!-- <li class="list-inline-item">
@@ -22,7 +22,7 @@
                   class="ti-pencil"></span></button>
             </li> -->
             <li class="list-inline-item">
-              <button class="btn btn-danger btn-sm btn-admin" title="Delete" (click)="onDelete(tag)">
+              <button class="btn btn-danger btn-sm btn-admin" title="Delete" (click)="onDelete(subscribe)">
                 <i class="ti-trash"></i>
               </button>
             </li>

@@ -3,6 +3,7 @@ import { NgbModal, ModalDismissReasons } from "@ng-bootstrap/ng-bootstrap";
 import { ConfirmModalComponent } from "@components/admin/confirm-modal/confirm-modal.component";
 import { TagService } from "app/services/tag.service";
 import { Subject } from "rxjs";
+import { SubscribeService } from "@services/subscribe.service";
 @Component({
 	selector: "app-admin-subscribes",
 	templateUrl: "./subscribes.component.html",
@@ -11,13 +12,14 @@ import { Subject } from "rxjs";
 })
 export class SubscribesComponent {
 	closeResult: string;
-	tags;
+	subscribes;
 	dtOptions = {};
 	dtTrigger = new Subject();
+	sub: any;
 
 	constructor(
 		private modalService: NgbModal,
-		protected tagService: TagService
+		protected subscribeService: SubscribeService
 	) {}
 
 	ngOnInit() {
@@ -25,18 +27,17 @@ export class SubscribesComponent {
 	}
 
 	getAll() {
-		this.tagService.getAll().subscribe(tags => {
-			console.log(tags);
-			this.tags = tags;
-			this.dtTrigger.next();
+		this.sub = this.subscribeService.getAll().subscribe(subscribes => {
+			//console.log(subscribes);
+			this.subscribes = subscribes;
 		});
 	}
-	onDelete(tag){
-		this.tagService.delete(tag.id);
+	onDelete(subscribe){
+		this.subscribeService.delete(subscribe.id);
 	}
 	
 
 	ngOnDestroy(): void {
-		this.dtTrigger.unsubscribe();
+		this.sub.unsubscribe();
 	}
 }

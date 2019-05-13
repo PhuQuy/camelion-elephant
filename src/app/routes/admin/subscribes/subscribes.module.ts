@@ -6,6 +6,8 @@ import { SubscribesRoutingModule } from "./subscribes.routing";
 import { ShareModule } from "@shared/share/share.module";
 import { DataTablesModule } from "angular-datatables";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { SubscribeService } from "@services/subscribe.service";
+
 @NgModule({
 	imports: [
 		CommonModule,
@@ -15,5 +17,6 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 		NgbModule
 	],
 	declarations: [SubscribesComponent],
+	providers: [SubscribeService]
 })
 export class SubscribesModule {}

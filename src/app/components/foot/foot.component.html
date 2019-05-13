@@ -10,19 +10,13 @@
           </p>
           <ul class="ftco-footer-social list-unstyled float-md-left float-lft">
             <li class="ftco" data-aos="fade-up" data-aos-delay="500">
-              <a href="#"
-                ><span><i class="fa fa-twitter"></i></span
-              ></a>
+              <a href="#"><span><i class="fa fa-twitter"></i></span></a>
             </li>
             <li class="ftco" data-aos="fade-up" data-aos-delay="600">
-              <a href="#"
-                ><span><i class="fa fa-facebook"></i></span
-              ></a>
+              <a href="#"><span><i class="fa fa-facebook"></i></span></a>
             </li>
             <li class="ftco" data-aos="fade-up" data-aos-delay="700">
-              <a href="#"
-                ><span><i class="fa fa-instagram"></i></span
-              ></a>
+              <a href="#"><span><i class="fa fa-instagram"></i></span></a>
             </li>
           </ul>
         </div>
@@ -45,9 +39,7 @@
           <h2 class="ftco-heading-2">Contact Information</h2>
           <ul class="list-unstyled">
             <li>
-              <a href="#" class="py-2 d-block"
-                >198 West 21th Street, Suite 721 New York NY 10016</a
-              >
+              <a href="#" class="py-2 d-block">198 West 21th Street, Suite 721 New York NY 10016</a>
             </li>
             <li><a href="#" class="py-2 d-block">+ 1235 2355 98</a></li>
             <li><a href="#" class="py-2 d-block">info@yoursite.com</a></li>
@@ -95,15 +87,19 @@
           <p>
             Far far away, behind the word mountains, far from the countries.
           </p>
-          <form #formSubmit="ngForm" class="subscribe-form" >
+          <form #formSubmit="ngForm" class="subscribe-form">
             <div class="form-group">
               <span class="icon icon-paper-plane" (click)="sendInfo(formSubmit)"></span>
-              <input type="text" class="form-control" placeholder="Subscribe" [(ngModel)]="name" #nameText="ngModel" name="name" >
+              <input type="text" class="form-control" placeholder="Subscribe" [(ngModel)]="name" #nameText="ngModel"
+                name="name" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
             </div>
+            <p class="form-validation m-0 " *ngIf="nameText?.errors && nameText?.errors?.pattern">
+              Email is invalid
+            </p>
             <div class="alert alert-success alert-dismissible myAlert-bottom" *ngIf="sendMessage !== ''">
               <a class="close" data-dismiss="alert" aria-label="close" (click)="closeAlert(formSubmit)">&times;</a>
-                <strong>Success!</strong> {{sendMessage}}
-              </div>
+              <strong>Success!</strong> {{sendMessage}}
+            </div>
           </form>
         </div>
       </div>

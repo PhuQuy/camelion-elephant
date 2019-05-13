@@ -3,9 +3,10 @@ import { CommonModule } from '@angular/common';
 import { FootComponent } from './foot.component';
 import { AgmCoreModule } from '@agm/core';
 import { FormsModule }   from '@angular/forms';
-import { TagService } from '@services/tag.service';
 
 import { RouterModule, Routes } from '@angular/router';
+import { SubscribeService } from '@services/subscribe.service';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -14,7 +15,7 @@ import { RouterModule, Routes } from '@angular/router';
     RouterModule
   ],
   declarations: [FootComponent],
-  providers:[TagService],
+  providers:[SubscribeService],
   exports: [FootComponent]
 })
 export class FootModule { }
