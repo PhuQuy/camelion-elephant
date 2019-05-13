@@ -69,4 +69,8 @@
 
 ::ng-deep .block-18 .text span {
   display: inline-block;
+  font-family: "Work Sans", Arial, sans-serif !important;
+}
+::ng-deep .block-18 .text strong span {
+  font-size: 40px !important;
 }

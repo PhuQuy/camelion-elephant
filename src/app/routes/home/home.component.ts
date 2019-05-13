@@ -66,6 +66,7 @@ export class HomeComponent extends BaseComponent {
        animation: 'count', 
         format: '(,ddd)', 
         duration: 6000, 
+        theme: 'default',
         value: 0,
         auto: true,
     }
@@ -159,9 +160,6 @@ export class HomeComponent extends BaseComponent {
             slug: 'home',
             keywords: 'vay von sinh vien'
         });
-        console.log();
-        
-
     }
     ngOnDestroy(): void {
         this.dtTrigger.unsubscribe();
