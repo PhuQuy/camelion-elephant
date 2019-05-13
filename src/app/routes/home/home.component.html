@@ -47,7 +47,7 @@
           <ng-container *ngFor="let slide of portfolios; index as i">
             <ng-template carouselSlide [id]="i">
               <div>
-                <a [routerLink]="['/portfolio', slide.id]">
+                <a [routerLink]="['/portfolio', slide.slug]">
                   <img class="bg-white d-flex center" [src]="slide.images[0]" [alt]="slide.title" [title]="slide.title"
                     style="width: 100%;border-radius: 5px;" />
                   <div class="overlay-link">
@@ -263,14 +263,14 @@
       </div>
     </div>
     <div class="row">
-      <!-- <div
+      <div
         class="col-md-4"
         data-aos="fade-up"
         data-aos-delay="200"
         data-aos-offset="0"
         *ngFor="let blog of blogs">
         <app-blog-item [blog]="blog"></app-blog-item>
-      </div> -->
+      </div>
     </div>
   </div>
 </section>

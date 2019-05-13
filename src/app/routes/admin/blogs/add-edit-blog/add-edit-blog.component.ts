@@ -8,13 +8,12 @@ import { CategoryService } from "app/services/category.service";
 import { UploadService } from "app/services/upload.service";
 import { BlogService } from "app/services/blog.service";
 import { ActivatedRoute, Router } from "@angular/router";
-
+import { convertToSlug } from "app/utils/util";
 @Component({
     selector: "app-admin-add-edit-blog",
     templateUrl: "./add-edit-blog.component.html",
     styleUrls: ["./add-edit-blog.component.scss"],
     providers: [CategoryService, UploadService, TagService, BlogService]
-
 })
 export class AddEditBlogComponent {
     blogForm: FormGroup;
@@ -57,23 +56,29 @@ export class AddEditBlogComponent {
     id;
     edit: boolean = false;
 
-    constructor(private modalService: NgbModal, private tagService: TagService,
-        private categoryService: CategoryService, private upSvc: UploadService, private blogService: BlogService,
-        private activatedRoute: ActivatedRoute, private router: Router) {
+    constructor(
+        private modalService: NgbModal,
+        private tagService: TagService,
+        private categoryService: CategoryService,
+        private upSvc: UploadService,
+        private blogService: BlogService,
+        private activatedRoute: ActivatedRoute,
+        private router: Router
+    ) {
         this.activatedRoute.params.subscribe(params => {
-            this.id = params['id'];
-            if (this.id !== 'new') {
+            this.id = params["id"];
+            if (this.id !== "new") {
                 this.blogService.getById(this.id).subscribe(blog => {
                     this.blogForm.patchValue(blog);
-                    if(blog.imgURL) {
+                    if (blog.imgURL) {
                         this.imgURL = blog.imgURL;
                     }
                     this.edit = true;
-                })
+                });
             } else {
                 this.edit = false;
             }
-        })
+        });
     }
 
     ngOnInit() {
@@ -102,19 +107,21 @@ export class AddEditBlogComponent {
         });
     }
 
-    onChange() { }
+    onChange() {}
 
     preview(event) {
         let file = event.target.files.item(0);
         if (!file) return;
-        const a =this.blogForm.get('imgURL').value;
-        if (this.edit && this.blogForm.get('imgURL').value) {
-            this.upSvc.deleteFileByURL(this.blogForm.get('imgURL').value);
+        const a = this.blogForm.get("imgURL").value;
+        if (this.edit && this.blogForm.get("imgURL").value) {
+            this.upSvc.deleteFileByURL(this.blogForm.get("imgURL").value);
         }
-        this.upSvc.pushUpload(`Blogs/${file.name}-${Date.now()}`, file).subscribe(res => {
-            this.imgURL = res;
-            this.blogForm.patchValue({ imgURL: res });
-        })
+        this.upSvc
+            .pushUpload(`Blogs/${file.name}-${Date.now()}`, file)
+            .subscribe(res => {
+                this.imgURL = res;
+                this.blogForm.patchValue({ imgURL: res });
+            });
     }
 
     createForm() {
@@ -129,14 +136,17 @@ export class AddEditBlogComponent {
     }
 
     save() {
+        const slug = convertToSlug(this.blogForm.value.title);
         if (this.edit) {
-            this.blogService.update({ ...this.blogForm.value, id: this.id }).then(() => {
-                this.router.navigate(['/admin/blogs']);
-            })
+            this.blogService
+                .update({ ...this.blogForm.value, id: this.id, slug: slug })
+                .then(() => {
+                    this.router.navigate(["/admin/blogs"]);
+                });
         } else {
-            this.blogService.create(this.blogForm.value).then(() => {
-                this.router.navigate(['/admin/blogs']);
-            })
+            this.blogService.create({...this.blogForm.value, slug: slug}).then(() => {
+                this.router.navigate(["/admin/blogs"]);
+            });
         }
     }
 }

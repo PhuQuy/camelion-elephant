@@ -32,8 +32,6 @@ export class CategoriesComponent implements OnDestroy, OnInit {
 		this.categoryService.getAll().subscribe(categories => {
 			this.categories = categories;
 			console.log("categories", categories);
-		// this.dtTrigger.unsubscribe();
-			
 			this.dtTrigger.next();
 		});
 	}

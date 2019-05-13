@@ -81,14 +81,14 @@
         <h2>Our members</h2>
       </div>
     </div>
-    <owl-carousel-o #owlCar [options]="customOptions" (change)="getData($event)">
-      <ng-container *ngFor="let slide of slideStore; index as id">
-        <ng-template carouselSlide [id]="id">
+    <owl-carousel-o #owlCar [options]="customOptions" (change)="getData($event)" >
+      <ng-container *ngFor="let team of teams;index as i">
+        <ng-template carouselSlide [id]="i">
           <div class="text-center border">
             <div class="d-inline-block">
-              <img class="shadow p-1 mb-2 bg-white rounded-circle d-flex center" [src]="slide.src" [alt]="slide.alt"
-                [title]="slide.title" style="width: 100px;" />
-              <span class="shadow p-1 mb-2 quote d-flex align-items-center justify-content-center" (click)="getClickEvent(slide)">
+              <img class="shadow p-1 mb-2 bg-white rounded-circle d-flex center user-image" [src]="team.imgURL" [alt]="team.name"
+                [title]="team.name" style="width: 100px;" />
+              <span class="shadow p-1 mb-2 quote d-flex align-items-center justify-content-center" (click)="getClickEvent(team)">
                 <i class="icon-quote-left"></i>
               </span>
             </div>
@@ -96,8 +96,8 @@
               there live the
               blind texts.</p>
             <br />
-            <h6><strong>{{slide.name}}</strong></h6>
-            <p><small>{{slide.job}}</small></p>
+            <h6><strong>{{team.name}}</strong></h6>
+            <p><small>{{team.position}}</small></p>
             <br />
           </div>
         </ng-template>>

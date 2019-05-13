@@ -22,17 +22,11 @@
 <section class="ftco-section ftco-degree-bg" #portfolioHeader>
   <div class="container" *ngIf="portfolios">
     <div class="row ">
-      <div class="col-md-4">
-        <app-portfolio-item [portfolio]="portfolios[0]"></app-portfolio-item>
-      </div>
-      <div class="col-md-4">
-        <app-portfolio-item [portfolio]="portfolios[0]"></app-portfolio-item>
-      </div>
-      <div class="col-md-4">
-        <app-portfolio-item [portfolio]="portfolios[0]"></app-portfolio-item>
+      <div class="col-md-4" *ngFor="let portfolio of portfolios">
+        <app-portfolio-item [portfolio]="portfolio"></app-portfolio-item>
       </div>
     </div>
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-md-8">
         <app-portfolio-item classSize="big" [portfolio]="portfolios[0]"></app-portfolio-item>
       </div>
@@ -48,6 +42,6 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </section>

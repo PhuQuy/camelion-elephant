@@ -52,6 +52,9 @@ export class BaseService {
     let itemPath = `${this.basePath}/${id}`;
     return this.angularFirestore.doc<any>(itemPath).valueChanges();
   }
+  public getBySlug(slug){
+    return this.angularFirestore.collection<any>(this.basePath, ref=>ref.where('slug','==',slug)).valueChanges();
+  }
 
   get timestamp() {
     return new Date();

@@ -5,6 +5,7 @@ import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { PortfolioService } from "app/services/portfolio.service";
 import { Router, ActivatedRoute } from "@angular/router";
 import { UploadService } from "app/services/upload.service";
+import {convertToSlug} from 'app/utils/util';
 @Component({
     selector: "app-admin-add-edit-portfolio",
     templateUrl: "./add-edit-portfolio.component.html",
@@ -60,12 +61,13 @@ export class AddEditPortfolioComponent {
     }
 
     save() {
+        let slug = convertToSlug(this.portfolioForm.value.title);
         if (this.edit) {
-            this.portfolioService.update({ ...this.portfolioForm.value, id: this.id, images: this.images }).then(result => {
+            this.portfolioService.update({ ...this.portfolioForm.value, id: this.id, images: this.images, slug: slug }).then(result => {
                 this.router.navigate(['/admin/portfolio']);
             })
         } else {
-            this.portfolioService.create({ ...this.portfolioForm.value, images: this.images }).then(result => {
+            this.portfolioService.create({ ...this.portfolioForm.value, images: this.images, slug: slug }).then(result => {
                 this.router.navigate(['/admin/portfolio']);
             })
         }
@@ -75,7 +77,7 @@ export class AddEditPortfolioComponent {
         let files = event.target.files;
         if (files.length === 0) return;
         for (let i = 0; i < files.length; i++) {
-            this.upSvc.pushUpload(`Portfolio/${files[i].name}`, files[i]).subscribe(res => {
+            this.upSvc.pushUpload(`Portfolio/${files[i].name}-${Date.now()}`, files[i]).subscribe(res => {
                 this.images.push(res);
             })
         }
