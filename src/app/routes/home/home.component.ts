@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, PLATFORM_ID, Inject, ElementRef, ViewChild, AfterViewChecked } from '@angular/core';
+import { Component, AfterViewInit, PLATFORM_ID, Inject, ElementRef, ViewChild, AfterViewChecked, HostListener } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import * as AOS from 'aos';
 import { BaseComponent } from '@core/base/base.component';
@@ -17,6 +17,7 @@ var TxtType = function (el, toRotate, period) {
     this.tick();
     this.isDeleting = false;
 };
+
 @Component({
     selector: 'app-home',
     templateUrl: './home.component.html',
@@ -31,7 +32,7 @@ export class HomeComponent extends BaseComponent {
         pullDrag: true,
         dots: true,
         center: true,
-        margin: 50,
+        margin: 500,
         navSpeed: 700,
         stagePadding: 20,
         autoplay: true,
@@ -62,10 +63,10 @@ export class HomeComponent extends BaseComponent {
         lazyLoadEager: 2,
         responsiveBaseElement: 'div'
     };
-    public configCount = {
-       animation: 'count', 
-        format: '(,ddd)', 
-        duration: 6000, 
+    configCount = {
+        animation: 'count',
+        format: '(,ddd)',
+        duration: 8000,
         theme: 'default',
         value: 0,
         auto: true,
@@ -125,6 +126,13 @@ export class HomeComponent extends BaseComponent {
                 }
             ]
         }];
+    // @HostListener('window:scroll', ['$event'])
+    // checkScroll() {   
+    //     // console.log(window.scrollY);
+    //     if (window.scrollY > 3063) {
+    //         this.counterOn();
+    //     }
+    // }
     portfolios: any;
     dtTrigger = new Subject();
     constructor(@Inject(PLATFORM_ID) public platformId: string,
@@ -213,7 +221,10 @@ export class HomeComponent extends BaseComponent {
             }, delta);
         };
     }
-
+    // counterOn(){
+    //     this.configCount.auto = true;
+    //     // console.log("On", this.configCount);
+    // }
     getAll() {
         this.portfolioService.getLimit(3).subscribe(portfolios => {
             if (portfolios.length > 0) {
