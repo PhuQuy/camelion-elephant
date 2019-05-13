@@ -7,10 +7,10 @@ import { ContactService } from "@services/contact.service";
 	selector: "app-admin-contacts",
 	templateUrl: "./contacts.component.html",
 	styleUrls: ["./contacts.component.scss"],
+	providers: [ContactService]
 })
 export class ContactsComponent {
 	closeResult: string;
-	tags;
 	dtOptions = {};
 	dtTrigger = new Subject();
 	contacts: any[];
@@ -24,12 +24,12 @@ export class ContactsComponent {
 		this.getAll();
 	}
 
-	onDelete(tag) {
+	onDelete(contact) {
 		const modalRef = this.modalService.open(ConfirmModalComponent);
 		modalRef.componentInstance.title = "Contacts delete";
 		modalRef.result.then(result => {
-			if (result) {
-				
+			if (result === 'ok') {
+				this.contactService.delete(contact.id).then();
 			}
 		});
 	}

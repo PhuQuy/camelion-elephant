@@ -1,7 +1,7 @@
 <h4 class="c-grey-900 mT-10 mB-30">Contacts <small>manage</small></h4>
 
 <div class="bgc-white bd bdrs-3 p-20 mB-20">
-  <table class="table table-striped table-bordered" datatable [dtTrigger]="dtTrigger" >
+  <table class="table table-striped table-bordered" datatable [dtTrigger]="dtTrigger">
     <thead>
       <tr>
         <th>Fullname</th>
@@ -16,9 +16,9 @@
       <tr *ngFor="let contact of contacts">
         <td>{{contact.fullname}}</td>
         <td>{{contact.email}}</td>
-        <td>{{contact.phone}}</td>
+        <td>{{contact.number}}</td>
         <td>{{contact.message}}</td>
-        <td>{{contact.createdAt.seconds |  date:'medium'}}</td>
+        <td>{{contact.createdAt.seconds * 1000 | date :'short'}}</td>
         <td>
           <ul class="list-inline">
             <!-- <li class="list-inline-item">
@@ -26,7 +26,7 @@
                   class="ti-pencil"></span></button>
             </li> -->
             <li class="list-inline-item">
-              <button class="btn btn-danger btn-sm btn-admin" title="Delete" (click)="onDelete(tag)">
+              <button class="btn btn-danger btn-sm btn-admin" title="Delete" (click)="onDelete(contact)">
                 <i class="ti-trash"></i>
               </button>
             </li>

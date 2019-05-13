@@ -5,12 +5,20 @@ import { ContactService } from "@services/contact.service";
 import { NgForm } from '@angular/forms'
 
 @Component({
-    selector: "contact",
-    templateUrl: "./contact.component.html",
-    styleUrls: ["./contact.component.scss"]
+    selector: 'contact',
+    templateUrl: './contact.component.html',
+    styleUrls: ['./contact.component.scss'],
+    providers: [ContactService]
 })
 export class ContactComponent extends BaseComponent implements OnInit {
-    logo = "assets/images/logo3.png";
+
+    logo = 'assets/images/logo3.png';
+    contact = {
+        fullname: null,
+        email: null,
+        number: null,
+        message: null
+    }
     lat: number = 10.880319;
     lng: number = 106.794486;
     sendMessage = "";
@@ -44,10 +52,21 @@ export class ContactComponent extends BaseComponent implements OnInit {
 
             this.sendMessage = "Success";
         }
-        
+
     }
-    closeAlert(formSubmit: NgForm){
+    closeAlert(formSubmit: NgForm) {
         formSubmit.reset();
         this.sendMessage = '';
+    }
+    
+    save() {
+        this.contactService.create(this.contact).then(() => {
+            this.contact = {
+                fullname: null,
+                email: null,
+                number: null,
+                message: null
+            }
+        });
     }
 }
