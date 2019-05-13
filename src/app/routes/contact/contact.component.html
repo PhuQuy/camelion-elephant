@@ -99,7 +99,7 @@
           <button type="submit" class="btn btn-primary title w-100  btn py-2 px-4 btn-primary">
             Submit
           </button>
-          <div class="alert alert-success alert-dismissible" *ngIf="sendMessage !== ''">
+          <div class="alert alert-success alert-dismissible myAlert-bottom" *ngIf="sendMessage !== ''">
               <a class="close" data-dismiss="alert" aria-label="close" (click)="closeAlert(formSubmit)">&times;</a>
               <strong>Success!</strong> {{sendMessage}}
             </div>

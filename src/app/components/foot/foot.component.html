@@ -100,7 +100,7 @@
               <span class="icon icon-paper-plane" (click)="sendInfo(formSubmit)"></span>
               <input type="text" class="form-control" placeholder="Subscribe" [(ngModel)]="name" #nameText="ngModel" name="name" >
             </div>
-            <div class="alert alert-success alert-dismissible" *ngIf="sendMessage !== ''">
+            <div class="alert alert-success alert-dismissible myAlert-bottom" *ngIf="sendMessage !== ''">
                 <small><a class="close" data-dismiss="alert" aria-label="close" (click)="closeAlert(formSubmit)">&times;</a>
                 <strong>Success!</strong><br/> {{sendMessage}}</small>
               </div>

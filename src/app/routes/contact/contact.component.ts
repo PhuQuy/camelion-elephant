@@ -50,7 +50,7 @@ export class ContactComponent extends BaseComponent implements OnInit {
         if (formSubmit.valid) {
             this.contactService.create(formSubmit.value);
 
-            this.sendMessage = "Success";
+            this.sendMessage = "Your information has sent";
         }
 
     }
