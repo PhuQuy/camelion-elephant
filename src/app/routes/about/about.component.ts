@@ -95,7 +95,15 @@ export class AboutComponent extends BaseComponent implements OnInit {
             job: "System Analytics"
         },
 
-    ]
+    ];
+    configCount = {
+        animation: 'count',
+        format: '(,ddd)',
+        duration: 8000,
+        theme: 'default',
+        value: 0,
+        auto: true,
+    };
     activeSlides: SlidesOutputData;
     slidesStore: any[];
     constructor(@Inject(PLATFORM_ID) public platformId: string, private seoService: SeoService) {
