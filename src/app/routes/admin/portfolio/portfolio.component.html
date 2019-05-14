@@ -10,6 +10,7 @@
       <tr>
         <th class="th-image">Image</th>
         <th>Name</th>
+        <th>Create date</th>
         <th>Action</th>
       </tr>
     </thead>
@@ -18,6 +19,8 @@
         <td class="td-image"><img [src]="portfolio.images[0]"/></td>
 
         <td><a routerLink="/portfolio/{{portfolio.slug}}">{{portfolio.title}}</a></td>
+        <td>{{portfolio.createdAt.seconds * 1000 | date :'medium'}}</td>
+        
         <td>
           <ul class="list-inline">
             <li class="list-inline-item">

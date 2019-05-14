@@ -22,11 +22,6 @@
           </p>
           <ng-template #content let-d="dismiss">
             <div>
-              <div>
-                <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
               <div class="embed-responsive embed-responsive-16by9">
                 <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/M-P4QBt-FWw" allowfullscreen
                   frameborder="0"></iframe>
@@ -49,7 +44,7 @@
               <div>
                 <a [routerLink]="['/portfolio', slide.slug]">
                   <img class="bg-white d-flex center" [src]="slide.images[0]" [alt]="slide.title" [title]="slide.title"
-                    style="width: 100%;border-radius: 5px;" />
+                    style="width: 100%;border-radius: 5px; height: 510px;" />
                   <div class="overlay-link">
 
                     <div class='overlay-bar'>

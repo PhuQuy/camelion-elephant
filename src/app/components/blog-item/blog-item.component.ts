@@ -18,7 +18,7 @@ export class BlogItemComponent extends BaseComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.createDate = new Date(this.blog.createdAt.seconds);
+        this.createDate = new Date(this.blog.createdAt.seconds*1000);
     }
 
 }

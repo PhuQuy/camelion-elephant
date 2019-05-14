@@ -1,10 +1,11 @@
-import { Component, Inject } from "@angular/core";
+import { Component, Inject, ViewChild } from "@angular/core";
 
 import { NgbModal, ModalDismissReasons } from "@ng-bootstrap/ng-bootstrap";
 
 import { ConfirmModalComponent } from "@components/admin/confirm-modal/confirm-modal.component";
 import { PortfolioService } from "app/services/portfolio.service";
 import { Subject, Subscription } from "rxjs";
+import { DataTableDirective } from "angular-datatables";
 
 @Component({
 	selector: "app-portfolio",
@@ -16,6 +17,9 @@ export class PortfolioComponent {
 	portfolios;
 	dtTrigger = new Subject();
 	sub: Subscription;
+	index = 0;
+	@ViewChild(DataTableDirective) dtElement: DataTableDirective;
+
 	constructor(
 		private modalService: NgbModal,
 		protected portfolioService: PortfolioService
@@ -28,8 +32,12 @@ export class PortfolioComponent {
 	getAll() {
 		this.sub = this.portfolioService.getAll().subscribe(portfolios => {
 			this.portfolios = portfolios;
-			console.log("gte All");
-			this.dtTrigger.next();
+			if (this.index == 0) {
+				this.index ++;
+				this.dtTrigger.next();
+			} else {
+				this.rerender();
+			}
 		});
 	}
 
@@ -42,6 +50,12 @@ export class PortfolioComponent {
 			}
 		});
 	}
+	rerender = () => {
+		this.dtElement.dtInstance.then((dtInstance: DataTables.Api) => {
+			dtInstance.destroy();
+			this.dtTrigger.next();
+		});
+	};
 	ngOnDestroy(): void {
 		console.log("destroy");
 		this.dtTrigger.unsubscribe();

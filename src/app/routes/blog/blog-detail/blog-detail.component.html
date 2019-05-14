@@ -24,8 +24,11 @@
   <div class="container">
     <div class="row">
       <div class="col-md-8 ">
-        <h2 class="mb-3">{{ blog?.title }}</h2>
-        
+        <h1 class="mb-3">{{ blog?.title }}</h1>
+        <h6><span class="badge badge-primary">{{blog?.category[0].name}} </span> <span class="">
+          {{ blog?.createdAt.seconds*1000  | date :'mediumDate' }}
+      </span></h6>
+        <br/>
         <ngx-md [data]="blog?.content">
 </ngx-md>
         <div class="tag-widget post-tag-container mb-5 mt-5">

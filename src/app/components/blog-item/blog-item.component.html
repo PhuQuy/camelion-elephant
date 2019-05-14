@@ -8,19 +8,19 @@
 		</a>
 		<div class="text p-4 d-block ">
 			<div class="meta mb-3">
-				<div><span class="badge badge-primary">Javascript</span></div>
+				<div><span class="badge badge-primary">{{blog.category[0].name}} </span></div>
 				<div>
-					<a>
-					{{ createdDate | datene }}
-				</a>
+					<span>
+					{{ blog.createdAt.seconds*1000  | date :'mediumDate' }}
+				</span>
 				</div>
 				<div>
-					<a class="meta-chat"
-						>
+					<!-- <a class="meta-chat"
+						> -->
 						<!-- <span class="icon-chat"></span> -->
 						<!-- {{ blog.comments.length }} -->
-						</a
-					>
+						<!-- </a -->
+					<!-- > -->
 				</div>
 			</div>
 			<h3 class="heading">

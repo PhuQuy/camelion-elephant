@@ -36,7 +36,7 @@ export class HomeComponent extends BaseComponent {
         margin: 500,
         navSpeed: 700,
         stagePadding: 20,
-        autoplay: true,
+        autoplay: false,
         autoplayTimeout: 5000,
         autoplayHoverPause: true,
         nav: true,
@@ -128,7 +128,7 @@ export class HomeComponent extends BaseComponent {
         this.dtTrigger.unsubscribe();
     }
     open(content) {
-        this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title', size: 'lg', keyboard: true, windowClass: 'modal', centered: true }).result.then((result) => {
+        this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title', size: 'lg', keyboard: true}).result.then((result) => {
             this.closeResult = `Closed with: ${result}`;
         }, (reason) => {
             this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;

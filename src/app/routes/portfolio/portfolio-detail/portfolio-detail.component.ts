@@ -2,6 +2,7 @@ import { Component, OnInit, PLATFORM_ID, Inject } from "@angular/core";
 import { BaseComponent } from "@core/base/base.component";
 import { ActivatedRoute, Router } from "@angular/router";
 import { PortfolioService } from "@services/portfolio.service";
+import { SeoService } from "@shared/seo.service";
 import {
     NgxGalleryOptions,
     NgxGalleryImage,
@@ -11,7 +12,7 @@ import {
     selector: "portfolio-detail",
     templateUrl: "./portfolio-detail.component.html",
     styleUrls: ["./portfolio-detail.component.scss"],
-    providers: [PortfolioService]
+    providers: [PortfolioService, SeoService]
 })
 export class PortfolioDetailComponent extends BaseComponent implements OnInit {
     id = "";
@@ -21,7 +22,8 @@ export class PortfolioDetailComponent extends BaseComponent implements OnInit {
     constructor(
         @Inject(PLATFORM_ID) public platformId: string,
         private activatedRoute: ActivatedRoute,
-        private portfolioService: PortfolioService
+        private portfolioService: PortfolioService,
+        private seoService: SeoService
     ) {
         super(platformId);
     }
@@ -43,6 +45,13 @@ export class PortfolioDetailComponent extends BaseComponent implements OnInit {
                         medium: image,
                         big: image
                     });
+                });
+
+                this.seoService.generateTags({
+                    title: this.portfolio.title + " - Portfolio",
+                    description: this.portfolio.description,
+                    slug: this.portfolio.slug,
+                    keywords: this.portfolio.slug
                 });
             });
         });

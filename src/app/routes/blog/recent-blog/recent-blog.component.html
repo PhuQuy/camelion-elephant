@@ -11,7 +11,8 @@
       </h3>
       <div class="meta">
         <div>
-          <a href="#"><span class="icon-calendar"></span> July 12, 2018</a>
+          
+          <a href="#"><span class="icon-calendar"></span> {{ blog.createdAt.seconds*1000  | date :'mediumDate' }}</a>
         </div>
         <!-- <div>
           <a href="#"><span class="icon-person"></span> Admin</a>

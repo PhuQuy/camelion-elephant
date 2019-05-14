@@ -5,7 +5,7 @@
   </a>
 </div>
 <div class="bgc-white bd bdrs-3 p-20 mB-20">
-  <table class="table table-striped table-bordered table-image" datatable >
+  <table class="table table-striped table-bordered table-image" datatable [dtTrigger]="dtTrigger" >
     <thead>
       <tr>
         <th class="th-image">Image</th>
@@ -20,7 +20,7 @@
         <td class="td-image"><img [src]="blog.imgURL"/></td>
         <td><a routerLink="/blog/{{blog.slug}}" target="_blank">{{blog.title}}</a></td>
         <td>{{blog.published}}</td>
-        <td>{{blog.createdAt.seconds * 1000 | date :'short'}}</td>
+        <td>{{blog.createdAt.seconds * 1000 | date :'medium'}}</td>
         <td>
           <ul class="list-inline">
             <li class="list-inline-item">
