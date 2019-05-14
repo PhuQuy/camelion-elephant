@@ -28,32 +28,29 @@ export class AboutComponent extends BaseComponent implements OnInit {
         navSpeed: 700,
         stagePadding: 50,
         nav: true,
-        navText: [
-            '<i class="fas fa-chevron-left"></i>',
-            '<i class="fas fa-chevron-right"></i>'
-        ],
-        navClass: ["owl-prev", "owl-next"],
+        navText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>'],
+        navClass: ['owl-prev', 'owl-next'],
         responsiveClass: true,
         responsive: {
             0: {
                 items: 1
             },
             480: {
-                items: 2
+                items: 1
             },
             768: {
-                items: 3
+                items: 3,
                 // loop: false
             },
             990: {
-                items: 3
+                items: 3,
                 // loop: false
             }
         },
-        navElement: "div",
+        navElement: 'div',
         lazyLoad: true,
         lazyLoadEager: 2,
-        responsiveBaseElement: "div"
+        responsiveBaseElement: 'div'
     };
     slideStore = [
         {

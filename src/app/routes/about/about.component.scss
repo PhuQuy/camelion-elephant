@@ -45,7 +45,7 @@ img{
   right:25%;
 }
 ::ng-deep .owl-item{
-  min-height: 500px;
+  max-height: 500px;
 }
 ::ng-deep .owl-carousel .owl-nav .owl-next{
   background: transparent !important;
@@ -76,3 +76,14 @@ img{
   width: 100px;
   height: 100px;
 }
+p.px-4.quote-p{
+  white-space: normal;
+  overflow: hidden;
+  overflow-y: auto;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  max-height: 60px;
+}
+::-webkit-scrollbar {
+  display: none;
+  }
