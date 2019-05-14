@@ -51,7 +51,8 @@ export class PortfolioDetailComponent extends BaseComponent implements OnInit {
                     title: this.portfolio.title + " - Portfolio",
                     description: this.portfolio.description,
                     slug: this.portfolio.slug,
-                    keywords: this.portfolio.slug
+                    keywords: this.portfolio.slug,
+                    image:this.portfolio.images[0]
                 });
             });
         });

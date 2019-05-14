@@ -1,4 +1,4 @@
-import { Component, OnInit, PLATFORM_ID, Inject } from "@angular/core";
+import { Component, OnInit, PLATFORM_ID, Inject, Input,Output,EventEmitter } from "@angular/core";
 import { BaseComponent } from "@core/base/base.component";
 import { ActivatedRoute, Router } from "@angular/router";
 import { BlogService } from "@services/blog.service";
@@ -12,18 +12,21 @@ import { CategoryService } from "@services/category.service";
     providers: [BlogService, TagService, CategoryService]
 })
 export class RightBlogComponent extends BaseComponent implements OnInit {
-    blogs=[];
-    tags=[];
-    categories=[];
+    blogs = [];
+    tags = [];
+    categories = [];
+    @Input() searchBlog;
+    @Output() updateSearch = new EventEmitter();
     constructor(
         @Inject(PLATFORM_ID) public platformId: string,
         private activatedRoute: ActivatedRoute,
         private blogService: BlogService,
         private tagService: TagService,
-        private categoryService: CategoryService,
+        private categoryService: CategoryService
     ) {
         super(platformId);
     }
+
     ngOnInit() {
         this.blogService.getLimit(3).subscribe(blogs => {
             this.blogs = blogs;
@@ -32,14 +35,16 @@ export class RightBlogComponent extends BaseComponent implements OnInit {
             this.tags = tags;
         });
         this.categoryService.getAll().subscribe(categories => {
-            console.log('category', categories);
+            console.log("category", categories);
             this.categories = categories;
         });
+    }
+    onSearch(){
+        console.log('this', this.searchBlog);
+        this.updateSearch.emit(this.searchBlog);
     }
 
     ngAfterViewInit() {
         this.initView();
     }
-
-    
 }

@@ -1,11 +1,11 @@
 <div class="sidebar-box">
-  <form action="#" class="search-form">
+  <form class="search-form">
     <div class="form-group">
-      <span class="icon fa fa-search"></span>
+      <span class="icon fa fa-search" (click)="onSearch()"></span>
       <input
         type="text"
         class="form-control"
-        placeholder="Type a keyword and hit enter"
+        placeholder="Type a keyword and hit enter" [(ngModel)]="searchBlog" [ngModelOptions]="{standalone: true}"
       />
     </div>
   </form>

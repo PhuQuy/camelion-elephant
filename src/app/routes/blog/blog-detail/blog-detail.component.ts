@@ -37,7 +37,8 @@ export class BlogDetailComponent extends BaseComponent implements OnInit {
                     title: this.blog.title+' - Blog',
                     description: this.blog.title,
                     slug: this.blog.slug,
-                    keywords: ""
+                    keywords: this.blog.slug,
+                    image:this.blog.imgURL
                 });
             });
         });

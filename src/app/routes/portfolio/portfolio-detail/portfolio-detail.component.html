@@ -30,12 +30,12 @@
           <img [src]="(portfolio?.images)[0]" alt="" class="img-cover" />
         </p>
 
-        <h2 class="mb-3">{{ portfolio?.title }}</h2>
+        <h2 class="mb-3 title">{{ portfolio?.title }}</h2>
         <h5>
           Development platforms:
           <span *ngFor="let platform of portfolio?.platforms">{{
-            platform?.name
-          }}</span>
+            platform?.name 
+          }}, </span>
         </h5>
         <h5>
           Link:

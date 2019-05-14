@@ -11,6 +11,7 @@
         <th class="th-image">Image</th>
         <th>Name</th>
         <th>Published</th>
+        <th>Category</th>
         <th>Create date</th>
         <th>Action</th>
       </tr>
@@ -20,6 +21,7 @@
         <td class="td-image"><img [src]="blog.imgURL"/></td>
         <td><a routerLink="/blog/{{blog.slug}}" target="_blank">{{blog.title}}</a></td>
         <td>{{blog.published}}</td>
+        <td>{{blog.category[0].name}}</td>
         <td>{{blog.createdAt.seconds * 1000 | date :'medium'}}</td>
         <td>
           <ul class="list-inline">
