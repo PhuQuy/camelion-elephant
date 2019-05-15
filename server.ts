@@ -10,7 +10,7 @@ import * as cors from 'cors';
 import * as compression from 'compression';
 import { join } from 'path';
 
-// (global as any).XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
+(global as any).XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
 
 const domino = require('domino');
 const template = join(process.cwd(), 'dist/browser/index.html').toString();
