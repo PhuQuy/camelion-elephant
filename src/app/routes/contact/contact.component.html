@@ -14,7 +14,6 @@
     </div>
   </div>
 </section>
-
 <!-- <section class="ftco-section-2 ftco-degree-bg">
   <div class="container d-flex">
     <div class="section-2-blocks-wrapper row d-flex">
@@ -50,8 +49,7 @@
       <div class="col-sm-6">
         <form #formSubmit="ngForm" class="contact-form" (ngSubmit)="sendInfo(formSubmit)">
           <div class="form-group  mb-4">
-            <input type="text" class="form-control pl-2 pr-2" id="fullname" placeholder="Fullname"
-              [(ngModel)]="fullname" required #fullnameText="ngModel" name="fullname" />
+            <input type="text" class="form-control pl-2 pr-2" id="fullname" placeholder="Fullname" [(ngModel)]="fullname" required #fullnameText="ngModel" name="fullname" />
             <p class="form-validation m-0 " *ngIf="
                 fullnameText?.invalid &&
                 (fullnameText?.dirty || fullnameText?.touched)
@@ -60,8 +58,7 @@
             </p>
           </div>
           <div class="form-group mb-4">
-            <input type="text" class="form-control pl-2 pr-2" id="email" placeholder="Email" [(ngModel)]="email"
-              required #emailText="ngModel" name="email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" />
+            <input type="text" class="form-control pl-2 pr-2" id="email" placeholder="Email" [(ngModel)]="email" required #emailText="ngModel" name="email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" />
             <p class="form-validation m-0 " *ngIf="
                 emailText?.errors &&
                 emailText?.errors?.required &&
@@ -74,9 +71,7 @@
             </p>
           </div>
           <div class="form-group mb-4">
-            <input type="number" class="form-control pl-2 pr-2" id="phone" placeholder="Phone" [(ngModel)]="phone"
-              #phoneNumber="ngModel" required
-              name="phone" />
+            <input type="number" class="form-control pl-2 pr-2" id="phone" placeholder="Phone" [(ngModel)]="phone" #phoneNumber="ngModel" required name="phone" />
             <p class="form-validation m-0 " *ngIf="
             phoneNumber?.errors &&
             phoneNumber?.errors?.required &&
@@ -86,29 +81,49 @@
             </p>
           </div>
           <div class="form-group mb-4">
-            <textarea class="form-control pl-2 pr-2" id="exampleFormControlTextarea1" placeholder="Message" rows="3"
-              [(ngModel)]="message" #messageText="ngModel" name="message" required appForbiddenName="fuck"></textarea>
-              <p class="form-validation m-0 " *ngIf="
+            <textarea class="form-control pl-2 pr-2" id="exampleFormControlTextarea1" placeholder="Message" rows="3" [(ngModel)]="message" #messageText="ngModel" name="message" required appForbiddenName="fuck"></textarea>
+            <p class="form-validation m-0 " *ngIf="
               messageText?.errors &&
               messageText?.errors?.required &&
                 (messageText?.dirty || messageText?.touched)
               ">
-                Message is required
-              </p>
+              Message is required
+            </p>
           </div>
           <button type="submit" class="btn btn-primary title w-100  btn py-2 px-4 btn-primary">
             Submit
           </button>
           <div class="alert alert-success alert-dismissible myAlert-bottom" *ngIf="sendMessage !== ''">
-              <a class="close" data-dismiss="alert" aria-label="close" (click)="closeAlert(formSubmit)">&times;</a>
-              <strong>Success!</strong> {{sendMessage}}
-            </div>
+            <a class="close" data-dismiss="alert" aria-label="close" (click)="closeAlert(formSubmit)">&times;</a>
+            <strong>Success!</strong> {{sendMessage}}
+          </div>
         </form>
+      </div>
+      <div class="col-sm-6">
+        <ul class="contact-info">
+          <li><span class="icon icon-home"></span>
+            <div class="info">
+              <strong>Binghamton, New York</strong>
+              <div>4343 Hinkle Deegan Lake Road</div>
+            </div>
+          </li>
+          <li><span class="icon icon-phone"></span>
+            <div class="info">
+              <strong>+ 1235 2355 98</strong>
+              <div>Mon to Fri 9am to 6 pm</div>
+            </div>
+          </li>
+          <li><span class="icon icon-inbox"></span>
+            <div class="info">
+              <strong>info@yoursite.com</strong>
+              <div>Send us your query anytime!</div>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
-
 <!-- <section class="ftco-section-2 ftco-gray-bg">
   <div class="container">
     <div class="row">

@@ -1,6 +1,5 @@
 import { Component, Inject, ViewChild } from "@angular/core";
 
-// import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { PortfolioService } from "app/services/portfolio.service";
 import { Router, ActivatedRoute } from "@angular/router";
@@ -13,7 +12,6 @@ import {convertToSlug} from 'app/utils/util';
     providers: [PortfolioService, UploadService]
 })
 export class AddEditPortfolioComponent {
-    // public editor = ClassicEditor;
     public selectedCompany = '';
     platformsData = [];
     portfolioForm: FormGroup;

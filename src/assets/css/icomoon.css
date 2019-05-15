@@ -4917,3 +4917,7 @@
 .icon-zoom_out_map:before {
   content: "\e56b";
 }
+
+.icon-mail:before {
+  content: "\ea83";
+}

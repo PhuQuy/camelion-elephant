@@ -7,7 +7,6 @@ import { ConfirmModalComponent } from '@components/admin/confirm-modal/confirm-m
 import { TagsRoutingModule } from "./tags.routing";
 
 import { ShareModule } from "@shared/share/share.module";
-import { CKEditorModule } from "@ckeditor/ckeditor5-angular";
 import { DataTablesModule } from "angular-datatables";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 @NgModule({
@@ -15,7 +14,6 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 		CommonModule,
 		ShareModule,
 		TagsRoutingModule,
-		CKEditorModule,
 		DataTablesModule,
 		NgbModule
 	],

@@ -19,7 +19,7 @@
     </div>
   </div>
 </section>
-<section class="ftco-section ftco-degree-bg" #blogHeader>
+<section  class="ftco-section ftco-degree-bg" #blogHeader>
   <div class="container">
     <div class="row">
       <div class="col-md-8 ">
@@ -30,7 +30,7 @@
             data-aos="fade-up"
             data-aos-delay="200"
             data-aos-offset="0"
-            *ngFor="let blog of (blogs | paginate: config | filter: searchBlog)"
+            *ngFor="let blog of blogs |filter: searchBlog| paginate: config  "
           >
             <app-blog-item [blog]="blog"></app-blog-item>
           </div>

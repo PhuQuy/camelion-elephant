@@ -6,7 +6,6 @@ import { UploadImageModalComponent } from "./upload-image-modal/upload-image-mod
 import { BlogsRoutingModule } from "./blogs.routing";
 
 import { ShareModule } from "@shared/share/share.module";
-import { CKEditorModule } from "@ckeditor/ckeditor5-angular";
 import { DataTablesModule } from "angular-datatables";
 import { ConfirmModalComponent } from "@components/admin/confirm-modal/confirm-modal.component";
 import { NgSelectModule } from "@ng-select/ng-select";
@@ -18,7 +17,6 @@ import { SimplemdeModule, SIMPLEMDE_CONFIG } from "ng2-simplemde";
 		CommonModule,
 		ShareModule,
 		BlogsRoutingModule,
-		CKEditorModule,
 		DataTablesModule,
 		NgSelectModule,
 		SimplemdeModule.forRoot({

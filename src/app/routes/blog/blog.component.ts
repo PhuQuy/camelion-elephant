@@ -60,7 +60,7 @@ export class BlogComponent extends BaseComponent implements OnInit {
     }
 
     ngAfterViewInit() {
-        this.initView();
+         this.initView();
     }
 
     pageChange(page) {

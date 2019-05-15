@@ -1,5 +1,4 @@
 import { Component, Inject, ViewChild } from "@angular/core";
-import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { Router, ActivatedRoute } from "@angular/router";
 import { UploadService } from "app/services/upload.service";
@@ -13,7 +12,6 @@ import { TeamService } from "app/services/team.service";
 })
 
 export class AddEditTeamComponent {
-    public editor = ClassicEditor;
     public selectedCompany = '';
     platformsData = [];
     teamForm: FormGroup;

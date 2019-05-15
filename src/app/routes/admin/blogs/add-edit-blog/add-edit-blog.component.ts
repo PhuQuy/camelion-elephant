@@ -1,5 +1,4 @@
 import { Component, Inject } from "@angular/core";
-import * as ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { NgbModal, ModalDismissReasons } from "@ng-bootstrap/ng-bootstrap";
 import { UploadImageModalComponent } from "../upload-image-modal/upload-image-modal.component";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
@@ -18,7 +17,6 @@ import { convertToSlug } from "app/utils/util";
 export class AddEditBlogComponent {
     blogForm: FormGroup;
     images: any = [];
-    editor = ClassicEditor;
     tags;
     categories;
     value = "";
