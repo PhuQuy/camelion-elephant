@@ -1,12 +1,4 @@
-import { Injectable } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore';
-import { Observable, Observer } from 'rxjs';
-import { map } from 'rxjs/operators';
-import * as firebase from 'firebase/app';
-
-@Injectable({
-  providedIn: 'root'
-})
 export class BaseService {
 
   protected basePath = '';

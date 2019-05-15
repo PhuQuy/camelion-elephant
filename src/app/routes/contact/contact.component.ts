@@ -13,6 +13,11 @@ import { NgForm } from '@angular/forms'
 export class ContactComponent extends BaseComponent implements OnInit {
 
     logo = 'assets/images/logo3.png';
+    fullname: null;
+    email: null;
+    number: null;
+    message: null;
+    phone;
     contact = {
         fullname: null,
         email: null,
@@ -58,7 +63,7 @@ export class ContactComponent extends BaseComponent implements OnInit {
         formSubmit.reset();
         this.sendMessage = '';
     }
-    
+
     save() {
         this.contactService.create(this.contact).then(() => {
             this.contact = {

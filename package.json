@@ -64,7 +64,10 @@
     "rxjs-compat": "6.3.3",
     "ts-loader": "4.2.0",
     "webpack-cli": "^3.3.2",
-    "zone.js": "^0.8.26"
+    "zone.js": "^0.8.26",
+    "cp-cli": "^1.1.0",
+    "domino": "^2.1.0",
+    "xmlhttprequest": "^1.8.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.6.8",

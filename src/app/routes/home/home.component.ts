@@ -1,12 +1,10 @@
-import { Component, AfterViewInit, PLATFORM_ID, Inject, ElementRef, ViewChild, AfterViewChecked, HostListener } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
-import * as AOS from 'aos';
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { BaseComponent } from '@core/base/base.component';
-import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { BlogService } from '@services/blog.service';
+import { PortfolioService } from '@services/portfolio.service';
 import { SeoService } from '@shared/seo.service';
 import { Subject } from 'rxjs';
-import { PortfolioService } from '@services/portfolio.service';
-import { BlogService } from '@services/blog.service';
 
 declare let $: any;
 var TxtType = function (el, toRotate, period) {
