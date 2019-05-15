@@ -1,18 +1,18 @@
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { AgmCoreModule } from '@agm/core';
+import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { NgModule, Inject, PLATFORM_ID } from '@angular/core';
+import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AuthGuard } from '@core/auth.guard';
+import { environment } from '@env/environment';
 import { NgtUniversalModule } from '@ng-toolkit/universal';
 import { TransferHttpCacheModule } from '@nguniversal/common';
-import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app.routing';
-import { AgmCoreModule } from '@agm/core';
 import { SeoService } from '@shared/seo.service';
-import { environment } from '@env/environment';
-import { AuthGuard } from '@core/auth.guard';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFirestore } from 'angularfire2/firestore';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app.routing';
 
 @NgModule({
     declarations: [

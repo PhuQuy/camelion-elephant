@@ -2,9 +2,10 @@ import { Injectable } from '@angular/core';
 import * as firebase from 'firebase';
 import { Observable } from "rxjs/Observable";
 import { Observer } from "rxjs/Observer";
-import { FirebaseStorage } from '@firebase/storage-types';
 
-@Injectable()
+@Injectable({
+    providedIn: 'root'
+  })
 export class UploadService {
 
     pushUpload(path, file) {

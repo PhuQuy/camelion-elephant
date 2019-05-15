@@ -7,7 +7,7 @@
 
 </div>
 
-<div #animateChild [style.visibility]="!loading ? 'visible' : 'hidden'" class="client-content">
-  <router-outlet #appOutlet="outlet"></router-outlet>
+<div [style.visibility]="!loading ? 'visible' : 'hidden'" class="client-content">
+  <router-outlet></router-outlet>
   <foot></foot>
 </div>

@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build:server:prod": "ng run camelion-elephant:server && webpack  --mode development --config webpack.server.config.js --progress --colors",
-    "build:browser:prod": "ng build --prod --build-optimizer ",
+    "build:browser:prod": "ng build --prod --build-optimizer",
     "build:prod": "npm run build:server:prod && npm run build:browser:prod",
     "server": "node local.js"
   },

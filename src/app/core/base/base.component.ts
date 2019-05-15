@@ -1,7 +1,6 @@
 import { isPlatformBrowser } from '@angular/common';
 import { AfterViewInit, Component, Inject, PLATFORM_ID } from '@angular/core';
 import * as AOS from 'aos';
-declare let $: any;
 
 @Component({
     selector: 'base',
@@ -15,8 +14,8 @@ export class BaseComponent implements AfterViewInit {
         return isPlatformBrowser(this.platformId);
     }
 
-    ngAfterViewInit(){
-        
+    ngAfterViewInit() {
+
     }
 
     initView() {

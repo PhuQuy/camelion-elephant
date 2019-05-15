@@ -8,8 +8,16 @@ import * as express from 'express';
 import * as bodyParser from 'body-parser';
 import * as cors from 'cors';
 import * as compression from 'compression';
-
 import { join } from 'path';
+
+// (global as any).XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
+
+const domino = require('domino');
+const template = join(process.cwd(), 'dist/browser/index.html').toString();
+const win = domino.createWindow(template);
+(global as any)['window'] = win;
+(global as any)['document'] = win.document;
+(global as any)['navigator'] = win.navigator;
 
 enableProdMode();
 

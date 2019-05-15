@@ -81,8 +81,7 @@ export class HomeComponent extends BaseComponent {
     // }
     portfolios: any;
     dtTrigger = new Subject();
-    constructor(@Inject(PLATFORM_ID) public platformId: string,
-        private modalService: NgbModal, private seoService: SeoService, protected portfolioService: PortfolioService, private blogService: BlogService) {
+    constructor(@Inject(PLATFORM_ID) public platformId: string, private seoService: SeoService, protected portfolioService: PortfolioService, private blogService: BlogService) {
         super(platformId);
     }
 
@@ -126,11 +125,11 @@ export class HomeComponent extends BaseComponent {
         this.dtTrigger.unsubscribe();
     }
     open(content) {
-        this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title', size: 'lg', keyboard: true}).result.then((result) => {
-            this.closeResult = `Closed with: ${result}`;
-        }, (reason) => {
-            this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-        });
+        // this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title', size: 'lg', keyboard: true}).result.then((result) => {
+        //     this.closeResult = `Closed with: ${result}`;
+        // }, (reason) => {
+        //     this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+        // });
     }
 
     private getDismissReason(reason: any): string {
