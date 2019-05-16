@@ -1,5 +1,4 @@
-
-.center{
+.center {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -10,14 +9,14 @@
   width: 70%;
   min-height: 600px;
 }
-img{
+img {
   margin-top: 20px;
   box-shadow: 0px 25px 82px -31px rgba(0, 0, 0, 0.36);
 }
 .quote {
   position: relative;
-  bottom: 35px;
-  left: 60px;
+  bottom: 25px;
+  left: 70px;
   width: 40px;
   height: 40px;
   background: #79efb4;
@@ -30,7 +29,6 @@ img{
   background: transparent !important; /* dots color*/
   width: 100% !important;
   margin-top: 100px !important;
-
 }
 ::ng-deep .owl-theme .owl-dots .owl-dot.active span,
 .owl-theme .owl-dots .owl-dot:hover span {
@@ -38,29 +36,29 @@ img{
   margin-top: 10px !important;
 }
 
-::ng-deep .owl-dots{
+::ng-deep .owl-dots {
   position: absolute;
-  top:107%;
-  left:25%;
-  right:25%;
+  top: 107%;
+  left: 25%;
+  right: 25%;
 }
-::ng-deep .owl-item{
+::ng-deep .owl-item {
   max-height: 500px;
 }
-::ng-deep .owl-carousel .owl-nav .owl-next{
+::ng-deep .owl-carousel .owl-nav .owl-next {
   background: transparent !important;
   font-size: 37px !important;
   color: rgb(173, 173, 173);
-  &:hover{
+  &:hover {
     color: rgb(173, 173, 173);
   }
 }
 
-::ng-deep .owl-carousel .owl-nav .owl-prev{
+::ng-deep .owl-carousel .owl-nav .owl-prev {
   background: transparent !important;
   font-size: 37px !important;
   color: rgb(173, 173, 173);
-  &:hover{
+  &:hover {
     color: rgb(173, 173, 173);
   }
 }
@@ -72,11 +70,11 @@ img{
   font-size: 40px !important;
 }
 
-.user-image{
+.user-image {
   width: 100px;
   height: 100px;
 }
-p.px-4.quote-p{
+p.px-4.quote-p {
   white-space: normal;
   overflow: hidden;
   overflow-y: auto;
@@ -86,4 +84,16 @@ p.px-4.quote-p{
 }
 ::-webkit-scrollbar {
   display: none;
-  }
+}
+
+.circle-image {
+  position: relative;
+  overflow: hidden;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}

@@ -86,8 +86,13 @@
         <ng-template carouselSlide [id]="team.id">
           <div class="text-center border">
             <div class="d-inline-block">
-              <img class="shadow p-1 mb-2 bg-white rounded-circle d-flex center user-image" [src]="team.imgURL" [alt]="team.name"
-                [title]="team.name" style="width: 100px;" />
+                <div class="mt-4">
+                    <!-- <img class="shadow bg-white img-fluid d-flex center user-image" [src]="team.imgURL" [alt]="team.name"
+                [title]="team.name" style="width: 100px;" /> -->
+                <div class="ml-2 col- circle-image" [ngStyle]="{'background-image': 'url(' + team.imgURL + ')'}">
+                </div>
+                </div>
+              
               <span class="shadow p-1 mb-2 quote d-flex align-items-center justify-content-center" (click)="getClickEvent(team)">
                 <i class="icon-quote-left"></i>
               </span>
