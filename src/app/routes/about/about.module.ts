@@ -4,7 +4,7 @@ import { AboutComponent } from './about.component';
 import { AboutRoutingModule } from './about.routing';
 import { ShareModule } from '@shared/share/share.module';
 import { CarouselModule } from 'ngx-owl-carousel-o';
-import { Ng2OdometerModule } from 'ng2-odometer';
+// import { Ng2OdometerModule } from 'ng2-odometer';
 
 @NgModule({
   imports: [
@@ -12,7 +12,7 @@ import { Ng2OdometerModule } from 'ng2-odometer';
     ShareModule,
     AboutRoutingModule,
     CarouselModule,
-    Ng2OdometerModule
+    // Ng2OdometerModule
   ],
   declarations: [AboutComponent]
 })
