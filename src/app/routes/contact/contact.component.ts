@@ -49,13 +49,15 @@ export class ContactComponent extends BaseComponent implements OnInit {
     }
 
     sendInfo(formSubmit: NgForm) {
-        // console.log(formSubmit.value);
-        // console.log(formSubmit.valid);
-
         if (formSubmit.valid) {
             this.contactService.create(formSubmit.value);
-
             this.sendMessage = "Your information has sent";
+            const email = formSubmit.value.email
+            this.contactService.sendEmail(email).subscribe(res=>{
+                console.log('res', res);
+            },err=>{
+                console.log('err', err);
+            });
         }
 
     }
