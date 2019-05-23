@@ -35,12 +35,10 @@ export class RightBlogComponent extends BaseComponent implements OnInit {
             this.tags = tags;
         });
         this.categoryService.getAll().subscribe(categories => {
-            console.log("category", categories);
             this.categories = categories;
         });
     }
     onSearch(){
-        console.log('this', this.searchBlog);
         this.updateSearch.emit(this.searchBlog);
     }
 

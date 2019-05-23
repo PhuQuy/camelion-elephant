@@ -66,7 +66,8 @@
     "zone.js": "^0.8.26",
     "cp-cli": "^1.1.0",
     "domino": "^2.1.0",
-    "xmlhttprequest": "^1.8.0"
+    "xmlhttprequest": "^1.8.0",
+    "nodemailer": "^6.1.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.6.8",
@@ -78,6 +79,7 @@
     "@types/jquery": "^3.3.29",
     "@types/node": "~8.9.4",
     "codelyzer": "~4.2.1",
+    "nodemon": "^1.19.0",
     "ts-node": "~5.0.1",
     "tslint": "~5.9.1",
     "typescript": "~2.7.2"

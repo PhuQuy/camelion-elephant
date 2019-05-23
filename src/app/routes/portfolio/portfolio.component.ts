@@ -39,9 +39,9 @@ export class PortfolioComponent extends BaseComponent implements OnInit {
     ngOnInit() {
         this.seoService.generateTags({
             title: "Portfolio",
-            description: "Liên hệ Vay vốn sinh viên",
+            // description: "Liên hệ Vay vốn sinh viên",
             slug: "portfolio",
-            keywords: "vay von sinh vien"
+            // keywords: "vay von sinh vien"
         });
         this.getAll();
     }

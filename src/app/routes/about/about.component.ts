@@ -52,58 +52,6 @@ export class AboutComponent extends BaseComponent implements OnInit {
         lazyLoadEager: 2,
         responsiveBaseElement: 'div'
     };
-    slideStore = [
-        {
-            src: "/assets/images/person_1.jpg",
-            alt: "image 1",
-            title: "Person 1",
-            name: "Dennis Green",
-            job: "Web Developer"
-        },
-        {
-            src: "/assets/images/person_2.jpg",
-            alt: "image 2",
-            title: "Person 2",
-            name: "Erik Lee",
-            job: "UI Designer"
-        },
-        {
-            src: "/assets/images/person_3.jpg",
-            alt: "image 3",
-            title: "Person 3",
-            name: "Dennis Green",
-            job: "System Analytics"
-        },
-        {
-            src: "/assets/images/person_1.jpg",
-            alt: "image 1",
-            title: "Person 1",
-            name: "Erik Lee",
-            job: "Maketing Manager"
-        },
-        {
-            src: "/assets/images/person_2.jpg",
-            alt: "image 2",
-            title: "Person 2",
-            name: "Dennis Green",
-            job: "Web Developer"
-        },
-        {
-            src: "/assets/images/person_3.jpg",
-            alt: "image 3",
-            title: "Person 3",
-            name: "Dennis Green",
-            job: "Web Developer"
-        },
-        {
-            src: "/assets/images/person_3.jpg",
-            alt: "image 3",
-            title: "Person 3",
-            name: "Dennis Green",
-            job: "System Analytics"
-        },
-
-    ];
     configCount = {
         animation: 'count',
         format: '(,ddd)',
@@ -126,9 +74,9 @@ export class AboutComponent extends BaseComponent implements OnInit {
     ngOnInit() {
         this.seoService.generateTags({
             title: "About",
-            description: "Liên hệ Vay vốn sinh viên",
+            // description: "Liên hệ Vay vốn sinh viên",
             slug: "about",
-            keywords: "vay von sinh vien"
+            // keywords: "vay von sinh vien"
         });
         this.loadTeams();
     }

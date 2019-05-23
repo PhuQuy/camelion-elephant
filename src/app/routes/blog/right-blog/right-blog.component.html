@@ -13,15 +13,15 @@
 <div class="sidebar-box ">
   <div class="categories">
     <h3>Categories</h3>
-    <li *ngFor="let categogy of categories">
-      <a href="#">{{categogy.name}} <span></span></a>
+    <li *ngFor="let category of categories">
+      <a   [routerLink]="['/blog']" [queryParams]="{ category: category.name}">{{category.name}} <span></span></a>
     </li>
   </div>
 </div>
 
 <app-recent-blog></app-recent-blog>
 
-<div class="sidebar-box ">
+<div class="sidebar-box">
   <h3>Tag Cloud</h3>
   <div class="tagcloud">
     <a href="#" class="tag-cloud-link" *ngFor="let tag of tags">{{tag.name}}</a>

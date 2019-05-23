@@ -7,34 +7,38 @@ export class SeoService {
     constructor(private meta: Meta, private titleService: Title, @Inject(DOCUMENT) private doc) { }
     generateTags(config) {
         config = Object.assign({
-            title: 'Hosiana | Tin đăng bất động sản, mua bán nhà đất, cho thuê nhà đất',
-            description: 'Kênh bất động sản hàng đầu tại Việt Nam: mua bán nhà đất, cho thuê nhà đất, trao đổi nhà đất, dự án, căn hộ, căn hộ, biệt thự, villa, chung cư, văn phòng',
-            image: 'https://financial-manage.firebaseapp.com/assets/images/beach.jpg',
+            title: 'Gocodee | Oursourcing team, Web Design, Web Development',
+            description: 'Gocodee - Outsourcing team, specializing in full service Web design and development. Grow your business faster with 24/7 support as a service: Always on, elastic, with management and training included. Do you need a website? We are here for you!',
+            image: window.location.origin + '/assets/images/beach.jpg',
             slug: '',
-            keywords: ''
+            keywords: 'gocodee, full stack developer, freelancer, responsive, mobile design, mobile app website designer, web developer, 24/7 support, outsourcing team, innovative organization, Web design and development, training included'
         }, config);
 
         if(!config.image) {
-            config.image = 'https://financial-manage.firebaseapp.com/assets/images/beach.jpg';
+            config.image = window.location.origin + '/assets/images/beach.jpg';
         }
+
+        let title = config.title +' | Gocodee ';
+
         this.meta.updateTag({ name: 'slug', content: config.slug });
         this.meta.updateTag({ name: 'image', content: config.image });
         this.meta.updateTag({ name: 'description', content: config.description });
         this.meta.updateTag({ name: 'keywords', content: config.keywords });
-        this.meta.updateTag({ name: 'title', content: config.title });
+        this.meta.updateTag({ name: 'title', content: title });
+
         this.meta.updateTag({ name: 'twitter:card', content: 'summary' });
-        this.meta.updateTag({ name: 'twitter:site', content: '@hosiana' });
-        this.meta.updateTag({ name: 'twitter:title', content: config.title })
+        this.meta.updateTag({ name: 'twitter:site', content: '@gocodee' });
+        this.meta.updateTag({ name: 'twitter:title', content: title })
         this.meta.updateTag({ name: 'twitter:description', content: config.description });
         this.meta.updateTag({ name: 'twitter:image', content: config.image });
 
         this.meta.updateTag({ property: 'og:type', content: 'website' });
-        this.meta.updateTag({ property: 'og:site_name', content: 'Hosiana | Tin đăng bất động sản, mua bán nhà đất, cho thuê nhà đất' });
-        this.meta.updateTag({ property: 'og:title', content: config.title });
+        this.meta.updateTag({ property: 'og:site_name', content: 'Gocodee | Oursourcing team, Web Design, Web Development' });
+        this.meta.updateTag({ property: 'og:title', content: title });
         this.meta.updateTag({ property: 'og:description', content: config.description });
         this.meta.updateTag({ property: 'og:image', content: config.image });
 
-        this.titleService.setTitle(config.title);
+        this.titleService.setTitle(title);
         this.setCanonical();
 
     }

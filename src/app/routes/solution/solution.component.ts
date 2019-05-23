@@ -15,9 +15,9 @@ export class SolutionComponent extends BaseComponent implements OnInit {
     ngOnInit() {
         this.seoService.generateTags({
             title: 'Solution',
-            description: 'Liên hệ Vay vốn sinh viên',
+            // description: 'Liên hệ Vay vốn sinh viên',
             slug: 'solution',
-            keywords: 'vay von sinh vien'
+            // keywords: 'vay von sinh vien'
         });
     }
 

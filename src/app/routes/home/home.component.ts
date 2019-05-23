@@ -107,10 +107,10 @@ export class HomeComponent extends BaseComponent {
 
     ngOnInit() {
         this.seoService.generateTags({
-            title: 'Home',
-            description: 'Liên hệ Vay vốn sinh viên',
-            slug: 'home',
-            keywords: 'vay von sinh vien'
+            // title: 'Home',
+            // description: 'Liên hệ Vay vốn sinh viên',
+            // slug: 'home',
+            // keywords: 'vay von sinh vien'
         });
         this.getAll();
         this.loadRecentBlogs();

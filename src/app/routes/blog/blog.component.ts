@@ -10,6 +10,7 @@ import { BaseComponent } from "@core/base/base.component";
 import { PaginationInstance } from "ngx-pagination";
 import { SeoService } from "@shared/seo.service";
 import { BlogService } from "@services/blog.service";
+import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
     selector: "blog",
@@ -27,10 +28,12 @@ export class BlogComponent extends BaseComponent implements OnInit {
     @ViewChild("blogHeader") blogHeader: ElementRef;
 
     blogs = [];
+    category;
     constructor(
         @Inject(PLATFORM_ID) public platformId: string,
         private seoService: SeoService,
-        private blogService: BlogService
+        private blogService: BlogService,
+        private activatedRoute: ActivatedRoute
     ) {
         super(platformId);
     }
@@ -38,17 +41,24 @@ export class BlogComponent extends BaseComponent implements OnInit {
     ngOnInit() {
         this.seoService.generateTags({
             title: " Blog",
-            description: "Liên hệ Vay vốn sinh viên",
-            slug: "blog",
-            keywords: "vay von sinh vien"
+            slug: "blog"
         });
-        this.blogService.getAll().subscribe(blogs => {
-            this.blogs = blogs;
-            console.log("blogs", this.blogs);
+
+        this.activatedRoute.queryParams.subscribe(params => {
+            console.log("params", params);
+            this.category = params.category;
+            this.blogService.getAll().subscribe(blogs => {
+                if (this.category != "" && this.category) {
+                    this.blogs = blogs.filter(blog => {
+                        return blog.category.find(item=>{
+                            return item.name== this.category;
+                        });
+                    });
+                } else {
+                    this.blogs = blogs;
+                }
+            });
         });
-    }
-    ngOnChanges(...args: any[]) {
-        console.log("searchBlog", this.searchBlog);
     }
 
     clearSearch() {
@@ -60,7 +70,7 @@ export class BlogComponent extends BaseComponent implements OnInit {
     }
 
     ngAfterViewInit() {
-         this.initView();
+        this.initView();
     }
 
     pageChange(page) {
