@@ -411,7 +411,7 @@ h5,
           font-size: 20px;
           line-height: 1.5;
           font-weight: 300;
-          color: rgba(255, 255, 255, .8);
+          color: rgba(255, 255, 255, 1);
 
           strong {
             font-weight: 700;
@@ -1140,7 +1140,6 @@ textarea.form-control {
 
 
 .about-author {
-  img {}
 
   .desc {
     h3 {
@@ -1148,7 +1147,6 @@ textarea.form-control {
     }
   }
 
-  .bio {}
 }
 
 
@@ -1538,9 +1536,6 @@ textarea.form-control {
   background: $tertiary;
   padding: 15em 0;
 
-  .icon {
-    span {}
-  }
 
   .text {
     strong.number {
@@ -1664,7 +1659,6 @@ textarea.form-control {
   }
 
   .media-body {
-    .heading {}
 
     p {
       font-size: 16px;
@@ -1720,9 +1714,6 @@ textarea.form-control {
           margin-bottom: 10px;
         }
 
-        &:first-child {
-          // padding-left: 0;
-        }
 
         &:last-child {
           border-right: none;
@@ -1778,12 +1769,7 @@ textarea.form-control {
         }
       }
 
-      .textfield-search,
-      .select-wrap {}
 
-      .textfield-search {
-        input {}
-      }
 
       .select-wrap {
         position: relative;
@@ -1814,8 +1800,6 @@ textarea.form-control {
 //### .block-18 
 .block-18 {
 
-  .icon,
-  .text {}
 
   .icon {
     >span {
@@ -2084,7 +2068,6 @@ textarea.form-control {
         color: lighten($black, 10%);
       }
 
-      span {}
     }
   }
 }
@@ -2097,7 +2080,6 @@ textarea.form-control {
     font-size: 15px;
   }
 
-  #map {}
 }
 
 
@@ -2107,6 +2089,7 @@ textarea.form-control {
     display: block;
     height: 80px;
     width: 80px;
+    background-size: contain;
   }
 
   .text {

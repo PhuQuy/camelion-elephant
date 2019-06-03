@@ -38,9 +38,7 @@ export class ContactComponent extends BaseComponent implements OnInit {
     ngOnInit() {
         this.seoService.generateTags({
             title: " Contact",
-            // description: "Liên hệ Vay vốn sinh viên",
             slug: "contact",
-            // keywords: "vay von sinh vien"
         });
     }
 
@@ -52,8 +50,9 @@ export class ContactComponent extends BaseComponent implements OnInit {
         if (formSubmit.valid) {
             this.contactService.create(formSubmit.value);
             this.sendMessage = "Your information has sent";
-            const email = formSubmit.value.email
-            this.contactService.sendEmail(email).subscribe(res=>{
+            const email = formSubmit.value.email;
+            const fullname = formSubmit.value.fullname;
+            this.contactService.sendEmail(email, fullname).subscribe(res=>{
                 console.log('res', res);
             },err=>{
                 console.log('err', err);

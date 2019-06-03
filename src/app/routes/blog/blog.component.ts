@@ -48,6 +48,8 @@ export class BlogComponent extends BaseComponent implements OnInit {
             console.log("params", params);
             this.category = params.category;
             this.blogService.getAll().subscribe(blogs => {
+                console.log('Blog', blogs);
+                
                 if (this.category != "" && this.category) {
                     this.blogs = blogs.filter(blog => {
                         return blog.category.find(item=>{

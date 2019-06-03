@@ -37,9 +37,10 @@ const sendEmailTemplate = (templateFile, subject, data, callback) => {
 
 exports.sendNotify = (req, res) => {
   const email = req.body.email;
+  const fullname = req.body.fullname;
   console.log('email', email);
   const dataClient = {
-    fullname: "Le Xuan Thinh",
+    fullname: fullname,
     to: email
   };
   const dataAdmin = {

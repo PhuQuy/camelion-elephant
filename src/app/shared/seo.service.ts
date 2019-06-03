@@ -7,7 +7,7 @@ export class SeoService {
     constructor(private meta: Meta, private titleService: Title, @Inject(DOCUMENT) private doc) { }
     generateTags(config) {
         config = Object.assign({
-            title: 'Gocodee | Oursourcing team, Web Design, Web Development',
+            title: 'Oursourcing team, Web Design, Web Development',
             description: 'Gocodee - Outsourcing team, specializing in full service Web design and development. Grow your business faster with 24/7 support as a service: Always on, elastic, with management and training included. Do you need a website? We are here for you!',
             image: window.location.origin + '/assets/images/beach.jpg',
             slug: '',

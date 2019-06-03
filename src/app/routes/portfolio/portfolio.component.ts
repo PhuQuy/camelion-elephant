@@ -10,7 +10,6 @@ import { BaseComponent } from "@core/base/base.component";
 import { PaginationInstance } from "ngx-pagination";
 import { SeoService } from "@shared/seo.service";
 import { PortfolioService } from "@services/portfolio.service";
-import { Subject } from "rxjs";
 
 @Component({
     selector: "portfolio",
@@ -39,9 +38,7 @@ export class PortfolioComponent extends BaseComponent implements OnInit {
     ngOnInit() {
         this.seoService.generateTags({
             title: "Portfolio",
-            // description: "Liên hệ Vay vốn sinh viên",
             slug: "portfolio",
-            // keywords: "vay von sinh vien"
         });
         this.getAll();
     }
