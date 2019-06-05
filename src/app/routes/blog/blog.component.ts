@@ -28,7 +28,8 @@ export class BlogComponent extends BaseComponent implements OnInit {
     @ViewChild("blogHeader") blogHeader: ElementRef;
 
     blogs = [];
-    category;
+    category: string;
+    search: string;
     constructor(
         @Inject(PLATFORM_ID) public platformId: string,
         private seoService: SeoService,
@@ -43,20 +44,23 @@ export class BlogComponent extends BaseComponent implements OnInit {
             title: " Blog",
             slug: "blog"
         });
-
         this.activatedRoute.queryParams.subscribe(params => {
             console.log("params", params);
             this.category = params.category;
+            this.search = params.search;
             this.blogService.getAll().subscribe(blogs => {
                 console.log('Blog', blogs);
-                
                 if (this.category != "" && this.category) {
                     this.blogs = blogs.filter(blog => {
                         return blog.category.find(item=>{
                             return item.name== this.category;
                         });
                     });
-                } else {
+                } else if(this.search!=''&& this.search) {
+                    this.blogs = blogs.filter(blog=>{
+                        return blog.title.toLowerCase().search(this.search.toLowerCase())>-1;
+                    });
+                }else{
                     this.blogs = blogs;
                 }
             });

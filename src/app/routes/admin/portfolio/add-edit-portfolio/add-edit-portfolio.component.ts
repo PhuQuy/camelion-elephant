@@ -86,4 +86,9 @@ export class AddEditPortfolioComponent {
         this.upSvc.deleteFileByURL(url);
         this.images.splice(i, 1);
     }
+
+    onClickDefault(url,i){
+        this.images.splice(i,1);
+        this.images.unshift(url);
+    }
 }

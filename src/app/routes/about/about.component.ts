@@ -40,25 +40,15 @@ export class AboutComponent extends BaseComponent implements OnInit {
             },
             768: {
                 items: 3,
-                // loop: false
             },
             990: {
                 items: 3,
-                // loop: false
             }
         },
         navElement: 'div',
         lazyLoad: true,
         lazyLoadEager: 2,
         responsiveBaseElement: 'div'
-    };
-    configCount = {
-        animation: 'count',
-        format: '(,ddd)',
-        duration: 8000,
-        theme: 'default',
-        value: 0,
-        auto: true,
     };
     activeSlides: SlidesOutputData;
     slidesStore: any[];
@@ -74,15 +64,12 @@ export class AboutComponent extends BaseComponent implements OnInit {
     ngOnInit() {
         this.seoService.generateTags({
             title: "About",
-            // description: "Liên hệ Vay vốn sinh viên",
             slug: "about",
-            // keywords: "vay von sinh vien"
         });
         this.loadTeams();
     }
     loadTeams() {
         this.teamService.getAll().subscribe(teams => {
-            //console.log('team', teams);
             this.teams = teams;
         });
     }
@@ -91,7 +78,6 @@ export class AboutComponent extends BaseComponent implements OnInit {
     }
     getData(data: SlidesOutputData) {
         this.activeSlides = data;
-        //console.log(this.activeSlides);
     }
     getClickEvent(data) {
         console.log(data.name);

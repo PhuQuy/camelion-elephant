@@ -22,24 +22,23 @@
   </div>
 </section>
 
-<section class="ftco-section ftco-degree-bg" style="margin-top: -7rem;">
+<section class="ftco-section ftco-degree-bg portfolio-detail" style="margin-top: -7rem;" >
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <!-- <p>
+        <p>
           <img [src]="portfolio?.images[0]" alt="" class="img-cover" />
-        </p> -->
-
+        </p>
         <h2 class="mb-3 title">{{ portfolio?.title }}</h2>
         <h5>
           Development platforms:
-          <span *ngFor="let platform of portfolio?.platforms">{{
+          <a href="javascript:void(0)" class="badge badge-light" *ngFor="let platform of portfolio?.platforms">{{
             platform?.name 
-          }}, </span>
+          }}</a>
         </h5>
-        <h5>
+        <h5 *ngIf="portfolio?.link">
           Link:
-          <a href="{{ portfolio?.link }}" target="_blank">{{
+          <a href="{{ portfolio?.link }}" target="_blank" >{{
             portfolio?.link
           }}</a>
         </h5>

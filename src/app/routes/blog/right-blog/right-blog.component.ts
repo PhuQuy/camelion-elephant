@@ -20,6 +20,7 @@ export class RightBlogComponent extends BaseComponent implements OnInit {
     constructor(
         @Inject(PLATFORM_ID) public platformId: string,
         private activatedRoute: ActivatedRoute,
+        private router: Router,
         private blogService: BlogService,
         private tagService: TagService,
         private categoryService: CategoryService
@@ -39,7 +40,7 @@ export class RightBlogComponent extends BaseComponent implements OnInit {
         });
     }
     onSearch(){
-        this.updateSearch.emit(this.searchBlog);
+        this.router.navigate(['/blog'], { queryParams: { search: this.searchBlog } });
     }
 
     ngAfterViewInit() {

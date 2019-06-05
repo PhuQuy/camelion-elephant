@@ -14,9 +14,9 @@
             Gocodee - Outsourcing team, specializing in full service Web design and development. Grow your business faster with 24/7 support as a service: Always on, elastic, with management and training included. Do you need a website? We are here for you!
           </p>
           <p>
-            <a href="#" class="btn btn-primary btn-outline-white px-4 py-3 popup-youtube" (click)="open(content)"
+            <!-- <a href="#" class="btn btn-primary btn-outline-white px-4 py-3 popup-youtube" (click)="open(content)"
               data-toggle="modal"><span><i class="fa fa-play" style="font-size: 12px"></i></span>
-              Watch Video</a>
+              Watch Video</a> -->
           </p>
           <ng-template #content let-d="dismiss">
             <div>
@@ -61,85 +61,10 @@
   </div>
 </section>
 
-<section class="ftco-section ftco-degree-bg">
-  <div class="container">
-    <div class="row justify-content-center mb-5 pb-5">
-      <div class="col-md-7 text-center heading-section " data-aos="fade-up">
-        <span class="subheading">Our Services</span>
-        <h2>Racks provides a fully featured text services platform!</h2>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6 col-lg-3 d-flex align-self-stretch ">
-        <div class="media block-6 services d-block text-center">
-          <div class="d-flex justify-content-center">
-            <div class="icon color-1 d-flex justify-content-center mb-3">
-              <span class="align-self-center icon-layers"></span>
-            </div>
-          </div>
-          <div class="media-body p-2">
-            <h3 class="heading">Unlimited Features</h3>
-            <p>
-              Even the all-powerful Pointing has no control about the blind
-              texts it is an almost unorthographic.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3 d-flex align-self-stretch ">
-        <div class="media block-6 services d-block text-center">
-          <div class="d-flex justify-content-center">
-            <div class="icon color-2 d-flex justify-content-center mb-3">
-              <span class="align-self-center icon-gears"></span>
-            </div>
-          </div>
-          <div class="media-body p-2">
-            <h3 class="heading">Multiple Functions</h3>
-            <p>
-              Even the all-powerful Pointing has no control about the blind
-              texts it is an almost unorthographic.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3 d-flex align-self-stretch ">
-        <div class="media block-6 services d-block text-center">
-          <div class="d-flex justify-content-center">
-            <div class="icon color-3 d-flex justify-content-center mb-3">
-              <span class="align-self-center icon-paper-plane"></span>
-            </div>
-          </div>
-          <div class="media-body p-2">
-            <h3 class="heading">Advanced Visualizations</h3>
-            <p>
-              Even the all-powerful Pointing has no control about the blind
-              texts it is an almost unorthographic.
-            </p>
-          </div>
-        </div>
-      </div>
+<app-list-service></app-list-service>
 
-      <div class="col-md-6 col-lg-3 d-flex align-self-stretch ">
-        <div class="media block-6 services d-block text-center">
-          <div class="d-flex justify-content-center">
-            <div class="icon color-4 d-flex justify-content-center mb-3">
-              <span class="align-self-center icon-live_help"></span>
-            </div>
-          </div>
-          <div class="media-body p-2">
-            <h3 class="heading">Community &amp; Supports</h3>
-            <p>
-              Even the all-powerful Pointing has no control about the blind
-              texts it is an almost unorthographic.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section class="ftco-section-parallax ftco-degree-bg">
+<section class="ftco-section-parallax ftco-degree-bg" hidden>
   <div class="parallax-img d-flex align-items-center">
     <div class="container">
       <div class="row d-flex justify-content-center">
@@ -169,42 +94,9 @@
         <app-portfolio-item [portfolio]="porfolio"></app-portfolio-item>
       </div>
     </div>
-    <!-- <div class="row no-gutters">
-      <div class="block-3 d-md-flex " data-aos="fade-up">
-        <a href="portfolio.html" class="image" style="background-image: url('/assets/images/work-1.jpg'); "></a>
-        <div class="text">
-          <h4 class="subheading">Illustration</h4>
-          <h2 class="heading"><a href="portfolio.html">Even the all-powerful Pointing has no control</a></h2>
-          <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life
-            One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of
-            Grammar.</p>
-        </div>
-      </div>
-      <div class="block-3 d-md-flex " data-aos="fade-up">
-        <a href="portfolio.html" class="image order-2" style="background-image: url('/assets/images/work-2.jpg'); "></a>
-        <div class="text order-1">
-          <h4 class="subheading">Application</h4>
-          <h2 class="heading"><a href="portfolio.html">Even the all-powerful Pointing has no control</a></h2>
-          <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life
-            One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of
-            Grammar.</p>
-        </div>
-      </div>
-      <div class="block-3 d-md-flex " data-aos="fade-up">
-        <a href="portfolio.html" class="image" style="background-image: url('/assets/images/work-3.jpg'); "></a>
-        <div class="text">
-          <h4 class="subheading">Web Design</h4>
-          <h2 class="heading"><a href="portfolio.html">Even the all-powerful Pointing has no control</a></h2>
-          <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life
-            One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of
-            Grammar.</p>
-        </div>
-      </div>
-    </div> -->
   </div>
 </section>
-
-<section class="ftco-section ftco-counter ftco-degree-bg" id="section-counter">
+<section class="ftco-section ftco-counter ftco-degree-bg" id="section-counter" hidden>
   <div class="container">
     <div class="row justify-content-center mb-5 pb-5">
       <div class="col-md-7 text-center heading-section heading-section-white ">

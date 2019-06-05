@@ -6,6 +6,7 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { DatePipe } from "@shared/date.pipe";
 import { PortfolioItemComponent } from "@components/portfolio-item/portfolio-item.component";
 import { BlogItemComponent } from "@components/blog-item/blog-item.component";
+import { ListServiceComponent } from "@components/list-service/list-service.component";
 
 @NgModule({
 	imports: [
@@ -19,6 +20,7 @@ import { BlogItemComponent } from "@components/blog-item/blog-item.component";
 		DatePipe,
 		PortfolioItemComponent,
 		BlogItemComponent,
+		ListServiceComponent
 	],
 	exports: [
 		RouterModule,
@@ -28,6 +30,7 @@ import { BlogItemComponent } from "@components/blog-item/blog-item.component";
 		DatePipe,
 		PortfolioItemComponent,
 		BlogItemComponent,
+		ListServiceComponent
 	]
 })
 export class ShareModule {}

@@ -28,12 +28,13 @@
         <img class="upload-action" src="/assets/images/upload.png" (click)="file.click()" />
         <div class="img-content" *ngFor="let image of images; let i = index">
           <img [src]="image" />
-          <button class="btn-primary btn-hover" (click)="deletePhoto(image, i)">
+          <button class="btn-light btn-hover" (click)="deletePhoto(image, i)">
             <i class="fa fa-times"></i>
           </button>
+          <a class="default-image" href="javascript:void(0)" *ngIf="i>0" (click)="onClickDefault(image,i)">Default</a>
         </div>
       </div>
     </div>
-    <button type="submit" class="btn btn-primary btn-admin" (click)="save()">Save</button>
+    <button type="submit" class="btn btn-primary btn-admin " (click)="save()">Save</button>
   </form>
 </div>
