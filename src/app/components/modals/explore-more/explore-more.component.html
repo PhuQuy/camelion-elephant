@@ -1,0 +1,38 @@
+<div class="modal-content" style="max-height: 100%; max-width: 100%">
+  <div class="modal-body add-form add-form-lg">
+    <div class="row">
+      <div class="col-12 close-modal pr-3">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+          (click)="activeModal.dismiss('Cross click')">
+          <span aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+    <div class="row px-3">
+      <div class="text-center w-100">
+        <h2>{{service.title}}</h2>
+      </div>
+      <p class="mb-0">{{service.desscription1}}</p>
+      <ul class="blue-style py-2">
+        <li *ngFor="let item of service.items">
+          <span>{{item}}</span>
+        </li>
+      </ul>
+      <p>{{service.desscription2}}</p>
+    </div>
+    <div class="row p-1" *ngFor="let table of service.tables">
+      <div class="col-md-4 d-flex left-table">
+        <div class="my-auto">
+            <h3 class="table-title">{{table.title}}</h3>
+        </div>
+      </div>
+      <div class="col-md-8 right-table">
+        <ul class="blue-style py-2">
+          <li *ngFor="let detail of table.details">
+            <span>{{detail}}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

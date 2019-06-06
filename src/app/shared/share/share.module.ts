@@ -7,6 +7,7 @@ import { DatePipe } from "@shared/date.pipe";
 import { PortfolioItemComponent } from "@components/portfolio-item/portfolio-item.component";
 import { BlogItemComponent } from "@components/blog-item/blog-item.component";
 import { ListServiceComponent } from "@components/list-service/list-service.component";
+import { ExploreMoreComponent } from "@components/modals/explore-more/explore-more.component";
 
 @NgModule({
 	imports: [
@@ -20,7 +21,8 @@ import { ListServiceComponent } from "@components/list-service/list-service.comp
 		DatePipe,
 		PortfolioItemComponent,
 		BlogItemComponent,
-		ListServiceComponent
+		ListServiceComponent,
+		ExploreMoreComponent
 	],
 	exports: [
 		RouterModule,
@@ -31,6 +33,7 @@ import { ListServiceComponent } from "@components/list-service/list-service.comp
 		PortfolioItemComponent,
 		BlogItemComponent,
 		ListServiceComponent
-	]
+	],
+	entryComponents: [ExploreMoreComponent]
 })
 export class ShareModule {}

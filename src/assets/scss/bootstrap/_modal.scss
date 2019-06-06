@@ -36,6 +36,7 @@
 .modal-dialog {
   position: relative;
   width: auto;
+  max-width: 800px !important;
   margin: $modal-dialog-margin;
   // allow clicks to pass through for custom click handling to close modal
   pointer-events: none;
