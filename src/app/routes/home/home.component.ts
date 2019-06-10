@@ -72,13 +72,6 @@ export class HomeComponent extends BaseComponent {
     }
     closeResult: string;
     blogs = [];
-    // @HostListener('window:scroll', ['$event'])
-    // checkScroll() {   
-    //     // console.log(window.scrollY);
-    //     if (window.scrollY > 3063) {
-    //         this.counterOn();
-    //     }
-    // }
     portfolios: any;
     dtTrigger = new Subject();
     constructor(@Inject(PLATFORM_ID) public platformId: string, private seoService: SeoService, protected portfolioService: PortfolioService, private blogService: BlogService) {
@@ -107,10 +100,7 @@ export class HomeComponent extends BaseComponent {
 
     ngOnInit() {
         this.seoService.generateTags({
-            // title: 'Home',
-            // description: 'Liên hệ Vay vốn sinh viên',
-            // slug: 'home',
-            // keywords: 'vay von sinh vien'
+            slug: 'home',
         });
         this.getAll();
         this.loadRecentBlogs();
@@ -173,10 +163,6 @@ export class HomeComponent extends BaseComponent {
             }, delta);
         };
     }
-    // counterOn(){
-    //     this.configCount.auto = true;
-    //     // console.log("On", this.configCount);
-    // }
     getAll() {
         this.portfolioService.getLimit(3).subscribe(portfolios => {
             if (portfolios.length > 0) {
@@ -185,9 +171,6 @@ export class HomeComponent extends BaseComponent {
             else {
                 this.portfolios = [];
             }
-
-
-
         })
     }
 

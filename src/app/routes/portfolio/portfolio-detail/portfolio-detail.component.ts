@@ -46,17 +46,21 @@ export class PortfolioDetailComponent extends BaseComponent implements OnInit {
             big: image
           });
         });
-
+        let keywords = '';
+        this.portfolio.platforms.forEach(platform=>{
+          keywords =keywords+ platform.name +', ';
+        })
         this.seoService.generateTags({
           title: this.portfolio.title + " - Portfolio",
           description: this.portfolio.description,
           slug: this.portfolio.slug,
-          keywords: this.portfolio.slug,
+          keywords: keywords,
           image: this.portfolio.images[0]
         });
       });
     });
     this.galleryOptions = [
+      { previewCloseOnClick: true, previewCloseOnEsc: true },
       { image: false, thumbnailsRemainingCount: true, height: "100px" },
       { breakpoint: 500, width: "100%", thumbnailsColumns: 2 }
     ];

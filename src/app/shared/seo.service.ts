@@ -6,18 +6,21 @@ export class SeoService {
 
     constructor(private meta: Meta, private titleService: Title, @Inject(DOCUMENT) private doc) { }
     generateTags(config) {
+        let keywords = 'gocodee, full stack developer, freelancer, responsive, mobile design, mobile app website designer, web developer, 24/7 support, outsourcing team, innovative organization, Web design and development, training included';
         config = Object.assign({
             title: 'Oursourcing team, Web Design, Web Development',
             description: 'Gocodee - Outsourcing team, specializing in full service Web design and development. Grow your business faster with 24/7 support as a service: Always on, elastic, with management and training included. Do you need a website? We are here for you!',
             image: window.location.origin + '/assets/images/beach.jpg',
             slug: '',
-            keywords: 'gocodee, full stack developer, freelancer, responsive, mobile design, mobile app website designer, web developer, 24/7 support, outsourcing team, innovative organization, Web design and development, training included'
+            keywords:keywords
         }, config);
 
         if(!config.image) {
             config.image = window.location.origin + '/assets/images/beach.jpg';
         }
-
+        if(config.keywords){
+            config.keywords = keywords + config.keywords;
+        }
         let title = config.title +' | Gocodee ';
 
         this.meta.updateTag({ name: 'slug', content: config.slug });
