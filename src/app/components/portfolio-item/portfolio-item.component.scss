@@ -4,7 +4,6 @@
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
-	// background-size: contain;
 	height: 220px;
 	position: relative;
 	display: block;
@@ -54,5 +53,16 @@
 	&:hover .shadow,
 	&:hover .shadow .info {
 		opacity: 1;
+	}
+}
+
+@media screen and (max-width: 576px) {
+	.portfolio-item {
+		.shadow{
+			opacity: 1;
+			.info{
+				opacity: 1;
+			}
+		}
 	}
 }

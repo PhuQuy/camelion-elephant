@@ -29,50 +29,7 @@ img {
   border-radius: 50%;
 }
 
-::ng-deep .owl-dots span {
-  background: transparent !important;
-  /* dots color*/
-  width: 100% !important;
-  margin-top: 100px !important;
-}
 
-::ng-deep .owl-theme .owl-dots .owl-dot.active span,
-.owl-theme .owl-dots .owl-dot:hover span {
-  background: transparent !important;
-  /*active and on hover color*/
-  margin-top: 10px !important;
-}
-
-::ng-deep .owl-dots {
-  position: absolute;
-  top: 107%;
-  left: 25%;
-  right: 25%;
-}
-
-::ng-deep .owl-item {
-  max-height: 500px;
-}
-
-::ng-deep .owl-carousel .owl-nav .owl-next {
-  background: transparent !important;
-  font-size: 37px !important;
-  color: rgb(173, 173, 173);
-
-  &:hover {
-    color: rgb(173, 173, 173);
-  }
-}
-
-::ng-deep .owl-carousel .owl-nav .owl-prev {
-  background: transparent !important;
-  font-size: 37px !important;
-  color: rgb(173, 173, 173);
-
-  &:hover {
-    color: rgb(173, 173, 173);
-  }
-}
 
 ::ng-deep .block-18 .text span {
   display: inline-block;
@@ -116,4 +73,58 @@ p.px-4.quote-p {
 .core-value {
   border-radius: 50%;
   width: 200px;
+}
+
+#why-gocodee{
+  h3{
+    line-height: 1.5em;
+    height: 3em;
+  }
+}
+
+.member{
+  ::ng-deep .owl-dots span {
+    background: transparent !important;
+    /* dots color*/
+    width: 100% !important;
+    margin-top: 100px !important;
+  }
+  
+  ::ng-deep .owl-theme .owl-dots .owl-dot.active span,
+  .owl-theme .owl-dots .owl-dot:hover span {
+    background: transparent !important;
+    /*active and on hover color*/
+    margin-top: 10px !important;
+  }
+  
+  ::ng-deep .owl-dots {
+    position: absolute;
+    top: 107%;
+    left: 25%;
+    right: 25%;
+  }
+  
+  ::ng-deep .owl-item {
+    max-height: 500px;
+  }
+  
+  ::ng-deep .owl-carousel .owl-nav .owl-next {
+    background: transparent !important;
+    font-size: 37px !important;
+    color: rgb(173, 173, 173);
+  
+    &:hover {
+      color: rgb(173, 173, 173);
+    }
+  }
+  
+  ::ng-deep .owl-carousel .owl-nav .owl-prev {
+    background: transparent !important;
+    font-size: 37px !important;
+    color: rgb(173, 173, 173);
+  
+    &:hover {
+      color: rgb(173, 173, 173);
+    }
+  }
 }

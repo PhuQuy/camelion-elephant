@@ -11,10 +11,7 @@
     color: rgb(173, 173, 173);
   }
 }
-::ng-deep .owl-item{
-  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px 0px,
-		rgba(0, 0, 0, 0.02) 0px 0px 0px 1px;
-}
+
 ::ng-deep .owl-carousel .owl-nav .owl-prev {
   background: transparent !important;
   font-size: 37px !important;
@@ -23,46 +20,47 @@
     color: rgb(173, 173, 173);
   }
 }
-
-.overlay-bar{
-  visibility: hidden;
-  display: none;
+::ng-deep .owl-item {
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px 0px,
+    rgba(0, 0, 0, 0.02) 0px 0px 0px 1px;
+  .overlay-link {
+    visibility: hidden;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px 0px,
+      rgba(0, 0, 0, 0.02) 0px 0px 0px 1px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.397);
+    cursor: pointer;
+    background-position: center top;
+    background-repeat: no-repeat;
+    border-radius: 4px;
+    overflow: hidden;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    .overlay-bar {
+      position: absolute;
+      bottom: 0%;
+      width: 100%;
+      min-height: 100px;
+      display: block;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+      background-color: rgba(0, 0, 0, 0.692);
+      a {
+        color: rgb(92, 168, 255);
+        text-decoration: none;
+      }
+    }
+  }
 }
 ::ng-deep .owl-item {
-    
   &:hover {
     .overlay-link {
       visibility: visible;
-      position: absolute;
-      top: 0px;
-      bottom: 0px;
-      width: 100%;
-      background-size: cover;
-      box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px 0px, rgba(0, 0, 0, 0.02) 0px 0px 0px 1px;
-      text-align: center;
-      background-color: rgba(0, 0, 0, 0.397);
-     cursor: pointer;
-      background-position: center top;
-      background-repeat: no-repeat;
-      border-radius: 4px;
-      overflow: hidden;
-      -webkit-transition-duration: 0.5s;
-      transition-duration: 0.5s;
-      .overlay-bar {
-        position: absolute; 
-        bottom: 0%; 
-        width: 100%; 
-        min-height: 100px;
-        visibility: visible;
-        display: block;
-        padding-top: 2rem;
-        padding-bottom: 2rem;
-        background-color: rgba(0, 0, 0, 0.692);
-        a {
-          color: rgb(92, 168, 255);
-          text-decoration: none;
-        }
-      }
     }
   }
 }
@@ -73,4 +71,11 @@
 }
 ::ng-deep .block-18 .text strong span {
   font-size: 40px !important;
+}
+@media screen and (max-width: 576px) {
+	::ng-deep .owl-item {
+      .overlay-link {
+        visibility: visible;
+      }
+  }
 }

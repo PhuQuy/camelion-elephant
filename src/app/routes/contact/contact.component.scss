@@ -44,10 +44,17 @@ input.ng-invalid{
   }
   .icon{
     margin-right: 20px;
-    font-size: 30px;
+    font-size: 44px;
   }
   .icon, .info{
     display: inline-block;
     vertical-align: middle;
   }
+}
+.ftco-section-2{
+  margin-top: -18em;
+}
+
+::ng-deep .agm-map-container-inner{
+  border-radius: 8px;
 }

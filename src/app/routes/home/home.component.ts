@@ -165,10 +165,11 @@ export class HomeComponent extends BaseComponent {
         };
     }
     getAll() {
-        this.portfolioService.getLimit(6).subscribe(portfolios => {
+        this.portfolioService.getInHome().subscribe(portfolios => {
+            console.log('Home portfolios', portfolios);
             if (portfolios.length > 0) {
                 this.portfolios = portfolios;
-                if(portfolios.length>3){
+                if(portfolios.length> 3){
                     this.homePortfolios = portfolios.slice(0,3);
                 }else{
                     this.homePortfolios = portfolios;

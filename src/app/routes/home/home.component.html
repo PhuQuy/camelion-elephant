@@ -40,7 +40,7 @@
           <ng-container *ngFor="let slide of homePortfolios; index as i">
             <ng-template carouselSlide [id]="i">
               <div>
-                <a [routerLink]="['/portfolio', slide.slug]">
+                <a [routerLink]="['/portfolio', slide.slug]" >
                   <img class="bg-white d-flex center" [src]="slide.images[0]" [alt]="slide.title" [title]="slide.title"
                     style="width: 100%;border-radius: 5px; height: 510px;" />
                   <div class="overlay-link">

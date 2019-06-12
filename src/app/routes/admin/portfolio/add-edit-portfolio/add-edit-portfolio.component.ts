@@ -53,6 +53,7 @@ export class AddEditPortfolioComponent {
         this.portfolioForm = new FormGroup({
             title: new FormControl("", [Validators.required]),
             link: new FormControl("", []),
+            is_home: new FormControl('true',[]),
             platforms: new FormControl("", [Validators.required]),
             description: new FormControl("", [Validators.required])
         })

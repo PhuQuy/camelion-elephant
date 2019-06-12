@@ -44,7 +44,7 @@
         </h5>
 
         <h5>Description</h5>
-        <p>{{ portfolio?.description }}</p>
+        <p [innerHTML]="portfolio?.description"></p>
         <h5>Snapshots</h5>
         <ngx-gallery
           [options]="galleryOptions"
