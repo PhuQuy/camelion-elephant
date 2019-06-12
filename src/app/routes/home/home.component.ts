@@ -73,6 +73,7 @@ export class HomeComponent extends BaseComponent {
     closeResult: string;
     blogs = [];
     portfolios: any;
+    homePortfolios: any;
     dtTrigger = new Subject();
     constructor(@Inject(PLATFORM_ID) public platformId: string, private seoService: SeoService, protected portfolioService: PortfolioService, private blogService: BlogService) {
         super(platformId);
@@ -107,7 +108,7 @@ export class HomeComponent extends BaseComponent {
 
     }
     loadRecentBlogs(){
-        this.blogService.getLimit(3).subscribe(blogs => {
+        this.blogService.getLimit(6).subscribe(blogs => {
             this.blogs = blogs;
         })
     }
@@ -164,14 +165,19 @@ export class HomeComponent extends BaseComponent {
         };
     }
     getAll() {
-        this.portfolioService.getLimit(3).subscribe(portfolios => {
+        this.portfolioService.getLimit(6).subscribe(portfolios => {
             if (portfolios.length > 0) {
                 this.portfolios = portfolios;
+                if(portfolios.length>3){
+                    this.homePortfolios = portfolios.slice(0,3);
+                }else{
+                    this.homePortfolios = portfolios;
+                }
             }
             else {
                 this.portfolios = [];
             }
-        })
+        });
     }
 
 }
