@@ -22,7 +22,7 @@ import { ExploreMoreComponent } from "@components/modals/explore-more/explore-mo
 		PortfolioItemComponent,
 		BlogItemComponent,
 		ListServiceComponent,
-		ExploreMoreComponent
+		ExploreMoreComponent,
 	],
 	exports: [
 		RouterModule,
@@ -32,7 +32,7 @@ import { ExploreMoreComponent } from "@components/modals/explore-more/explore-mo
 		DatePipe,
 		PortfolioItemComponent,
 		BlogItemComponent,
-		ListServiceComponent
+		ListServiceComponent,
 	],
 	entryComponents: [ExploreMoreComponent]
 })

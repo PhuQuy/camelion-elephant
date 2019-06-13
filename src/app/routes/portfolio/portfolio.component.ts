@@ -10,6 +10,7 @@ import { BaseComponent } from "@core/base/base.component";
 import { PaginationInstance } from "ngx-pagination";
 import { SeoService } from "@shared/seo.service";
 import { PortfolioService } from "@services/portfolio.service";
+import { SpinnerService } from "@components/spinner/spinner.service";
 
 @Component({
     selector: "portfolio",
@@ -30,7 +31,8 @@ export class PortfolioComponent extends BaseComponent implements OnInit {
     constructor(
         @Inject(PLATFORM_ID) public platformId: string,
         private seoService: SeoService,
-        protected portfolioService: PortfolioService
+        protected portfolioService: PortfolioService,
+        private spinnerService:SpinnerService
     ) {
         super(platformId);
     }
@@ -48,9 +50,11 @@ export class PortfolioComponent extends BaseComponent implements OnInit {
     }
 
     getAll() {
+        this.spinnerService.show();
         this.portfolioService.getAll().subscribe(portfolios => {
             this.portfolios = portfolios;
-            console.log("Log", portfolios);
+            this.spinnerService.hide();
+            console.log("portfolios", portfolios);
         });
     }
     pageChange(page) {

@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FootModule } from '@components/foot/foot.module';
 import { NavbarModule } from '@components/navbar/navbar.module';
+import { SpinnerModule } from '@components/spinner/spinner.module';
 import { ClientsComponent } from './clients.component';
 import { ClientsRoutingModule } from './clients.routing';
 
@@ -10,7 +11,8 @@ import { ClientsRoutingModule } from './clients.routing';
     CommonModule,
     ClientsRoutingModule,
     NavbarModule,
-    FootModule
+    FootModule,
+    SpinnerModule
   ],
   declarations: [ClientsComponent],
   exports: [ClientsRoutingModule]

@@ -1,4 +1,4 @@
-import { Component, OnInit, PLATFORM_ID, Inject } from '@angular/core';
+import { Component, OnInit, PLATFORM_ID, Inject, Input } from '@angular/core';
 import { BaseComponent } from '@core/base/base.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ExploreMoreComponent } from '@components/modals/explore-more/explore-more.component';
@@ -9,6 +9,7 @@ import { ExploreMoreComponent } from '@components/modals/explore-more/explore-mo
     styleUrls: ['./list-service.component.scss']
 })
 export class ListServiceComponent extends BaseComponent implements OnInit {
+    @Input() isHome: boolean= false;
     services = [
         {
             title: "Software Development",
