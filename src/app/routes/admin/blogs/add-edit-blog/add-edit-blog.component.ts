@@ -109,13 +109,20 @@ export class AddEditBlogComponent {
 
     preview(event) {
         let file = event.target.files.item(0);
+        console.log('file', file);
+        
         if (!file) return;
         const a = this.blogForm.get("imgURL").value;
         if (this.edit && this.blogForm.get("imgURL").value) {
             this.upSvc.deleteFileByURL(this.blogForm.get("imgURL").value);
         }
+        console.log('File', file.name);
+        const arr = file.name.split('.');
+        console.log('arr', arr);
+        
+        
         this.upSvc
-            .pushUpload(`Blogs/${file.name}-${Date.now()}`, file)
+            .pushUpload(`Blogs/${arr[0]}-${Date.now()}.jpg`, file)
             .subscribe(res => {
                 this.imgURL = res;
                 this.blogForm.patchValue({ imgURL: res });
@@ -127,6 +134,7 @@ export class AddEditBlogComponent {
             title: new FormControl("", [Validators.required]),
             tags: new FormControl("", [Validators.required]),
             content: new FormControl("", [Validators.required]),
+            description: new FormControl("", [Validators.required]),
             published: new FormControl("", [Validators.required]),
             category: new FormControl("", [Validators.required]),
             imgURL: new FormControl("", [Validators.required])

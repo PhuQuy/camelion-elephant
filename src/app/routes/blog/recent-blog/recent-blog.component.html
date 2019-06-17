@@ -4,7 +4,7 @@
     <a
       class="blog-img mr-4"
       [style.backgroundImage]="'url(' + blog.imgURL + ')'"
-     [routerLink]="['/blog', blog.slug]"></a>
+     [routerLink]="['/blog', blog.slug]" aria-label={{ blog.title}}></a>
     <div class="text">
       <h3 class="heading">
         <a [routerLink]="['/blog', blog.slug]">{{ blog.title }}</a>

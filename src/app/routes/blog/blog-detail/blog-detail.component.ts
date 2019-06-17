@@ -5,45 +5,49 @@ import { BlogService } from "app/services/blog.service";
 import { SeoService } from "@shared/seo.service";
 
 @Component({
-    selector: "blog-detail",
-    templateUrl: "./blog-detail.component.html",
-    styleUrls: ["./blog-detail.component.scss"],
-    providers: [BlogService, SeoService]
+  selector: "blog-detail",
+  templateUrl: "./blog-detail.component.html",
+  styleUrls: ["./blog-detail.component.scss"],
+  providers: [BlogService, SeoService]
 })
 export class BlogDetailComponent extends BaseComponent implements OnInit {
-    id;
-    blog;
-    blogs = [];
-    constructor(
-        @Inject(PLATFORM_ID) public platformId: string,
-        private activatedRoute: ActivatedRoute,
-        private blogService: BlogService,
-        private seoService: SeoService
-    ) {
-        super(platformId);
-    }
+  id;
+  blog;
+  blogs = [];
+  constructor(
+    @Inject(PLATFORM_ID) public platformId: string,
+    private activatedRoute: ActivatedRoute,
+    private blogService: BlogService,
+    private seoService: SeoService
+  ) {
+    super(platformId);
+  }
 
-    ngAfterViewInit() {
-        this.initView();
-    }
+  ngAfterViewInit() {
+    this.initView();
+  }
 
-    ngOnInit() {
-        this.activatedRoute.params.subscribe(params => {
-            this.id = params["id"];
-            this.blogService.getBySlug(this.id).subscribe(blogs => {
-                console.log("Blog", blogs);
-                this.blog = blogs[0];
-                this.seoService.generateTags({
-                    title: this.blog.title+' - Blog',
-                    description: this.blog.title,
-                    slug: this.blog.slug,
-                    keywords: this.blog.slug,
-                    image:this.blog.imgURL
-                });
-            });
+  ngOnInit() {
+    this.activatedRoute.params.subscribe(params => {
+      this.id = params["id"];
+      this.blogService.getBySlug(this.id).subscribe(blogs => {
+        console.log("Blog", blogs);
+        this.blog = blogs[0];
+        const keywords = this.blog.tags.reduce(
+          (acc, tag) => acc + ', '+ tag.name,
+          ""
+        );
+        this.seoService.generateTags({
+          title: this.blog.title + " - Blog",
+          description: this.blog.description ||'',
+          slug: this.blog.slug,
+          keywords: keywords,
+          image: this.blog.imgURL
         });
-        this.blogService.getLimit(3).subscribe(blogs => {
-            this.blogs = blogs;
-        });
-    }
+      });
+    });
+    this.blogService.getLimit(3).subscribe(blogs => {
+      this.blogs = blogs;
+    });
+  }
 }

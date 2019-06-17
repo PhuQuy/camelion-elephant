@@ -15,9 +15,9 @@ export class SolutionComponent extends BaseComponent implements OnInit {
     ngOnInit() {
         this.seoService.generateTags({
             title: 'Solution',
-            // description: 'Liên hệ Vay vốn sinh viên',
+            description: 'Gocodee specializes in multi-platform and cross-platform: Web development, Mobile application, Web application, Mobile application, Application Server Development',
             slug: 'solution',
-            // keywords: 'vay von sinh vien'
+            keywords: 'Web development, Mobile development, Application Server Development, Angular, ReactJs, Android, Java, NodeJs, Ionic, React Native'
         });
     }
 

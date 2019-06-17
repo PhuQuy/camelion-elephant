@@ -43,7 +43,7 @@ export class BlogComponent extends BaseComponent implements OnInit {
 
   ngOnInit() {
     this.seoService.generateTags({
-      title: " Blog",
+      title: "Blog",
       slug: "blog"
     });
     this.spinnerService.show();

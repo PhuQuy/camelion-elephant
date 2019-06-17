@@ -1,67 +1,83 @@
 .portfolio-item {
-	margin:15px 0px;
-	background-color: rgb(255, 255, 255);
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center center;
-	height: 220px;
-	position: relative;
-	display: block;
-	border-radius: 7px;
-	cursor: pointer;
-	width: 100%;
-	box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px 0px,
-		rgba(0, 0, 0, 0.02) 0px 0px 0px 1px;
-	text-align: center;
-	color: white;
-	text-shadow: rgba(0, 0, 0, 0.5) 0px 2px 20px;
-	&.big{
-		height: 470px;
-	}
-	.shadow {
-		align-items: center;
-		height: 100%;
-		color: white;
-		text-shadow: rgba(0, 0, 0, 0.5) 0px 2px 20px;
-		opacity: 0;
-		background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
-		transition: opacity 0.2s ease 0s;
-		border-radius: 7px;
-		position: relative;
-		.info {
-			position: absolute;
-			bottom: 0px;
-			width: 100%;
-			text-align: center;
-			opacity: 0;
-			padding: 1.5rem;
-			background: rgba(0, 0, 0, 0.8);
-			transition: opacity 0.6s ease 0s;
-			border-bottom-right-radius: 7px;
-			border-bottom-left-radius: 7px;
-			.title {
-				font-size: 20px;
-				font-weight: bold;
-			}
-			a {
-				color: #0074de;
-				font-weight: bold;
-				word-break: break-word;
-			}
-		}
-	}
-	&:hover .shadow,
-	&:hover .shadow .info {
-		opacity: 1;
-	}
+  margin: 15px 0px;
+  background-color: rgb(255, 255, 255);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 220px;
+  position: relative;
+  display: block;
+  border-radius: 7px;
+  cursor: pointer;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px 0px,
+    rgba(0, 0, 0, 0.02) 0px 0px 0px 1px;
+  text-align: center;
+  color: white;
+  text-shadow: rgba(0, 0, 0, 0.5) 0px 2px 20px;
+  &.big {
+    height: 470px;
+  }
+  .shadow {
+    align-items: center;
+    height: 100%;
+    color: white;
+    text-shadow: rgba(0, 0, 0, 0.5) 0px 2px 20px;
+    opacity: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
+    transition: opacity 0.2s ease 0s;
+    border-radius: 7px;
+    position: relative;
+    .info {
+      position: absolute;
+      bottom: 0px;
+      width: 100%;
+      text-align: center;
+      opacity: 0;
+      padding: 1.5rem;
+      background: rgba(0, 0, 0, 0.8);
+      transition: opacity 0.6s ease 0s;
+      border-bottom-right-radius: 7px;
+      border-bottom-left-radius: 7px;
+      .title {
+        font-size: 20px;
+        font-weight: bold;
+      }
+      a {
+        color: #0074de;
+        font-weight: bold;
+        word-break: break-word;
+      }
+    }
+  }
+  &:hover .shadow,
+  &:hover .shadow .info {
+    opacity: 1;
+  }
 }
 
+.list-technology {
+  img {
+    width: 200px;
+    height: 55px;
+    margin: 15px 20px;
+    margin-right: 45px;
+  }
+}
 
-.list-technology{
-	img{
-		width: 200px;
-		height: 55px;
-		margin:15px 20px;
-		margin-right:45px;
-	}
+.technologies {
+  .technology {
+    font-size: 1.3rem;
+    line-height: 1.875rem;
+	font-weight: 500;
+	text-align: center;
+    padding: 10px 5px;
+    border: 1px solid gray;
+    border-radius: 7px;
+  }
+  img {
+    height: 30px;
+	width: 30px;
+	margin-right: 10px;
+  }
 }

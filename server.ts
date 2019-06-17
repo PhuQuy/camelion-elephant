@@ -46,7 +46,6 @@ app.get('/redirect/**', (req, res) => {
     const location = req.url.substring(10);
     res.redirect(301, location);
 });
-
 app.get('*.*', express.static('./dist/browser', {
     maxAge: '1y'
 }));

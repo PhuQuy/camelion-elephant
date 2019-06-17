@@ -76,7 +76,10 @@ export class AddEditPortfolioComponent {
         let files = event.target.files;
         if (files.length === 0) return;
         for (let i = 0; i < files.length; i++) {
-            this.upSvc.pushUpload(`Portfolio/${files[i].name}-${Date.now()}`, files[i]).subscribe(res => {
+        console.log('File', files[i].name);
+        const arr = files[i].name.split('.');
+        console.log('arr', arr);
+            this.upSvc.pushUpload(`Portfolio/${arr[0]}-${Date.now()}.jpg`, files[i]).subscribe(res => {
                 this.images.push(res);
             })
         }

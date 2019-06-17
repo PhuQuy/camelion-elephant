@@ -9,7 +9,7 @@
 	<div class="shadow">
 		<div class="info">
 			<div class="title">{{ portfolio.title }}</div>
-			<a [href]="portfolio.link" target="_blank"> {{ portfolio.link }}</a>
+			<a [href]="portfolio.link" target="_blank" *ngIf="portfolio.link" rel="noopener"> {{ portfolio.link }}</a>
 		</div>
 	</div>
 </a>

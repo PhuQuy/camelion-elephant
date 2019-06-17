@@ -19,7 +19,7 @@ export class SeoService {
             config.image = window.location.origin + '/assets/images/beach.jpg';
         }
         if(config.keywords){
-            config.keywords = keywords + config.keywords;
+            config.keywords = keywords +', '+ config.keywords;
         }
         let title = config.title +' | Gocodee ';
 
@@ -34,12 +34,14 @@ export class SeoService {
         this.meta.updateTag({ name: 'twitter:title', content: title })
         this.meta.updateTag({ name: 'twitter:description', content: config.description });
         this.meta.updateTag({ name: 'twitter:image', content: config.image });
+        this.meta.updateTag({ name: 'twitter:url', content: window.location.href });
 
         this.meta.updateTag({ property: 'og:type', content: 'website' });
-        this.meta.updateTag({ property: 'og:site_name', content: 'Gocodee | Oursourcing team, Web Design, Web Development' });
+        this.meta.updateTag({ property: 'og:site_name', content: 'Gocodee' });
         this.meta.updateTag({ property: 'og:title', content: title });
         this.meta.updateTag({ property: 'og:description', content: config.description });
         this.meta.updateTag({ property: 'og:image', content: config.image });
+        this.meta.updateTag({ property: 'og:url', content: window.location.href });
 
         this.titleService.setTitle(title);
         this.setCanonical();
