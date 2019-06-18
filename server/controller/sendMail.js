@@ -4,12 +4,12 @@ const handlebars = require("handlebars");
 const fs = require("fs");
 
 var transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
+  host: "smtp.zoho.com",
   port: 465,
   secure: true,
   auth: {
-    user: "dotafreelancer@gmail.com",
-    pass: "XXxx11@@"
+    user: "phuquy@gocodee.com",
+    pass: "Ngokylong11##"
   }
 });
 
@@ -20,11 +20,12 @@ const sendEmailTemplate = (templateFile, subject, data, callback) => {
   let theTemplate = handlebars.template(precompiled);
   const theCompiledHtml = theTemplate(data);
   const mailOptions = {
+    from: 'phuquy@gocodee.com',
     to: data.to,
     subject: subject,
     html: theCompiledHtml
   };
-  transporter.sendMail(mailOptions, function(err, info) {
+  transporter.sendMail(mailOptions, function (err, info) {
     if (err) {
       console.log("Error", JSON.stringify(err));
       callback(err, null);
@@ -46,22 +47,28 @@ exports.sendNotify = (req, res) => {
   const dataAdmin = {
     fullname: "Admin",
     host: req.headers.origin,
-    to: "lethinh0510@gmail.com"
+    to: "phuquy@gocodee.com"
   };
-  sendEmailTemplate("admin.html", "New Contact", dataAdmin, function(
+  sendEmailTemplate("admin.html", "New Contact", dataAdmin, function (
     err,
     result
   ) {
     console.log("callback", err, result);
     if (err) {
-      res.status(500).json({ success: false });
+      res.status(500).json({
+        success: false
+      });
     } else {
-      sendEmailTemplate("index.html", "Contact", dataClient, function(err, result2) {
+      sendEmailTemplate("index.html", "Contact", dataClient, function (err, result2) {
         console.log("callback2", err, result2);
         if (err) {
-          res.status(500).json({ success: false });
+          res.status(500).json({
+            success: false
+          });
         } else {
-          res.json({ success: true });
+          res.json({
+            success: true
+          });
         }
       });
     }
