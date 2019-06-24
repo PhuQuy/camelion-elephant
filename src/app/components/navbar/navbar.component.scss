@@ -98,3 +98,139 @@ nav:not(.scrolled) {
 .navbar-toggler.collapsed .icon-bar:nth-of-type(3) {
   transform: rotate(0);
 }
+
+.navbar-brand {
+  height: 60px;
+}
+
+.load-x {
+  transform: scale(0);
+  animation-delay: 0.5s;
+}
+
+.loading-wrapper {
+  position: fixed;
+  transform: translate(-50%, -50%);
+  top: 45%;
+  left: 50%;
+}
+
+.loading {
+  opacity: 0;
+}
+
+.loading-e {
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  opacity: 1;
+
+  .logo svg {
+    height: 60px !important;
+  }
+
+  .text-logo svg {
+    height: 40px;
+  }
+}
+
+.loading-main {
+  opacity: 1;
+  transform: scale(2);
+
+  .main-logo {
+    transform: scale(0.5);
+    transition: transform .4s;
+  }
+
+  .main-logo.scale-logo {
+    transform: scale(1) !important;
+    transition: transform .4s;
+  }
+}
+
+.logo svg {
+  path {
+    fill: #fff;
+    stroke: #fff;
+  }
+
+  height: 100px;
+}
+
+.text-logo svg {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  height: 60px;
+
+  path {
+    fill: #fff;
+    stroke: #fff;
+    stroke-dasharray: 3000;
+    animation: animate 2s cubic-bezier(0, 0.23, 1, .1);
+  }
+}
+
+@keyframes animate {
+  0% {
+    opacity: 0;
+    fill: none;
+    stroke-dashoffset: 3000;
+  }
+
+  10% {
+    opacity: 0.4;
+    fill: none;
+    stroke-dashoffset: 3000;
+  }
+
+  80% {
+    opacity: 1;
+    fill: none;
+    stroke-dashoffset: 1000;
+  }
+
+  90% {
+    fill: rgba(255, 255, 255, 0);
+  }
+
+  100% {
+    opacity: 1;
+    fill: rgba(255, 255, 255, 1);
+    stroke-dashoffset: 0;
+  }
+}
+
+.hide {
+  opacity: 0;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -ms-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+}
+
+.show {
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -ms-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  opacity: 1;
+}
+
+.scrolled {
+
+  .logo,
+  .text-logo {
+
+    path,
+    circle {
+      fill: red;
+    }
+  }
+}
+
+.normal-loading {
+  transform: scale(1);
+}

@@ -176,10 +176,10 @@ export class HomeComponent extends BaseComponent {
     };
   }
   getAll() {
-    this.spinnerService.show();
+    // this.spinnerService.show();
     this.portfolioService.getInHome().subscribe(portfolios => {
       console.log("Home portfolios", portfolios);
-      this.spinnerService.hide();
+    //   this.spinnerService.hide();
 
       if (portfolios.length > 0) {
         this.portfolios = portfolios;

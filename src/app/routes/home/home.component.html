@@ -1,6 +1,5 @@
 <section class="home-slider carousel ftco-degree-bg">
   <div class="slider-item" data-stellar-background-ratio="0.5">
-    <div class="overlay hero-area-fix"></div>
     <div class="container">
       <div class="row slider-text align-items-center justify-content-center">
         <div class="col-md-10 text-center">
@@ -11,7 +10,9 @@
             </strong>
           </h1>
           <p>
-            Gocodee - Outsourcing team, specializing in full service Web design and development. Grow your business faster with 24/7 support as a service: Always on, elastic, with management and training included. Do you need a website? We are here for you!
+            Gocodee - Outsourcing team, specializing in full service Web design and development. Grow your business
+            faster with 24/7 support as a service: Always on, elastic, with management and training included. Do you
+            need a website? We are here for you!
           </p>
           <p>
             <!-- <a href="#" class="btn btn-primary btn-outline-white px-4 py-3 popup-youtube" (click)="open(content)"
@@ -40,14 +41,14 @@
           <ng-container *ngFor="let slide of homePortfolios; index as i">
             <ng-template carouselSlide [id]="i">
               <div>
-                <a [routerLink]="['/portfolio', slide.slug]" >
+                <a [routerLink]="['/portfolio', slide.slug]">
                   <img class="bg-white d-flex center" [src]="slide.images[0]" [alt]="slide.title" [title]="slide.title"
                     style="width: 100%;border-radius: 5px; height: 510px;" />
                   <div class="overlay-link">
 
                     <div class='overlay-bar'>
                       <h2 class="text-white">{{slide.title}}</h2>
-                      <a [href]="slide.link" >{{slide.link}} </a>
+                      <a [href]="slide.link">{{slide.link}} </a>
                     </div>
 
                   </div>
@@ -61,7 +62,9 @@
   </div>
 </section>
 
-<app-list-service isHome="true"></app-list-service>
+<div class="position-relative">
+  <app-list-service isHome="true"></app-list-service>
+</div>
 
 
 <section class="ftco-section-parallax ftco-degree-bg" hidden>
@@ -81,7 +84,7 @@
   </div>
 </section>
 
-<section class="ftco-section">
+<section class="ftco-section ftco-degree-bg">
   <div class="container">
     <div class="row no-gutters justify-content-center mb-5 pb-5">
       <div class="col-md-7 text-center heading-section" data-aos="fade-up">
@@ -107,8 +110,8 @@
       <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap ">
         <div class="block-18 text-center">
           <div class="text">
-            <strong class="number" data-aos="fade-down" >
-                1000
+            <strong class="number" data-aos="fade-down">
+              1000
             </strong>
 
             <span>Customers are satisfied with our professional support</span>
@@ -119,7 +122,7 @@
         <div class="block-18 text-center">
           <div class="text">
             <strong class="number" data-aos="fade-down">
-                1200
+              1200
             </strong>
             <span>Amazing preset options to be mixed and combined</span>
           </div>
@@ -128,8 +131,8 @@
       <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap ">
         <div class="block-18 text-center">
           <div class="text">
-            <strong class="number" data-aos="fade-down" >
-                1300
+            <strong class="number" data-aos="fade-down">
+              1300
             </strong>
             <span>Average response time on live chat support channel</span>
           </div>
@@ -148,12 +151,7 @@
       </div>
     </div>
     <div class="row">
-      <div
-        class="col-md-4"
-        data-aos="fade-up"
-        data-aos-delay="200"
-        data-aos-offset="0"
-        *ngFor="let blog of blogs">
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200" data-aos-offset="0" *ngFor="let blog of blogs">
         <app-blog-item [blog]="blog"></app-blog-item>
       </div>
     </div>

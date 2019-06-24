@@ -1,6 +1,8 @@
 import { Component, OnInit, HostListener, PLATFORM_ID, Inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { Router } from '@angular/router';
+import { SpinnerState } from '@components/spinner/spinner';
+import { SpinnerService } from '@components/spinner/spinner.service';
 
 @Component({
     selector: 'navbar',
@@ -26,17 +28,42 @@ export class NavbarComponent implements OnInit {
     }
 
     collapsed = true;
-     toggleCollapsed(): void {
-       this.collapsed = !this.collapsed;
-     }
+    toggleCollapsed(): void {
+        this.collapsed = !this.collapsed;
+    }
 
-    constructor(@Inject(PLATFORM_ID) public platformId: string, private router: Router) { }
-
+    constructor(@Inject(PLATFORM_ID) public platformId: string, private router: Router, private spinnerService: SpinnerService) { }
+    show = false;
+    hide;
+    scaleUp;
     ngOnInit() {
         this.router.events
             .subscribe(() => {
-              this.collapsed = true;
+                this.collapsed = true;
             });
+
+        this.scaleUp = true;
+        this.show = true;
+
+        setTimeout(() => {
+            this.scaleUp = false;
+        }, 3000);
+
+        //    this.spinnerService.loaderState.subscribe(
+        //             (state: SpinnerState) => {
+        //                 if (!state.show) {
+        //                     this.hide = true;
+        //                     setTimeout(() => {
+        //                         this.show = state.show;
+        //                     }, 500);
+        //                 } else {
+        //                     setTimeout(() => {
+        //                         this.scaleUp = true;
+        //                     }, 100);
+        //                     this.show = state.show;
+        //                 }
+        //             }
+        //         );
     }
 
 }

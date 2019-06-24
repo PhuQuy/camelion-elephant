@@ -3,23 +3,36 @@ import { Subscription } from "rxjs/Subscription";
 import { SpinnerState } from "./spinner";
 import { SpinnerService } from "./spinner.service";
 @Component({
-  selector: "app-spinner",
-  templateUrl: "./spinner.component.html",
-  styleUrls: ["./spinner.component.scss"]
+    selector: "app-spinner",
+    templateUrl: "./spinner.component.html",
+    styleUrls: ["./spinner.component.scss"]
 })
 export class SpinnerComponent implements OnInit {
-  show = false;
-  private subscription: Subscription;
-  constructor(private spinnerService: SpinnerService) {}
+    show = false;
+    hide;
+    scaleUp;
+    private subscription: Subscription;
+    constructor(private spinnerService: SpinnerService) { }
 
-  ngOnInit() {
-    this.subscription = this.spinnerService.loaderState.subscribe(
-      (state: SpinnerState) => {
-        this.show = state.show;
-      }
-    );
-  }
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
-  }
+    ngOnInit() {
+        this.subscription = this.spinnerService.loaderState.subscribe(
+            (state: SpinnerState) => {
+                if (!state.show) {
+                    this.hide = true;
+                    setTimeout(() => {
+                        this.show = state.show;
+                    }, 500);
+                } else {
+                    setTimeout(() => {
+                        this.scaleUp = true;
+                    }, 100);
+                    this.show = state.show;
+                }
+            }
+        );
+    }
+
+    ngOnDestroy() {
+        this.subscription.unsubscribe();
+    }
 }

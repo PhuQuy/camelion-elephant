@@ -46,13 +46,13 @@ export class BlogComponent extends BaseComponent implements OnInit {
       title: "Blog",
       slug: "blog"
     });
-    this.spinnerService.show();
+    // this.spinnerService.show();
     this.activatedRoute.queryParams.subscribe(params => {
       console.log("params", params);
       this.category = params.category;
       this.search = params.search;
       this.blogService.getAll().subscribe(blogs => {
-        this.spinnerService.hide();
+        // this.spinnerService.hide();
         console.log("Blogs", blogs);
         if (this.category != "" && this.category) {
           this.blogs = blogs.filter(blog => {

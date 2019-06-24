@@ -1,4 +1,4 @@
-<footer class="ftco-footer ftco-bg-dark ftco-section ftco-degree-bg-blue">
+<footer class="ftco-footer ftco-bg-dark ftco-section ftco-degree-bg-blue position-relative footer-radient">
   <div class="container">
     <div class="row mb-5">
       <div class="col-md">
@@ -25,7 +25,7 @@
           <h2 class="ftco-heading-2">Quick Links</h2>
           <ul class="list-unstyled">
             <li><a [routerLink]="['/']" class="py-2 d-block" aria-label="Home">Home</a></li>
-            <li><a routerLink="/about-us" class="py-2 d-block" aria-label="About" >About</a></li>
+            <li><a routerLink="/about-us" class="py-2 d-block" aria-label="About">About</a></li>
             <li><a routerLink="/solution" class="py-2 d-block" aria-label="Solution">Solution</a></li>
             <li><a routerLink="/portfolio" class="py-2 d-block" aria-label="Portfolio">Portfolio</a></li>
             <li><a routerLink="/contact" class="py-2 d-block" aria-label="Contact">Contact</a></li>
@@ -93,11 +93,12 @@
               <input type="email" class="form-control" placeholder="Subscribe" [(ngModel)]="email" #emailText="ngModel"
                 name="email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" id="email">
             </div>
-            <p class="form-validation m-0 " *ngIf="emailText?.errors && emailText?.errors?.pattern" >
+            <p class="form-validation m-0 " *ngIf="emailText?.errors && emailText?.errors?.pattern">
               Email is invalid
             </p>
             <div class="alert alert-success alert-dismissible myAlert-bottom" *ngIf="sendMessage !== ''">
-              <a class="close" data-dismiss="alert" aria-label="close" (click)="closeAlert(formSubmit)" aria-label="Close">&times;</a>
+              <a class="close" data-dismiss="alert" aria-label="close" (click)="closeAlert(formSubmit)"
+                aria-label="Close">&times;</a>
               <strong>Success!</strong> {{sendMessage}}
             </div>
           </form>
