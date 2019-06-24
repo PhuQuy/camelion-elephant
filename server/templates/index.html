@@ -1,382 +1,269 @@
-<!doctype html>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width" />
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Simple Transactional Email</title>
-    <style>
-      /* -------------------------------------
-          GLOBAL RESETS
-      ------------------------------------- */
-      
-      /*All the styling goes here*/
-      
-      img {
-        border: none;
-        -ms-interpolation-mode: bicubic;
-        max-width: 100%; 
-      }
 
-      body {
-        background-color: #f6f6f6;
-        font-family: sans-serif;
-        -webkit-font-smoothing: antialiased;
-        font-size: 14px;
-        line-height: 1.4;
-        margin: 0;
-        padding: 0;
-        -ms-text-size-adjust: 100%;
-        -webkit-text-size-adjust: 100%; 
-      }
-
-      table {
-        border-collapse: separate;
-        mso-table-lspace: 0pt;
-        mso-table-rspace: 0pt;
-        width: 100%; }
-        table td {
-          font-family: sans-serif;
-          font-size: 14px;
-          vertical-align: top; 
-      }
-
-      /* -------------------------------------
-          BODY & CONTAINER
-      ------------------------------------- */
-
-      .body {
-        background-color: #f6f6f6;
-        width: 100%; 
-      }
-
-      /* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */
-      .container {
-        display: block;
-        margin: 0 auto !important;
-        /* makes it centered */
-        max-width: 580px;
-        padding: 10px;
-        width: 580px; 
-      }
-
-      /* This should also be a block element, so that it will fill 100% of the .container */
-      .content {
-        box-sizing: border-box;
-        display: block;
-        margin: 0 auto;
-        max-width: 580px;
-        padding: 10px; 
-      }
-
-      /* -------------------------------------
-          HEADER, FOOTER, MAIN
-      ------------------------------------- */
-      .main {
-        background: #ffffff;
-        border-radius: 3px;
-        width: 100%; 
-      }
-
-      .wrapper {
-        box-sizing: border-box;
-        padding: 20px; 
-      }
-
-      .content-block {
-        padding-bottom: 10px;
-        padding-top: 10px;
-      }
-
-      .footer {
-        clear: both;
-        margin-top: 10px;
-        text-align: center;
-        width: 100%; 
-      }
-        .footer td,
-        .footer p,
-        .footer span,
-        .footer a {
-          color: #999999;
-          font-size: 12px;
-          text-align: center; 
-      }
-
-      /* -------------------------------------
-          TYPOGRAPHY
-      ------------------------------------- */
-      h1,
-      h2,
-      h3,
-      h4 {
-        color: #000000;
-        font-family: sans-serif;
-        font-weight: 400;
-        line-height: 1.4;
-        margin: 0;
-        margin-bottom: 30px; 
-      }
-
-      h1 {
-        font-size: 35px;
-        font-weight: 300;
-        text-align: center;
-        text-transform: capitalize; 
-      }
-
-      p,
-      ul,
-      ol {
-        font-family: sans-serif;
-        font-size: 14px;
-        font-weight: normal;
-        margin: 0;
-        margin-bottom: 15px; 
-      }
-        p li,
-        ul li,
-        ol li {
-          list-style-position: inside;
-          margin-left: 5px; 
-      }
-
-      a {
-        color: #3498db;
-        text-decoration: underline; 
-      }
-
-      /* -------------------------------------
-          BUTTONS
-      ------------------------------------- */
-      .btn {
-        box-sizing: border-box;
-        width: 100%; }
-        .btn > tbody > tr > td {
-          padding-bottom: 15px; }
-        .btn table {
-          width: auto; 
-      }
-        .btn table td {
-          background-color: #ffffff;
-          border-radius: 5px;
-          text-align: center; 
-      }
-        .btn a {
-          background-color: #ffffff;
-          border: solid 1px #3498db;
-          border-radius: 5px;
-          box-sizing: border-box;
-          color: #3498db;
-          cursor: pointer;
-          display: inline-block;
-          font-size: 14px;
-          font-weight: bold;
-          margin: 0;
-          padding: 12px 25px;
-          text-decoration: none;
-          text-transform: capitalize; 
-      }
-
-      .btn-primary table td {
-        background-color: #3498db; 
-      }
-
-      .btn-primary a {
-        background-color: #3498db;
-        border-color: #3498db;
-        color: #ffffff; 
-      }
-
-      /* -------------------------------------
-          OTHER STYLES THAT MIGHT BE USEFUL
-      ------------------------------------- */
-      .last {
-        margin-bottom: 0; 
-      }
-
-      .first {
-        margin-top: 0; 
-      }
-
-      .align-center {
-        text-align: center; 
-      }
-
-      .align-right {
-        text-align: right; 
-      }
-
-      .align-left {
-        text-align: left; 
-      }
-
-      .clear {
-        clear: both; 
-      }
-
-      .mt0 {
-        margin-top: 0; 
-      }
-
-      .mb0 {
-        margin-bottom: 0; 
-      }
-
-      .preheader {
-        color: transparent;
-        display: none;
-        height: 0;
-        max-height: 0;
-        max-width: 0;
-        opacity: 0;
-        overflow: hidden;
-        mso-hide: all;
-        visibility: hidden;
-        width: 0; 
-      }
-
-      .powered-by a {
-        text-decoration: none; 
-      }
-
-      hr {
-        border: 0;
-        border-bottom: 1px solid #f6f6f6;
-        margin: 20px 0; 
-      }
-
-      /* -------------------------------------
-          RESPONSIVE AND MOBILE FRIENDLY STYLES
-      ------------------------------------- */
-      @media only screen and (max-width: 620px) {
-        table[class=body] h1 {
-          font-size: 28px !important;
-          margin-bottom: 10px !important; 
-        }
-        table[class=body] p,
-        table[class=body] ul,
-        table[class=body] ol,
-        table[class=body] td,
-        table[class=body] span,
-        table[class=body] a {
-          font-size: 16px !important; 
-        }
-        table[class=body] .wrapper,
-        table[class=body] .article {
-          padding: 10px !important; 
-        }
-        table[class=body] .content {
-          padding: 0 !important; 
-        }
-        table[class=body] .container {
-          padding: 0 !important;
-          width: 100% !important; 
-        }
-        table[class=body] .main {
-          border-left-width: 0 !important;
-          border-radius: 0 !important;
-          border-right-width: 0 !important; 
-        }
-        table[class=body] .btn table {
-          width: 100% !important; 
-        }
-        table[class=body] .btn a {
-          width: 100% !important; 
-        }
-        table[class=body] .img-responsive {
-          height: auto !important;
-          max-width: 100% !important;
-          width: auto !important; 
-        }
-      }
-
-      /* -------------------------------------
-          PRESERVE THESE STYLES IN THE HEAD
-      ------------------------------------- */
-      @media all {
-        .ExternalClass {
-          width: 100%; 
-        }
-        .ExternalClass,
-        .ExternalClass p,
-        .ExternalClass span,
-        .ExternalClass font,
-        .ExternalClass td,
-        .ExternalClass div {
-          line-height: 100%; 
-        }
-        .apple-link a {
-          color: inherit !important;
-          font-family: inherit !important;
-          font-size: inherit !important;
-          font-weight: inherit !important;
-          line-height: inherit !important;
-          text-decoration: none !important; 
-        }
-        .btn-primary table td:hover {
-          background-color: #34495e !important; 
-        }
-        .btn-primary a:hover {
-          background-color: #34495e !important;
-          border-color: #34495e !important; 
-        } 
-      }
-
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta name="x-apple-disable-message-reformatting">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta content="telephone=no" name="format-detection">
+  <title></title>
+  <!--[if (mso 16)]>
+    <style type="text/css">
+    a {text-decoration: none;}
     </style>
-  </head>
-  <body class="">
-    <span class="preheader">Hi {{fullname}}.Thank you for contacting us, we will contact you soon</span>
-    <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="body">
-      <tr>
-        <td>&nbsp;</td>
-        <td class="container">
-          <div class="content">
+    <![endif]-->
+  <!--[if gte mso 9]><style>sup { font-size: 100% !important; }</style><![endif]-->
+  <!--[if !mso]><!-- -->
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i" rel="stylesheet">
+  <!--<![endif]-->
+</head>
 
-            <!-- START CENTERED WHITE CONTAINER -->
-            <table role="presentation" class="main">
-
-              <!-- START MAIN CONTENT AREA -->
-              <tr>
-                <td class="wrapper">
-                  <table role="presentation" border="0" cellpadding="0" cellspacing="0">
-                    <tr>
-                      <td>
-                        <p>Hi {{fullname}},</p>
-                        <p>Thank you for contacting us, we will contact you soon</p>
-                        <p>Thanks,</p>
-						<p>The Gocodee Team</p>
-                      </td>
-                    </tr>
-                  </table>
-                </td>
-              </tr>
-
-            <!-- END MAIN CONTENT AREA -->
+<body>
+  <div class="es-wrapper-color">
+    <!--[if gte mso 9]>
+			<v:background xmlns:v="urn:schemas-microsoft-com:vml" fill="t">
+				<v:fill type="tile" color="#f6f6f6"></v:fill>
+			</v:background>
+		<![endif]-->
+    <table class="es-wrapper" width="100%" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td class="esd-email-paddings" valign="top">
+            <table class="es-content" cellspacing="0" cellpadding="0" align="center">
+              <tbody>
+                <tr> </tr>
+                <tr>
+                  <td class="esd-stripe" esd-custom-block-id="2877" align="center">
+                    <table class="es-content-body" width="600" cellspacing="0" cellpadding="0" bgcolor="#ffffff"
+                      align="center">
+                      <tbody>
+                        <tr>
+                          <td class="esd-structure" align="left">
+                            <table width="100%" cellspacing="0" cellpadding="0">
+                              <tbody>
+                                <tr>
+                                  <td class="esd-container-frame" width="600" valign="top" align="center">
+                                    <table width="100%" cellspacing="0" cellpadding="0">
+                                      <tbody>
+                                        <tr>
+                                          <td class="esd-block-banner" style="position: relative;" align="center"
+                                            esdev-config="h1">
+                                            <a target="_blank" href="https://viewstripo.email/"> </a>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
             </table>
-            <!-- END CENTERED WHITE CONTAINER -->
-
-            <!-- START FOOTER -->
-            <div class="footer">
-              <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+            <table cellpadding="0" cellspacing="0" class="es-content" align="center">
+              <tbody>
                 <tr>
-                  <td class="content-block">
-                    <span class="apple-link">Street 7, Dong Hoa, Di An, Binh Duong 75000</span>
-                    <br> Don't like these emails? <a href="http://i.imgur.com/CScmqnj.gif">Unsubscribe</a>.
+                  <td class="esd-stripe" esd-custom-block-id="2919" align="center">
+                    <table class="es-content-body" width="600" cellspacing="0" cellpadding="0" bgcolor="#ffffff"
+                      align="center">
+                      <tbody>
+                        <tr>
+                          <td class="esd-structure" align="left">
+                            <table width="100%" cellspacing="0" cellpadding="0">
+                              <tbody>
+                                <tr>
+                                  <td class="esd-container-frame" width="600" valign="top" align="center">
+                                    <table width="100%" cellspacing="0" cellpadding="0">
+                                      <tbody>
+                                        <tr>
+                                          <td class="esd-block-banner" style="position: relative;" align="center"
+                                            esdev-config="h2">
+                                            <a target="_blank" href="https://viewstripo.email/"> <img
+                                                class="adapt-img esdev-stretch-width esdev-banner-rendered"
+                                                src="https://apwys.stripocdn.email/content/guids/bannerImgGuid/images/53261560932620643.png"
+                                                alt="GoCodee" title="GoCodee"
+                                                width="100%" style="display: block;"></a>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </td>
                 </tr>
+              </tbody>
+            </table>
+            <table class="es-content" cellspacing="0" cellpadding="0" align="center">
+              <tbody>
                 <tr>
-                  <td class="content-block powered-by">
-                    Powered by <a href="http://htmlemail.io">HTMLemail</a>.
+                  <td class="esd-stripe" align="center">
+                    <table class="es-content-body" style="background-color: rgb(255, 255, 255);" width="600"
+                      cellspacing="0" cellpadding="0" bgcolor="#ffffff" align="center">
+                      <tbody>
+                        <tr>
+                          <td class="esd-structure es-p40t es-p40b es-p40r es-p40l" esd-general-paddings-checked="false"
+                            align="left">
+                            <table width="100%" cellspacing="0" cellpadding="0">
+                              <tbody>
+                                <tr>
+                                  <td class="esd-container-frame" width="520" valign="top" align="center">
+                                    <table width="100%" cellspacing="0" cellpadding="0">
+                                      <tbody>
+                                        <tr>
+                                          <td class="esd-block-text es-m-txt-c" align="left">
+                                            <h1 style="color: #333333; line-height: 150%;">Thank you for contacting us!</h1>
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td class="esd-block-text es-m-txt-c" align="left">
+                                            <p style="color: #666666; line-height: 150%;">We have received the information you sent in the mail.
+                                                 One of our happiness members will respond to you within 24 hours.</p>
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td class="esd-block-text es-m-txt-c es-p10t" align="left">
+                                            <p style="color: rgb(102, 102, 102);">Have a great day!</p>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </td>
                 </tr>
-              </table>
-            </div>
-            <!-- END FOOTER -->
-
-          </div>
-        </td>
-        <td>&nbsp;</td>
-      </tr>
+              </tbody>
+            </table>
+            <table class="es-footer" cellspacing="0" cellpadding="0" align="center">
+              <tbody>
+                <tr>
+                  <td class="esd-stripe" align="center">
+                    <table class="es-footer-body" width="600" cellspacing="0" cellpadding="0" align="center">
+                      <tbody>
+                        <tr>
+                          <td class="esd-structure" esd-general-paddings-checked="true" align="left">
+                            <table width="100%" cellspacing="0" cellpadding="0">
+                              <tbody>
+                                <tr>
+                                  <td class="esd-container-frame" width="600" valign="top" align="center">
+                                    <table width="100%" cellspacing="0" cellpadding="0">
+                                      <tbody>
+                                        <tr>
+                                          <td class="esd-block-image" align="center">
+                                            <a target="_blank"> <img class="adapt-img"
+                                                src="https://apwys.stripocdn.email/content/guids/f5b9e2f8-1d9c-4e57-8d04-d88a7d2ab85b/images/99631560932735855.PNG"
+                                                alt="Map" title="Map" width="600" style="display: block;"> </a>
+                                          </td>
+                                        </tr>
+                                        <tr style="background-color: #f4eade">
+                                          <td class="esd-block-text es-p20t es-p15b es-p15r es-p15l" align="center">
+                                            <p><span style="font-size:20px;"><span style="line-height: 150%;">+84 33 812
+                                                  7699</span></span>
+                                            </p>
+                                            <p>7 Street, Dong Hoa, Di An, Binh Duong 75000<br></p>
+                                          </td>
+                                        </tr>
+                                        <tr style="background-color: #f4eade">
+                                          <td class="esd-block-social" align="center">
+                                            <table class="es-table-not-adapt es-social" cellspacing="0" cellpadding="0">
+                                              <tbody>
+                                                <tr>
+                                                  <td class="es-p10r" valign="top" align="center">
+                                                    <a target="_blank" href><img title="Twitter"
+                                                        src="https://stripo.email/cabinet/assets/editor/assets/img/social-icons/logo-black/twitter-logo-black.png"
+                                                        alt="Tw" width="24" height="24"></a>
+                                                  </td>
+                                                  <td class="es-p10r" valign="top" align="center">
+                                                    <a target="_blank" href><img title="Facebook"
+                                                        src="https://stripo.email/cabinet/assets/editor/assets/img/social-icons/logo-black/facebook-logo-black.png"
+                                                        alt="Fb" width="24" height="24"></a>
+                                                  </td>
+                                                  <td class="es-p10r" valign="top" align="center">
+                                                    <a target="_blank" href><img title="Youtube"
+                                                        src="https://stripo.email/cabinet/assets/editor/assets/img/social-icons/logo-black/youtube-logo-black.png"
+                                                        alt="Yt" width="24" height="24"></a>
+                                                  </td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                          </td>
+                                        </tr>
+                                        <tr style="background-color: #f4eade">
+                                          <td class="esd-block-text es-p15t es-p20b es-p15r es-p15l" align="center">
+                                            <p style="font-size: 13px; line-height: 150%;">You are receiving this email
+                                              because you have visited our site or asked us about regular
+                                              newsletter.&nbsp;If you wish to unsubscribe from our newsletter, click <a
+                                                target="_blank" style="font-size: 13px;text-decoration: underline;">here</a>.<br></p>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="esd-structure" esd-general-paddings-checked="true"
+                            style="background-color: rgb(128, 87, 43);" bgcolor="#80572b" align="left">
+                            <table width="100%" cellspacing="0" cellpadding="0">
+                              <tbody>
+                                <tr>
+                                  <td class="esd-container-frame" width="600" valign="top" align="center">
+                                    <table width="100%" cellspacing="0" cellpadding="0">
+                                      <tbody>
+                                        <tr>
+                                          <td class="esd-block-image" align="center">
+                                            <a target="_blank"> <img
+                                                src="https://apwys.stripocdn.email/content/guids/CABINET_c3aa6803686f8361447088d544a5e1f7/images/96221507104192901.png"
+                                                alt width="41"> </a>
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td class="esd-block-text es-p10t es-p15b" esdev-links-color="#f4eade"
+                                            align="center">
+                                            <p style="color: #ffffff;">GoCodee © 2019 |&nbsp;<a target="_blank"
+                                                style="color: #f4eade;">Privacy policy</a></p>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
     </table>
-  </body>
+  </div>
+</body>
+
 </html>
