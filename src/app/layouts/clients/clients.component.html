@@ -1,7 +1,7 @@
 <navbar></navbar>
 <app-spinner></app-spinner>
 <div class="top-background"></div>
-<div class="client-content" *ngIf="!loading" >
+<div [style.visibility]="!loading ? 'visible' : 'hidden'" class="client-content" >
   <router-outlet></router-outlet>
   <foot></foot>
 </div>

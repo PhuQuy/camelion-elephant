@@ -310,23 +310,37 @@ h5,
 
   .owl-nav {
     position: absolute;
-    top: 50%;
-    width: 100%;
+    top: 110%;
+    width: 180px;
+    left: 80px;
+    transform: translateX(-50%);
 
     .owl-prev,
     .owl-next {
       position: absolute;
       transform: translateY(-50%);
       margin-top: -10px;
+      opacity: 1;
+
+      img {
+        opacity: 0.7;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+
       @include transition(0.7s);
+
+      .rotate {
+        transform: rotate(180deg);
+      }
 
       span {
         &:before {
           font-size: 40px;
         }
       }
-
-      opacity: 0;
     }
 
     .owl-prev {
@@ -388,16 +402,16 @@ h5,
       // height: calc(100vh - 70vh);
       // min-height: 584px;
 
-    //   .overlay {
-    //     position: absolute;
-    //     top: 0;
-    //     left: 0;
-    //     right: 0;
-    //     bottom: 0;
-    //     content: "";
-    //     opacity: 0.99;
-    //     // @include gradient-background();
-    //   }
+      //   .overlay {
+      //     position: absolute;
+      //     top: 0;
+      //     left: 0;
+      //     right: 0;
+      //     bottom: 0;
+      //     content: "";
+      //     opacity: 0.99;
+      //     // @include gradient-background();
+      //   }
 
       .slider-text {
         color: $white;
@@ -2511,8 +2525,7 @@ textarea.form-control {
   }
 }
 
-.carousel.home-slider .slider-item .overlay {
-}
+.carousel.home-slider .slider-item .overlay {}
 
 .blog-entry {
   .p-4 {
@@ -2553,12 +2566,27 @@ textarea.form-control {
 }
 
 .top-background {
-    background: url(/assets/images/Desktop.png) no-repeat;
-    background-size: cover;
-    background-position: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 200vh;
-    width: 100%;
-  }
+  background: url(/assets/images/Desktop.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 200vh;
+  width: 100%;
+  z-index: -1;
+}
+
+.image-animate {
+  -webkit-box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .3);
+  box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .3);
+  border-radius: 10px;
+}
+
+.rotate-ne {
+  transform: translate3d(220px, 30px, 0) rotate3d(1, 1, 5, 31deg);
+}
+
+.owl-item {
+  box-shadow: none !important;
+}

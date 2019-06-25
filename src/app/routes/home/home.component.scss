@@ -45,8 +45,8 @@
     background-repeat: no-repeat;
     border-radius: 4px;
     overflow: hidden;
-    -webkit-transition-duration: 0.5s;
-    transition-duration: 0.5s;
+    // -webkit-transition-duration: 0.5s;
+    // transition-duration: 0.5s;
 
     .overlay-bar {
       position: absolute;
@@ -66,13 +66,13 @@
   }
 }
 
-::ng-deep .owl-item {
-  &:hover {
-    .overlay-link {
-      visibility: visible;
-    }
-  }
-}
+// ::ng-deep .owl-item {
+//   &:hover {
+//     .overlay-link {
+//       visibility: visible;
+//     }
+//   }
+// }
 
 ::ng-deep .block-18 .text span {
   display: inline-block;
@@ -105,3 +105,48 @@
   }
 }
 
+.animate-carousel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 500px;
+}
+
+@media screen and (max-width: 576px) {
+
+  .service-section {
+    margin-top: 450px;
+  }
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+.slide-controls svg {
+  cursor: pointer;
+
+  &:hover {
+    .hover-effect {
+      fill: url(#PSgrad_0);
+    }
+  }
+}
+
+.social-medias {
+  list-style-type: none;
+  margin-block-start: 0em;
+  padding-inline-start: 12px;
+  margin-top: 1em;
+  cursor: pointer;
+
+  li {
+    display: inline-block;
+
+    &:hover {
+      .hover-effect {
+        fill: url(#PSgrad_0);
+      }
+    }
+  }
+}

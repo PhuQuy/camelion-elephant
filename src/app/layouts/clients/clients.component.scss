@@ -21,6 +21,9 @@ $secondary: #79efb4;
 $tertiary: #ee76ad;
 $quarternary: #efac78;
 
+.client-content {
+  overflow-x: hidden;
+}
 
 @mixin gradient-background() {
   background: rgba(68, 142, 246, 1);
@@ -95,11 +98,11 @@ h5,
   top: 30px;
 
 
-    @include media-breakpoint-down(md) {
-      // background: $black !important;
-      top: 0;
-      // position: relative;
-    }
+  @include media-breakpoint-down(md) {
+    // background: $black !important;
+    top: 0;
+    // position: relative;
+  }
 
   .navbar-brand {
     color: $white;

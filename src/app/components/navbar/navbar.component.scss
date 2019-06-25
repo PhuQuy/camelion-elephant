@@ -1,3 +1,5 @@
+@import "src/assets/scss/bootstrap/mixins";
+
 nav:not(.scrolled) {
   .nav-item {
     border: 1px solid transparent;
@@ -100,7 +102,7 @@ nav:not(.scrolled) {
 }
 
 .navbar-brand {
-  height: 60px;
+  height: 40px;
 }
 
 .load-x {
@@ -127,7 +129,7 @@ nav:not(.scrolled) {
   opacity: 1;
 
   .logo svg {
-    height: 60px !important;
+    height: 40px !important;
   }
 
   .text-logo svg {
@@ -233,4 +235,97 @@ nav:not(.scrolled) {
 
 .normal-loading {
   transform: scale(1);
+}
+
+.menu-animate {
+  svg {
+    width: 60px;
+    height: 60px;
+    margin-top: -12px;
+    cursor: pointer;
+    transform: translate3d(0, 0, 0);
+  }
+
+  path {
+    fill: none;
+    transition: stroke-dashoffset 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25), stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25);
+    stroke-width: 40px;
+    stroke-linecap: round;
+    stroke: white;
+    stroke-dashoffset: 0px;
+  }
+
+  path#top,
+  path#bottom {
+    stroke-dasharray: 240px 950px;
+  }
+
+  path#middle {
+    stroke-dasharray: 240px 240px;
+  }
+
+  .cross path#top,
+  .cross path#bottom {
+    stroke-dashoffset: -650px;
+    stroke-dashoffset: -650px;
+  }
+
+  .cross path#middle {
+    stroke-dashoffset: -115px;
+    stroke-dasharray: 1px 220px;
+  }
+}
+
+.mobile-navbar-bg {
+  //   background: url(/assets/images/Desktop.png) no-repeat;
+  //   background-size: cover;
+  //   background-position: center;
+}
+
+.mobile-navbar {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  transform: translateX(101%);
+  width: calc(100% - 40px);
+  height: 100vh;
+  z-index: 1000;
+  background: url(/assets/images/footer.svg) no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  -moz-transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  -o-transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  -webkit-transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  -ms-transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+  &.show {
+    transform: translateX(0px);
+    -moz-transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    -o-transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    -webkit-transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    -ms-transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+    .logo {
+      display: block;
+    }
+  }
+
+  .logo {
+    display: none;
+  }
+}
+
+.navbar-animate {
+  &.collapsed-animate {
+    transform: translateX(calc(-100% + 60px));
+  }
+
+  -moz-transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  -o-transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  -webkit-transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  -ms-transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
