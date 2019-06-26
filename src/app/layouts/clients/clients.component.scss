@@ -2506,3 +2506,9 @@ textarea.form-control {
   background-size: cover;
   background-position: center;
 }
+
+.opacity-animate {
+  -webkit-transition: opacity .7s ease-in-out;
+  -moz-transition: opacity .7s ease-in-out;
+  transition: opacity .7s ease-in-out;
+}

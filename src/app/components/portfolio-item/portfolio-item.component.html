@@ -1,4 +1,4 @@
-<a
+<!-- <a
 	class="portfolio-item {{ classSize }}"
 	data-aos="fade-up"
 	data-aos-delay="200"
@@ -12,4 +12,28 @@
 			<a [href]="portfolio.link" target="_blank" *ngIf="portfolio.link" rel="noopener"> {{ portfolio.link }}</a>
 		</div>
 	</div>
-</a>
+</a> -->
+
+<div style="width: 100%; display: inline-block;">
+  <div class="card card-blog card-plain">
+    <div class="card-image">
+      <a tabindex="0" [routerLink]="['/portfolio', portfolio.slug]">
+        <img class="img" [src]="imageURL">
+      </a>
+    </div>
+    <div class="card-body">
+      <h6 class="category text-info">Javascript</h6>
+      <h4 class="card-title">
+        <h3 [routerLink]="['/portfolio', portfolio.slug]" class="porfolio-title c-pointer" tabindex="0">{{portfolio.title}}</h3>
+      </h4>
+      <p class="card-description content-text-line-clamp">
+        {{portfolio.description}}
+      </p>
+      <div class="card-footer px-0">
+        <div class="author">
+          <span>{{portfolio.createdAt.seconds * 1000 | date :'medium'}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

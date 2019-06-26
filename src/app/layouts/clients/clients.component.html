@@ -1,7 +1,8 @@
 <navbar></navbar>
 <app-spinner></app-spinner>
-<div class="top-background"></div>
-<div [style.visibility]="!loading ? 'visible' : 'hidden'" class="client-content" >
+<div class="top-background" [style.transform]="'translateY(' + (-posY) + 'px)'"></div>
+<div [style.visibility]="!loading ? 'visible' : 'hidden'" class="client-content opacity-animate"
+  [style.opacity]="!loading ? 1 : 0">
   <router-outlet></router-outlet>
   <foot></foot>
 </div>

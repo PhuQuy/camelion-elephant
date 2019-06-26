@@ -1,5 +1,5 @@
 import { isPlatformBrowser } from "@angular/common";
-import { Component, Inject, PLATFORM_ID, AfterViewInit } from "@angular/core";
+import { Component, Inject, PLATFORM_ID, AfterViewInit, HostListener } from "@angular/core";
 import {
     NavigationCancel,
     NavigationEnd,
@@ -15,11 +15,17 @@ import { SpinnerService } from "@components/spinner/spinner.service";
 })
 export class ClientsComponent implements AfterViewInit {
     loading = false;
+    posY = 0;
     constructor(
         private router: Router,
         @Inject(PLATFORM_ID) public platformId: string,
         private spinnerService: SpinnerService
     ) { }
+
+    @HostListener('window:scroll', ['$event'])
+    public moveBackground() {
+        this.posY = window.scrollY * 0.35;
+    }
 
     ngOnInit() {
         this.loading = true;

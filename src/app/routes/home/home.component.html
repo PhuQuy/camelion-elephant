@@ -1,8 +1,8 @@
 <section class="home-slider carousel ftco-degree-bg">
   <div class="slider-item" data-stellar-background-ratio="0.5">
     <div class="container">
-      <div class="row slider-text align-items-center justify-content-center mt-5 mt-md-0">
-        <div class="col-md-8 text-center mt-5 mt-md-0">
+      <div class="row slider-text align-items-center justify-content-center">
+        <div class="col-md-8 pt-md-5 my-auto">
           <h1 class="mb-4 typewrite-head">
             We love to
 
@@ -30,7 +30,10 @@
 
 
           </p> -->
-          <div class="row">
+          <div class="row connect-us">
+            <div class="col-12">
+              <h3>Connect with us</h3>
+            </div>
             <div class="col-12">
               <ul class="social-medias">
                 <li>
@@ -121,7 +124,7 @@
             </div>
           </ng-template>
         </div>
-        <div class="col-md-4 mt-3 mt-md-0" style="height: 460px;">
+        <div class="col-md-4 mt-3 mt-md-0" style="height: 720px;">
           <div class="animate-carousel">
             <div class="position-relative">
               <owl-carousel-o #owlCar [options]="customOptions">
@@ -151,20 +154,18 @@
               </owl-carousel-o>
               <div class="row pl-3 pt-3 slide-controls">
                 <div class="col-2">
-                  <!-- <img (click)="owlCar.prev()" class="rotate float-right" src="/assets/images/circlearrow.png" /> -->
                   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="0.764in"
-                    height="0.764in">
+                    height="0.764in" (click)="owlCar.prev()">
                     <g filter="url(#Filter_0)">
-                        <path fill-rule="evenodd" stroke="rgb(255, 255, 255)" stroke-width="2px" stroke-linecap="butt"
-                          stroke-linejoin="miter" fill="none"  class="hover-effect"
-                          d="M27.000,52.000 C13.193,52.000 2.000,40.807 2.000,27.000 C2.000,13.193 13.193,2.000 27.000,2.000 C40.807,2.000 52.000,13.193 52.000,27.000 C52.000,40.807 40.807,52.000 27.000,52.000 Z" />
+                      <path fill-rule="evenodd" stroke="rgb(255, 255, 255)" stroke-width="2px" stroke-linecap="butt"
+                        stroke-linejoin="miter" fill="none" class="hover-effect"
+                        d="M27.000,52.000 C13.193,52.000 2.000,40.807 2.000,27.000 C2.000,13.193 13.193,2.000 27.000,2.000 C40.807,2.000 52.000,13.193 52.000,27.000 C52.000,40.807 40.807,52.000 27.000,52.000 Z" />
                     </g>
                     <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
                       d="M38.000,28.000 L20.130,28.000 L27.515,35.385 L26.100,36.799 L16.201,26.899 L26.100,17.000 L27.515,18.414 L19.929,26.000 L38.000,26.000 L38.000,28.000 Z" />
                   </svg>
                 </div>
                 <div class="col-2 px-0">
-                  <!-- <img (click)="owlCar.next()" src="/assets/images/circlearrow.png" /> -->
                   <svg (click)="owlCar.next()" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink" width="0.56in" height="0.764in">
                     <g filter="url(#Filter_0)">
@@ -237,20 +238,58 @@
 </section>
 
 <section class="ftco-section ftco-degree-bg">
-  <div class="container">
-    <div class="row no-gutters justify-content-center mb-5 pb-5">
+    <div class="row no-gutters justify-content-center mb-5">
       <div class="col-md-7 text-center heading-section" data-aos="fade-up">
         <span class="subheading">Works</span>
         <h2>Recent Works</h2>
       </div>
     </div>
-    <div class="row" *ngIf="portfolios">
-      <div class="col-md-4" *ngFor="let porfolio of portfolios; index as i">
-        <app-portfolio-item [portfolio]="porfolio"></app-portfolio-item>
-      </div>
+    <div class="porfolio-list">
+        <div class="row" *ngIf="portfolios">
+          <div class="col-12" data-aos="fade-up">
+            <owl-carousel-o [options]="owlOptions" #owlPorfolio (changed)="getData($event)">
+              <ng-container *ngFor="let porfolio of portfolios; let i = index">
+                <ng-template carouselSlide>
+                  <div class="porfolio-item" [class.active]="i == invisibleIndex">
+                    <app-portfolio-item [portfolio]="porfolio"></app-portfolio-item>
+                  </div>
+                </ng-template>
+              </ng-container>
+            </owl-carousel-o>
+            <div style="max-width: 500px; margin-left: 200px" class="porfolio-controls">
+              <div class="row pl-3 pt-3 slide-controls">
+                <div class="col-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="0.764in"
+                    height="0.764in" (click)="owlPorfolio.prev();">
+                    <g filter="url(#Filter_0)">
+                      <path fill-rule="evenodd" stroke="#e14eca" stroke-width="2px" stroke-linecap="butt"
+                        stroke-linejoin="miter" fill="none" class="hover-effect"
+                        d="M27.000,52.000 C13.193,52.000 2.000,40.807 2.000,27.000 C2.000,13.193 13.193,2.000 27.000,2.000 C40.807,2.000 52.000,13.193 52.000,27.000 C52.000,40.807 40.807,52.000 27.000,52.000 Z" />
+                    </g>
+                    <path fill-rule="evenodd" fill="#e14eca"
+                      d="M38.000,28.000 L20.130,28.000 L27.515,35.385 L26.100,36.799 L16.201,26.899 L26.100,17.000 L27.515,18.414 L19.929,26.000 L38.000,26.000 L38.000,28.000 Z" />
+                  </svg>
+                </div>
+                <div class="col-2 px-0">
+                  <svg (click)="owlPorfolio.next();" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" width="0.56in" height="0.764in">
+                    <g filter="url(#Filter_0)">
+                      <path fill-rule="evenodd" stroke="#e14eca" stroke-width="2px" stroke-linecap="butt"
+                        class="hover-effect" stroke-linejoin="miter" fill="none"
+                        d="M27.000,52.000 C40.807,52.000 52.000,40.807 52.000,27.000 C52.000,13.193 40.807,2.000 27.000,2.000 C13.193,2.000 2.000,13.193 2.000,27.000 C2.000,40.807 13.193,52.000 27.000,52.000 Z" />
+                    </g>
+                    <path fill-rule="evenodd" fill="#e14eca"
+                      d="M36.385,28.314 L36.385,28.314 L27.899,36.799 L26.485,35.385 L33.870,28.000 L16.000,28.000 L16.000,26.000 L34.071,26.000 L26.485,18.414 L27.899,17.000 L37.799,26.899 L36.385,28.314 Z" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+        </div>
     </div>
-  </div>
 </section>
+
 <section class="ftco-section ftco-counter ftco-degree-bg" id="section-counter" hidden>
   <div class="container">
     <div class="row justify-content-center mb-5 pb-5">

@@ -136,7 +136,7 @@
 .social-medias {
   list-style-type: none;
   margin-block-start: 0em;
-  padding-inline-start: 12px;
+  padding-inline-start: 0px;
   margin-top: 1em;
   cursor: pointer;
 
@@ -149,4 +149,56 @@
       }
     }
   }
+}
+
+.connect-us {
+  margin-top: 10em;
+
+  h3 {
+    color: white;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .connect-us {
+    margin-top: 2em;
+  }
+
+  .porfolio-list {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+
+    .porfolio-item {
+      opacity: 1 !important;
+    }
+
+    .porfolio-controls {
+      display: none;
+    }
+  }
+}
+
+.slider-text {
+  margin-top: 10em;
+}
+
+.porfolio-item {
+  opacity: 0.3;
+  padding: 0 1em;
+  -webkit-transition: opacity .7s ease-in-out;
+  -moz-transition: opacity .7s ease-in-out;
+  transition: opacity .7s ease-in-out;
+
+  &.active {
+    opacity: 1;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.porfolio-list {
+  margin-left: -160px;
+  margin-right: -160px;
 }

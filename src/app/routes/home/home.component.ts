@@ -1,11 +1,11 @@
 import { Component, Inject, PLATFORM_ID } from '@angular/core';
+import { SpinnerService } from '@components/spinner/spinner.service';
 import { BaseComponent } from '@core/base/base.component';
-import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { BlogService } from '@services/blog.service';
 import { PortfolioService } from '@services/portfolio.service';
 import { SeoService } from '@shared/seo.service';
 import { Subject } from 'rxjs';
-import { SpinnerService } from '@components/spinner/spinner.service';
 
 declare let $: any;
 let TxtType = function (el, toRotate, period) {
@@ -66,6 +66,39 @@ export class HomeComponent extends BaseComponent {
         lazyLoadEager: 2,
         responsiveBaseElement: 'div'
     };
+
+    owlOptions = {
+        loop: true,
+        mouseDrag: true,
+        touchDrag: true,
+        pullDrag: true,
+        dots: false,
+        nav: false,
+        autoWidth: true,
+        singleItem: true,
+        navSpeed: 700,
+        responsive: {
+            0: {
+                items: 1
+            },
+            330: {
+                items: 1.1
+            },
+            1050: {
+                items: 3
+            },
+            1090: {
+                items: 4
+            },
+            1600: {
+                items: 5
+            },
+            1825: {
+                items: 6
+            }
+        }
+    };
+
     configCount = {
         animation: 'count',
         format: '(,ddd)',
@@ -79,6 +112,8 @@ export class HomeComponent extends BaseComponent {
     portfolios: any;
     homePortfolios: any;
     dtTrigger = new Subject();
+    invisibleIndex = 2;
+
     constructor(
         @Inject(PLATFORM_ID) public platformId: string,
         private seoService: SeoService,
@@ -192,5 +227,13 @@ export class HomeComponent extends BaseComponent {
                 this.portfolios = [];
             }
         });
+    }
+
+    getData(data) {
+        if (data.startPosition + 2 >= this.portfolios.length) {
+            this.invisibleIndex = data.startPosition + 2 - this.portfolios.length;
+        } else {
+            this.invisibleIndex = data.startPosition + 2;
+        }
     }
 }
