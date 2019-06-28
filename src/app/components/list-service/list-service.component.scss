@@ -100,3 +100,47 @@
     width: 100%;
   }
 }
+
+.learn-more {
+  background-color: #ba54f5 !important;
+  background-image: linear-gradient(to bottom left, #e14eca, #ba54f5, #e14eca) !important;
+  background-image: -moz-linear-gradient(to bottom left, #e14eca, #ba54f5, #e14eca) !important;
+  color: #fff;
+  box-shadow: none;
+}
+
+.features-4 .info:hover {
+  transition: all .3s ease 0s;
+}
+
+.info.info-primary:hover {
+  background-color: #e14eca;
+  box-shadow: 13px 13px 50px -24px #e14eca;
+}
+
+@media (min-width: 768px) {
+  .info:first-of-type {
+    z-index: 2;
+  }
+}
+
+.features-4 .info {
+  text-align: left;
+  padding: 30px;
+}
+
+.info {
+  max-width: 360px;
+  margin: 0 auto;
+  padding: 70px 10px 30px;
+  text-align: center;
+  border-radius: 3px;
+
+  i {
+    font-size: 40px;
+  }
+}
+
+.popup-youtube:hover {
+  color: #404044 !important;
+}

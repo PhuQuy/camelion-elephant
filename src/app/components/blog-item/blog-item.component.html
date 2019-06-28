@@ -1,4 +1,4 @@
-
+<!-- 
 	<div class="blog-entry">
 		<a
 			[routerLink]="['/blog', blog.slug]"
@@ -15,17 +15,37 @@
 				</span>
 				</div>
 				<div>
-					<!-- <a class="meta-chat"
-						> -->
-						<!-- <span class="icon-chat"></span> -->
-						<!-- {{ blog.comments.length }} -->
-						<!-- </a -->
-					<!-- > -->
 				</div>
 			</div>
 			<h3 class="heading">
 				<a [routerLink]="['/blog', blog.slug]">{{ blog.title }}</a>
 			</h3>
 		</div>
-	</div>
-<!-- </div> -->
+    </div> -->
+<div class="card card-blog card-plain blog-horizontal">
+  <div class="row" [style.direction]="direction">
+    <div class="col-lg-4">
+      <div class="card-image">
+        <a [routerLink]="['/blog', blog.slug]">
+          <img class="img rounded" [src]="blog.imgURL">
+        </a>
+      </div>
+    </div>
+    <div class="col-lg-8">
+      <div class="card-body">
+        <h3 class="card-title">
+          <a style="color: #e14eca" [routerLink]="['/blog', blog.slug]">{{ blog.title }}</a>
+        </h3>
+        <div><span class="badge badge-primary">{{blog.category[0].name}} </span></div>
+        <p class="card-description">
+          {{ blog.description }}
+          <br />
+          <a style="color: #e14eca" [routerLink]="['/blog', blog.slug]"> Read More </a>
+        </p>
+        <div class="author">
+          <div class="meta">{{ blog.createdAt.seconds*1000  | date :'mediumDate' }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

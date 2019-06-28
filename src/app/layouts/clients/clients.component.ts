@@ -16,6 +16,7 @@ import { SpinnerService } from "@components/spinner/spinner.service";
 export class ClientsComponent implements AfterViewInit {
     loading = false;
     posY = 0;
+    showScrollTop;
     constructor(
         private router: Router,
         @Inject(PLATFORM_ID) public platformId: string,
@@ -25,6 +26,12 @@ export class ClientsComponent implements AfterViewInit {
     @HostListener('window:scroll', ['$event'])
     public moveBackground() {
         this.posY = window.scrollY * 0.35;
+
+        if (window.scrollY > window.innerHeight) {
+            this.showScrollTop = true;
+        } else {
+            this.showScrollTop = false;
+        }
     }
 
     ngOnInit() {
@@ -56,5 +63,9 @@ export class ClientsComponent implements AfterViewInit {
                 }
             }
         });
+    }
+
+    scrollTop() {
+        window.scrollTo(0, 0);
     }
 }

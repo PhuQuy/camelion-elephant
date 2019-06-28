@@ -2550,28 +2550,28 @@ textarea.form-control {
   color: white !important;
 }
 
-::-webkit-scrollbar {
-  width: 8px;
-}
+// ::-webkit-scrollbar {
+//   width: 8px;
+// }
 
-::-webkit-scrollbar-track {
-  background: linear-gradient(to bottom, #51509c, #9c48bf);
-  border-radius: 5px;
-}
+// ::-webkit-scrollbar-track {
+//   background: linear-gradient(to bottom, #51509c, #9c48bf);
+//   border-radius: 5px;
+// }
 
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #51509c, #9c48bf);
-  border-radius: 5px;
-}
+// ::-webkit-scrollbar-thumb {
+//   background: linear-gradient(to bottom, #51509c, #9c48bf);
+//   border-radius: 5px;
+// }
 
 .top-background {
   background: url(/assets/images/Desktop.png) no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: bottom;
   position: absolute;
   top: 0;
   left: 0;
-  height: 200vh;
+  height: 150vh;
   width: 100%;
   z-index: -1;
 }

@@ -91,7 +91,7 @@
 }
 
 .card-blog {
-  border: 1px solid #ba54f5;
+  border: 1px solid #e14eca;
 }
 
 .presentation-page .category {
@@ -107,14 +107,14 @@
   line-height: 1.25em;
 
   h3 {
-    color: #ba54f5;
+    color: #e14eca;
     font-weight: 300;
   }
 }
 
 .card .card-body .card-category,
 .card .card-body .card-description {
-  color: hsla(0, 0%, 100%, .6);
+  color: #fff;
 }
 
 .card .avatar {
@@ -130,7 +130,7 @@
   margin-left: 0;
   margin-right: 0;
   background-color: transparent;
-  color: rgba(255, 255, 255, 0.6);
+  color: #fff;
 }
 
 .content-text-line-clamp {

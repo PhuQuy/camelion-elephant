@@ -1,0 +1,19 @@
+.card-blog.blog-horizontal .card-image {
+  height: auto;
+  width: auto;
+
+  img {
+    width: 100%;
+    height: 500px;
+  }
+}
+
+.card.card-plain {
+  background: transparent;
+  box-shadow: none;
+  border: none;
+}
+
+.card-blog {
+  min-height: 550px;
+}

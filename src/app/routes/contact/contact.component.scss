@@ -7,54 +7,145 @@
   }
 
   img {
-      width: 500px;
+    width: 500px;
   }
 }
 
 .ftco-opacity-bg {
-    background: rgba(0,0,0,.6);
-    border-radius: 5px;
+  background: rgba(0, 0, 0, .6);
+  border-radius: 5px;
 }
 
 .ftco-sologan {
-    color: white;
-    font-size: 25px;
+  color: white;
+  font-size: 25px;
 }
 
 
-.contact-form{
-  margin-top:50px;
+.contact-form {
+  margin-top: 50px;
 }
 
-.form-validation{
+.form-validation {
   font-size: 12px;
   color: red;
 }
-input.ng-invalid{
-  &.ng-dirty, &.ng-touched{
-    
-  border-color: red !important;
+
+input.ng-invalid {
+
+  &.ng-dirty,
+  &.ng-touched {
+
+    border-color: red !important;
   }
 }
-.contact-info{
+
+.contact-info {
   list-style-type: none;
   margin-top: 42px;
-  li{
+
+  li {
     margin-bottom: 50px;
   }
-  .icon{
+
+  .icon {
     margin-right: 20px;
     font-size: 44px;
   }
-  .icon, .info{
+
+  .icon,
+  .info {
     display: inline-block;
     vertical-align: middle;
   }
 }
-.ftco-section-2{
+
+.ftco-section-2 {
   margin-top: -18em;
 }
 
-::ng-deep .agm-map-container-inner{
-  border-radius: 8px;
+.map {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+
+  &:after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: radial-gradient(400px circle at 65% 50%, transparent 0, #232258b5 100%);
+    opacity: 1;
+    background-position: 23% 10%;
+    left: 0;
+    top: 0;
+  }
+}
+
+.card-contact {
+  max-width: 560px;
+  margin-left: 15%;
+  // padding: 80px 0 80px 150px;
+
+  &.card {
+    background: #5d2fb0de;
+    border: 0;
+    position: relative;
+    width: 100%;
+    box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 7px;
+    margin-top: 30px;
+  }
+
+  .card-header {
+    border-bottom: none;
+    background-color: transparent;
+  }
+}
+
+.input-group {
+  input {
+    background: transparent !important;
+    // border-left: none;
+    color: white !important;
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+
+    &:focus,
+    &:active {
+      border-color: #e14eca;
+    }
+  }
+
+  span {
+    border-right: none;
+    background: transparent !important;
+  }
+}
+
+.send-contact {
+  background: transparent;
+  border: 1px solid white;
+
+  &:hover {
+    border: 1px solid white;
+    background: white;
+    color: #5d2fb0de;
+  }
+}
+
+.one-hunred-vh {
+  height: 100vh;
+}
+
+@media screen and (max-width: 576px) {
+  .one-hunred-vh {
+    height: 200vh;
+  }
+
+  .card-contact {
+    width: 90% !important;
+    margin: auto;
+  }
 }

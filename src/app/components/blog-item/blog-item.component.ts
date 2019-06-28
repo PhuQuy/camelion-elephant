@@ -7,7 +7,7 @@ import { BaseComponent } from '@core/base/base.component';
     styleUrls: ['./blog-item.component.scss']
 })
 export class BlogItemComponent extends BaseComponent implements OnInit {
-
+    @Input() direction = 'ltr';
     @Input() blog;
     createDate;
     constructor(@Inject(PLATFORM_ID) public platformId: string) {
@@ -18,7 +18,7 @@ export class BlogItemComponent extends BaseComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.createDate = new Date(this.blog.createdAt.seconds*1000);
+        this.createDate = new Date(this.blog.createdAt.seconds * 1000);
     }
 
 }

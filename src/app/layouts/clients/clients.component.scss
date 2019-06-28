@@ -2512,3 +2512,18 @@ textarea.form-control {
   -moz-transition: opacity .7s ease-in-out;
   transition: opacity .7s ease-in-out;
 }
+
+#back_top {
+  bottom: 10px;
+  cursor: pointer;
+  display: none;
+  padding: 4px;
+  position: fixed;
+  right: 10px;
+  text-align: center;
+  transition: all .3s ease-out 0s;
+  -webkit-transition: all .3s ease-out 0s;
+  -moz-transition: all .3s ease-out 0s;
+  z-index: 9998;
+
+}

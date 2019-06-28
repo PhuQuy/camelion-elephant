@@ -1,4 +1,4 @@
-<section class="home-slider carousel ftco-degree-bg">
+<!-- <section class="home-slider carousel ftco-degree-bg">
   <div class="slider-item bread-wrap">
     <div class="overlay hero-area-fix"></div>
     <div class="container">
@@ -13,8 +13,8 @@
       </div>
     </div>
   </div>
-</section>
-<section class="ftco-section-2 ftco-degree-bg">
+</section> -->
+<!-- <section class="ftco-section-2 ftco-degree-bg">
   <div class="container">
     <agm-map style="height: 500px" [latitude]="lat" [longitude]="lng" [zoom]="12"
       [scrollwheel]="null">
@@ -104,7 +104,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 <!-- <section class="ftco-section-2 ftco-gray-bg">
   <div class="container">
     <div class="row">
@@ -153,3 +153,156 @@
   </div>
 </section>
  -->
+
+<section class="one-hunred-vh">
+  <div class="map one-hunred-vh">
+    <agm-map class="one-hunred-vh" [latitude]="lat" [longitude]="lng" [zoom]="12" [scrollwheel]="null"
+      [styles]="styles">
+      <agm-marker [latitude]="lat" [longitude]="lng" [iconUrl]="{
+                          url: '../../../assets/icons/local.png',
+                          scaledSize: {
+                            width: 42,
+                            height: 53
+                          }
+                        }"></agm-marker>
+    </agm-map>
+  </div>
+  <div class="row" style="height: 100%">
+    <div class="col-lg-6 col-md-10 my-auto">
+      <div class="card card-contact card-raised">
+        <form #formSubmit="ngForm" class="contact-form" (ngSubmit)="sendInfo(formSubmit)">
+
+          <div class="card-header text-center">
+            <h4 class="card-title">Contact Us</h4>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="info info-horizontal">
+                  <div class="description">
+                    <h5 class="info-title">Give us a ring</h5>
+                    <p> Michael Jordan
+                      <br> +40 762 321 762
+                      <br> Mon - Fri, 8:00-22:00
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="info info-horizontal">
+                  <div class="icon icon-primary">
+                    <i class="tim-icons icon-square-pin"></i>
+                  </div>
+                  <div class="description">
+                    <h5 class="info-title">Find us at the office</h5>
+                    <p> Mihail Kogalniceanu, nr. 8,
+                      <br> 7652 Bucharest,
+                      <br> Romania
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label>Full name</label>
+                <div class="input-group form-group">
+                  <div class="input-group-prepend">
+                    <!-- <span class="input-group-text"><i class="tim-icons icon-single-02"></i></span> -->
+                  </div>
+                  <input type="text" class="form-control" [(ngModel)]="fullname" required #fullnameText="ngModel"
+                    name="fullname" placeholder="Fullname" autocomplete="given-name" />
+                </div>
+                <p class="form-validation m-0 " *ngIf="
+                fullnameText?.invalid &&
+                (fullnameText?.dirty || fullnameText?.touched)
+              ">
+                  Fullname is required!
+                </p>
+              </div>
+              <div class="col-md-6">
+                <label>Email address</label>
+                <div class="input-group form-group">
+                  <div class="input-group-prepend">
+                    <!-- <span class="input-group-text"><i class="tim-icons icon-email-85"></i></span> -->
+                  </div>
+                  <input type="email" class="form-control" placeholder="Email Here..." autocomplete="email" id="email"
+                    placeholder="Email" [(ngModel)]="email" required #emailText="ngModel" name="email"
+                    pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+                </div>
+                <p class="form-validation m-0 " *ngIf="
+                    emailText?.errors &&
+                    emailText?.errors?.required &&
+                    (emailText?.dirty || emailText?.touched)
+                  ">
+                  Email is required
+                </p>
+                <p class="form-validation m-0 " *ngIf="emailText?.errors && emailText?.errors?.pattern">
+                  Email is invalid
+                </p>
+              </div>
+
+              <div class="col-md-6">
+                <label>Phone number</label>
+                <div class="input-group form-group">
+                  <div class="input-group-prepend">
+                    <!-- <span class="input-group-text"><i class="tim-icons icon-email-85"></i></span> -->
+                  </div>
+                  <input type="number" class="form-control" id="phone" placeholder="Phone" [(ngModel)]="phone"
+                    #phoneNumber="ngModel" required name="phone" />
+                </div>
+                <p class="form-validation m-0 " *ngIf="
+                  phoneNumber?.errors &&
+                  phoneNumber?.errors?.required &&
+                    (phoneNumber?.dirty || phoneNumber?.touched)
+                  ">
+                  Phone is required
+                </p>
+              </div>
+
+              <div class="col-md-6">
+                <label>Message</label>
+                <div class="input-group form-group">
+                  <div class="input-group-prepend">
+                    <!-- <span class="input-group-text"><i class="tim-icons icon-email-85"></i></span> -->
+                  </div>
+                  <input type="email" class="form-control" placeholder="Message" autocomplete="email"
+                    [(ngModel)]="message" #messageText="ngModel" name="message" required appForbiddenName="fuck">
+                </div>
+                <p class="form-validation m-0 " *ngIf="
+                    messageText?.errors &&
+                    messageText?.errors?.required &&
+                      (messageText?.dirty || messageText?.touched)
+                    ">
+                  Message is required
+                </p>
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-md-6">
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox">
+                    <span class="form-check-sign"></span>
+                    I'm not a robot
+                  </label>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <button type="submit" class="btn btn-primary btn-round pull-right send-contact">Send Message</button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <div class="alert alert-success alert-dismissible myAlert-bottom" *ngIf="sendMessage !== ''">
+                  <a class="close" data-dismiss="alert" aria-label="close" (click)="closeAlert(formSubmit)">&times;</a>
+                  <strong>Success!</strong> {{sendMessage}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
