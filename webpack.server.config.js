@@ -13,7 +13,7 @@
       externals: [/(node_modules|main\..*\.js)/,],
       output: {
         libraryTarget: 'commonjs2',
-        path: path.join(__dirname, 'dist'),
+        path: path.join(__dirname, 'functions/dist'),
         filename: '[name].js'
       },
       module: {

@@ -36,8 +36,15 @@ const routes: Routes = [
                 path: 'login', 
                 loadChildren: "../user/login/login.module#LoginModule"
             }
-        ]
-    }
+        ],
+    },
+    { path: "seo", redirectTo: "", pathMatch: "full" },
+    { path: "seo/about-us", redirectTo: "about-us", pathMatch: "full" },
+    { path: "seo/blog", redirectTo: "blog", pathMatch: "full" },
+    { path: "seo/portfolio", redirectTo: "portfolio", pathMatch: "full" },
+    { path: "seo/contact", redirectTo: "contact", pathMatch: "full" },
+    { path: "seo/solution", redirectTo: "solution", pathMatch: "full" }
+
 ];
 
 @NgModule({
