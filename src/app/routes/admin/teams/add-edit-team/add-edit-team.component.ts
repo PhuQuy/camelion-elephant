@@ -28,7 +28,6 @@ export class AddEditTeamComponent {
                 this.teamService.getById(this.id).subscribe(team => {
                     this.teamForm.patchValue(team);
                     console.log(team);
-                    
                     if (team.imgURL) {
                         this.imgURL = team.imgURL;
                     }
@@ -72,10 +71,7 @@ export class AddEditTeamComponent {
     preview(event) {
         let file = event.target.files.item(0);
         if (!file) return;
-        if (this.edit && this.teamForm.get('imgURL')) {
-            this.upSvc.deleteFileByURL(this.teamForm.get('imgURL').value);
-        }
-        this.upSvc.pushUpload(`Teams/${file.name}`, file).subscribe(res => {
+        this.upSvc.pushUpload(`Teams`, file).subscribe(res => {
             this.imgURL = res;
             this.teamForm.patchValue({ imgURL: res });
         })

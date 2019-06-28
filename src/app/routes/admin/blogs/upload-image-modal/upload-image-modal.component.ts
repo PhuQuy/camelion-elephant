@@ -31,7 +31,7 @@ export class UploadImageModalComponent {
 		const that = this;
 		for (let i = 0; i < files.length; i++) {
 			this.upSvc
-				.pushUpload(`Images/${files[i].name}-${Date.now()}`, files[i])
+				.pushUpload(`Images`, files[i])
 				.subscribe(res => {
 					this.imageService
 						.create({ url: res })
