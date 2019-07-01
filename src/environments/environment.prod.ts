@@ -7,5 +7,6 @@ export const environment = {
     projectId: "camelion-elephant",
     storageBucket: "camelion-elephant.appspot.com",
     messagingSenderId: "668859628583"
-  }
+  },
+  apiUrl: "http://localhost:5001/camelion-elephant/us-central1/http"
 };

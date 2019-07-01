@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  apiUrl: '',
   firebaseConfig: {
     apiKey: "AIzaSyAQzhYcED7ENSi9GPr2PxMtN0Dk3grK8Qs",
     authDomain: "camelion-elephant.firebaseapp.com",
