@@ -122,7 +122,7 @@ export class AddEditBlogComponent {
         
         
         this.upSvc
-            .pushUpload(`Blogs/${arr[0]}-${Date.now()}.jpg`, file)
+            .pushUpload(`Blogs`, file)
             .subscribe(res => {
                 this.imgURL = res;
                 this.blogForm.patchValue({ imgURL: res });

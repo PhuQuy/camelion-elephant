@@ -79,7 +79,7 @@ export class AddEditPortfolioComponent {
         console.log('File', files[i].name);
         const arr = files[i].name.split('.');
         console.log('arr', arr);
-            this.upSvc.pushUpload(`Portfolio/${arr[0]}-${Date.now()}.jpg`, files[i]).subscribe(res => {
+            this.upSvc.pushUpload(`Portfolio`, files[i]).subscribe(res => {
                 this.images.push(res);
             })
         }
