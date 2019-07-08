@@ -18,6 +18,26 @@
         fill="none" fill-rule="evenodd" stroke="rgb(255, 255, 255)" stroke-linecap="butt" stroke-linejoin="miter"
         stroke-width="2px"></path>
     </g>
+    <defs>
+        <filter filterUnits="userSpaceOnUse" id="Filter_0" x="0px" y="0px" width="81px" height="81px">
+          <feOffset in="SourceAlpha" dx="0" dy="16" />
+          <feGaussianBlur result="blurOut" stdDeviation="4.583" />
+          <feFlood flood-color="rgb(0, 0, 0)" result="floodOut" />
+          <feComposite operator="atop" in="floodOut" in2="blurOut" />
+          <feComponentTransfer>
+            <feFuncA type="linear" slope="0.15" />
+          </feComponentTransfer>
+          <feMerge>
+            <feMergeNode />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+        <linearGradient id="PSgrad_0" x1="100%" x2="0%" y1="0%" y2="0%">
+          <stop offset="0%" stop-color="rgb(32,210,220)" stop-opacity="1" />
+          <stop offset="100%" stop-color="rgb(112,175,249)" stop-opacity="1" />
+        </linearGradient>
+
+      </defs>
     <path
       d="M36.385,28.314 L36.385,28.314 L27.899,36.799 L26.485,35.385 L33.870,28.000 L16.000,28.000 L16.000,26.000 L34.071,26.000 L26.485,18.414 L27.899,17.000 L37.799,26.899 L36.385,28.314 Z"
       fill="rgb(255, 255, 255)" fill-rule="evenodd"></path>

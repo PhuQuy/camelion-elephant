@@ -20,7 +20,7 @@
   </div>
 </section>
 <section  class="ftco-section ftco-degree-bg" #blogHeader>
-  <div class="container">
+  <div class="container" style="margin-top: -15%;">
     <div class="row">
       <div class="col-md-8 ">
           <h3 *ngIf="category" class="category-text">Category: {{category}}</h3>
@@ -34,7 +34,7 @@
             data-aos-offset="0"
             *ngFor="let blog of blogs |filter: searchBlog| paginate: config  "
           >
-            <app-blog-item [blog]="blog"></app-blog-item>
+            <app-blog-item [blog]="blog" [isBlogRoute]="true"></app-blog-item>
           </div>
         </div>
         <div class="row mt-5">

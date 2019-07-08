@@ -12752,6 +12752,7 @@ textarea.form-control {
 
 .sidebar-box *:last-child {
   margin-bottom: 0;
+  color: black;
 }
 
 .sidebar-box h3 {

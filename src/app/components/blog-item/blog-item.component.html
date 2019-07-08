@@ -27,7 +27,7 @@
     <div class="col-lg-4">
       <div class="card-image">
         <a [routerLink]="['/blog', blog.slug]">
-          <img class="img rounded" [src]="blog.imgURL">
+          <img class="img rounded" [src]="blog.imgURL" [class.blog-route]="isBlogRoute">
         </a>
       </div>
     </div>

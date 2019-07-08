@@ -1,7 +1,7 @@
 import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { SpinnerService } from '@components/spinner/spinner.service';
 import { BaseComponent } from '@core/base/base.component';
-import { ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { BlogService } from '@services/blog.service';
 import { PortfolioService } from '@services/portfolio.service';
 import { SeoService } from '@shared/seo.service';
@@ -119,7 +119,8 @@ export class HomeComponent extends BaseComponent {
         private seoService: SeoService,
         protected portfolioService: PortfolioService,
         private blogService: BlogService,
-        private spinnerService: SpinnerService
+        private spinnerService: SpinnerService,
+        private modalService: NgbModal
     ) {
         super(platformId);
     }
@@ -151,20 +152,23 @@ export class HomeComponent extends BaseComponent {
         this.getAll();
         this.loadRecentBlogs();
     }
+    
     loadRecentBlogs() {
         this.blogService.getLimit(6).subscribe(blogs => {
             this.blogs = blogs;
         });
     }
+
     ngOnDestroy(): void {
         this.dtTrigger.unsubscribe();
     }
+
     open(content) {
-        // this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title', size: 'lg', keyboard: true}).result.then((result) => {
-        //     this.closeResult = `Closed with: ${result}`;
-        // }, (reason) => {
-        //     this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-        // });
+        this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title', size: 'lg', keyboard: true}).result.then((result) => {
+            this.closeResult = `Closed with: ${result}`;
+        }, (reason) => {
+            this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+        });
     }
 
     private getDismissReason(reason: any): string {

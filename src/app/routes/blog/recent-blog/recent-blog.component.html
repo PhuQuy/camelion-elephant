@@ -4,22 +4,15 @@
     <a
       class="blog-img mr-4"
       [style.backgroundImage]="'url(' + blog.imgURL + ')'"
-     [routerLink]="['/blog', blog.slug]" aria-label={{ blog.title}}></a>
+     [routerLink]="['/blog', blog.slug]"></a>
     <div class="text">
       <h3 class="heading">
         <a [routerLink]="['/blog', blog.slug]">{{ blog.title }}</a>
       </h3>
       <div class="meta">
         <div>
-          
           <a href="javascript:void(0)"><span class="icon-calendar"></span> {{ blog.createdAt.seconds*1000  | date :'mediumDate' }}</a>
         </div>
-        <!-- <div>
-          <a href="#"><span class="icon-person"></span> Admin</a>
-        </div>
-        <div>
-          <a href="#"><span class="icon-chat"></span> 19</a>
-        </div> -->
       </div>
     </div>
   </div>

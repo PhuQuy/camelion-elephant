@@ -8,6 +8,7 @@ import { BaseComponent } from '@core/base/base.component';
 })
 export class BlogItemComponent extends BaseComponent implements OnInit {
     @Input() direction = 'ltr';
+    @Input() isBlogRoute;
     @Input() blog;
     createDate;
     constructor(@Inject(PLATFORM_ID) public platformId: string) {
