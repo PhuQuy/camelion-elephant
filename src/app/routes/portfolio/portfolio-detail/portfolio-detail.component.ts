@@ -8,6 +8,7 @@ import {
   NgxGalleryImage,
   NgxGalleryAnimation
 } from "ngx-gallery";
+import { environment } from "@env/environment.prod";
 @Component({
   selector: "portfolio-detail",
   templateUrl: "./portfolio-detail.component.html",
@@ -55,7 +56,8 @@ export class PortfolioDetailComponent extends BaseComponent implements OnInit {
           description: this.portfolio.description,
           slug: this.portfolio.slug,
           keywords: keywords,
-          image: this.portfolio.images[0]
+          image: this.portfolio.images[0],
+          url: `${environment.domain}/portfolio/${this.portfolio.slug}`
         });
       });
     });

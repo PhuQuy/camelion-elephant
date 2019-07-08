@@ -25,12 +25,14 @@ export class ClientsComponent implements AfterViewInit {
 
     @HostListener('window:scroll', ['$event'])
     public moveBackground() {
-        this.posY = window.scrollY * 0.35;
+        if (isPlatformBrowser(this.platformId)) {
+            this.posY = window.scrollY * 0.35;
 
-        if (window.scrollY > window.innerHeight) {
-            this.showScrollTop = true;
-        } else {
-            this.showScrollTop = false;
+            if (window.scrollY > window.innerHeight) {
+                this.showScrollTop = true;
+            } else {
+                this.showScrollTop = false;
+            }
         }
     }
 
@@ -39,7 +41,9 @@ export class ClientsComponent implements AfterViewInit {
     }
 
     ngAfterViewInit() {
-        window.scrollTo(0, 0);
+        if (isPlatformBrowser(this.platformId)) {
+            window.scrollTo(0, 0);
+        }
         setTimeout(() => {
             this.loading = false;
         }, 3000);
@@ -47,7 +51,9 @@ export class ClientsComponent implements AfterViewInit {
             if (event instanceof NavigationStart) {
                 this.spinnerService.show();
                 this.loading = true;
-                window.scrollTo(0, 0);
+                if (isPlatformBrowser(this.platformId)) {
+                   window.scrollTo(0, 0);
+                }
             } else if (
                 event instanceof NavigationEnd ||
                 event instanceof NavigationCancel

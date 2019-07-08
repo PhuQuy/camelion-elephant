@@ -3,6 +3,7 @@ import { BaseComponent } from "@core/base/base.component";
 import { ActivatedRoute, Router } from "@angular/router";
 import { BlogService } from "app/services/blog.service";
 import { SeoService } from "@shared/seo.service";
+import { environment } from "@env/environment";
 
 @Component({
   selector: "blog-detail",
@@ -42,7 +43,8 @@ export class BlogDetailComponent extends BaseComponent implements OnInit {
           description: this.blog.description ||'',
           slug: this.blog.slug,
           keywords: keywords,
-          image: this.blog.imgURL
+          image: this.blog.imgURL,
+          url: `${environment.domain}/blog/${this.blog.slug}`
         });
       });
     });

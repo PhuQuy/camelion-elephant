@@ -10,6 +10,7 @@ export class SeoService {
         let keywords = 'gocodee, full stack developer, freelancer, responsive, mobile design, mobile app website designer, web developer, 24/7 support, outsourcing team, innovative organization, Web design and development, training included';
         config = Object.assign({
             title: 'Oursourcing team, Web Design, Web Development',
+// tslint:disable-next-line: max-line-length
             description: 'Gocodee - Outsourcing team, specializing in full service Web design and development. Grow your business faster with 24/7 support as a service: Always on, elastic, with management and training included. Do you need a website? We are here for you!',
             image: environment.domain + '/assets/images/beach.jpg',
             slug: '',
@@ -35,14 +36,14 @@ export class SeoService {
         this.meta.updateTag({ name: 'twitter:title', content: title })
         this.meta.updateTag({ name: 'twitter:description', content: config.description });
         this.meta.updateTag({ name: 'twitter:image', content: config.image });
-        this.meta.updateTag({ name: 'twitter:url', content: window.location.href });
+        // this.meta.updateTag({ name: 'twitter:url', content: config.url ? config.url : `${environment.domain}/${config.slug}`  });
 
         this.meta.updateTag({ property: 'og:type', content: 'website' });
         this.meta.updateTag({ property: 'og:site_name', content: 'Gocodee' });
         this.meta.updateTag({ property: 'og:title', content: title });
         this.meta.updateTag({ property: 'og:description', content: config.description });
         this.meta.updateTag({ property: 'og:image', content: config.image });
-        this.meta.updateTag({ property: 'og:url', content: window.location.href });
+        // this.meta.updateTag({ property: 'og:url', content: config.url ? config.url : `${environment.domain}/${config.slug}` });
 
         this.titleService.setTitle(title);
         this.setCanonical();

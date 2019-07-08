@@ -11,6 +11,7 @@ import { PaginationInstance } from "ngx-pagination";
 import { SeoService } from "@shared/seo.service";
 import { PortfolioService } from "@services/portfolio.service";
 import { SpinnerService } from "@components/spinner/spinner.service";
+import { environment } from "@env/environment.prod";
 
 @Component({
     selector: "portfolio",
@@ -41,7 +42,8 @@ export class PortfolioComponent extends BaseComponent implements OnInit {
         this.seoService.generateTags({
             title: "Portfolio",
             slug: "portfolio",
-            description:'Gocodee is delivering high-quality services to our clients, helping them grow their business. Check out our projects. Read our case studies selection.'
+            description:'Gocodee is delivering high-quality services to our clients, helping them grow their business. Check out our projects. Read our case studies selection.',
+            url: `${environment.domain}/portfolio/`
         });
         this.getAll();
     }

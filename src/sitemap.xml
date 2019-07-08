@@ -1,16 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
-<url>
-  <loc>https://phuquy.dev/</loc>
-  <lastmod>2019-07-08T05:37:26+00:00</lastmod>
-</url>
-
-
+    <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+    <url>
+        <loc>https://phuquy.dev/</loc>
+        <lastmod>2019-07-08T05:37:26+00:00</lastmod>
+    </url>
+    <url>
+        <loc>https://phuquy.dev/about-us</loc>
+        <lastmod>2019-07-08T07:32:32+00:00</lastmod>
+    </url>
+    <url>
+        <loc>https://phuquy.dev/blog</loc>
+        <lastmod>2019-07-08T07:32:32+00:00</lastmod>
+    </url>
+    <url>
+        <loc>https://phuquy.dev/blog/</loc>
+        <lastmod>2019-07-08T07:32:32+00:00</lastmod>
+    </url>
+    <url>
+        <loc>https://phuquy.dev/portfolio</loc>
+        <lastmod>2019-07-08T07:32:32+00:00</lastmod>
+    </url>
+    <url>
+        <loc>https://phuquy.dev/portfolio/</loc>
+        <lastmod>2019-07-08T07:32:32+00:00</lastmod>
+    </url>
+    <url>
+        <loc>https://phuquy.dev/contacts</loc>
+        <lastmod>2019-07-08T07:32:32+00:00</lastmod>
+    </url>
+    <url>
+        <loc>https://phuquy.dev/solution</loc>
+        <lastmod>2019-07-08T07:32:32+00:00</lastmod>
+    </url>
+    <url>
+        <loc>https://phuquy.dev/seo</loc>
+        <lastmod>2019-07-08T07:32:32+00:00</lastmod>
+    </url>
+    <url>
+        <loc>https://phuquy.dev/seo/about-us</loc>
+        <lastmod>2019-07-08T07:32:32+00:00</lastmod>
+    </url>
+    <url>
+        <loc>https://phuquy.dev/seo/blog</loc>
+        <lastmod>2019-07-08T07:32:32+00:00</lastmod>
+    </url>
+    <url>
+        <loc>https://phuquy.dev/seo/portfolio</loc>
+        <lastmod>2019-07-08T07:32:32+00:00</lastmod>
+    </url>
+    <url>
+        <loc>https://phuquy.dev/seo/contacts</loc>
+        <lastmod>2019-07-08T07:32:32+00:00</lastmod>
+    </url>
+    <url>
+        <loc>https://phuquy.dev/seo/solution</loc>
+        <lastmod>2019-07-08T07:32:32+00:00</lastmod>
+    </url>
 </urlset>
