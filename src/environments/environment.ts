@@ -12,7 +12,8 @@ export const environment = {
     projectId: "camelion-elephant",
     storageBucket: "camelion-elephant.appspot.com",
     messagingSenderId: "668859628583"
-  }
+  },
+  domain: "https://phuquy.dev"
 };
 
 /*

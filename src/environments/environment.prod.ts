@@ -8,5 +8,6 @@ export const environment = {
     storageBucket: "camelion-elephant.appspot.com",
     messagingSenderId: "668859628583"
   },
-  apiUrl: "http://localhost:5001/camelion-elephant/us-central1/http"
+  apiUrl: "http://localhost:5001/camelion-elephant/us-central1/http",
+  domain: "https://phuquy.dev"
 };
