@@ -41,7 +41,6 @@ export class ContactsComponent {
 	getAll() {
 		this.sub = this.contactService.getAll().subscribe(contacts => {
 			this.contacts = contacts;
-			console.log('contacts', this.contacts);
 			if (this.index == 0) {
 				this.dtTrigger.next();
 				this.index++;

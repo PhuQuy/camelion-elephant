@@ -392,9 +392,7 @@ export class ContactComponent extends BaseComponent implements OnInit {
             const email = formSubmit.value.email;
             const fullname = formSubmit.value.fullname;
             this.contactService.sendEmail(email, fullname).subscribe(res=>{
-                console.log('res', res);
             },err=>{
-                console.log('err', err);
             });
         }
 

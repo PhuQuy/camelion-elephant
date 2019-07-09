@@ -63,7 +63,6 @@ export class TagsComponent {
 		modalRef.componentInstance.tag = tag;
 		modalRef.result.then(result => {
 			if (result) {
-				console.log(result);
 				this.tagService.update(result).then(() => {});
 			}
 		});

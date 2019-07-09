@@ -29,7 +29,6 @@ export class AddEditPortfolioComponent {
             if (this.id !== 'new') {
                 this.portfolioService.getById(this.id).subscribe(portfolio => {
                     this.portfolioForm.patchValue(portfolio);
-                    console.log('portfolio',portfolio);
                     portfolio.images.map(img => {
                         this.images.push(img);
                     })
@@ -76,9 +75,7 @@ export class AddEditPortfolioComponent {
         let files = event.target.files;
         if (files.length === 0) return;
         for (let i = 0; i < files.length; i++) {
-        console.log('File', files[i].name);
         const arr = files[i].name.split('.');
-        console.log('arr', arr);
             this.upSvc.pushUpload(`Portfolio`, files[i]).subscribe(res => {
                 this.images.push(res);
             })

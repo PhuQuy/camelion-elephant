@@ -32,7 +32,6 @@ export class BlogDetailComponent extends BaseComponent implements OnInit {
     this.activatedRoute.params.subscribe(params => {
       this.id = params["id"];
       this.blogService.getBySlug(this.id).subscribe(blogs => {
-        console.log("Blog", blogs);
         this.blog = blogs[0];
         const keywords = this.blog.tags.reduce(
           (acc, tag) => acc + ', '+ tag.name,

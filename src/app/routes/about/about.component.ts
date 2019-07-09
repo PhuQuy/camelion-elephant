@@ -80,6 +80,5 @@ export class AboutComponent extends BaseComponent implements OnInit {
         this.activeSlides = data;
     }
     getClickEvent(data) {
-        console.log(data.name);
     }
 }

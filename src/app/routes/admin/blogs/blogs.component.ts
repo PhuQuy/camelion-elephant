@@ -31,7 +31,6 @@ export class BlogsComponent {
             } else {
                 this.rerender();
             }
-            console.log(this.blogs);
         });
     }
 

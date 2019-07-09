@@ -37,7 +37,6 @@ export class PortfolioDetailComponent extends BaseComponent implements OnInit {
     this.activatedRoute.params.subscribe(params => {
       this.id = params["id"];
       this.portfolioService.getBySlug(this.id).subscribe(portfolio => {
-        console.log("portfolio", portfolio);
         this.portfolio = portfolio[0];
         this.galleryImages = [];
         this.portfolio.images.forEach(image => {

@@ -93,11 +93,9 @@ export class AddEditBlogComponent {
         return { name: name, tag: true };
     }
     openModalImage(editor) {
-        console.log("edittor", editor);
         const modalRef = this.modalService.open(UploadImageModalComponent);
         modalRef.result.then(result => {
             if (result) {
-                console.log("result", result);
                 let cm = editor.codemirror;
                 let output = "![](" + result + ")";
                 cm.replaceSelection(output);
@@ -109,17 +107,12 @@ export class AddEditBlogComponent {
 
     preview(event) {
         let file = event.target.files.item(0);
-        console.log('file', file);
-        
         if (!file) return;
         const a = this.blogForm.get("imgURL").value;
         if (this.edit && this.blogForm.get("imgURL").value) {
             this.upSvc.deleteFileByURL(this.blogForm.get("imgURL").value);
         }
-        console.log('File', file.name);
         const arr = file.name.split('.');
-        console.log('arr', arr);
-        
         
         this.upSvc
             .pushUpload(`Blogs`, file)

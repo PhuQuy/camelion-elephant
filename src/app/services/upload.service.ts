@@ -23,7 +23,6 @@ export class UploadService {
         fd.append('file', file);
         return Observable.create((obs: Observer<string>) => {
             this.http.post(url, fd).subscribe(res => {
-                console.log('pushUpload', res);
                 obs.next(res['secure_url']);
                 obs.complete();
             })

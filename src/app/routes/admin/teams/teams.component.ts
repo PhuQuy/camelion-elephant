@@ -30,7 +30,6 @@ export class TeamsComponent {
 	getAll() {
 		this.teamService.getAll().subscribe(teams => {
 			this.teams = teams;
-			console.log('team', teams);
 			
 			if (this.index == 0) {
 				this.dtTrigger.next();

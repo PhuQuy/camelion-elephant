@@ -44,7 +44,6 @@ export class UploadImageModalComponent {
         this.imageService.delete(image.id).then(()=>{
         	this.upSvc.deleteFileByURL(image.url);
         }).catch(err=>{
-        	console.log('err', err);
         })
     }
     onSelectImage(url){

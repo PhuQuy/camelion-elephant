@@ -27,7 +27,6 @@ export class AddEditTeamComponent {
             if (this.id !== 'new') {
                 this.teamService.getById(this.id).subscribe(team => {
                     this.teamForm.patchValue(team);
-                    console.log(team);
                     if (team.imgURL) {
                         this.imgURL = team.imgURL;
                     }

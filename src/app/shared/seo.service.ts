@@ -7,11 +7,11 @@ export class SeoService {
 
     constructor(private meta: Meta, private titleService: Title, @Inject(DOCUMENT) private doc) { }
     generateTags(config) {
-        let keywords = 'gocodee, full stack developer, freelancer, responsive, mobile design, mobile app website designer, web developer, 24/7 support, outsourcing team, innovative organization, Web design and development, training included';
+        let keywords = 'gocodee, full stack developer, freelancer, responsive, mobile design, mobile app website designer, web developer, 24/7 support, Outsourcing team in Vietnam, innovative organization, Web design and development, training included';
         config = Object.assign({
-            title: 'Oursourcing team, Web Design, Web Development',
+            title: 'Outsourcing team in Vietnamm, Web Design, Web Development',
 // tslint:disable-next-line: max-line-length
-            description: 'Gocodee - Outsourcing team, specializing in full service Web design and development. Grow your business faster with 24/7 support as a service: Always on, elastic, with management and training included. Do you need a website? We are here for you!',
+            description: 'Gocodee - Outsourcing team in Vietnam, specializing in full service Web design and development. Grow your business faster with 24/7 support as a service: Always on, elastic, with management and training included. Do you need a website? We are here for you!',
             image: environment.domain + '/assets/images/beach.jpg',
             slug: '',
             keywords:keywords

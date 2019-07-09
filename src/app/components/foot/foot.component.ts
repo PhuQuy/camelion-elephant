@@ -157,9 +157,6 @@ export class FootComponent implements OnInit {
   }
 
   sendInfo(formSubmit: NgForm) {
-    console.log(formSubmit.value);
-    console.log(formSubmit.valid);
-
     if (formSubmit.valid) {
       this.subscribeService.create(formSubmit.value);
 

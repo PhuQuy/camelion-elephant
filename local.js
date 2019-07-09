@@ -8,7 +8,6 @@ server.app.use(bodyParser.json())
 server.app.post('/api/sendEmail', mailController.sendNotify);
 
 server.app.listen(port, () => {
-  console.log("Listening on: http://localhost:" + port);
 });
 
 export const server;

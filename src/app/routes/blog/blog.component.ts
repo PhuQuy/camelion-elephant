@@ -48,12 +48,10 @@ export class BlogComponent extends BaseComponent implements OnInit {
     });
     // this.spinnerService.show();
     this.activatedRoute.queryParams.subscribe(params => {
-      console.log("params", params);
       this.category = params.category;
       this.search = params.search;
       this.blogService.getAll().subscribe(blogs => {
         // this.spinnerService.hide();
-        console.log("Blogs", blogs);
         if (this.category != "" && this.category) {
           this.blogs = blogs.filter(blog => {
             return blog.category.find(item => {
@@ -77,7 +75,6 @@ export class BlogComponent extends BaseComponent implements OnInit {
     this.searchBlog = "";
   }
   updateSearch(event) {
-    console.log("event", event);
     this.searchBlog = event;
   }
 

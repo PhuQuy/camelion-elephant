@@ -57,7 +57,6 @@ export class PortfolioComponent {
 		});
 	};
 	ngOnDestroy(): void {
-		console.log("destroy");
 		this.dtTrigger.unsubscribe();
 		this.sub.unsubscribe();
 	}

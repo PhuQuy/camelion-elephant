@@ -27,10 +27,8 @@ const sendEmailTemplate = (templateFile, subject, data, callback) => {
   };
   transporter.sendMail(mailOptions, function (err, info) {
     if (err) {
-      console.log("Error", JSON.stringify(err));
       callback(err, null);
     } else {
-      console.log("Success", JSON.stringify(info));
       callback(null, info);
     }
   });
@@ -39,7 +37,6 @@ const sendEmailTemplate = (templateFile, subject, data, callback) => {
 exports.sendNotify = (req, res) => {
   const email = req.body.email;
   const fullname = req.body.fullname;
-  console.log('email', email);
   const dataClient = {
     fullname: fullname,
     to: email
@@ -53,14 +50,12 @@ exports.sendNotify = (req, res) => {
     err,
     result
   ) {
-    console.log("callback", err, result);
     if (err) {
       res.status(500).json({
         success: false
       });
     } else {
       sendEmailTemplate("index.html", "Contact", dataClient, function (err, result2) {
-        console.log("callback2", err, result2);
         if (err) {
           res.status(500).json({
             success: false
