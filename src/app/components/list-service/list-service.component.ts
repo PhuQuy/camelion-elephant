@@ -70,7 +70,7 @@ export class ListServiceComponent extends BaseComponent implements OnInit {
         },
         {
             title: "Production Support Services",
-            desscription1: "At GoCodee, we don't stop at product development services; our team can also support the software systems after launch, so our customers can focus on their core businesses:",
+            desscription1: "At Phuquy, we don't stop at product development services; our team can also support the software systems after launch, so our customers can focus on their core businesses:",
             desscription2: "By leveraging time zone differences, our team can support your software systems while you are sleeping or support your clients in Asia.",
             items: ["Cloud, server and application administration, configuration, maintenance and support",
                 "System monitoring, optimization and reporting",

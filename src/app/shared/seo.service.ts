@@ -7,11 +7,10 @@ export class SeoService {
 
     constructor(private meta: Meta, private titleService: Title, @Inject(DOCUMENT) private doc) { }
     generateTags(config) {
-        let keywords = 'gocodee, full stack developer, freelancer, responsive, mobile design, mobile app website designer, web developer, 24/7 support, Outsourcing team in Vietnam, innovative organization, Web design and development, training included';
+        let keywords = 'phuquy, full stack developer, vietnam freelancer, responsive, mobile design, mobile app website designer, web developer, 24/7 support, Outsourcing team in Vietnam, innovative organization, Web design and development, training included';
         config = Object.assign({
             title: 'Outsourcing team in Vietnamm, Web Design, Web Development',
-// tslint:disable-next-line: max-line-length
-            description: 'Gocodee - Outsourcing team in Vietnam, specializing in full service Web design and development. Grow your business faster with 24/7 support as a service: Always on, elastic, with management and training included. Do you need a website? We are here for you!',
+            description: 'Phuquy - Outsourcing team in Vietnam, specializing in full service Web design and development. Grow your business faster with 24/7 support as a service: Always on, elastic, with management and training included. Do you need a website? We are here for you!',
             image: environment.domain + '/assets/images/beach.jpg',
             slug: '',
             keywords:keywords
@@ -23,7 +22,7 @@ export class SeoService {
         if(config.keywords){
             config.keywords = keywords +', '+ config.keywords;
         }
-        let title = config.title +' | Gocodee ';
+        let title = config.title +' | Phuquy ';
 
         this.meta.updateTag({ name: 'slug', content: config.slug });
         this.meta.updateTag({ name: 'image', content: config.image });
@@ -32,14 +31,14 @@ export class SeoService {
         this.meta.updateTag({ name: 'title', content: title });
 
         this.meta.updateTag({ name: 'twitter:card', content: 'summary' });
-        this.meta.updateTag({ name: 'twitter:site', content: '@gocodee' });
+        this.meta.updateTag({ name: 'twitter:site', content: '@phuquy' });
         this.meta.updateTag({ name: 'twitter:title', content: title })
         this.meta.updateTag({ name: 'twitter:description', content: config.description });
         this.meta.updateTag({ name: 'twitter:image', content: config.image });
         // this.meta.updateTag({ name: 'twitter:url', content: config.url ? config.url : `${environment.domain}/${config.slug}`  });
 
         this.meta.updateTag({ property: 'og:type', content: 'website' });
-        this.meta.updateTag({ property: 'og:site_name', content: 'Gocodee' });
+        this.meta.updateTag({ property: 'og:site_name', content: 'Phuquy' });
         this.meta.updateTag({ property: 'og:title', content: title });
         this.meta.updateTag({ property: 'og:description', content: config.description });
         this.meta.updateTag({ property: 'og:image', content: config.image });

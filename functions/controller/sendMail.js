@@ -8,8 +8,8 @@ var transporter = nodemailer.createTransport({
   port: 465,
   secure: true,
   auth: {
-    user: "phuquy@gocodee.com",
-    pass: "Ngokylong11##"
+    user: "support@phuquy.dev",
+    pass: "XFxf12!@"
   }
 });
 
@@ -20,7 +20,7 @@ const sendEmailTemplate = (templateFile, subject, data, callback) => {
   let theTemplate = handlebars.template(precompiled);
   const theCompiledHtml = theTemplate(data);
   const mailOptions = {
-    from: 'phuquy@gocodee.com',
+    from: 'support@phuquy.dev',
     to: data.to,
     subject: subject,
     html: theCompiledHtml
