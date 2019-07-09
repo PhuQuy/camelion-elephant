@@ -37,33 +37,46 @@ const sendEmailTemplate = (templateFile, subject, data, callback) => {
 exports.sendNotify = (req, res) => {
   const email = req.body.email;
   const fullname = req.body.fullname;
+  const message = req.body.message;
   const dataClient = {
     fullname: fullname,
     to: email
   };
   const dataAdmin = {
     fullname: "Admin",
+    client: email,
+    content: message,
     host: req.headers.origin,
     to: "phuquy@gocodee.com"
   };
+
+  if (email) {
+    res.json({
+      success: true
+    });
+  } else {
+    res.status(500).json({
+      success: false
+    });
+  }
   sendEmailTemplate("admin.html", "New Contact", dataAdmin, function (
     err,
     result
   ) {
     if (err) {
-      res.status(500).json({
-        success: false
-      });
+      //   res.status(500).json({
+      //     success: false
+      //   });
+      console.log(err);
+
     } else {
       sendEmailTemplate("index.html", "Contact", dataClient, function (err, result2) {
         if (err) {
-          res.status(500).json({
-            success: false
-          });
-        } else {
-          res.json({
-            success: true
-          });
+          //   res.status(500).json({
+          //     success: false
+          //   });
+          console.log(err);
+
         }
       });
     }

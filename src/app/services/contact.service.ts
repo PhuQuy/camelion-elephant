@@ -11,7 +11,7 @@ export class ContactService extends BaseService{
     super(angularFireDatabase, 'Contact');
   }
 
-  sendEmail(email, fullname){
-  	return this.http.post(`${environment.apiUrl}/api/sendEmail`, {email:email, fullname:fullname});
+  sendEmail(data){
+  	return this.http.post(`${environment.apiUrl}/api/sendEmail`, data);
   }
 }
