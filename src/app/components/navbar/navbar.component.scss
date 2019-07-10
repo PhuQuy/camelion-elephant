@@ -32,13 +32,19 @@ nav:not(.scrolled) {
   .logo {
     width: 200px !important;
   }
+
+  .logo,
+  .text-logo {
+    svg {
+      height: 40px !important;
+    }
+  }
 }
 
 .navbar-toggler {
   background: none;
   border: none;
-
-
+  margin-top: 20px;
 }
 
 .navbar-collapse {
@@ -161,6 +167,7 @@ nav:not(.scrolled) {
   height: 100px;
 }
 
+
 .text-logo svg {
   position: absolute;
   top: 50%;
@@ -235,6 +242,8 @@ nav:not(.scrolled) {
 
 .normal-loading {
   transform: scale(1);
+  margin-top: 10px;
+  margin-left: -2.8em;
 }
 
 .menu-animate {
@@ -287,7 +296,7 @@ nav:not(.scrolled) {
   top: 0px;
   right: 0px;
   transform: translateX(101%);
-  width: calc(100% - 40px);
+  width: calc(100% - 60px);
   height: 100vh;
   z-index: 1000;
   background: url(/assets/images/footer.svg) no-repeat;
@@ -320,7 +329,7 @@ nav:not(.scrolled) {
 
 .navbar-animate {
   &.collapsed-animate {
-    transform: translateX(calc(-100% + 60px));
+    transform: translateX(calc(-100% + 70px));
   }
 
   -moz-transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);

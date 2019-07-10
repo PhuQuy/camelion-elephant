@@ -4,13 +4,18 @@ const handlebars = require("handlebars");
 const fs = require("fs");
 
 var transporter = nodemailer.createTransport({
-  host: "smtp.zoho.com",
-  port: 465,
-  secure: true,
-  auth: {
-    user: "support@phuquy.dev",
-    pass: "XFxf12!@"
-  }
+//   host: "smtp.zoho.com",
+//   port: 465,
+//   secure: true,
+//   auth: {
+//     user: "support@phuquy.dev",
+//     pass: "XFxf12!@"
+//   }
+service: 'gmail',
+auth: {
+  user: 'phuquy.tool@gmail.com',
+  pass: 'XXxx11!!',
+}
 });
 
 const sendEmailTemplate = (templateFile, subject, data, callback) => {
@@ -20,7 +25,7 @@ const sendEmailTemplate = (templateFile, subject, data, callback) => {
   let theTemplate = handlebars.template(precompiled);
   const theCompiledHtml = theTemplate(data);
   const mailOptions = {
-    from: 'support@phuquy.dev',
+    from: 'phuquy.tool@gmail.com',
     to: data.to,
     subject: subject,
     html: theCompiledHtml
@@ -38,6 +43,8 @@ exports.sendNotify = (req, res) => {
   const email = req.body.email;
   const fullname = req.body.fullname;
   const message = req.body.message;
+  const phone = req.body.phone;
+
   const dataClient = {
     fullname: fullname,
     to: email
@@ -45,38 +52,33 @@ exports.sendNotify = (req, res) => {
   const dataAdmin = {
     fullname: "Admin",
     client: email,
-    content: message,
+    phone: phone,
+    content:  message,
     host: req.headers.origin,
     to: "phuquy@gocodee.com"
   };
-
-  if (email) {
-    res.json({
-      success: true
-    });
-  } else {
-    res.status(500).json({
-      success: false
-    });
-  }
   sendEmailTemplate("admin.html", "New Contact", dataAdmin, function (
     err,
     result
   ) {
     if (err) {
-      //   res.status(500).json({
-      //     success: false
-      //   });
-      console.log(err);
-
+        console.log(err);
+        
+      res.status(500).json({
+        success: false
+      });
     } else {
       sendEmailTemplate("index.html", "Contact", dataClient, function (err, result2) {
         if (err) {
-          //   res.status(500).json({
-          //     success: false
-          //   });
-          console.log(err);
+        console.log(err);
 
+          res.status(500).json({
+            success: false
+          });
+        } else {
+          res.json({
+            success: true
+          });
         }
       });
     }

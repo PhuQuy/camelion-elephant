@@ -19,12 +19,7 @@ export class PortfolioItemComponent extends BaseComponent implements OnInit {
     }
 
     ngOnInit() {
-        //console.log('classSize', this.classSize);
-        // this.title = this.portfolio.title;
         this.imageURL = this.portfolio.images[0];
-        // this.link = this.portfolio.link;
-        //console.log("Item", this.portfolio);
-        
     }
 
 }

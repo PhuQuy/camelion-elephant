@@ -2526,4 +2526,9 @@ textarea.form-control {
   -moz-transition: all .3s ease-out 0s;
   z-index: 9998;
 
+  &:hover .hover-effect {
+    fill: #e14eca;
+    stroke: white;
+    box-shadow: 13px 13px 50px -24px #e14eca;
+  }
 }

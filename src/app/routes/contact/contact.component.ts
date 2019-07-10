@@ -387,11 +387,11 @@ export class ContactComponent extends BaseComponent implements OnInit {
 
     sendInfo(formSubmit: NgForm) {
         if (formSubmit.valid) {
-            this.contactService.create(formSubmit.value);
-            const email = formSubmit.value.email;
-            const fullname = formSubmit.value.fullname;
+            this.contactService.create(formSubmit.value).then(ahihi => {});
+            // const email = formSubmit.value.email;
+            // const fullname = formSubmit.value.fullname;
+            this.sendMessage = "Your information has sent";
             this.contactService.sendEmail(formSubmit.value).subscribe(res => {
-                this.sendMessage = "Your information has sent";
                 this.contact = {
                     fullname: null,
                     email: null,

@@ -12,7 +12,10 @@
 @import "~scss/index.scss";
 
 /*====Hero area==*/
-
+html {
+    scroll-behavior: smooth;
+  }
+  
 .hero-area-fix {
   canvas {
     width: 100%;

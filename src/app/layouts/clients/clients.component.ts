@@ -49,8 +49,8 @@ export class ClientsComponent implements AfterViewInit {
         }, 3000);
         this.router.events.subscribe(event => {
             if (event instanceof NavigationStart) {
-                this.spinnerService.show();
-                this.loading = true;
+                // this.spinnerService.show();
+                // this.loading = true;
                 if (isPlatformBrowser(this.platformId)) {
                    window.scrollTo(0, 0);
                 }
@@ -59,13 +59,13 @@ export class ClientsComponent implements AfterViewInit {
                 event instanceof NavigationCancel
             ) {
                 if (isPlatformBrowser(this.platformId)) {
-                    setTimeout(() => {
-                        this.spinnerService.hide();
-                    }, 2000);
-                    setTimeout(() => {
-                        this.loading = false;
-                        window.scrollTo(0, 0);
-                    }, 3000);
+                    // setTimeout(() => {
+                    //     this.spinnerService.hide();
+                    // }, 2000);
+                    // setTimeout(() => {
+                    //     // this.loading = false;
+                    //     window.scrollTo(0, 0);
+                    // }, 3000);
                 }
             }
         });
