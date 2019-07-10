@@ -1,0 +1,13 @@
+[debug] [2019-07-10T09:23:12.281Z] ----------------------------------------------------------------------
+[debug] [2019-07-10T09:23:12.288Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Cougar\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2019-07-10T09:23:12.289Z] CLI Version:   7.0.2
+[debug] [2019-07-10T09:23:12.289Z] Platform:      win32
+[debug] [2019-07-10T09:23:12.289Z] Node Version:  v10.16.0
+[debug] [2019-07-10T09:23:12.298Z] Time:          Wed Jul 10 2019 16:23:12 GMT+0700 (Indochina Time)
+[debug] [2019-07-10T09:23:12.298Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-07-10T09:23:12.325Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-07-10T09:23:12.327Z] > authorizing via signed-in user
+[debug] [2019-07-10T09:23:12.327Z] [iam] checking project camelion-elephant for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2019-07-10T09:23:12.332Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/camelion-elephant:testIamPermissions  
+

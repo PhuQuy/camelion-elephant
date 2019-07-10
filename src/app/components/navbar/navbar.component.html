@@ -8,7 +8,7 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav"
       aria-expanded="false" aria-label="Toggle navigation" (click)="toggleCollapsed()">
       <span class="menu-animate">
-        <div [class.cross]="!collapsed">
+        <div [class.cross]="!collapsed" style="    transform: translateY(-9px);">
           <svg viewBox="0 0 800 600">
             <path d="M300,220 C300,220 520,220 540,220 C740,220 640,540 520,420 C440,340 300,200 300,200" id="top">
             </path>
@@ -32,7 +32,7 @@
   <div class="mobile-navbar-bg">
     <div class="row mt-3">
       <div class="col-12 logo">
-        <!-- <ng-container *ngTemplateOutlet="logoCustom"></ng-container> -->
+        <ng-container *ngTemplateOutlet="logoCustom"></ng-container>
       </div>
     </div>
 
@@ -47,16 +47,16 @@
 <ng-template #navbarItem>
   <ul class="navbar-nav ml-auto">
     <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}"><a
-        [routerLink]="['/']" class="nav-link">Home</a></li>
-    <li class="nav-item" [routerLinkActive]="['active']"><a [routerLink]="['/about-us']" class="nav-link">About</a>
+        [routerLink]="['/']" class="nav-link"><span>Home</span></a></li>
+    <li class="nav-item" [routerLinkActive]="['active']"><a [routerLink]="['/about-us']" class="nav-link"><span>About</span></a>
     </li>
-    <li class="nav-item" [routerLinkActive]="['active']"><a [routerLink]="['/solution']" class="nav-link">Solution</a>
+    <li class="nav-item" [routerLinkActive]="['active']"><a [routerLink]="['/solution']" class="nav-link"><span>Solution</span></a>
     </li>
-    <li class="nav-item" [routerLinkActive]="['active']"><a [routerLink]="['/portfolio']" class="nav-link">Portfolio</a>
+    <li class="nav-item" [routerLinkActive]="['active']"><a [routerLink]="['/portfolio']" class="nav-link"><span>Portfolio</span></a>
     </li>
-    <li class="nav-item" [routerLinkActive]="['active']"><a [routerLink]="['/blog']" class="nav-link">Blog</a>
+    <li class="nav-item" [routerLinkActive]="['active']"><a [routerLink]="['/blog']" class="nav-link"><span>Blog</span></a>
     </li>
-    <li class="nav-item" [routerLinkActive]="['active']"><a [routerLink]="['/contact']" class="nav-link">Contact</a>
+    <li class="nav-item" [routerLinkActive]="['active']"><a [routerLink]="['/contact']" class="nav-link"><span>Contact</span></a>
     </li>
   </ul>
 </ng-template>
