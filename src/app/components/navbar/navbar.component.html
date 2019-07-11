@@ -1,6 +1,8 @@
 <!-- START nav -->
-<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-lighter navbar-animate" id="ftco-navbar"
-  [class.collapsed-animate]="!collapsed">
+<!-- <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-lighter navbar-animate" id="ftco-navbar"
+  [class.collapsed-animate]="!collapsed"> -->
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-lighter navbar-animate" id="ftco-navbar"
+  [class.scrolled]="scrolled" [class.awake]="awake" [class.collapsed-animate]="!collapsed">
   <div class="container">
     <a class="navbar-brand" [routerLink]="['/']">
       <ng-container *ngTemplateOutlet="logoCustom"></ng-container>

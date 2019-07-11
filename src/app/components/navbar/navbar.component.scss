@@ -229,22 +229,23 @@ nav:not(.scrolled) {
   opacity: 1;
 }
 
-.scrolled {
+// .scrolled {
 
-  .logo,
-  .text-logo {
+//   .logo,
+//   .text-logo {
 
-    path,
-    circle {
-      fill: red;
-    }
-  }
-}
+//     path,
+//     circle {
+//       fill: #78d5ef ;
+//       stroke: #78d5ef;
+//     }
+//   }
+// }
 
 .normal-loading {
   transform: scale(1);
   //   margin-top: 10px;
-  margin-left: -2.8em;
+  margin-left: -1.5em;
 }
 
 .menu-animate {

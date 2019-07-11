@@ -13,9 +13,9 @@
 
 /*====Hero area==*/
 html {
-    scroll-behavior: smooth;
-  }
-  
+  scroll-behavior: smooth;
+}
+
 .hero-area-fix {
   canvas {
     width: 100%;
@@ -227,7 +227,10 @@ h5,
     left: 0;
     top: 0;
     margin-top: -130px;
-    background: $white !important;
+    height: 80px;
+    background-image: url(/assets/images/bg.png) !important;
+    background-repeat-y: repeat !important;
+    background-size: contain !important;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 
     .nav-item {
@@ -269,7 +272,7 @@ h5,
     .nav-link {
       padding-top: 0.9rem !important;
       padding-bottom: 0.9rem !important;
-      color: $black !important;
+      color: white !important;
 
       &.active {
         color: $primary !important;
