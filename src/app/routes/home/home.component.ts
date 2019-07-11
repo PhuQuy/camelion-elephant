@@ -226,6 +226,10 @@ export class HomeComponent extends BaseComponent {
                 } else {
                     this.homePortfolios = portfolios;
                 }
+                console.log(this.homePortfolios);
+                this.homePortfolios[0].images[0] = "https://gocodee.com/assets/images/animate.gif";
+                this.homePortfolios[0].images[1] = "https://gocodee.com/assets/images/cat1.jpg";
+
             } else {
                 this.portfolios = [];
             }
