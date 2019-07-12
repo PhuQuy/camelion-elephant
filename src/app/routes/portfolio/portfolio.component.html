@@ -3,12 +3,7 @@
     <div class="overlay hero-area-fix"></div>
     <div class="container">
       <div class="row slider-text justify-content-center align-items-center">
-        <div
-          class="col-md-10 col-sm-12 mb-4 text-center"
-          data-aos="fade-up"
-          data-aos-delay="200"
-          data-aos-offset="0"
-        >
+        <div class="col-md-10 col-sm-12 mb-4 text-center" data-aos="fade-up" data-aos-delay="200" data-aos-offset="0">
           <p class="breadcrumbs">
             <span class="mr-2"><a [routerLink]="['/']">Home</a></span>
             <span>Portfolio</span>
@@ -19,11 +14,15 @@
     </div>
   </div>
 </section>
-<section class="ftco-section ftco-degree-bg" #portfolioHeader >
+<section class="ftco-section ftco-degree-bg" #portfolioHeader>
   <div class="container" *ngIf="portfolios">
     <div class="row ">
-      <div class="col-md-4 mb-4" *ngFor="let portfolio of portfolios">
+      <div class="col-md-4 mb-4" *ngFor="let portfolio of portfolios | paginate: config">
         <app-portfolio-item [portfolio]="portfolio"></app-portfolio-item>
+      </div>
+
+      <div class="col-12 mt-5">
+        <pagination class="mx-auto" [config]="config" (onPageChange)="pageChange($event)"></pagination>
       </div>
     </div>
   </div>

@@ -4,6 +4,7 @@ import { HomeComponent } from './home.component';
 import { HomeRoutingModule } from './home.routing';
 import { ShareModule } from '@shared/share/share.module';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { PaginationModule } from '@components/pagination/pagination.module';
 // import { Ng2OdometerModule } from 'ng2-odometer';
 
 @NgModule({
@@ -12,6 +13,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     ShareModule,
     HomeRoutingModule,
     CarouselModule,
+    PaginationModule
     // Ng2OdometerModule
   ],
   declarations: [HomeComponent]

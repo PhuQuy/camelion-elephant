@@ -17,7 +17,7 @@ export class NavbarComponent implements OnInit {
     @HostListener("window:scroll", [])
     onWindowScroll() {
         if (isPlatformBrowser(this.platformId)) {
-            this.scrolled = window.scrollY > 60;
+            this.scrolled = window.scrollY > 100;
             this.awake = window.scrollY > 100;
             if (window.scrollY > 100) {
                 this.logo = "/assets/images/logo4.png";

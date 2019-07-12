@@ -59,10 +59,8 @@ export class PortfolioComponent extends BaseComponent implements OnInit {
             // this.spinnerService.hide();
         });
     }
+    
     pageChange(page) {
-        this.portfolioHeader.nativeElement.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        });
+        this.portfolioHeader.nativeElement.scrollIntoView();
     }
 }

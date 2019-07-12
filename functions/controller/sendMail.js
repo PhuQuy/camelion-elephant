@@ -13,8 +13,8 @@ var transporter = nodemailer.createTransport({
 //   }
 service: 'gmail',
 auth: {
-  user: 'phuquy.tool@gmail.com',
-  pass: 'XXxx11!!',
+  user: 'dotafreelancer@gmail.com',
+  pass: 'XXxx11@@',
 }
 });
 
@@ -25,7 +25,7 @@ const sendEmailTemplate = (templateFile, subject, data, callback) => {
   let theTemplate = handlebars.template(precompiled);
   const theCompiledHtml = theTemplate(data);
   const mailOptions = {
-    from: 'phuquy.tool@gmail.com',
+    from: 'dotafreelancer@gmail.com',
     to: data.to,
     subject: subject,
     html: theCompiledHtml
@@ -65,7 +65,8 @@ exports.sendNotify = (req, res) => {
         console.log(err);
         
       res.status(500).json({
-        success: false
+        success: false,
+        error: error
       });
     } else {
       sendEmailTemplate("index.html", "Contact", dataClient, function (err, result2) {

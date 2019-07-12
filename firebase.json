@@ -6,15 +6,18 @@
       "**/.*",
       "**/node_modules/**"
     ],
-    "rewrites": [
-        {
-            "source": "/seo/**",
-            "function": "http"
-          },
-          {
-            "source": "**",
-            "destination": "/index.html"
-          }
-      ]
+    "rewrites": [{
+        "source": "/send-mail",
+        "function": "email"
+      },
+      {
+        "source": "/seo/**",
+        "function": "http"
+      },
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
   }
 }

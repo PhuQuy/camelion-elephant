@@ -1,17 +1,16 @@
 const functions = require('firebase-functions');
 const local = require('./local');
+const sendMail = require('./controller/sendMail');
 
 const http = functions.https.onRequest((request, response) => {
-    return local.server.app(request, response);
-    // const isBot = botDetect.detectBot(request.headers['user-agent']);
-    // if (!isBot) {
-    //   return client.app(request, response);
-    // }
-    // if (!request.path) {
-    //   request.url = "/" + request.url;
-    // }
-  });
+  return local.server.app(request, response);
+});
 
-  module.exports = {
-    http
-  }
+const email = functions.https.onRequest((request, response) => {
+  return sendMail.sendNotify(request, response);
+});
+
+module.exports = {
+  http,
+  email
+}

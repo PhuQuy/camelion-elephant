@@ -1,4 +1,4 @@
-import { Component, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, Inject, PLATFORM_ID, ElementRef, ViewChild } from '@angular/core';
 import { SpinnerService } from '@components/spinner/spinner.service';
 import { BaseComponent } from '@core/base/base.component';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -6,6 +6,7 @@ import { BlogService } from '@services/blog.service';
 import { PortfolioService } from '@services/portfolio.service';
 import { SeoService } from '@shared/seo.service';
 import { Subject } from 'rxjs';
+import { PaginationInstance } from 'ngx-pagination';
 
 declare let $: any;
 let TxtType = function (el, toRotate, period) {
@@ -25,6 +26,8 @@ let TxtType = function (el, toRotate, period) {
     providers: [PortfolioService, BlogService]
 })
 export class HomeComponent extends BaseComponent {
+    @ViewChild("blog") blog: ElementRef;
+
     customOptions: any = {
         loop: true,
         mouseDrag: true,
@@ -114,6 +117,12 @@ export class HomeComponent extends BaseComponent {
     dtTrigger = new Subject();
     invisibleIndex = 2;
 
+    config: PaginationInstance = {
+        id: "blog",
+        itemsPerPage: 3,
+        currentPage: 1
+    };
+
     constructor(
         @Inject(PLATFORM_ID) public platformId: string,
         private seoService: SeoService,
@@ -152,7 +161,7 @@ export class HomeComponent extends BaseComponent {
         this.getAll();
         this.loadRecentBlogs();
     }
-    
+
     loadRecentBlogs() {
         this.blogService.getLimit(6).subscribe(blogs => {
             this.blogs = blogs;
@@ -164,7 +173,7 @@ export class HomeComponent extends BaseComponent {
     }
 
     open(content) {
-        this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title', size: 'lg', keyboard: true}).result.then((result) => {
+        this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title', size: 'lg', keyboard: true }).result.then((result) => {
             this.closeResult = `Closed with: ${result}`;
         }, (reason) => {
             this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
@@ -242,5 +251,9 @@ export class HomeComponent extends BaseComponent {
         } else {
             this.invisibleIndex = data.startPosition + 2;
         }
+    }
+
+    pageChange(page) {
+        this.blog.nativeElement.scrollIntoView();
     }
 }

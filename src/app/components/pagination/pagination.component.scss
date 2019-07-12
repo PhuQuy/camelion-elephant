@@ -9,5 +9,10 @@
 
 .block-27 ul li a,
 .block-27 ul li span {
-  line-height: 25px;
+  line-height: 23px;
+  color: #78d5ef;
+}
+
+.active .page-link {
+    color: white !important; 
 }

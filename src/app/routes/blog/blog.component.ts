@@ -23,7 +23,7 @@ export class BlogComponent extends BaseComponent implements OnInit {
   searchBlog: string = "";
   config: PaginationInstance = {
     id: "comment",
-    itemsPerPage: 6,
+    itemsPerPage: 2,
     currentPage: 1
   };
   @ViewChild("blogHeader") blogHeader: ElementRef;

@@ -12,6 +12,6 @@ export class ContactService extends BaseService{
   }
 
   sendEmail(data){
-  	return this.http.post(`${environment.apiUrl}/api/sendEmail`, data);
+  	return this.http.post(`${environment.emailURL}`, data);
   }
 }
