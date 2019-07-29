@@ -56,7 +56,6 @@ export class PortfolioComponent extends BaseComponent implements OnInit {
         // this.spinnerService.show();
         this.portfolioService.getAll().subscribe(portfolios => {
             this.portfolios = portfolios;
-            // this.spinnerService.hide();
         });
     }
     
