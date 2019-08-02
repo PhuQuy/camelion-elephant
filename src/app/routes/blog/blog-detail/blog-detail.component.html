@@ -1,13 +1,10 @@
 <section class="home-slider carousel ftco-degree-bg">
-  <div
-    class="slider-item bread-wrap"
-    style="background-image: url('/assets/images/bg_1.jpg');"
-    data-stellar-background-ratio="0.5"
-  >
+  <div class="slider-item bread-wrap" style="height: 300px; min-height: 0px; opacity: 0.6;"
+    [ngStyle]="{'background-image': blogImg}" data-stellar-background-ratio="0.5">
     <div class="overlay hero-area-fix"></div>
-    <div class="container">
-      <div class="row slider-text justify-content-center align-items-center">
-        <div class="col-md-10 col-sm-12 mb-4 text-center">
+    <!-- <div class="container">
+      <div class="row slider-text justify-content-center align-items-center" style="height: 300px; min-height: 0px;">
+        <div class="col-md-12 col-sm-12 mb-4 text-left">
           <p class="breadcrumbs">
             <span class="mr-2"> <a [routerLink]="['/']">Home</a></span>
             <span class="mr-2"> <a [routerLink]="['/blog']">Blog</a></span>
@@ -16,21 +13,31 @@
           <h1 class="mb-3">{{ blog?.title }}</h1>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </section>
 
-<section class="ftco-section ftco-degree-bg" style="margin-top: -7rem;">
+<section class="ftco-section ftco-degree-bg">
   <div class="container">
+    <div class="row slider-text justify-content-center align-items-center">
+      <div class="col-md-12 col-sm-12 mb-4 text-left">
+        <p class="breadcrumbs">
+          <span class="mr-2"> <a [routerLink]="['/']">Home</a></span>
+          <span class="mr-2"> <a [routerLink]="['/blog']">Blog</a></span>
+          <span>{{ id }}</span>
+        </p>
+        <!-- <h1 class="mb-3">{{ blog?.title }}</h1> -->
+      </div>
+    </div>
     <div class="row">
       <div class="col-md-8 ">
         <h1 class="mb-3 title">{{ blog?.title }}</h1>
         <h6><span class="badge badge-primary">{{blog?.category[0].name}} </span> <span class="">
-          {{ blog?.createdAt.seconds*1000  | date :'mediumDate' }}
-      </span></h6>
-        <br/>
+            {{ blog?.createdAt.seconds*1000  | date :'mediumDate' }}
+          </span></h6>
+        <br />
         <ngx-md [data]="blog?.content">
-</ngx-md>
+        </ngx-md>
         <div class="tag-widget post-tag-container mb-5 mt-5">
           <div class="tagcloud">
             <a href="javascript:void(0)" class="tag-cloud-link" *ngFor="let tag of blog?.tags">{{tag.name}}</a>
@@ -38,7 +45,7 @@
         </div>
 
         <div class="pt-5 mt-5">
-          
+
         </div>
       </div>
       <!-- .col-md-8 -->
@@ -52,15 +59,9 @@
       </div>
     </div>
     <div class="row">
-      <div
-        class="col-md-4"
-        data-aos="fade-up"
-        data-aos-delay="200"
-        data-aos-offset="0"
-        *ngFor="let blog of blogs">
+      <div class="col-md-12" data-aos="fade-up" data-aos-delay="200" data-aos-offset="0" *ngFor="let blog of blogs">
         <app-blog-item [blog]="blog"></app-blog-item>
       </div>
     </div>
   </div>
 </section>
-

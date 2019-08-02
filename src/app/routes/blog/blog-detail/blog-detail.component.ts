@@ -15,6 +15,7 @@ export class BlogDetailComponent extends BaseComponent implements OnInit {
   id;
   blog;
   blogs = [];
+  blogImg;
   constructor(
     @Inject(PLATFORM_ID) public platformId: string,
     private activatedRoute: ActivatedRoute,
@@ -33,6 +34,7 @@ export class BlogDetailComponent extends BaseComponent implements OnInit {
       this.id = params["id"];
       this.blogService.getBySlug(this.id).subscribe(blogs => {
         this.blog = blogs[0];
+        this.blogImg = `url('${this.blog.imgURL}')`;
         const keywords = this.blog.tags.reduce(
           (acc, tag) => acc + ', '+ tag.name,
           ""

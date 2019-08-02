@@ -12519,7 +12519,7 @@ textarea.form-control {
   margin-bottom: 7px;
   margin-right: 4px;
   border-radius: 4px;
-  color: #404044;
+  color: white;
   border: 1px solid #ccc;
   font-size: 11px;
 }
@@ -12737,7 +12737,7 @@ textarea.form-control {
 }
 
 .submit-form .btn-primary:hover {
-  background: #29bae4!important;
+  background: #29bae4 !important;
   color: #fff !important;
 }
 
@@ -12905,4 +12905,8 @@ textarea.form-control {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px;
   }
+}
+
+code {
+  color: bisque !important;
 }
