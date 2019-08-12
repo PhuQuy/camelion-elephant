@@ -1,17 +1,17 @@
-import { Component, Inject } from "@angular/core";
-import { NgbModal, ModalDismissReasons } from "@ng-bootstrap/ng-bootstrap";
-import { UploadImageModalComponent } from "../upload-image-modal/upload-image-modal.component";
-import { FormGroup, FormControl, Validators } from "@angular/forms";
-import { TagService } from "app/services/tag.service";
-import { CategoryService } from "app/services/category.service";
-import { UploadService } from "app/services/upload.service";
-import { BlogService } from "app/services/blog.service";
-import { ActivatedRoute, Router } from "@angular/router";
-import { convertToSlug } from "app/utils/util";
+import { Component, Inject } from '@angular/core';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { UploadImageModalComponent } from '../upload-image-modal/upload-image-modal.component';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { TagService } from 'app/services/tag.service';
+import { CategoryService } from 'app/services/category.service';
+import { UploadService } from 'app/services/upload.service';
+import { BlogService } from 'app/services/blog.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { convertToSlug } from 'app/utils/util';
 @Component({
-    selector: "app-admin-add-edit-blog",
-    templateUrl: "./add-edit-blog.component.html",
-    styleUrls: ["./add-edit-blog.component.scss"],
+    selector: 'app-admin-add-edit-blog',
+    templateUrl: './add-edit-blog.component.html',
+    styleUrls: ['./add-edit-blog.component.scss'],
     providers: [CategoryService, UploadService, TagService, BlogService]
 })
 export class AddEditBlogComponent {
@@ -19,37 +19,37 @@ export class AddEditBlogComponent {
     images: any = [];
     tags;
     categories;
-    value = "";
+    value = '';
     options = {
         toolbar: [
-            "bold",
-            "italic",
-            "heading-1",
-            "heading-2",
-            "heading-3",
-            "code",
-            "quote",
-            "unordered-list",
-            "ordered-list",
+            'bold',
+            'italic',
+            'heading-1',
+            'heading-2',
+            'heading-3',
+            'code',
+            'quote',
+            'unordered-list',
+            'ordered-list',
             {
-                name: "image",
+                name: 'image',
                 action: editor => {
                     this.openModalImage(editor);
                 },
-                className: "fa fa-image",
-                title: "Upload Image"
+                className: 'fa fa-image',
+                title: 'Upload Image'
             },
-            "table",
-            "link",
-            "horizontal-rule",
-            "preview",
-            "side-by-side",
-            "fullscreen",
-            "guide"
+            'table',
+            'link',
+            'horizontal-rule',
+            'preview',
+            'side-by-side',
+            'fullscreen',
+            'guide'
         ]
     };
     imagePath;
-    imgURL: any = "/assets/images/about.jpg";
+    imgURL: any = '/assets/images/about.jpg';
     public message: string;
     id;
     edit: boolean = false;
@@ -64,8 +64,8 @@ export class AddEditBlogComponent {
         private router: Router
     ) {
         this.activatedRoute.params.subscribe(params => {
-            this.id = params["id"];
-            if (this.id !== "new") {
+            this.id = params['id'];
+            if (this.id !== 'new') {
                 this.blogService.getById(this.id).subscribe(blog => {
                     this.blogForm.patchValue(blog);
                     if (blog.imgURL) {
@@ -96,8 +96,8 @@ export class AddEditBlogComponent {
         const modalRef = this.modalService.open(UploadImageModalComponent);
         modalRef.result.then(result => {
             if (result) {
-                let cm = editor.codemirror;
-                let output = "![](" + result + ")";
+                const cm = editor.codemirror;
+                const output = '![](' + result + ')';
                 cm.replaceSelection(output);
             }
         });
@@ -106,14 +106,13 @@ export class AddEditBlogComponent {
     onChange() {}
 
     preview(event) {
-        let file = event.target.files.item(0);
-        if (!file) return;
-        const a = this.blogForm.get("imgURL").value;
-        if (this.edit && this.blogForm.get("imgURL").value) {
-            this.upSvc.deleteFileByURL(this.blogForm.get("imgURL").value);
+        const file = event.target.files.item(0);
+        if (!file) { return; }
+        const a = this.blogForm.get('imgURL').value;
+        if (this.edit && this.blogForm.get('imgURL').value) {
+            this.upSvc.deleteFileByURL(this.blogForm.get('imgURL').value);
         }
         const arr = file.name.split('.');
-        
         this.upSvc
             .pushUpload(`Blogs`, file)
             .subscribe(res => {
@@ -124,13 +123,13 @@ export class AddEditBlogComponent {
 
     createForm() {
         this.blogForm = new FormGroup({
-            title: new FormControl("", [Validators.required]),
-            tags: new FormControl("", [Validators.required]),
-            content: new FormControl("", [Validators.required]),
-            description: new FormControl("", [Validators.required]),
-            published: new FormControl("", [Validators.required]),
-            category: new FormControl("", [Validators.required]),
-            imgURL: new FormControl("", [Validators.required])
+            title: new FormControl('', [Validators.required]),
+            tags: new FormControl('', [Validators.required]),
+            content: new FormControl('', [Validators.required]),
+            description: new FormControl('', [Validators.required]),
+            published: new FormControl('', [Validators.required]),
+            category: new FormControl('', [Validators.required]),
+            imgURL: new FormControl('', [Validators.required])
         });
     }
 
@@ -140,11 +139,11 @@ export class AddEditBlogComponent {
             this.blogService
                 .update({ ...this.blogForm.value, id: this.id, slug: slug })
                 .then(() => {
-                    this.router.navigate(["/admin/blogs"]);
+                    this.router.navigate(['/admin/blogs']);
                 });
         } else {
             this.blogService.create({...this.blogForm.value, slug: slug}).then(() => {
-                this.router.navigate(["/admin/blogs"]);
+                this.router.navigate(['/admin/blogs']);
             });
         }
     }

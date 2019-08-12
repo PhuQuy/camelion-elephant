@@ -6,17 +6,25 @@
       <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
         placeholder="Enter title" formControlName="title" />
     </div>
-    <div class="form-group">
-      <label for="inputState">Is Home </label>
-      <select id="inputState" class="form-control" formControlName="is_home">
-        <option value="true">True</option>
-        <option value="false">False</option>
-      </select>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label></label>
+        <div class="checkbox checkbox-circle checkbox-info peers ai-c mB-15 col-md-4" style="padding-top:13px">
+          <input type="checkbox" id="published" name="published" class="peer"
+            formControlName="published"><label for="published" class="peers peer-greed js-sb ai-c"><span
+              class="peer peer-greed">Published</span></label></div>
+      </div>
+      <div class="form-group col-md-6">
+        <label></label>
+        <div class="checkbox checkbox-circle checkbox-info peers ai-c mB-15 col-md-4" style="padding-top:13px">
+          <input type="checkbox" id="is_home" name="is_home" class="peer"
+            formControlName="is_home"><label for="is_home" class="peers peer-greed js-sb ai-c"><span
+              class="peer peer-greed">Is Home</span></label></div>
+      </div>
     </div>
     <div class="form-group">
       <label for="exampleInputEmail1">Link</label>
-      <input type="text" class="form-control" 
-        placeholder="Enter link" formControlName="link" />
+      <input type="text" class="form-control" placeholder="Enter link" formControlName="link" />
     </div>
     <div class="form-group">
       <label>Development platforms</label>

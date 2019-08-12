@@ -36,6 +36,10 @@ const routes: Routes = [
             {
                 path: 'login',
                 loadChildren: '../user/login/login.module#LoginModule'
+            },
+            {
+                path: 'not-found',
+                loadChildren: '../../routes/not-found/not-found.module#NotFoundModule'
             }
         ],
     },

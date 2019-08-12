@@ -41,11 +41,12 @@ export class BaseService {
   }
 
   public getById(id) {
-    let itemPath = `${this.basePath}/${id}`;
+    const itemPath = `${this.basePath}/${id}`;
     return this.angularFirestore.doc<any>(itemPath).valueChanges();
   }
-  public getBySlug(slug){
-    return this.angularFirestore.collection<any>(this.basePath, ref=>ref.where('slug','==',slug)).valueChanges();
+  public getBySlug(slug) {
+    return this.angularFirestore.collection<any>(this.basePath,
+      ref => ref.where('slug', '==', slug).where('published', '==', true)).valueChanges();
   }
 
   get timestamp() {

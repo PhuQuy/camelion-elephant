@@ -11,6 +11,7 @@
         <th class="th-image">Image</th>
         <th>Name</th>
         <th>Is Home</th>
+        <th>Published</th>
         <th>Create date</th>
         <th>Action</th>
       </tr>
@@ -21,6 +22,7 @@
 
         <td><a routerLink="/portfolio/{{portfolio.slug}}">{{portfolio.title}}</a></td>
         <td>{{portfolio.is_home}}</td>
+        <td>{{portfolio.published}}</td>
         <td>{{portfolio.createdAt.seconds * 1000 | date :'medium'}}</td>
         
         <td>

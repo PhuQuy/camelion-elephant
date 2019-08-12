@@ -2,7 +2,9 @@
 @import '../../../assets/scss/bootstrap/variables';
 
 /*====Hero area==*/
-
+label{
+  color:black !important;
+}
 .hero-area-fix {
   canvas {
     width: 100%;
