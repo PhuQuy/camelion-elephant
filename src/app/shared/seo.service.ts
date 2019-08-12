@@ -7,9 +7,9 @@ export class SeoService {
 
     constructor(private meta: Meta, private titleService: Title, @Inject(DOCUMENT) private doc) { }
     generateTags(config) {
-        let keywords = 'phuquy, full stack developer, vietnam freelancer, responsive, mobile design, mobile app website designer, web developer, phuquy developer, Javascript outsourcing team based in Vietnam, phuquy dev, Web design and development, training included';
+        let keywords = 'Javascript outsourcing in Vietnam,  IT outsourcing, Web outsourcing, Web developer, Angular developer, React developer, Full stack developer, Vietnam developer';
         config = Object.assign({
-            title: 'Javascript outsourcing team based in Vietnam, Web Design, Web Development',
+            title: '𝗝𝗔𝗩𝗔𝗦𝗖𝗥𝗜𝗣𝗧 𝗢𝗨𝗧𝗦𝗢𝗨𝗥𝗖𝗜𝗡𝗚 𝗧𝗘𝗔𝗠 𝗕𝗔𝗦𝗘𝗗 𝗜𝗡 𝗩𝗜𝗘𝗧𝗡𝗔𝗠 | 𝗣𝗛𝗨𝗤𝗨𝗬 𝗦𝗧𝗨𝗗𝗜𝗢',
             description: 'Phuquy - Javascript outsourcing team based in Vietnam, specializing in full service Web design and development. Grow your business faster with 24/7 support as a service: Always on, elastic, with management and training included. Do you need a website?  We are Phuquy team, we are here for you!',
             image: environment.domain + '/assets/images/beach.jpg',
             slug: '',

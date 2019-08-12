@@ -13,127 +13,133 @@
     </url>
     <url>
         <loc>https://phuquy.dev/about-us</loc>
-        <lastmod>2019-07-10T07:32:32+00:00</lastmod>
+        <lastmod>2019-08-07T07:32:32+00:00</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
         <loc>https://phuquy.dev/blog</loc>
-        <lastmod>2019-07-10T07:32:32+00:00</lastmod>
+        <lastmod>2019-08-07T07:32:32+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://phuquy.dev/blog/</loc>
-        <lastmod>2019-07-10T07:32:32+00:00</lastmod>
+        <lastmod>2019-08-07T07:32:32+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://phuquy.dev/portfolio</loc>
-        <lastmod>2019-07-10T07:32:32+00:00</lastmod>
+        <lastmod>2019-08-07T07:32:32+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://phuquy.dev/portfolio/</loc>
-        <lastmod>2019-07-10T07:32:32+00:00</lastmod>
+        <lastmod>2019-08-07T07:32:32+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://phuquy.dev/contacts</loc>
-        <lastmod>2019-07-10T07:32:32+00:00</lastmod>
+        <lastmod>2019-08-07T07:32:32+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://phuquy.dev/solution</loc>
-        <lastmod>2019-07-10T07:32:32+00:00</lastmod>
+        <lastmod>2019-08-07T07:32:32+00:00</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
         <loc>https://phuquy.dev/seo/</loc>
-        <lastmod>2019-07-10T07:32:32+00:00</lastmod>
+        <lastmod>2019-08-07T07:32:32+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://phuquy.dev/seo/about-us</loc>
-        <lastmod>2019-07-10T07:32:32+00:00</lastmod>
+        <lastmod>2019-08-07T07:32:32+00:00</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
         <loc>https://phuquy.dev/seo/blog</loc>
-        <lastmod>2019-07-10T07:32:32+00:00</lastmod>
+        <lastmod>2019-08-07T07:32:32+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://phuquy.dev/seo/blog/</loc>
-        <lastmod>2019-07-10T07:32:32+00:00</lastmod>
+        <lastmod>2019-08-07T07:32:32+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://phuquy.dev/seo/blog/making-progressive-web-apps-pwas-with-react</loc>
-        <lastmod>2019-07-10T07:32:32+00:00</lastmod>
+        <lastmod>2019-08-07T07:32:32+00:00</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
         <loc>https://phuquy.dev/seo/blog/intro-to-progressive-web-apps-pwas-in-angular</loc>
-        <lastmod>2019-07-10T07:32:32+00:00</lastmod>
+        <lastmod>2019-08-07T07:32:32+00:00</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
         <loc>https://phuquy.dev/seo/blog/i18n-with-react-and-i18next</loc>
-        <lastmod>2019-07-10T07:32:32+00:00</lastmod>
+        <lastmod>2019-08-07T07:32:32+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    <url>
+        <loc>https://phuquy.dev/seo/blog/how-to-pass-a-simple-variable-from-html-to-scss-in-angular</loc>
+        <lastmod>2019-08-07T07:32:32+00:00</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
         <loc>https://phuquy.dev/seo/portfolio</loc>
-        <lastmod>2019-07-10T07:32:32+00:00</lastmod>
+        <lastmod>2019-08-07T07:32:32+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://phuquy.dev/seo/portfolio/</loc>
-        <lastmod>2019-07-10T07:32:32+00:00</lastmod>
+        <lastmod>2019-08-07T07:32:32+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://phuquy.dev/seo/portfolio/ludus</loc>
-        <lastmod>2019-07-10T07:32:32+00:00</lastmod>
+        <lastmod>2019-08-07T07:32:32+00:00</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
         <loc>https://phuquy.dev/seo/portfolio/skilpe</loc>
-        <lastmod>2019-07-10T07:32:32+00:00</lastmod>
+        <lastmod>2019-08-07T07:32:32+00:00</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
         <loc>https://phuquy.dev/seo/portfolio/hosiana</loc>
-        <lastmod>2019-07-10T07:32:32+00:00</lastmod>
+        <lastmod>2019-08-07T07:32:32+00:00</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
         <loc>https://phuquy.dev/seo/contacts</loc>
-        <lastmod>2019-07-10T07:32:32+00:00</lastmod>
+        <lastmod>2019-08-07T07:32:32+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://phuquy.dev/seo/solution</loc>
-        <lastmod>2019-07-10T07:32:32+00:00</lastmod>
+        <lastmod>2019-08-07T07:32:32+00:00</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.3</priority>
     </url>
