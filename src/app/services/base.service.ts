@@ -21,7 +21,7 @@ export class BaseService {
   }
 
   public getAll(query?) {
-    return this.angularFirestore.collection<any>(this.basePath).snapshotChanges().map(changes => {
+    return this.angularFirestore.collection<any>(this.basePath, query).snapshotChanges().map(changes => {
       return changes.map(a => {
         const data = a.payload.doc.data();
         data.id = a.payload.doc.id;
