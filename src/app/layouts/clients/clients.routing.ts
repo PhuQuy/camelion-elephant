@@ -10,7 +10,8 @@ const routes: Routes = [
         children: [
             {
                 path: '',
-                loadChildren: `../../routes/home/home.module#HomeModule`
+                loadChildren: `../../routes/home/home.module#HomeModule`,
+                data: { preload: true }
             },
             {
                 path: 'about-us',

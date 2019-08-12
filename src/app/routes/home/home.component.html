@@ -141,12 +141,12 @@
                       <!-- src="https://gocodee.com/assets/images/animate.gif"  -->
                       <a [routerLink]="['/portfolio', slide.slug]">
                         <img [src]="slide.images[0]" class="bg-white d-flex center image-animate"
-                          style="width: 50%;border-radius: 5px; height: 425px; margin-bottom: 68px; object-fit: cover;">
+                          style="width: 50%;border-radius: 5px; height: 425px; margin-bottom: 68px; object-fit: cover;" alt="portfolio image">
                         <!-- <img src="https://gocodee.com/assets/images/cat1.jpg" -->
                         <img [src]="slide.images[1]" class="bg-white d-flex center rotate-ne image-animate" style="width: 50%;border-radius: 5px; position: absolute; height: 425px;object-fit: cover;
                           top: 0;
                           left: -58px;
-                          z-index: -1;">
+                          z-index: -1;" alt="slide image">
                         <div class='overlay-bar'>
                           <h2 class="text-white">{{slide.title}}</h2>
                           <a [href]="slide.link">{{slide.link}} </a>

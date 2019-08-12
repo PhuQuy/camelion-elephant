@@ -18,7 +18,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let blog of blogs">
-        <td class="td-image"><img [src]="blog.imgURL"/></td>
+        <td class="td-image"><img [src]="blog.imgURL" alt="blog image"/></td>
         <td><a routerLink="/blog/{{blog.slug}}" target="_blank">{{blog.title}}</a></td>
         <td>{{blog.published}}</td>
         <td>{{blog.category[0].name}}</td>

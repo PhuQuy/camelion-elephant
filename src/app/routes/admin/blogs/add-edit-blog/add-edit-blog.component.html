@@ -7,10 +7,10 @@
 <div class="bgc-white bd bdrs-3 p-20 mB-20">
     <div class="upload-image">
       <div class="upload-icon">
-        <img src="/assets/images/upload.png" (click)="file.click()" />
+        <img src="/assets/images/upload.png" (click)="file.click()" alt="upload" />
         <input type="file" name="image" accept="image/*" hidden (change)="preview($event)" #file />
       </div>
-      <img class="image-default" [src]="imgURL" />
+      <img class="image-default" [src]="imgURL" alt="upload" />
     </div>
     <br />
     <div class="form-group">

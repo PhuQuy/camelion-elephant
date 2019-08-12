@@ -17,7 +17,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let portfolio of portfolios">
-        <td class="td-image"><img [src]="portfolio.images[0]"/></td>
+        <td class="td-image"><img [src]="portfolio.images[0]" alt="portfolio image"/></td>
 
         <td><a routerLink="/portfolio/{{portfolio.slug}}">{{portfolio.title}}</a></td>
         <td>{{portfolio.is_home}}</td>

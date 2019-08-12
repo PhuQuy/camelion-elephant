@@ -12,7 +12,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app.routing';
+import { AppRoutingModule, AppCustomPreloader } from './app.routing';
 
 @NgModule({
     declarations: [
@@ -30,7 +30,7 @@ import { AppRoutingModule } from './app.routing';
             apiKey: 'AIzaSyDhMJyRMmSKUPnuWEUqmH87W531M1kdRK4'
          })
     ],
-    providers: [SeoService, AuthGuard, AngularFireAuth, AngularFirestore],
+    providers: [SeoService, AuthGuard, AngularFireAuth, AngularFirestore, AppCustomPreloader],
 })
 export class AppModule {
 

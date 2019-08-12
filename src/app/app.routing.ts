@@ -1,5 +1,12 @@
 import { NgModule } from "@angular/core";
-import { RouterModule, Routes } from "@angular/router";
+import { RouterModule, Routes, PreloadingStrategy, Route } from "@angular/router";
+import { Observable, of } from "rxjs";
+
+export class AppCustomPreloader implements PreloadingStrategy {
+    preload(route: Route, load: Function): Observable<any> {
+        return route.data && route.data.preload ? load() : of(null);
+    }
+}
 
 const routes: Routes = [
     { path: "", redirectTo: "/", pathMatch: "full" },
@@ -19,7 +26,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes, { initialNavigation: "enabled" })],
+    imports: [RouterModule.forRoot(routes, { initialNavigation: "enabled"  })],
     exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

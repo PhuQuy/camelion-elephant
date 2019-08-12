@@ -32,9 +32,9 @@
       <label>Images</label>
       <div class="list-image">
         <input type="file" name="image" accept='image/*' hidden (change)="preview($event)" #file multiple>
-        <img class="upload-action" src="/assets/images/upload.png" (click)="file.click()" />
+        <img class="upload-action" src="/assets/images/upload.png" (click)="file.click()" alt="upload icon" />
         <div class="img-content" *ngFor="let image of images; let i = index">
-          <img [src]="image" />
+          <img [src]="image" alt="image" />
           <button class="btn-light btn-hover" (click)="deletePhoto(image, i)">
             <i class="fa fa-times"></i>
           </button>
