@@ -12910,3 +12910,11 @@ textarea.form-control {
 code {
   color: bisque !important;
 }
+
+code[class*=language-], pre[class*=language-]{
+  background: #363640  !important;
+  text-shadow: 0px 0px !important;
+}
+.token.operator{
+  background: none !important;
+}

@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build:server:prod": "ng run camelion-elephant:server && webpack  --mode development --config webpack.server.config.js --progress --colors",
-    "build:browser:prod": "ng build --prod --build-optimizer --configuration=production",
+    "build:browser:prod": "ng build --prod --build-optimizer --configuration=production && gulp purifyCSS",
     "build:prod": "npm run build:server:prod && npm run build:browser:prod",
     "install:server": "cd server && npm install",
     "server": "npm run install:server && node local.js"
@@ -79,6 +79,8 @@
     "@types/jquery": "^3.3.29",
     "@types/node": "~8.9.4",
     "codelyzer": "~4.2.1",
+    "gulp": "^4.0.2",
+    "gulp-purifycss": "^0.2.0",
     "nodemon": "^1.19.0",
     "ts-node": "~5.0.1",
     "tslint": "~5.9.1",
