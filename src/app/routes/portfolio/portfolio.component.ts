@@ -54,7 +54,7 @@ export class PortfolioComponent extends BaseComponent implements OnInit {
 
     getAll() {
         // this.spinnerService.show();
-        this.portfolioService.getAll(ref => ref.where('published', '==', true)).subscribe(portfolios => {
+        this.portfolioService.getAll(ref => ref.where('published', '==', true).orderBy('createdAt', 'desc')).subscribe(portfolios => {
             this.portfolios = portfolios;
         });
     }

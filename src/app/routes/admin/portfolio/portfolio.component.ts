@@ -30,7 +30,7 @@ export class PortfolioComponent {
 	}
 
 	getAll() {
-		this.sub = this.portfolioService.getAll().subscribe(portfolios => {
+		this.sub = this.portfolioService.getAll(ref => ref.orderBy('createdAt', 'desc')).subscribe(portfolios => {
 			this.portfolios = portfolios;
 			if (this.index == 0) {
 				this.index ++;

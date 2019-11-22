@@ -12,7 +12,8 @@ export class PortfolioService extends BaseService {
 
   getInHome() {
     return this.angularFirestore.collection<any>(this.basePath,
-      ref => ref.limit(6).where('is_home', '==', true).where('published', '==', true)).snapshotChanges().map(changes => {
+      // tslint:disable-next-line: max-line-length
+      ref => ref.limit(6).where('is_home', '==', true).where('published', '==', true).orderBy('createdAt', 'desc')).snapshotChanges().map(changes => {
         return changes.map(a => {
           const data = a.payload.doc.data();
           data.id = a.payload.doc.id;

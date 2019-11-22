@@ -3,6 +3,7 @@ import { isPlatformBrowser } from '@angular/common';
 import { Router } from '@angular/router';
 import { SpinnerState } from '@components/spinner/spinner';
 import { SpinnerService } from '@components/spinner/spinner.service';
+declare var gtag: any;
 
 @Component({
     selector: 'navbar',
@@ -37,6 +38,10 @@ export class NavbarComponent implements OnInit {
     hide;
     scaleUp;
     ngOnInit() {
+        gtag('event', 'click', {
+            'event_category': 'button',
+            'event_label': 'nabar form'
+        });
         this.router.events
             .subscribe(() => {
                 this.collapsed = true;

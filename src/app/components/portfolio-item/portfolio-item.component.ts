@@ -1,5 +1,6 @@
 import { Component, OnInit, PLATFORM_ID, Inject, Input } from '@angular/core';
 import { BaseComponent } from '@core/base/base.component';
+declare var ga:any;
 
 @Component({
     selector: 'app-portfolio-item',
@@ -17,6 +18,7 @@ export class PortfolioItemComponent extends BaseComponent implements OnInit {
     }
 
     ngAfterViewInit() {
+
     }
 
     ngOnInit() {
