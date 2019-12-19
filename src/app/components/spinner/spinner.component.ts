@@ -33,6 +33,6 @@ export class SpinnerComponent implements OnInit {
     }
 
     ngOnDestroy() {
-        this.subscription.unsubscribe();
+        this.subscription ? this.subscription.unsubscribe() : null;
     }
 }
