@@ -45,7 +45,7 @@
     "brand-colors": "^2.0.1",
     "core-js": "^2.5.4",
     "cors": "~2.8.4",
-    "datatables.net": "^1.10.19",
+    "datatables.net": "^1.10.22",
     "datatables.net-dt": "^1.10.19",
     "firebase": "5.0.4",
     "font-awesome": "^4.7.0",
